@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* EarthTrend Explorer design tokens: calm, precise, data-first. Light theme only. */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --ink: #0f1b2d;
+  --ink-soft: #33435a;
+  --muted: #5b6b80;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --accent: #0f766e;
+  --accent-strong: #0b5a54;
+  --accent-soft: #e6f4f2;
+  --info: #0072b2;
+  --info-soft: #e5f1f8;
+  --warn: #7a4b00;
+  --warn-soft: #fff4d6;
+  --warn-line: #f0d68a;
+  --danger: #8a1c1c;
+  --danger-soft: #fdecec;
+  --danger-line: #f0b7b7;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-warn-line: var(--warn-line);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-line: var(--danger-line);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --shadow-card: 0 1px 2px rgb(15 27 45 / 0.04), 0 2px 6px rgb(15 27 45 / 0.05);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  font-feature-settings: "cv11", "ss01";
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: #bfe6e1;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Skeleton loading blocks */
+.skeleton {
+  background: linear-gradient(90deg, #e9eef4 25%, #f3f6fa 37%, #e9eef4 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+  border-radius: 6px;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/* Recharts: keep axis text legible and the focus ring visible for keyboard users */
+.recharts-wrapper:focus-visible,
+.recharts-surface:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .skeleton {
+    animation: none;
+  }
+}
