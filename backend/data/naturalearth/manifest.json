@@ -1,0 +1,95 @@
+{
+  "layers": {
+    "ne_10m_admin_1_states_provinces": {
+      "bytes": 14909524,
+      "category": "cultural",
+      "purpose": "states / provinces",
+      "retrieved_at": "2026-11-12T08:26:22+00:00",
+      "scale": "10m",
+      "sha256": "efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05",
+      "url": "https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip"
+    },
+    "ne_10m_geography_marine_polys": {
+      "bytes": 940563,
+      "category": "physical",
+      "purpose": "oceans, seas, gulfs, bays",
+      "retrieved_at": "2026-11-12T08:26:24+00:00",
+      "scale": "10m",
+      "sha256": "a2d3395904c41e718e02c3ec5bc988712164c524c236fad32d95d282ca303b2a",
+      "url": "https://naciscdn.org/naturalearth/10m/physical/ne_10m_geography_marine_polys.zip"
+    },
+    "ne_10m_geography_regions_elevation_points": {
+      "bytes": 240144,
+      "category": "physical",
+      "purpose": "named peaks with elevation",
+      "retrieved_at": "2026-11-12T08:26:27+00:00",
+      "scale": "10m",
+      "sha256": "c7465b5df43045c3b639ab26ce61128273c2391b597074077a55f06fe63e1c99",
+      "url": "https://naciscdn.org/naturalearth/10m/physical/ne_10m_geography_regions_elevation_points.zip"
+    },
+    "ne_10m_geography_regions_points": {
+      "bytes": 87372,
+      "category": "physical",
+      "purpose": "named physical regions without a polygon",
+      "retrieved_at": "2026-11-12T08:26:27+00:00",
+      "scale": "10m",
+      "sha256": "2cf54b21fc684f0f7023886379c7ae9c5c716d8bd4c3ead19050f3a7f53e4f7d",
+      "url": "https://naciscdn.org/naturalearth/10m/physical/ne_10m_geography_regions_points.zip"
+    },
+    "ne_10m_geography_regions_polys": {
+      "bytes": 2038519,
+      "category": "physical",
+      "purpose": "mountain ranges, deserts, plateaus, peninsulas, ...",
+      "retrieved_at": "2026-11-12T08:26:26+00:00",
+      "scale": "10m",
+      "sha256": "cb7b9db200284ed1551f20eacc7f3333e9b5f311c19f7cb2670694529f688682",
+      "url": "https://naciscdn.org/naturalearth/10m/physical/ne_10m_geography_regions_polys.zip"
+    },
+    "ne_10m_lakes": {
+      "bytes": 2349685,
+      "category": "physical",
+      "purpose": "lake polygons",
+      "retrieved_at": "2026-11-12T08:26:29+00:00",
+      "scale": "10m",
+      "sha256": "0803a06f9c3cb4671d89b68c48b142aad9366ba40f665245e12a913fbc61722a",
+      "url": "https://naciscdn.org/naturalearth/10m/physical/ne_10m_lakes.zip"
+    },
+    "ne_10m_populated_places_simple": {
+      "bytes": 652145,
+      "category": "cultural",
+      "purpose": "cities and towns (points)",
+      "retrieved_at": "2026-11-12T08:26:22+00:00",
+      "scale": "10m",
+      "sha256": "2963ee08f7743f13f37d5243acd77a2f7a510e26a36c7e04b920f1b381f2b251",
+      "url": "https://naciscdn.org/naturalearth/10m/cultural/ne_10m_populated_places_simple.zip"
+    },
+    "ne_10m_rivers_lake_centerlines": {
+      "bytes": 2079507,
+      "category": "physical",
+      "purpose": "river centre lines",
+      "retrieved_at": "2026-11-12T08:26:28+00:00",
+      "scale": "10m",
+      "sha256": "ded71b01870855ccfe19b51f2ec14c9bb48fae23c0e9f3c11974d426433b5c38",
+      "url": "https://naciscdn.org/naturalearth/10m/physical/ne_10m_rivers_lake_centerlines.zip"
+    },
+    "ne_50m_admin_0_countries": {
+      "bytes": 799734,
+      "category": "cultural",
+      "purpose": "country polygons, names, continents",
+      "retrieved_at": "2026-11-12T08:26:16+00:00",
+      "scale": "50m",
+      "sha256": "5fed433373581fa648920435f937d95f2d3c0200e067409c6478dcdf1b853139",
+      "url": "https://naciscdn.org/naturalearth/50m/cultural/ne_50m_admin_0_countries.zip"
+    },
+    "ne_50m_admin_0_map_units": {
+      "bytes": 816908,
+      "category": "cultural",
+      "purpose": "map units (separates e.g. French Guiana from France) for continent shapes",
+      "retrieved_at": "2026-11-12T08:26:17+00:00",
+      "scale": "50m",
+      "sha256": "f449ec126985e5aab30aea4b439c2d9eb0c5d40bd722fc1036ad3b6477e25cdd",
+      "url": "https://naciscdn.org/naturalearth/50m/cultural/ne_50m_admin_0_map_units.zip"
+    }
+  },
+  "source": "Natural Earth (public domain), https://www.naturalearthdata.com"
+}
