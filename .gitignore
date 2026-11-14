@@ -1,0 +1,37 @@
+# Python
+backend/.venv/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local environment files (use the .env.example templates instead)
+.env
+.env.*
+!.env.example
+
+# User-uploaded datasets are runtime state, not source
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+
+# Natural Earth source files are downloaded by backend/scripts/fetch_natural_earth.py (keep the manifest)
+backend/data/naturalearth/*/
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/coverage/
+frontend/*.tsbuildinfo
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+frontend/public/vendor/
+
+# Scratch / local state
+.scratch_*.log
+frontend/.next-verify/
+datasets/user_uploads/
+*.log
