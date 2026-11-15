@@ -133,7 +133,28 @@ export interface RankingRow {
   source: string | null;
 }
 
+export interface Projection {
+  dataset_id: string;
+  available: boolean;
+  reason?: string;
+  name?: string;
+  variable?: string;
+  key?: string;
+  history?: { year: number; area_ha: number }[];
+  projection?: { year: number; central_ha: number; low_ha?: number; high_ha?: number }[];
+  slope_ha_per_year?: number;
+  recent_rate_ha_per_year?: number;
+  footprint_ha?: number;
+  n_observations?: number;
+  confidence?: "low" | "medium";
+  band?: boolean;
+  reaches_footprint?: boolean;
+  method?: string;
+  limits?: string;
+}
+
 export const analyticsApi = {
+  projection: (id: string, horizon: number, signal?: AbortSignal) => request<Projection>(`${base}/datasets/${id}/projection?horizon=${horizon}`, { signal }),
   rankings: (signal?: AbortSignal) => request<{ rows: RankingRow[]; count: number }>(`${base}/rankings`, { signal, timeoutMs: 30_000 }),
   catalogue: (signal?: AbortSignal) => request<{ datasets: CatalogueRow[]; count: number }>(`${base}/catalogue`, { signal }),
   stats: (id: string, signal?: AbortSignal) => request<DatasetStats>(`${base}/datasets/${id}/statistics`, { signal }),

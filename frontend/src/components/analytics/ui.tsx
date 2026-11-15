@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AlertTriangle, BarChart3, Columns2, Trophy, Table2, Database, Globe2, History, Loader2, Mountain, type LucideIcon } from "lucide-react";
+import { AlertTriangle, BarChart3, Columns2, TrendingUp, Trophy, Table2, Database, Globe2, History, Loader2, Mountain, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const NAV: { href: string; label: string; icon: LucideIcon }[] = [
@@ -10,6 +10,7 @@ export const NAV: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/analytics", label: "Change Analytics", icon: BarChart3 },
   { href: "/compare", label: "Compare Places", icon: Columns2 },
   { href: "/rankings", label: "Rankings & Map", icon: Trophy },
+  { href: "/outlook", label: "Future Outlook", icon: TrendingUp },
   { href: "/deep-time", label: "Deep-Time Analytics", icon: Mountain },
   { href: "/datasets", label: "Datasets", icon: Table2 },
   { href: "/data", label: "Data & Methods", icon: Database },

@@ -309,6 +309,126 @@ def rankings(svc: Svc) -> dict[str, Any]:
     return {"rows": rows, "count": len(rows)}
 
 
+@router.get("/datasets/{dataset_id}/projection")
+def projection(dataset_id: str, svc: Svc, horizon: int = 2050) -> dict[str, Any]:
+    """Trend projection of the primary variable: the measured change continued forward, with a band from the observed spread of rates.
+
+    This is an extrapolation of the measured series, not a model of what will happen. The central line is the least-squares trend; with three or
+    more observations the band runs between the slowest and fastest rate seen between consecutive observations; with two observations there is
+    only one rate, so no band is drawn and confidence is low. Values are kept inside the physical footprint of the dataset.
+    """
+    if not 2025 <= horizon <= 2100:
+        raise unprocessable("bad_horizon", "horizon must be a year between 2025 and 2100.")
+    ds = svc.datasets.get(dataset_id)
+    st = svc.statistics(ds)
+    prim = next(((k, v) for k, v in st["variables"].items() if v.get("primary")), next(iter(st["variables"].items()), None))
+    if not prim or len(prim[1]["series"]) < 2:
+        return {"dataset_id": ds.id, "available": False, "reason": "A projection needs at least two dated observations of the same variable."}
+    key, v = prim
+    pts = [(int(p["date"][:4]), float(p["area_ha"])) for p in v["series"]]
+    n = len(pts)
+    xs = [x for x, _ in pts]
+    ys = [y for _, y in pts]
+    mx, my = sum(xs) / n, sum(ys) / n
+    slope = sum((x - mx) * (y - my) for x, y in pts) / sum((x - mx) ** 2 for x in xs)
+    icpt = my - slope * mx
+    rates = [(ys[i + 1] - ys[i]) / (xs[i + 1] - xs[i]) for i in range(n - 1)]
+    footprint = max((float(o["valid_ha"]) for o in st["observations"]), default=max(ys) * 2)
+    last_x, last_y = xs[-1], ys[-1]
+    fitted_last = icpt + slope * last_x
+
+    def clamp(val: float) -> float:
+        return round(min(footprint, max(0.0, val)), 2)
+
+    out = []
+    for yr in range(last_x, horizon + 1, 1 if horizon - last_x <= 30 else 5):
+        central = last_y + slope * (yr - last_x) if yr > last_x else last_y
+        row = {"year": yr, "central_ha": clamp(central)}
+        if n >= 3:
+            lo, hi = min(rates), max(rates)
+            row["low_ha"] = clamp(last_y + lo * (yr - last_x))
+            row["high_ha"] = clamp(last_y + hi * (yr - last_x))
+        out.append(row)
+    if out[-1]["year"] != horizon:
+        yr = horizon
+        row = {"year": yr, "central_ha": clamp(last_y + slope * (yr - last_x))}
+        if n >= 3:
+            row["low_ha"], row["high_ha"] = clamp(last_y + min(rates) * (yr - last_x)), clamp(last_y + max(rates) * (yr - last_x))
+        out.append(row)
+    res = [y - (icpt + slope * x) for x, y in pts]
+    return {
+        "dataset_id": ds.id, "available": True, "name": ds.meta["name"], "variable": v["label"], "key": key, "history": [{"year": x, "area_ha": y} for x, y in pts],
+        "projection": out, "slope_ha_per_year": round(slope, 2), "recent_rate_ha_per_year": round(rates[-1], 2), "footprint_ha": round(footprint, 1), "n_observations": n,
+        "confidence": "medium" if n >= 3 and max(abs(r) for r in res) < 0.1 * max(ys) else "low",
+        "band": n >= 3, "reaches_footprint": any(r["central_ha"] >= footprint for r in out),
+        "method": "Least-squares trend through the measured series, continued from the last observation" + ("; band between the slowest and fastest observed rates." if n >= 3 else "; only one observed rate exists, so no band is shown."),
+        "limits": "A projection continues the measured trend. It does not model policy, climate, land supply or other drivers, and growth rarely stays linear.",
+        "fitted_last_ha": round(fitted_last, 2),
+    }
+
+
+@router.get("/datasets/{dataset_id}/projection-map.png")
+def projection_map(dataset_id: str, svc: Svc, years: int = Query(10, ge=1, le=50)) -> Response:
+    """How the study area could look `years` after the last observation if the measured trend continues.
+
+    The trend area comes from the same projection as the chart. Growth is placed on the cells nearest to the existing class (shrinkage removes the
+    cells nearest its edge), so this is an illustration of the trend and not a model of where change will really occur.
+    """
+    import numpy as np
+    from scipy import ndimage as ndi
+
+    from app.explorer.rendering import _png
+
+    ds = svc.datasets.get(dataset_id)
+    last_obs = svc.datasets.usable(ds)[-1]
+    target_year = last_obs.date.year + years
+    proj = projection(dataset_id, svc, horizon=min(2100, max(2025, target_year)))
+    if not proj.get("available"):
+        raise unprocessable("no_projection", proj.get("reason", "No projection is available for this dataset."))
+    row = next((r for r in proj["projection"] if r["year"] == target_year), None)
+    if row is None:
+        slope = proj["slope_ha_per_year"]
+        row = {"central_ha": max(0.0, min(proj["footprint_ha"], proj["history"][-1]["area_ha"] + slope * years))}
+
+    def make() -> bytes:
+        arr = svc.datasets.read(ds, last_obs)
+        valid = arr != ds.uncertain
+        cls = ds.variable()["class"]
+        m = np.isin(arr, cls if isinstance(cls, list) else [cls]) & valid
+        rows_a = ds.row_area_m2
+        cell = np.broadcast_to(rows_a[:, None], arr.shape)
+        cur_ha = float(cell[m].sum() / 10_000.0)
+        tgt_ha = float(row["central_ha"])
+        grown = np.zeros_like(m)
+        lost = np.zeros_like(m)
+        if tgt_ha > cur_ha:
+            cand = valid & ~m
+            if cand.any():
+                dist = ndi.distance_transform_edt(~m) if m.any() else np.zeros(m.shape)
+                idx = np.flatnonzero(cand.ravel())
+                order = idx[np.argsort(dist.ravel()[idx], kind="stable")]
+                cum = np.cumsum(cell.ravel()[order]) / 10_000.0
+                k = int(np.searchsorted(cum, tgt_ha - cur_ha)) + 1
+                grown.ravel()[order[:k]] = True
+        elif tgt_ha < cur_ha and m.any():
+            dist = ndi.distance_transform_edt(m)
+            idx = np.flatnonzero(m.ravel())
+            order = idx[np.argsort(dist.ravel()[idx], kind="stable")]
+            cum = np.cumsum(cell.ravel()[order]) / 10_000.0
+            k = int(np.searchsorted(cum, cur_ha - tgt_ha)) + 1
+            lost.ravel()[order[:k]] = True
+        water = proj["key"] == "water"
+        out = np.zeros((*arr.shape, 4), dtype=np.uint8)
+        out[valid & ~m] = (122, 128, 140, 110)
+        out[m] = (56, 139, 253, 205) if water else (214, 118, 80, 225)
+        out[grown] = (0, 229, 255, 245) if water else (255, 222, 23, 245)
+        out[lost] = (230, 57, 70, 240)
+        return _png(out)
+
+    data = svc.rendering.cache.get_or_make(("projmap", ds.id, last_obs.iso, years), make)
+    return Response(data, media_type="image/png", headers=PNG_HEADERS)
+
+
 @router.get("/source-registry")
 def source_registry(svc: Svc) -> dict[str, Any]:
     return {"entries": list(svc.registry().values())}

@@ -112,3 +112,25 @@ def test_metadata_catalogue_and_registry_endpoints(client):
     assert client.get("/api/explorer/catalogue").status_code == 200
     r = client.get("/api/explorer/source-registry")
     assert r.status_code in (200, 404)
+
+
+def test_projection_extends_the_measured_trend_without_inventing_a_band(client):
+    r = client.get("/api/explorer/datasets/ghsl-built-up-chennai/projection", params={"horizon": 2040}).json()
+    assert r["available"] and r["n_observations"] == 3 and r["band"]
+    last = r["projection"][-1]
+    assert last["year"] == 2040 and last["low_ha"] <= last["central_ha"] <= last["high_ha"] <= r["footprint_ha"]
+    assert last["central_ha"] > r["history"][-1]["area_ha"]  # Chennai's measured trend is upward
+    two = client.get("/api/explorer/datasets/jrc-water-bellandur/projection").json()
+    assert two["available"] and two["band"] is False and two["confidence"] == "low"
+    assert "low_ha" not in two["projection"][-1]
+    assert client.get("/api/explorer/datasets/ghsl-built-up-chennai/projection", params={"horizon": 2200}).status_code == 422
+    one = client.get("/api/explorer/datasets/worldcover-sundarbans-2021/projection").json()
+    assert one["available"] is False
+
+
+def test_projection_map_renders_png_for_each_horizon(client):
+    for yrs in (10, 20):
+        r = client.get("/api/explorer/datasets/ghsl-built-up-chennai/projection-map.png", params={"years": yrs})
+        assert r.status_code == 200 and r.headers["content-type"] == "image/png" and r.content[:4] == b"\x89PNG"
+    assert client.get("/api/explorer/datasets/jrc-water-bellandur/projection-map.png", params={"years": 10}).status_code == 200
+    assert client.get("/api/explorer/datasets/worldcover-sundarbans-2021/projection-map.png").status_code == 422
