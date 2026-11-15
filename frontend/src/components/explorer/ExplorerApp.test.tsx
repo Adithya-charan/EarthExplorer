@@ -20,13 +20,13 @@ vi.mock("next/dynamic", () => ({
 
 const BBOX: [number, number, number, number] = [77.6, 12.9, 77.7, 13.0];
 const dataset: DatasetInfo = {
-  id: "bell", name: "Bellandur Lake (simulated)", description: "", is_synthetic: true, simulated_label: "SIMULATED DEMONSTRATION DATA", source: "Generator", product: "", format: "", crs: "EPSG:4326",
+  id: "bell", name: "Bellandur Lake (illustrative)", description: "", is_synthetic: true, simulated_label: "Illustrative Dataset: a generated demonstration layer, not satellite imagery.", variables: [{ key: "water", label: "water", class: 2, primary: true }], designation: "illustrative", public_label: "Illustrative Dataset", provenance: {}, source: "Generator", product: "", format: "", crs: "EPSG:4326",
   resolution_m: 30, temporal_resolution: "monthly", bbox: BBOX, coverage: { start: "2000-01-01", end: "2025-12-01" }, observation_count: 3, usable_count: 3, classes: {}, real_dataset_targets: [], issues: [],
 };
-const loc = { id: "d:1", name: "Bellandur Lake", display_name: "Bellandur Lake, Bengaluru", lat: 12.95, lon: 77.65, kind: "water body", source: "x", bbox: BBOX, zoom_altitude_m: 14000 };
-const latest = { label: "Latest available observation", date: "2025-12-01", location: "Bellandur Lake", source: "Generator", spatial_resolution_m: 30, quality: "good" as const, valid_fraction: 0.97, temporal_resolution: "monthly", historical_coverage: dataset.coverage, is_synthetic: true, simulated_label: "SIMULATED DEMONSTRATION DATA", note: "Not live or real-time." };
+const loc = { id: "d:1", name: "Bellandur Lake", display_name: "Bellandur Lake, Bengaluru", lat: 12.95, lon: 77.65, kind: "water body", source: "x", bbox: BBOX, zoom_altitude_m: 14000, level: "water body", hierarchy: ["India", "Karnataka"], boundary_status: "approximate_bbox" };
+const latest = { label: "Latest available observation", date: "2025-12-01", location: "Bellandur Lake", source: "Generator", spatial_resolution_m: 30, quality: "good" as const, valid_fraction: 0.97, temporal_resolution: "monthly", historical_coverage: dataset.coverage, is_synthetic: true, simulated_label: "Illustrative Dataset: a generated demonstration layer, not satellite imagery.", note: "Not live or real-time." };
 const period = { requested: { start_year: 2000, end_year: 2025 }, supported: dataset.coverage, effective: { start_year: 2000, end_year: 2025 }, status: "ok" as const, messages: [] };
-const ready: SessionResponse = { status: "ready", message: "ok", location: loc, alternatives: [], examples: [], datasets: [dataset], dataset, period, latest, insufficient: null, is_synthetic: true, simulated_label: "SIMULATED DEMONSTRATION DATA" };
+const ready: SessionResponse = { status: "ready", message: "ok", location: loc, alternatives: [], examples: [], datasets: [dataset], dataset, period, latest, insufficient: null, nearby_datasets: [], is_synthetic: true, simulated_label: "Illustrative Dataset: a generated demonstration layer, not satellite imagery." };
 
 const hotspot = { id: "h1", rank: 1, kind: "loss" as const, area_ha: 33.4, geometry_area_ha: 33.1, share_of_change_pct: 60, centroid: { lon: 77.67, lat: 12.93 }, bbox: [77.66, 12.92, 77.68, 12.94] as [number, number, number, number], region: "south-eastern", description: "south-eastern shore: 33.4 ha of water lost" };
 const changed = {
@@ -34,8 +34,8 @@ const changed = {
   first_observation: { date: "2000-01-01", quality: "good", valid_fraction: 1, layer_url: "" }, last_observation: { date: "2025-12-01", quality: "good", valid_fraction: 1, layer_url: "" },
   observations_used: {}, areas: { analysed_ha: 900, net_ha: -44.6, pct_net_change: -11.8, lost_ha: 55.3, gained_ha: 10.7 }, most_affected: { region: "south-eastern", kind: "loss", area_ha: 33.4, description: "south-eastern shore: 33.4 ha of water lost", hotspot_id: "h1", centroid: hotspot.centroid },
   hotspots: [hotspot], progression: [{ year: 2000, water_ha: 380, cumulative_loss_ha: 0, cumulative_gain_ha: 0, observations: 8 }, { year: 2025, water_ha: 335, cumulative_loss_ha: 55, cumulative_gain_ha: 10, observations: 8 }],
-  trend: { direction: "decreasing", slope_ha_per_year: -2.4, p_value: 0, method: "x", years: 2 }, quality: { mean_valid_fraction: 0.95 }, confidence: "high", confidence_reasons: ["ok"], limitations: ["SIMULATED data"], what_was_analysed: "same-season composites",
-  insufficient: null, thresholds: {}, bbox: BBOX, layers: { difference_png: "/api/explorer/analysis/aid/layers/difference.png" }, is_synthetic: true, simulated_label: "SIMULATED DEMONSTRATION DATA",
+  trend: { direction: "decreasing", slope_ha_per_year: -2.4, p_value: 0, method: "x", years: 2 }, quality: { mean_valid_fraction: 0.95 }, confidence: "high", confidence_reasons: ["ok"], limitations: ["Illustrative Dataset: generated demonstration layer."], variable: { key: "water", label: "water", class: 2, primary: true }, what_was_analysed: "same-season composites",
+  insufficient: null, thresholds: {}, bbox: BBOX, layers: { difference_png: "/api/explorer/analysis/aid/layers/difference.png" }, is_synthetic: true, simulated_label: "Illustrative Dataset: a generated demonstration layer, not satellite imagery.",
 } as unknown as ChangeSummary;
 const observations = ["2000-01-01", "2010-06-01", "2025-12-01"].map((date) => ({ date, quality: "good" as const, valid_fraction: 0.95, usable: true, water_share: 0.4, sensor: null }));
 
@@ -45,13 +45,13 @@ const routes = (session: SessionResponse, summary: ChangeSummary | null) => ({
   "POST /api/explorer/analysis/detect-change": () => ({ body: summary }),
   "GET /api/explorer/datasets/bell/observations": () => ({ body: observations }),
   "GET /api/explorer/analysis/aid/hotspots": () => ({ body: { type: "FeatureCollection", features: [] } }),
-  "POST /api/explorer/analysis/aid/explain": () => ({ body: { text: "SIMULATED. 55.3 ha were lost.", source: "deterministic", model: null, notice: "No AI key is configured.", tools_used: [] } }),
+  "POST /api/explorer/analysis/aid/explain": () => ({ body: { text: "Illustrative Dataset. 55.3 ha were lost.", source: "deterministic", model: null, notice: "No AI key is configured.", tools_used: [] } }),
   "POST /api/explorer/ai/chat": () => ({ body: { answer: "Hotspots: south-eastern shore.", source: "deterministic", model: null, notice: null, tools_used: [] } }),
 });
 
 async function search(text: string) {
   const user = userEvent.setup();
-  await user.type(screen.getByRole("textbox", { name: "Place name" }), text);
+  await user.type(screen.getByRole("combobox", { name: /place name/i }), text);
   await user.click(screen.getByRole("button", { name: "Explore" }));
   return user;
 }
@@ -60,9 +60,9 @@ describe("Earth Time Machine", () => {
   it("shows examples, instructions and which datasets exist before any search", async () => {
     mockFetch(routes(ready, changed));
     renderView(<ExplorerApp />);
-    expect(screen.getByRole("button", { name: "Mumbai" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Hyderabad" })).toBeInTheDocument();
     expect(screen.getByText(/drag to turn the globe/i)).toBeInTheDocument();
-    expect(await screen.findByTestId("availability")).toHaveTextContent("Bellandur Lake 2000–2025 (monthly, simulated)");
+    expect(await screen.findByTestId("availability")).toHaveTextContent("Bellandur Lake 2000–2025 (Illustrative Dataset)");
   });
 
   it("outcome A: shows the change, the latest observation, hotspots, timeline and an honest explanation", async () => {
@@ -74,7 +74,7 @@ describe("Earth Time Machine", () => {
     const latestCard = screen.getByTestId("latest-card");
     expect(latestCard).toHaveTextContent("Latest available observation");
     expect(latestCard).toHaveTextContent("Not live or real-time");
-    expect(screen.getAllByText(/SIMULATED DEMONSTRATION DATA/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Illustrative Dataset/i).length).toBeGreaterThan(0);
     expect(screen.getByTestId("globe-stub")).toHaveAttribute("data-layer", expect.stringContaining("diff:aid"));
     expect(within(screen.getByTestId("summary-stats")).getByText("55.3 ha")).toBeInTheDocument();
     expect(screen.getByTestId("most-affected")).toHaveTextContent("south-eastern");
@@ -156,5 +156,37 @@ describe("Earth Time Machine", () => {
     await search("Bellandur");
     expect(await screen.findByTestId("error-banner")).toHaveTextContent(/Cannot reach the EarthTrend API/);
     expect(screen.getByRole("button", { name: "Try again" })).toBeInTheDocument();
+  });
+  it("Back and Forward return to earlier places without a page reload", async () => {
+    const fetchMock = mockFetch(routes(ready, changed));
+    renderView(<ExplorerApp />);
+    const user = await search("Bellandur Lake");
+    await screen.findByTestId("banner-change_detected");
+    const back = screen.getByRole("button", { name: /back to the previous location/i });
+    const fwd = screen.getByRole("button", { name: /forward to the next location/i });
+    expect(back).toBeDisabled();
+    const box = screen.getByRole("combobox", { name: /place name/i });
+    await user.clear(box);
+    await user.type(box, "Hyderabad");
+    await user.click(screen.getByRole("button", { name: "Explore" }));
+    await screen.findByTestId("banner-change_detected");
+    expect(back).toBeEnabled();
+    await user.click(back);
+    await screen.findByTestId("banner-change_detected");
+    expect(requestBodies(fetchMock, "/api/explorer/session").at(-1)).toMatchObject({ location_id: "d:1" });
+    expect(fwd).toBeEnabled();
+    expect(back).toBeDisabled();
+  });
+
+  it("a typed command works like a spoken one", async () => {
+    mockFetch(routes(ready, changed));
+    renderView(<ExplorerApp />);
+    const user = await search("Bellandur Lake");
+    await screen.findByTestId("banner-change_detected");
+    const box = screen.getByRole("combobox", { name: /place name/i });
+    await user.clear(box);
+    await user.type(box, "show the latest observation");
+    await user.click(screen.getByRole("button", { name: "Explore" }));
+    expect(await screen.findByTestId("voice-note")).toHaveTextContent("latest available observation");
   });
 });

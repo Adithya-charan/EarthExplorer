@@ -1,0 +1,134 @@
+{
+ "request": "POST /api/explorer/analysis/detect-change",
+ "status_code": 200,
+ "response": {
+  "outcome": "insufficient_data",
+  "headline": "Insufficient data to assess change for this period.",
+  "analysis_id": null,
+  "dataset": {
+   "id": "worldcover-sundarbans-2021",
+   "name": "Sundarbans (ESA WorldCover 2021)",
+   "description": "A single 2021 land-cover map with mangrove. One date only, so no change can be measured from it.",
+   "is_synthetic": false,
+   "simulated_label": null,
+   "source": "European Space Agency, ESA WorldCover",
+   "product": "ESA WorldCover 10 m 2021 v200 (reclassified, aggregated to 30 m)",
+   "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+   "crs": "EPSG:4326",
+   "resolution_m": 25.8,
+   "temporal_resolution": "irregular",
+   "bbox": [
+    88.6,
+    21.55,
+    89.1,
+    22.05
+   ],
+   "coverage": {
+    "start": "2021-01-01",
+    "end": "2021-01-01"
+   },
+   "observation_count": 1,
+   "usable_count": 1,
+   "classes": {
+    "1": "Other land / exposed terrain",
+    "2": "Water",
+    "3": "Vegetation",
+    "4": "Built-up",
+    "8": "Mangrove",
+    "9": "Agriculture",
+    "255": "Uncertain or no data"
+   },
+   "real_dataset_targets": [],
+   "issues": [],
+   "variables": [
+    {
+     "key": "mangrove",
+     "label": "mangrove",
+     "class": 8,
+     "primary": true
+    },
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": false
+    }
+   ],
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "provenance": {
+    "designation": "official_derived",
+    "note": "Single-date product.",
+    "pipeline": "pipeline.json"
+   }
+  },
+  "location_name": "Sundarbans (ESA WorldCover 2021)",
+  "period": {
+   "requested": {
+    "start_year": 2000,
+    "end_year": 2024
+   },
+   "supported": {
+    "start": "2021-01-01",
+    "end": "2021-01-01"
+   },
+   "effective": {
+    "start_year": 2021,
+    "end_year": 2021
+   },
+   "status": "too_short",
+   "messages": [
+    "Only 2021 overlaps the dataset (2021–2021), which is too short to compare two periods."
+   ]
+  },
+  "first_observation": null,
+  "last_observation": null,
+  "observations_used": {},
+  "areas": {},
+  "most_affected": null,
+  "hotspots": [],
+  "progression": [],
+  "trend": null,
+  "quality": {},
+  "confidence": null,
+  "confidence_reasons": [],
+  "limitations": [
+   "This is not a finding of 'no change': the observations needed to decide are missing."
+  ],
+  "what_was_analysed": "The data were checked against the minimum requirements below; no comparison was made.",
+  "insufficient": {
+   "code": "period_too_short",
+   "reason": "Only 2021 overlaps the dataset (2021–2021), which is too short to compare two periods.",
+   "missing": [
+    "observations inside the requested period"
+   ],
+   "available_dates": [
+    "2021"
+   ],
+   "suggested_period": null
+  },
+  "thresholds": {
+   "window_years": 1,
+   "min_valid_obs_monthly": 6,
+   "min_valid_obs_yearly": 1,
+   "min_obs_valid_fraction": 0.5,
+   "min_pixel_obs_fraction": 0.34,
+   "water_frequency": 0.5,
+   "min_change_pct": 5.0,
+   "min_hotspot_ha": 2.0,
+   "min_feature_px": null,
+   "noise_factor": 2.0,
+   "variable": null
+  },
+  "bbox": [
+   88.6,
+   21.55,
+   89.1,
+   22.05
+  ],
+  "layers": {},
+  "variable": null,
+  "is_synthetic": false,
+  "simulated_label": null
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "schema_version": 2,
+ "id": "worldcover-sundarbans-2021",
+ "name": "Sundarbans (ESA WorldCover 2021)",
+ "description": "A single 2021 land-cover map with mangrove. One date only, so no change can be measured from it.",
+ "kind": "raster_classification",
+ "is_synthetic": false,
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "simulated_label": null,
+ "source": "European Space Agency, ESA WorldCover",
+ "product": "ESA WorldCover 10 m 2021 v200 (reclassified, aggregated to 30 m)",
+ "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+ "crs": "EPSG:4326",
+ "resolution_deg": 0.00025,
+ "resolution_m": 25.8,
+ "bbox": [
+  88.6,
+  21.55,
+  89.1,
+  22.05
+ ],
+ "location": {
+  "name": "Sundarbans (ESA WorldCover 2021)",
+  "aliases": [
+   "sundarbans",
+   "the sundarbans",
+   "sunderbans"
+  ],
+  "lat": 21.8,
+  "lon": 88.85,
+  "hint": "West Bengal, India"
+ },
+ "classes": {
+  "1": "Other land / exposed terrain",
+  "2": "Water",
+  "3": "Vegetation",
+  "4": "Built-up",
+  "8": "Mangrove",
+  "9": "Agriculture",
+  "255": "Uncertain or no data"
+ },
+ "uncertain_value": 255,
+ "variables": [
+  {
+   "key": "mangrove",
+   "label": "mangrove",
+   "class": 8,
+   "primary": true
+  },
+  {
+   "key": "water",
+   "label": "water",
+   "class": 2
+  }
+ ],
+ "license": "CC BY 4.0",
+ "temporal_resolution": "irregular",
+ "coverage": {
+  "start": "2021-01-01",
+  "end": "2021-01-01"
+ },
+ "observations": [
+  {
+   "date": "2021-01-01",
+   "file": "observations/2021.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "sensor": "Sentinel-1 / Sentinel-2 derived (ESA WorldCover)",
+   "class_area_ha": {
+    "Other land / exposed terrain": 367.74,
+    "Water": 135580.76,
+    "Vegetation": 1041.98,
+    "Built-up": 4.72,
+    "Mangrove": 146454.89,
+    "Agriculture": 2797.3
+   },
+   "provenance": {
+    "designation": "official_derived",
+    "source_id": "esa_worldcover_2021_N21E087",
+    "provider": "European Space Agency (ESA) WorldCover consortium",
+    "dataset_identifier": "ESA WorldCover 10 m 2021 v200",
+    "official_url": "https://esa-worldcover.org/en",
+    "download_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N21E087_Map.tif",
+    "original_file": "ESA_WorldCover_10m_2021_v200_N21E087_Map.tif",
+    "original_local_path": "datasets/india_historical_atlas/official/sundarbans/originals/ESA_WorldCover_10m_2021_v200_N21E087_Map.tif",
+    "sha256": "a652fbd8e327ceb600d309f1934223a8d95d7ab0902dbc524c830aba9587b160",
+    "license": "CC BY 4.0; cite Zanaga et al. (2022), ESA WorldCover 10 m 2021 v200.",
+    "temporal_coverage": "2021 (based on Sentinel-1 and Sentinel-2)",
+    "date_semantics": "map year 2021, not a single acquisition date",
+    "original_crs": "EPSG:4326",
+    "original_resolution_deg": 8.333333333333333e-05,
+    "window_pixels": [
+     6000,
+     6000
+    ],
+    "processing_operations": [
+     "clip to analysis window",
+     "aggregate 3x3 with the mode",
+     "reclassify: 95 mangroves to 8; 80 water to 2; 40 cropland to 9; 50 built-up to 4; 10/20/30/90/100 to 3; others to 1",
+     "write COG"
+    ],
+    "nodata_fraction": 0.0,
+    "processed_at": "2026-11-15T01:14:46+00:00"
+   }
+  }
+ ],
+ "water_class": 2,
+ "real_dataset_targets": [],
+ "provenance": {
+  "designation": "official_derived",
+  "note": "Single-date product.",
+  "pipeline": "pipeline.json"
+ },
+ "min_feature_px": 1
+}

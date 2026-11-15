@@ -1,0 +1,416 @@
+{
+ "outcome": "change_detected",
+ "headline": "Change detected: 122.1 ha of water lost and 53.1 ha gained between 1984 and 2021 (net -69.0 ha, -35.0%).",
+ "analysis_id": "9bb7c4a2c336",
+ "dataset": {
+  "id": "jrc-water-bellandur",
+  "name": "Bellandur Lake (JRC surface water)",
+  "description": "Water state at the first and last year of the JRC record, derived from the transition layer.",
+  "is_synthetic": false,
+  "simulated_label": null,
+  "source": "European Commission JRC, Global Surface Water Explorer",
+  "product": "JRC Global Surface Water transitions (v1.4, 2021 release)",
+  "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+  "crs": "EPSG:4326",
+  "resolution_m": 27.1,
+  "temporal_resolution": "irregular",
+  "bbox": [
+   77.62,
+   12.9,
+   77.72,
+   12.99
+  ],
+  "coverage": {
+   "start": "1984-01-01",
+   "end": "2021-01-01"
+  },
+  "observation_count": 2,
+  "usable_count": 2,
+  "classes": {
+   "1": "Not water",
+   "2": "Water (permanent or seasonal)",
+   "255": "No data"
+  },
+  "real_dataset_targets": [],
+  "issues": [],
+  "variables": [
+   {
+    "key": "water",
+    "label": "water",
+    "class": 2,
+    "primary": true
+   }
+  ],
+  "designation": "official_derived",
+  "public_label": "Satellite Observations",
+  "provenance": {
+   "designation": "official_derived",
+   "note": "Two-date comparison taken from JRC's own transition layer.",
+   "pipeline": "pipeline.json"
+  }
+ },
+ "location_name": "Bellandur Lake (JRC surface water)",
+ "period": {
+  "requested": {
+   "start_year": 1984,
+   "end_year": 2021
+  },
+  "supported": {
+   "start": "1984-01-01",
+   "end": "2021-01-01"
+  },
+  "effective": {
+   "start_year": 1984,
+   "end_year": 2021
+  },
+  "status": "ok",
+  "messages": []
+ },
+ "first_observation": {
+  "date": "1984-01-01",
+  "quality": "fair",
+  "valid_fraction": 1.0,
+  "layer_url": "/api/explorer/datasets/jrc-water-bellandur/observations/1984-01-01/layer.png"
+ },
+ "last_observation": {
+  "date": "2021-01-01",
+  "quality": "fair",
+  "valid_fraction": 1.0,
+  "layer_url": "/api/explorer/datasets/jrc-water-bellandur/observations/2021-01-01/layer.png"
+ },
+ "observations_used": {
+  "start_window": "1984",
+  "end_window": "2021",
+  "start_count": 1,
+  "end_count": 1,
+  "matched_months": "Jan",
+  "matched_month_numbers": [
+   1
+  ],
+  "excluded": []
+ },
+ "areas": {
+  "footprint_ha": 10803.88,
+  "analysed_ha": 10803.88,
+  "uncertain_ha": 0.0,
+  "water_start_ha": 196.95,
+  "water_end_ha": 119.15,
+  "gained_ha": 53.12,
+  "lost_ha": 122.14,
+  "net_ha": -69.02,
+  "unchanged_water_ha": 39.39,
+  "unchanged_land_ha": 10527.17,
+  "noise_filtered_ha": 62.05,
+  "pct_net_change": -35.05,
+  "pct_gross_change": 88.99,
+  "seasonal_amplitude_pct": null,
+  "year_to_year_scatter_ha": null
+ },
+ "most_affected": {
+  "region": "southern",
+  "kind": "loss",
+  "area_ha": 47.72,
+  "description": "southern shore: 47.7 ha of water lost",
+  "hotspot_id": "9bb7c4a2c336-l1",
+  "centroid": {
+   "lon": 77.674554,
+   "lat": 12.937292
+  }
+ },
+ "hotspots": [
+  {
+   "id": "9bb7c4a2c336-l1",
+   "rank": 1,
+   "kind": "loss",
+   "area_ha": 47.72,
+   "geometry_area_ha": 47.78,
+   "share_of_change_pct": 31.5,
+   "centroid": {
+    "lon": 77.674554,
+    "lat": 12.937292
+   },
+   "bbox": [
+    77.6705,
+    12.932,
+    77.678,
+    12.9415
+   ],
+   "region": "southern",
+   "description": "southern shore: 47.7 ha of water lost"
+  },
+  {
+   "id": "9bb7c4a2c336-l2",
+   "rank": 2,
+   "kind": "loss",
+   "area_ha": 27.31,
+   "geometry_area_ha": 27.34,
+   "share_of_change_pct": 18.0,
+   "centroid": {
+    "lon": 77.688646,
+    "lat": 12.975317
+   },
+   "bbox": [
+    77.685,
+    12.9725,
+    77.692,
+    12.9785
+   ],
+   "region": "northern",
+   "description": "northern shore: 27.3 ha of water lost"
+  },
+  {
+   "id": "9bb7c4a2c336-l3",
+   "rank": 3,
+   "kind": "loss",
+   "area_ha": 24.46,
+   "geometry_area_ha": 24.49,
+   "share_of_change_pct": 16.1,
+   "centroid": {
+    "lon": 77.666037,
+    "lat": 12.938659
+   },
+   "bbox": [
+    77.66275,
+    12.936,
+    77.67,
+    12.94125
+   ],
+   "region": "south-western",
+   "description": "south-western shore: 24.5 ha of water lost"
+  },
+  {
+   "id": "9bb7c4a2c336-g4",
+   "rank": 4,
+   "kind": "gain",
+   "area_ha": 14.63,
+   "geometry_area_ha": 14.65,
+   "share_of_change_pct": 9.7,
+   "centroid": {
+    "lon": 77.621098,
+    "lat": 12.983321
+   },
+   "bbox": [
+    77.62,
+    12.97975,
+    77.62225,
+    12.987
+   ],
+   "region": "north-western",
+   "description": "north-western area: 14.6 ha of water gained"
+  },
+  {
+   "id": "9bb7c4a2c336-g5",
+   "rank": 5,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.79,
+   "share_of_change_pct": 5.8,
+   "centroid": {
+    "lon": 77.668129,
+    "lat": 12.904381
+   },
+   "bbox": [
+    77.6665,
+    12.9025,
+    77.67,
+    12.90575
+   ],
+   "region": "southern",
+   "description": "southern area: 8.8 ha of water gained"
+  },
+  {
+   "id": "9bb7c4a2c336-g6",
+   "rank": 6,
+   "kind": "gain",
+   "area_ha": 7.73,
+   "geometry_area_ha": 7.74,
+   "share_of_change_pct": 5.1,
+   "centroid": {
+    "lon": 77.672746,
+    "lat": 12.912761
+   },
+   "bbox": [
+    77.67075,
+    12.91125,
+    77.6755,
+    12.9145
+   ],
+   "region": "southern",
+   "description": "southern area: 7.7 ha of water gained"
+  },
+  {
+   "id": "9bb7c4a2c336-l7",
+   "rank": 7,
+   "kind": "loss",
+   "area_ha": 7.05,
+   "geometry_area_ha": 7.06,
+   "share_of_change_pct": 4.7,
+   "centroid": {
+    "lon": 77.719269,
+    "lat": 12.913138
+   },
+   "bbox": [
+    77.7185,
+    12.91025,
+    77.72,
+    12.9155
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 7.1 ha of water lost"
+  },
+  {
+   "id": "9bb7c4a2c336-g8",
+   "rank": 8,
+   "kind": "gain",
+   "area_ha": 4.5,
+   "geometry_area_ha": 4.51,
+   "share_of_change_pct": 3.0,
+   "centroid": {
+    "lon": 77.640417,
+    "lat": 12.919458
+   },
+   "bbox": [
+    77.6395,
+    12.91825,
+    77.64175,
+    12.921
+   ],
+   "region": "south-western",
+   "description": "south-western area: 4.5 ha of water gained"
+  },
+  {
+   "id": "9bb7c4a2c336-l9",
+   "rank": 9,
+   "kind": "loss",
+   "area_ha": 3.23,
+   "geometry_area_ha": 3.23,
+   "share_of_change_pct": 2.1,
+   "centroid": {
+    "lon": 77.670985,
+    "lat": 12.981904
+   },
+   "bbox": [
+    77.67,
+    12.9805,
+    77.67175,
+    12.983
+   ],
+   "region": "northern",
+   "description": "northern shore: 3.2 ha of water lost"
+  },
+  {
+   "id": "9bb7c4a2c336-g10",
+   "rank": 10,
+   "kind": "gain",
+   "area_ha": 3.08,
+   "geometry_area_ha": 3.08,
+   "share_of_change_pct": 2.0,
+   "centroid": {
+    "lon": 77.693716,
+    "lat": 12.911869
+   },
+   "bbox": [
+    77.6925,
+    12.911,
+    77.695,
+    12.9125
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 3.1 ha of water gained"
+  },
+  {
+   "id": "9bb7c4a2c336-l11",
+   "rank": 11,
+   "kind": "loss",
+   "area_ha": 3.0,
+   "geometry_area_ha": 3.0,
+   "share_of_change_pct": 2.0,
+   "centroid": {
+    "lon": 77.663856,
+    "lat": 12.935737
+   },
+   "bbox": [
+    77.6625,
+    12.93475,
+    77.6655,
+    12.937
+   ],
+   "region": "south-western",
+   "description": "south-western shore: 3.0 ha of water lost"
+  }
+ ],
+ "progression": [
+  {
+   "year": 1984,
+   "water_ha": 196.95,
+   "cumulative_loss_ha": 0.0,
+   "cumulative_gain_ha": 0.0,
+   "observations": 1
+  },
+  {
+   "year": 2021,
+   "water_ha": 119.15,
+   "cumulative_loss_ha": 122.14,
+   "cumulative_gain_ha": 53.12,
+   "observations": 1
+  }
+ ],
+ "trend": null,
+ "quality": {
+  "mean_valid_fraction": 1.0,
+  "uncertain_share": 0.0,
+  "observations_in_period": 2,
+  "usable_in_period": 2
+ },
+ "confidence": "medium",
+ "confidence_reasons": [
+  "1 usable observation(s) in 1984",
+  "1 usable observation(s) in 2021",
+  "mean valid-pixel share of the observations used: 100%",
+  "0% of the footprint is uncertain (cloud or gaps) and excluded"
+ ],
+ "limitations": [
+  "Spatial resolution is about 27 m per pixel; boundary shifts smaller than ~2 pixels are treated as positional noise.",
+  "Only Jan were compared so that seasons match; other months were not used for the start/end maps.",
+  "Fewer than five yearly composites exist, so the year-to-year scatter test could not be applied.",
+  "The data describe where and how much water extent changed. They cannot, by themselves, establish why."
+ ],
+ "what_was_analysed": "Same-season composites of 1984 (1 observations) and 2021 (1 observations), using only Jan so seasons match. A pixel counts as water if it is water in at least 50% of its valid observations; 0 ha (0%) were uncertain and excluded.",
+ "insufficient": null,
+ "thresholds": {
+  "window_years": 1,
+  "min_valid_obs_monthly": 6,
+  "min_valid_obs_yearly": 1,
+  "min_obs_valid_fraction": 0.5,
+  "min_pixel_obs_fraction": 0.34,
+  "water_frequency": 0.5,
+  "min_change_pct": 5.0,
+  "min_hotspot_ha": 2.0,
+  "min_feature_px": null,
+  "noise_factor": 2.0,
+  "variable": "water"
+ },
+ "bbox": [
+  77.62,
+  12.9,
+  77.72,
+  12.99
+ ],
+ "layers": {
+  "difference_png": "/api/explorer/analysis/9bb7c4a2c336/layers/difference.png",
+  "before_png": "/api/explorer/analysis/9bb7c4a2c336/layers/before.png",
+  "after_png": "/api/explorer/analysis/9bb7c4a2c336/layers/after.png",
+  "difference_tif": "/api/explorer/analysis/9bb7c4a2c336/layers/difference.tif",
+  "hotspots_geojson": "/api/explorer/analysis/9bb7c4a2c336/hotspots"
+ },
+ "variable": {
+  "key": "water",
+  "label": "water",
+  "class": 2,
+  "primary": true
+ },
+ "is_synthetic": false,
+ "simulated_label": null,
+ "designation": "official_derived",
+ "data_designation_note": "official-derived"
+}

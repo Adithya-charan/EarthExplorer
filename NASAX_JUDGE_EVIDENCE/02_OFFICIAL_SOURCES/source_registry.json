@@ -1,0 +1,587 @@
+{
+ "schema": "nasax-source-registry-1",
+ "entries": [
+  {
+   "id": "jrc_gsw_occurrence_70E_20N",
+   "variable": "water occurrence (%)",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (occurrence layer)",
+   "original_file_name": "occurrence_70E_20Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "1984-03 to 2021-12 (occurrence = share of valid observations with water)",
+   "geographical_coverage_bbox": [
+    70,
+    10,
+    80,
+    20
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422 (JRC Global Surface Water Explorer terms).",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/occurrence/occurrence_70E_20Nv1_4_2021.tif",
+   "used_by_regions": [
+    "bengaluru",
+    "hyderabad"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/bengaluru/originals/occurrence_70E_20Nv1_4_2021.tif",
+   "size_bytes": 49143172,
+   "sha256": "0510b9110b7596e7bdbd02fa2f6c1a259545e372c2432c86beb758665b5fdd14",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:01:26+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     70.0,
+     10.0,
+     80.0,
+     20.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_transitions_70E_20N",
+   "variable": "water class transition",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (transition layer)",
+   "original_file_name": "transitions_70E_20Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "First year (1984) versus last year (2021) water class transition",
+   "geographical_coverage_bbox": [
+    70,
+    10,
+    80,
+    20
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/transitions/transitions_70E_20Nv1_4_2021.tif",
+   "used_by_regions": [
+    "bengaluru",
+    "hyderabad"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/bengaluru/originals/transitions_70E_20Nv1_4_2021.tif",
+   "size_bytes": 23248532,
+   "sha256": "23efd8b1f3ecfcf9e3d77fe2d371c9fa0619e8140f75f41ebb97b638e52a01b1",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:01:30+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     70.0,
+     10.0,
+     80.0,
+     20.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_occurrence_80E_30N",
+   "variable": "water occurrence (%)",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (occurrence layer)",
+   "original_file_name": "occurrence_80E_30Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "1984-03 to 2021-12",
+   "geographical_coverage_bbox": [
+    80,
+    20,
+    90,
+    30
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/occurrence/occurrence_80E_30Nv1_4_2021.tif",
+   "used_by_regions": [
+    "sundarbans"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/sundarbans/originals/occurrence_80E_30Nv1_4_2021.tif",
+   "size_bytes": 83431512,
+   "sha256": "3b357ed4ac4ea15555b17b77bff862f34d929f6af90a68f9ece4aa8269db1081",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:01:45+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     80.0,
+     20.0,
+     90.0,
+     30.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2000_R8_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2000 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    10,
+    80,
+    20
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "used_by_regions": [
+    "hyderabad",
+    "bengaluru"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/hyderabad/originals/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "size_bytes": 28015951,
+   "sha256": "55643aba2753980c01cdb9bab7cb7011f8a00b952a2860555a00cb85009c5140",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:01:50+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     9.099583,
+     79.992083,
+     19.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2010_R8_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2010 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    10,
+    80,
+    20
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "used_by_regions": [
+    "hyderabad",
+    "bengaluru"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/hyderabad/originals/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "size_bytes": 34574511,
+   "sha256": "12d2c30731d6b1c61efd501a4dbba9ba93256c6a1b3558af3a1963dbdd01efb4",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:01:55+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     9.099583,
+     79.992083,
+     19.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2020_R8_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2020 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    10,
+    80,
+    20
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "used_by_regions": [
+    "hyderabad",
+    "bengaluru"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/hyderabad/originals/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+   "size_bytes": 41175075,
+   "sha256": "cb95a4337c7e3f4e08f2c740d16ac340c9e508856631fa8abd1bf100f26eab3c",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:02:02+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     9.099583,
+     79.992083,
+     19.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "esa_worldcover_2021_N21E087",
+   "variable": "land cover class (class 95 = mangroves)",
+   "providing_organization": "European Space Agency (ESA) WorldCover consortium",
+   "official_dataset_url": "https://esa-worldcover.org/en",
+   "dataset_identifier": "ESA WorldCover 10 m 2021 v200",
+   "original_file_name": "ESA_WorldCover_10m_2021_v200_N21E087_Map.tif",
+   "acquisition_or_temporal_coverage": "2021 (based on Sentinel-1 and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    87,
+    21,
+    90,
+    24
+   ],
+   "spatial_resolution": "10 m",
+   "original_file_format": "GeoTIFF (COG)",
+   "license_or_terms": "CC BY 4.0; cite Zanaga et al. (2022), ESA WorldCover 10 m 2021 v200.",
+   "download_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N21E087_Map.tif",
+   "used_by_regions": [
+    "sundarbans"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/sundarbans/originals/ESA_WorldCover_10m_2021_v200_N21E087_Map.tif",
+   "size_bytes": 81771213,
+   "sha256": "a652fbd8e327ceb600d309f1934223a8d95d7ab0902dbc524c830aba9587b160",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:02:14+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 36000,
+    "height": 36000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     87.0,
+     21.0,
+     90.0,
+     24.0
+    ],
+    "resolution": [
+     8.333e-05,
+     8.333e-05
+    ],
+    "nodata": 0.0,
+    "overviews": [
+     2,
+     4,
+     8,
+     16,
+     32,
+     64
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "geoboundaries_IND_ADM1",
+   "variable": "administrative boundaries",
+   "providing_organization": "geoBoundaries (William and Mary geoLab)",
+   "official_dataset_url": "https://www.geoboundaries.org/",
+   "dataset_identifier": "geoBoundaries gbOpen IND ADM1",
+   "original_file_name": "geoBoundaries-IND-ADM1_simplified.geojson",
+   "acquisition_or_temporal_coverage": "Boundary year 2021 (per geoBoundaries API)",
+   "geographical_coverage_bbox": [
+    68,
+    6,
+    98,
+    38
+   ],
+   "spatial_resolution": "vector (simplified)",
+   "original_file_format": "GeoJSON",
+   "license_or_terms": "Open Data Commons Open Database License 1.0 (as reported by the geoBoundaries API); attribution to geoBoundaries required.",
+   "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/IND/ADM1/geoBoundaries-IND-ADM1_simplified.geojson",
+   "used_by_regions": [
+    "boundaries"
+   ],
+   "local_path": "datasets/india_historical_atlas/geographical_boundaries/originals/geoBoundaries-IND-ADM1_simplified.geojson",
+   "size_bytes": 5103747,
+   "sha256": "4c63fe43294a391e8f2de4e9f86f3edb60f8688275b9fee90c61fb2aa0c26061",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:02:17+00:00",
+   "crs": null,
+   "inspection": {
+    "type": "FeatureCollection",
+    "features": 36
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "geoboundaries_IND_ADM2",
+   "variable": "administrative boundaries",
+   "providing_organization": "geoBoundaries (William and Mary geoLab)",
+   "official_dataset_url": "https://www.geoboundaries.org/",
+   "dataset_identifier": "geoBoundaries gbOpen IND ADM2",
+   "original_file_name": "geoBoundaries-IND-ADM2_simplified.geojson",
+   "acquisition_or_temporal_coverage": "Boundary year 2021 (per geoBoundaries API)",
+   "geographical_coverage_bbox": [
+    68,
+    6,
+    98,
+    38
+   ],
+   "spatial_resolution": "vector (simplified)",
+   "original_file_format": "GeoJSON",
+   "license_or_terms": "Open Data Commons Open Database License 1.0 (as reported by the geoBoundaries API); attribution to geoBoundaries required.",
+   "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/IND/ADM2/geoBoundaries-IND-ADM2_simplified.geojson",
+   "used_by_regions": [
+    "boundaries"
+   ],
+   "local_path": "datasets/india_historical_atlas/geographical_boundaries/originals/geoBoundaries-IND-ADM2_simplified.geojson",
+   "size_bytes": 7979916,
+   "sha256": "d68db39cd3e2d0892af268e2b0454166368ce3b5b8a78fcda63069ec92a641db",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T01:02:19+00:00",
+   "crs": null,
+   "inspection": {
+    "type": "FeatureCollection",
+    "features": 735
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "landsat_c2_l2_ee_catalog",
+   "providing_organization": "USGS / NASA",
+   "dataset_name": "Landsat Collection 2 Level-2 (LT05/LC08) - Earth Engine catalog entries",
+   "official_dataset_url": "https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_L2",
+   "dataset_identifier": "LANDSAT/LC08/C02/T1_L2, LANDSAT/LT05/C02/T1_L2",
+   "download_date": "2026-11-15",
+   "access_note": "Catalog pages only. Bulk access through Earth Engine needs a Google account; USGS EarthExplorer needs a free USGS login.",
+   "sha256": null,
+   "local_path": null,
+   "http_status": 200,
+   "verification_status": "VERIFIED_METADATA_ONLY",
+   "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  },
+  {
+   "id": "jrc_gsw_monthly_history_ee_catalog",
+   "providing_organization": "European Commission JRC",
+   "dataset_name": "JRC Monthly Water History v1.4 - Earth Engine catalog entry",
+   "official_dataset_url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyHistory",
+   "dataset_identifier": "JRC/GSW1_4/MonthlyHistory",
+   "download_date": "2026-11-15",
+   "access_note": "Monthly rasters are served through Earth Engine only (account required). The static tiles above were downloaded instead.",
+   "sha256": null,
+   "local_path": null,
+   "http_status": 200,
+   "verification_status": "VERIFIED_METADATA_ONLY",
+   "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  },
+  {
+   "id": "sentinel2_sr_harmonized_ee_catalog",
+   "providing_organization": "ESA / Copernicus",
+   "dataset_name": "Sentinel-2 Harmonized Surface Reflectance - Earth Engine catalog entry",
+   "official_dataset_url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED",
+   "dataset_identifier": "COPERNICUS/S2_SR_HARMONIZED",
+   "download_date": "2026-11-15",
+   "access_note": "Catalog page only; direct scene access was done through the public Earth Search STAC (see windowed Sentinel-2 entries).",
+   "sha256": null,
+   "local_path": null,
+   "http_status": 200,
+   "verification_status": "VERIFIED_METADATA_ONLY",
+   "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  },
+  {
+   "id": "copernicus_dataspace",
+   "providing_organization": "ESA / European Commission",
+   "dataset_name": "Copernicus Data Space Ecosystem browser",
+   "official_dataset_url": "https://dataspace.copernicus.eu/",
+   "dataset_identifier": "Sentinel-2 L2A",
+   "download_date": "2026-11-15",
+   "access_note": "Browsing is open; downloading needs a free Copernicus account.",
+   "sha256": null,
+   "local_path": null,
+   "http_status": 200,
+   "verification_status": "ACCESS_REQUIRES_AUTHENTICATION",
+   "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  },
+  {
+   "id": "usgs_earthexplorer",
+   "providing_organization": "USGS",
+   "dataset_name": "USGS EarthExplorer",
+   "official_dataset_url": "https://earthexplorer.usgs.gov/",
+   "dataset_identifier": "Landsat Collection 2",
+   "download_date": "2026-11-15",
+   "access_note": "Search is open; downloading needs a free USGS ERS login.",
+   "sha256": null,
+   "local_path": null,
+   "http_status": 200,
+   "verification_status": "ACCESS_REQUIRES_AUTHENTICATION",
+   "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  },
+  {
+   "id": "bhuvan_nrsc",
+   "providing_organization": "ISRO National Remote Sensing Centre",
+   "dataset_name": "ISRO / NRSC Bhuvan portal",
+   "official_dataset_url": "https://bhuvan.nrsc.gov.in/",
+   "dataset_identifier": "Bhuvan thematic data (LULC, water bodies)",
+   "download_date": "2026-11-15",
+   "access_note": "Portal reachable; thematic downloads require registration on Bhuvan, so none were attempted.",
+   "sha256": null,
+   "local_path": null,
+   "http_status": 200,
+   "verification_status": "ACCESS_REQUIRES_AUTHENTICATION",
+   "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  },
+  {
+   "id": "rgi7_glaciers_nsidc",
+   "providing_organization": "GLIMS / NSIDC",
+   "dataset_name": "Randolph Glacier Inventory v7 (glacier outlines)",
+   "official_dataset_url": "https://nsidc.org/data/nsidc-0770/versions/7",
+   "dataset_identifier": "NSIDC-0770 RGI v7.0",
+   "download_date": "2026-11-15",
+   "access_note": "NSIDC distribution requires a NASA Earthdata login. No glacier outline file was obtained.",
+   "sha256": null,
+   "local_path": null,
+   "http_status": 200,
+   "verification_status": "ACCESS_REQUIRES_AUTHENTICATION",
+   "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  },
+  {
+   "id": "gpm_imerg",
+   "providing_organization": "NASA GES DISC",
+   "dataset_name": "NASA GPM IMERG precipitation",
+   "official_dataset_url": "https://gpm.nasa.gov/data/imerg",
+   "dataset_identifier": "GPM IMERG V07",
+   "download_date": "2026-11-15",
+   "access_note": "Data needs an Earthdata login; coarse rainfall is context only and is not used for boundaries.",
+   "sha256": null,
+   "local_path": null,
+   "http_status": 200,
+   "verification_status": "ACCESS_REQUIRES_AUTHENTICATION",
+   "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  }
+ ],
+ "generated_at": "2026-11-15T01:02:52+00:00"
+}

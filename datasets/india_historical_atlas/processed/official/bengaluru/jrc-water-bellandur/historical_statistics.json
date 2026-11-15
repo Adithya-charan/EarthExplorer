@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-bellandur",
+ "name": "Bellandur Lake (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 10803.88,
+   "valid_ha": 10803.88,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 10606.93,
+    "Water (permanent or seasonal)": 196.95
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 10803.88,
+   "valid_ha": 10803.88,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 10684.73,
+    "Water (permanent or seasonal)": 119.15
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 196.95,
+     "share_of_valid_pct": 1.823
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 119.15,
+     "share_of_valid_pct": 1.103
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": -77.8,
+   "net_change_pct": -39.5
+  }
+ },
+ "generated_at": "2026-11-15T02:09:20+00:00"
+}

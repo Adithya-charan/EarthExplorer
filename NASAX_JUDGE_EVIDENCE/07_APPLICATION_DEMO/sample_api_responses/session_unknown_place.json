@@ -1,0 +1,25 @@
+{
+ "request": "POST /api/explorer/session",
+ "status_code": 200,
+ "response": {
+  "status": "not_found",
+  "message": "No place called \"Zzzzqqq\" could be found. Check the spelling, add the city or country, or try one of the examples.",
+  "location": null,
+  "alternatives": [],
+  "examples": [
+   "Bellandur Lake, Bengaluru",
+   "Hyderabad",
+   "Sundarbans",
+   "Himalayas",
+   "Uttarakhand"
+  ],
+  "datasets": [],
+  "dataset": null,
+  "period": null,
+  "latest": null,
+  "insufficient": null,
+  "nearby_datasets": [],
+  "is_synthetic": false,
+  "simulated_label": null
+ }
+}

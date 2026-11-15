@@ -240,6 +240,29 @@ body {
     transform: rotate(360deg);
   }
 }
+.nx-listening {
+  position: relative;
+  box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.55);
+  animation: nx-ring 1.4s ease-out infinite;
+}
+@keyframes nx-ring {
+  to {
+    box-shadow: 0 0 0 12px rgba(56, 189, 248, 0);
+  }
+}
+.nx-dot {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 9999px;
+  background: #38bdf8;
+  animation: nx-blink 1s ease-in-out infinite;
+}
+@keyframes nx-blink {
+  50% {
+    opacity: 0.25;
+  }
+}
 .nx .cesium-viewer-bottom {
   left: 0;
   right: auto;

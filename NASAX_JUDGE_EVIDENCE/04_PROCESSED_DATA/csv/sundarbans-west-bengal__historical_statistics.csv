@@ -1,0 +1,21 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+sundarbans-west-bengal,illustrative,2000-01-01,mangrove,mangrove,59248.27,20.698,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2005-01-01,mangrove,mangrove,57884.22,20.222,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2010-01-01,mangrove,mangrove,55461.51,20.183,whole footprint,4.0,good
+sundarbans-west-bengal,illustrative,2015-01-01,mangrove,mangrove,56785.12,19.838,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2020-01-01,mangrove,mangrove,56492.59,19.736,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2000-01-01,water,open water,174665.64,61.019,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2005-01-01,water,open water,177468.47,61.998,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2010-01-01,water,open water,172701.44,62.847,whole footprint,4.0,good
+sundarbans-west-bengal,illustrative,2015-01-01,water,open water,181570.58,63.431,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2020-01-01,water,open water,182802.68,63.862,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2000-01-01,mudflat,mudflat,12356.11,4.317,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2005-01-01,mudflat,mudflat,11492.45,4.015,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2010-01-01,mudflat,mudflat,10011.48,3.643,whole footprint,4.0,good
+sundarbans-west-bengal,illustrative,2015-01-01,mudflat,mudflat,9524.14,3.327,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2020-01-01,mudflat,mudflat,8829.94,3.085,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2000-01-01,land,land (including mangrove),99225.64,34.664,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2005-01-01,land,land (including mangrove),97286.47,33.987,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2010-01-01,land,land (including mangrove),92083.31,33.51,whole footprint,4.0,good
+sundarbans-west-bengal,illustrative,2015-01-01,land,land (including mangrove),95152.67,33.241,whole footprint,0.0,good
+sundarbans-west-bengal,illustrative,2020-01-01,land,land (including mangrove),94614.77,33.053,whole footprint,0.0,good

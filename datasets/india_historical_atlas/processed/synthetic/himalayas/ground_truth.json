@@ -1,0 +1,47 @@
+{
+ "period": {
+  "start_year": 2001,
+  "end_year": 2020
+ },
+ "method": "Per-variable areas from the noise-free generator rasters of the first and last year.",
+ "rules": [
+  "Glacier tongues end at elevations that rise at a different rate for each of four basins (2.0 to 13.0 m per year).",
+  "Snow cover follows a snowline that varies randomly from year to year, with no trend.",
+  "A proglacial lake grows in the area vacated by one glacier after 2009.",
+  "Terrain elevation is identical in every year."
+ ],
+ "variables": {
+  "glacier": {
+   "label": "glacier ice",
+   "start_ha": 18080.8,
+   "end_ha": 14535.81,
+   "loss_ha": 3544.99,
+   "gain_ha": 0.0,
+   "unchanged_ha": 14535.81
+  },
+  "snow": {
+   "label": "snow cover",
+   "start_ha": 20186.52,
+   "end_ha": 16888.84,
+   "loss_ha": 3297.67,
+   "gain_ha": 0.0,
+   "unchanged_ha": 16888.84
+  },
+  "glacial_lake": {
+   "label": "glacial lake",
+   "start_ha": 0.0,
+   "end_ha": 32.08,
+   "loss_ha": 0.0,
+   "gain_ha": 32.08,
+   "unchanged_ha": 0.0
+  },
+  "exposed_terrain": {
+   "label": "exposed terrain",
+   "start_ha": 56412.96,
+   "end_ha": 63223.54,
+   "loss_ha": 0.0,
+   "gain_ha": 6810.58,
+   "unchanged_ha": 56412.96
+  }
+ }
+}

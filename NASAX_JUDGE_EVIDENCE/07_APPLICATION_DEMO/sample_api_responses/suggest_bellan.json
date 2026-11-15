@@ -1,0 +1,52 @@
+{
+ "request": "GET /api/explorer/locations/suggest?q=Bellan",
+ "status_code": 200,
+ "response": [
+  {
+   "id": "lake:bellandur-lake",
+   "name": "Bellandur Lake",
+   "display_name": "Bellandur Lake, Bengaluru, Karnataka, India",
+   "lat": 12.9352,
+   "lon": 77.672,
+   "kind": "lake",
+   "source": "JRC Global Surface Water v1.4 (occurrence), downloaded",
+   "bbox": [
+    77.65575,
+    12.92875,
+    77.6775,
+    12.94125
+   ],
+   "zoom_altitude_m": 5069.924999999364,
+   "level": "lake",
+   "hierarchy": [
+    "India",
+    "Karnataka",
+    "Bengaluru"
+   ],
+   "boundary_status": "derived_from_official_data"
+  },
+  {
+   "id": "locality:bellandur",
+   "name": "Bellandur",
+   "display_name": "Bellandur, Bengaluru, Karnataka, India",
+   "lat": 12.926,
+   "lon": 77.6762,
+   "kind": "locality",
+   "source": "reference point (approximate)",
+   "bbox": [
+    77.6562,
+    12.908,
+    77.6962,
+    12.944
+   ],
+   "zoom_altitude_m": 10069.92000000038,
+   "level": "locality",
+   "hierarchy": [
+    "India",
+    "Karnataka",
+    "Bengaluru"
+   ],
+   "boundary_status": "approximate_point"
+  }
+ ]
+}

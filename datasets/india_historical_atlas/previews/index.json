@@ -1,0 +1,363 @@
+{
+ "generated_at": "2026-11-15T02:09:23+00:00",
+ "datasets": {
+  "ghsl-built-up-bengaluru": [
+   {
+    "kind": "observation",
+    "date": "2000-01-01",
+    "file": "previews/ghsl-built-up-bengaluru/observation_2000-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2010-01-01",
+    "file": "previews/ghsl-built-up-bengaluru/observation_2010-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2020-01-01",
+    "file": "previews/ghsl-built-up-bengaluru/observation_2020-01-01.png"
+   },
+   {
+    "kind": "before_after",
+    "dates": [
+     "2000-01-01",
+     "2020-01-01"
+    ],
+    "file": "previews/ghsl-built-up-bengaluru/before_after.png"
+   },
+   {
+    "kind": "change",
+    "variable": "built_up_2000_2020",
+    "file": "previews/ghsl-built-up-bengaluru/change_built_up_2000_2020.png"
+   }
+  ],
+  "jrc-water-bellandur": [
+   {
+    "kind": "observation",
+    "date": "1984-01-01",
+    "file": "previews/jrc-water-bellandur/observation_1984-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2021-01-01",
+    "file": "previews/jrc-water-bellandur/observation_2021-01-01.png"
+   },
+   {
+    "kind": "before_after",
+    "dates": [
+     "1984-01-01",
+     "2021-01-01"
+    ],
+    "file": "previews/jrc-water-bellandur/before_after.png"
+   },
+   {
+    "kind": "change",
+    "variable": "water_1984_2021",
+    "file": "previews/jrc-water-bellandur/change_water_1984_2021.png"
+   }
+  ],
+  "ghsl-built-up-hyderabad": [
+   {
+    "kind": "observation",
+    "date": "2000-01-01",
+    "file": "previews/ghsl-built-up-hyderabad/observation_2000-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2010-01-01",
+    "file": "previews/ghsl-built-up-hyderabad/observation_2010-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2020-01-01",
+    "file": "previews/ghsl-built-up-hyderabad/observation_2020-01-01.png"
+   },
+   {
+    "kind": "before_after",
+    "dates": [
+     "2000-01-01",
+     "2020-01-01"
+    ],
+    "file": "previews/ghsl-built-up-hyderabad/before_after.png"
+   },
+   {
+    "kind": "change",
+    "variable": "built_up_2000_2020",
+    "file": "previews/ghsl-built-up-hyderabad/change_built_up_2000_2020.png"
+   }
+  ],
+  "jrc-water-hyderabad": [
+   {
+    "kind": "observation",
+    "date": "1984-01-01",
+    "file": "previews/jrc-water-hyderabad/observation_1984-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2021-01-01",
+    "file": "previews/jrc-water-hyderabad/observation_2021-01-01.png"
+   },
+   {
+    "kind": "before_after",
+    "dates": [
+     "1984-01-01",
+     "2021-01-01"
+    ],
+    "file": "previews/jrc-water-hyderabad/before_after.png"
+   },
+   {
+    "kind": "change",
+    "variable": "water_1984_2021",
+    "file": "previews/jrc-water-hyderabad/change_water_1984_2021.png"
+   }
+  ],
+  "worldcover-sundarbans-2021": [
+   {
+    "kind": "observation",
+    "date": "2021-01-01",
+    "file": "previews/worldcover-sundarbans-2021/observation_2021-01-01.png"
+   }
+  ],
+  "bellandur-lake": [
+   {
+    "kind": "observation",
+    "date": "2002-02-01",
+    "file": "previews/bellandur-lake/observation_2002-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2005-02-01",
+    "file": "previews/bellandur-lake/observation_2005-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2010-02-01",
+    "file": "previews/bellandur-lake/observation_2010-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2015-02-01",
+    "file": "previews/bellandur-lake/observation_2015-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2019-02-01",
+    "file": "previews/bellandur-lake/observation_2019-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2022-02-01",
+    "file": "previews/bellandur-lake/observation_2022-02-01.png"
+   },
+   {
+    "kind": "before_after",
+    "dates": [
+     "2002-02-01",
+     "2022-02-01"
+    ],
+    "file": "previews/bellandur-lake/before_after.png"
+   },
+   {
+    "kind": "change",
+    "variable": "aquatic_vegetation_2002_2022",
+    "file": "previews/bellandur-lake/change_aquatic_vegetation_2002_2022.png"
+   },
+   {
+    "kind": "change",
+    "variable": "built_up_2002_2022",
+    "file": "previews/bellandur-lake/change_built_up_2002_2022.png"
+   },
+   {
+    "kind": "change",
+    "variable": "lake_extent_2002_2022",
+    "file": "previews/bellandur-lake/change_lake_extent_2002_2022.png"
+   },
+   {
+    "kind": "change",
+    "variable": "vegetation_2002_2022",
+    "file": "previews/bellandur-lake/change_vegetation_2002_2022.png"
+   },
+   {
+    "kind": "change",
+    "variable": "water_2002_2022",
+    "file": "previews/bellandur-lake/change_water_2002_2022.png"
+   },
+   {
+    "kind": "change",
+    "variable": "wetland_2002_2022",
+    "file": "previews/bellandur-lake/change_wetland_2002_2022.png"
+   }
+  ],
+  "himalayas-dhauliganga": [
+   {
+    "kind": "observation",
+    "date": "2001-09-01",
+    "file": "previews/himalayas-dhauliganga/observation_2001-09-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2005-09-01",
+    "file": "previews/himalayas-dhauliganga/observation_2005-09-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2010-09-01",
+    "file": "previews/himalayas-dhauliganga/observation_2010-09-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2015-09-01",
+    "file": "previews/himalayas-dhauliganga/observation_2015-09-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2020-09-01",
+    "file": "previews/himalayas-dhauliganga/observation_2020-09-01.png"
+   },
+   {
+    "kind": "before_after",
+    "dates": [
+     "2001-09-01",
+     "2020-09-01"
+    ],
+    "file": "previews/himalayas-dhauliganga/before_after.png"
+   },
+   {
+    "kind": "change",
+    "variable": "exposed_terrain_2001_2020",
+    "file": "previews/himalayas-dhauliganga/change_exposed_terrain_2001_2020.png"
+   },
+   {
+    "kind": "change",
+    "variable": "glacial_lake_2001_2020",
+    "file": "previews/himalayas-dhauliganga/change_glacial_lake_2001_2020.png"
+   },
+   {
+    "kind": "change",
+    "variable": "glacier_2001_2020",
+    "file": "previews/himalayas-dhauliganga/change_glacier_2001_2020.png"
+   },
+   {
+    "kind": "change",
+    "variable": "snow_2001_2020",
+    "file": "previews/himalayas-dhauliganga/change_snow_2001_2020.png"
+   }
+  ],
+  "hyderabad-metro": [
+   {
+    "kind": "observation",
+    "date": "2000-02-01",
+    "file": "previews/hyderabad-metro/observation_2000-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2005-02-01",
+    "file": "previews/hyderabad-metro/observation_2005-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2010-02-01",
+    "file": "previews/hyderabad-metro/observation_2010-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2015-02-01",
+    "file": "previews/hyderabad-metro/observation_2015-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2020-02-01",
+    "file": "previews/hyderabad-metro/observation_2020-02-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2024-02-01",
+    "file": "previews/hyderabad-metro/observation_2024-02-01.png"
+   },
+   {
+    "kind": "before_after",
+    "dates": [
+     "2000-02-01",
+     "2024-02-01"
+    ],
+    "file": "previews/hyderabad-metro/before_after.png"
+   },
+   {
+    "kind": "change",
+    "variable": "agriculture_2000_2024",
+    "file": "previews/hyderabad-metro/change_agriculture_2000_2024.png"
+   },
+   {
+    "kind": "change",
+    "variable": "built_up_2000_2024",
+    "file": "previews/hyderabad-metro/change_built_up_2000_2024.png"
+   },
+   {
+    "kind": "change",
+    "variable": "vegetation_2000_2024",
+    "file": "previews/hyderabad-metro/change_vegetation_2000_2024.png"
+   },
+   {
+    "kind": "change",
+    "variable": "water_2000_2024",
+    "file": "previews/hyderabad-metro/change_water_2000_2024.png"
+   }
+  ],
+  "sundarbans-west-bengal": [
+   {
+    "kind": "observation",
+    "date": "2000-01-01",
+    "file": "previews/sundarbans-west-bengal/observation_2000-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2005-01-01",
+    "file": "previews/sundarbans-west-bengal/observation_2005-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2010-01-01",
+    "file": "previews/sundarbans-west-bengal/observation_2010-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2015-01-01",
+    "file": "previews/sundarbans-west-bengal/observation_2015-01-01.png"
+   },
+   {
+    "kind": "observation",
+    "date": "2020-01-01",
+    "file": "previews/sundarbans-west-bengal/observation_2020-01-01.png"
+   },
+   {
+    "kind": "before_after",
+    "dates": [
+     "2000-01-01",
+     "2020-01-01"
+    ],
+    "file": "previews/sundarbans-west-bengal/before_after.png"
+   },
+   {
+    "kind": "change",
+    "variable": "land_2000_2020",
+    "file": "previews/sundarbans-west-bengal/change_land_2000_2020.png"
+   },
+   {
+    "kind": "change",
+    "variable": "mangrove_2000_2020",
+    "file": "previews/sundarbans-west-bengal/change_mangrove_2000_2020.png"
+   },
+   {
+    "kind": "change",
+    "variable": "mudflat_2000_2020",
+    "file": "previews/sundarbans-west-bengal/change_mudflat_2000_2020.png"
+   },
+   {
+    "kind": "change",
+    "variable": "water_2000_2020",
+    "file": "previews/sundarbans-west-bengal/change_water_2000_2020.png"
+   }
+  ]
+ },
+ "india_overview": "previews/india_overview.png"
+}

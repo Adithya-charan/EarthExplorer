@@ -1,0 +1,663 @@
+{
+ "request": "GET /api/explorer/datasets",
+ "status_code": 200,
+ "response": [
+  {
+   "id": "ghsl-built-up-bengaluru",
+   "name": "Bellandur and east Bengaluru (GHSL built-up)",
+   "description": "Built-up surface from the Global Human Settlement Layer at epochs 2000, 2010 and 2020, reclassified to built-up / not built-up.",
+   "is_synthetic": false,
+   "simulated_label": null,
+   "source": "European Commission JRC, Global Human Settlement Layer (GHS-BUILT-S R2023A)",
+   "product": "GHS-BUILT-S R2023A built-up surface (reclassified)",
+   "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+   "crs": "EPSG:4326",
+   "resolution_m": 90.4,
+   "temporal_resolution": "irregular",
+   "bbox": [
+    77.55,
+    12.85,
+    77.8,
+    13.05
+   ],
+   "coverage": {
+    "start": "2000-01-01",
+    "end": "2020-01-01"
+   },
+   "observation_count": 3,
+   "usable_count": 3,
+   "classes": {
+    "1": "Not built-up (below 15% of the cell)",
+    "4": "Built-up (at least 15% of the cell)",
+    "255": "No data"
+   },
+   "real_dataset_targets": [],
+   "issues": [],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "provenance": {
+    "designation": "official_derived",
+    "note": "GHSL is a modelled product built from Landsat and Sentinel-2 imagery. Epoch years are not acquisition dates.",
+    "pipeline": "pipeline.json"
+   }
+  },
+  {
+   "id": "jrc-water-bellandur",
+   "name": "Bellandur Lake (JRC surface water)",
+   "description": "Water state at the first and last year of the JRC record, derived from the transition layer.",
+   "is_synthetic": false,
+   "simulated_label": null,
+   "source": "European Commission JRC, Global Surface Water Explorer",
+   "product": "JRC Global Surface Water transitions (v1.4, 2021 release)",
+   "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+   "crs": "EPSG:4326",
+   "resolution_m": 27.1,
+   "temporal_resolution": "irregular",
+   "bbox": [
+    77.62,
+    12.9,
+    77.72,
+    12.99
+   ],
+   "coverage": {
+    "start": "1984-01-01",
+    "end": "2021-01-01"
+   },
+   "observation_count": 2,
+   "usable_count": 2,
+   "classes": {
+    "1": "Not water",
+    "2": "Water (permanent or seasonal)",
+    "255": "No data"
+   },
+   "real_dataset_targets": [],
+   "issues": [],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "provenance": {
+    "designation": "official_derived",
+    "note": "Two-date comparison taken from JRC's own transition layer.",
+    "pipeline": "pipeline.json"
+   }
+  },
+  {
+   "id": "ghsl-built-up-hyderabad",
+   "name": "Hyderabad metropolitan area (GHSL built-up)",
+   "description": "Built-up surface from the Global Human Settlement Layer at epochs 2000, 2010 and 2020, reclassified to built-up / not built-up.",
+   "is_synthetic": false,
+   "simulated_label": null,
+   "source": "European Commission JRC, Global Human Settlement Layer (GHS-BUILT-S R2023A)",
+   "product": "GHS-BUILT-S R2023A built-up surface (reclassified)",
+   "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+   "crs": "EPSG:4326",
+   "resolution_m": 88.5,
+   "temporal_resolution": "irregular",
+   "bbox": [
+    78.25,
+    17.25,
+    78.65,
+    17.6
+   ],
+   "coverage": {
+    "start": "2000-01-01",
+    "end": "2020-01-01"
+   },
+   "observation_count": 3,
+   "usable_count": 3,
+   "classes": {
+    "1": "Not built-up (below 15% of the cell)",
+    "4": "Built-up (at least 15% of the cell)",
+    "255": "No data"
+   },
+   "real_dataset_targets": [],
+   "issues": [],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "provenance": {
+    "designation": "official_derived",
+    "note": "GHSL is a modelled product built from Landsat and Sentinel-2 imagery. Epoch years are not acquisition dates.",
+    "pipeline": "pipeline.json"
+   }
+  },
+  {
+   "id": "jrc-water-hyderabad",
+   "name": "Hyderabad lakes (JRC surface water)",
+   "description": "Water state at the first and last year of the JRC record, derived from the transition layer.",
+   "is_synthetic": false,
+   "simulated_label": null,
+   "source": "European Commission JRC, Global Surface Water Explorer",
+   "product": "JRC Global Surface Water transitions (v1.4, 2021 release)",
+   "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+   "crs": "EPSG:4326",
+   "resolution_m": 26.6,
+   "temporal_resolution": "irregular",
+   "bbox": [
+    78.25,
+    17.25,
+    78.65,
+    17.6
+   ],
+   "coverage": {
+    "start": "1984-01-01",
+    "end": "2021-01-01"
+   },
+   "observation_count": 2,
+   "usable_count": 2,
+   "classes": {
+    "1": "Not water",
+    "2": "Water (permanent or seasonal)",
+    "255": "No data"
+   },
+   "real_dataset_targets": [],
+   "issues": [],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "provenance": {
+    "designation": "official_derived",
+    "note": "Two-date comparison taken from JRC's own transition layer.",
+    "pipeline": "pipeline.json"
+   }
+  },
+  {
+   "id": "worldcover-sundarbans-2021",
+   "name": "Sundarbans (ESA WorldCover 2021)",
+   "description": "A single 2021 land-cover map with mangrove. One date only, so no change can be measured from it.",
+   "is_synthetic": false,
+   "simulated_label": null,
+   "source": "European Space Agency, ESA WorldCover",
+   "product": "ESA WorldCover 10 m 2021 v200 (reclassified, aggregated to 30 m)",
+   "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+   "crs": "EPSG:4326",
+   "resolution_m": 25.8,
+   "temporal_resolution": "irregular",
+   "bbox": [
+    88.6,
+    21.55,
+    89.1,
+    22.05
+   ],
+   "coverage": {
+    "start": "2021-01-01",
+    "end": "2021-01-01"
+   },
+   "observation_count": 1,
+   "usable_count": 1,
+   "classes": {
+    "1": "Other land / exposed terrain",
+    "2": "Water",
+    "3": "Vegetation",
+    "4": "Built-up",
+    "8": "Mangrove",
+    "9": "Agriculture",
+    "255": "Uncertain or no data"
+   },
+   "real_dataset_targets": [],
+   "issues": [],
+   "variables": [
+    {
+     "key": "mangrove",
+     "label": "mangrove",
+     "class": 8,
+     "primary": true
+    },
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": false
+    }
+   ],
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "provenance": {
+    "designation": "official_derived",
+    "note": "Single-date product.",
+    "pipeline": "pipeline.json"
+   }
+  },
+  {
+   "id": "bellandur-lake",
+   "name": "Bellandur Lake, Bengaluru (illustrative)",
+   "description": "Illustrative lake with a stable outline: aquatic vegetation spreads over open water while the surroundings are built over. Changes inside the lake are kept separate from the surroundings.",
+   "is_synthetic": true,
+   "simulated_label": "Illustrative Dataset: a generated demonstration layer, not satellite imagery.",
+   "source": "Generated by the reusable pipeline app.explorer.atlas; no satellite data are used for these layers.",
+   "product": "Illustrative land-cover classification",
+   "format": "Cloud Optimized GeoTIFF",
+   "crs": "EPSG:4326",
+   "resolution_m": 16.3,
+   "temporal_resolution": "yearly",
+   "bbox": [
+    77.62,
+    12.9,
+    77.72,
+    12.99
+   ],
+   "coverage": {
+    "start": "2002-02-01",
+    "end": "2022-02-01"
+   },
+   "observation_count": 6,
+   "usable_count": 6,
+   "classes": {
+    "1": "Other land / exposed terrain",
+    "2": "Water",
+    "3": "Vegetation",
+    "4": "Built-up",
+    "5": "Snow",
+    "6": "Glacier ice",
+    "7": "Mudflat",
+    "8": "Mangrove",
+    "9": "Agriculture",
+    "10": "Aquatic vegetation",
+    "11": "Wetland fringe",
+    "255": "Uncertain or no data"
+   },
+   "real_dataset_targets": [
+    {
+     "name": "Landsat Collection 2 Level-2",
+     "coverage": "1982 onward (sensor dependent)",
+     "resolution_m": 30,
+     "status": "ACCESS_REQUIRES_AUTHENTICATION"
+    },
+    {
+     "name": "Sentinel-2 Harmonized Surface Reflectance",
+     "coverage": "2017-03 onward",
+     "resolution_m": 10,
+     "status": "VERIFIED_METADATA_ONLY"
+    }
+   ],
+   "issues": [],
+   "variables": [
+    {
+     "key": "water",
+     "label": "open water",
+     "class": 2,
+     "primary": true
+    },
+    {
+     "key": "lake_extent",
+     "label": "lake extent (open water and aquatic vegetation)",
+     "class": [
+      2,
+      10
+     ],
+     "primary": false
+    },
+    {
+     "key": "aquatic_vegetation",
+     "label": "aquatic vegetation",
+     "class": 10,
+     "primary": false
+    },
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": false
+    },
+    {
+     "key": "vegetation",
+     "label": "vegetation",
+     "class": 3,
+     "primary": false
+    },
+    {
+     "key": "wetland",
+     "label": "wetland fringe",
+     "class": 11,
+     "primary": false
+    }
+   ],
+   "designation": "illustrative",
+   "public_label": "Illustrative Dataset",
+   "provenance": {
+    "designation": "illustrative",
+    "generator": "backend/app/explorer/atlas.py",
+    "seed": 404,
+    "rules": [
+     "The lake outline is nearly constant (a small shore sector is built over, about 2 percent of the lake).",
+     "Aquatic vegetation expands in the shallow zones, replacing open water cover while the lake extent stays nearly the same.",
+     "Built-up area grows around village nuclei and an east-west corridor, outside the lake zone only."
+    ],
+    "clean_truth": "synthetic/bengaluru/clean_truth/",
+    "sensor_note": "Dry-season (February) illustrative scenes",
+    "cloud_fraction_by_year": {
+     "2015": 0.03
+    },
+    "resolution": "0.00015 degrees"
+   }
+  },
+  {
+   "id": "himalayas-dhauliganga",
+   "name": "Dhauliganga catchment, Uttarakhand (illustrative)",
+   "description": "Illustrative glacier retreat, snow, glacial-lake growth and exposed terrain over a fixed, generated elevation model.",
+   "is_synthetic": true,
+   "simulated_label": "Illustrative Dataset: a generated demonstration layer, not satellite imagery.",
+   "source": "Generated by the reusable pipeline app.explorer.atlas; no satellite data are used for these layers.",
+   "product": "Illustrative land-cover classification",
+   "format": "Cloud Optimized GeoTIFF",
+   "crs": "EPSG:4326",
+   "resolution_m": 57.4,
+   "temporal_resolution": "yearly",
+   "bbox": [
+    79.6,
+    30.55,
+    80.05,
+    30.95
+   ],
+   "coverage": {
+    "start": "2001-09-01",
+    "end": "2020-09-01"
+   },
+   "observation_count": 5,
+   "usable_count": 5,
+   "classes": {
+    "1": "Other land / exposed terrain",
+    "2": "Water",
+    "3": "Vegetation",
+    "4": "Built-up",
+    "5": "Snow",
+    "6": "Glacier ice",
+    "7": "Mudflat",
+    "8": "Mangrove",
+    "9": "Agriculture",
+    "10": "Aquatic vegetation",
+    "11": "Wetland fringe",
+    "255": "Uncertain or no data"
+   },
+   "real_dataset_targets": [
+    {
+     "name": "Landsat Collection 2 Level-2",
+     "coverage": "1982 onward (sensor dependent)",
+     "resolution_m": 30,
+     "status": "ACCESS_REQUIRES_AUTHENTICATION"
+    },
+    {
+     "name": "Sentinel-2 Harmonized Surface Reflectance",
+     "coverage": "2017-03 onward",
+     "resolution_m": 10,
+     "status": "VERIFIED_METADATA_ONLY"
+    }
+   ],
+   "issues": [],
+   "variables": [
+    {
+     "key": "glacier",
+     "label": "glacier ice",
+     "class": 6,
+     "primary": true
+    },
+    {
+     "key": "snow",
+     "label": "snow cover",
+     "class": 5,
+     "primary": false
+    },
+    {
+     "key": "glacial_lake",
+     "label": "glacial lake",
+     "class": 2,
+     "primary": false
+    },
+    {
+     "key": "exposed_terrain",
+     "label": "exposed terrain",
+     "class": 1,
+     "primary": false
+    }
+   ],
+   "designation": "illustrative",
+   "public_label": "Illustrative Dataset",
+   "provenance": {
+    "designation": "illustrative",
+    "generator": "backend/app/explorer/atlas.py",
+    "seed": 101,
+    "rules": [
+     "Glacier tongues end at elevations that rise at a different rate for each of four basins (2.0 to 13.0 m per year).",
+     "Snow cover follows a snowline that varies randomly from year to year, with no trend.",
+     "A proglacial lake grows in the area vacated by one glacier after 2009.",
+     "Terrain elevation is identical in every year."
+    ],
+    "clean_truth": "synthetic/himalayas/clean_truth/",
+    "sensor_note": "Late-season (September) illustrative scenes",
+    "cloud_fraction_by_year": {
+     "2005": 0.07,
+     "2015": 0.03
+    },
+    "resolution": "0.0006 degrees"
+   }
+  },
+  {
+   "id": "hyderabad-metro",
+   "name": "Hyderabad metropolitan area (illustrative)",
+   "description": "Illustrative urban expansion around settlements and transport corridors, with land-use transitions from agriculture and vegetation.",
+   "is_synthetic": true,
+   "simulated_label": "Illustrative Dataset: a generated demonstration layer, not satellite imagery.",
+   "source": "Generated by the reusable pipeline app.explorer.atlas; no satellite data are used for these layers.",
+   "product": "Illustrative land-cover classification",
+   "format": "Cloud Optimized GeoTIFF",
+   "crs": "EPSG:4326",
+   "resolution_m": 31.9,
+   "temporal_resolution": "yearly",
+   "bbox": [
+    78.25,
+    17.25,
+    78.65,
+    17.6
+   ],
+   "coverage": {
+    "start": "2000-02-01",
+    "end": "2024-02-01"
+   },
+   "observation_count": 6,
+   "usable_count": 6,
+   "classes": {
+    "1": "Other land / exposed terrain",
+    "2": "Water",
+    "3": "Vegetation",
+    "4": "Built-up",
+    "5": "Snow",
+    "6": "Glacier ice",
+    "7": "Mudflat",
+    "8": "Mangrove",
+    "9": "Agriculture",
+    "10": "Aquatic vegetation",
+    "11": "Wetland fringe",
+    "255": "Uncertain or no data"
+   },
+   "real_dataset_targets": [
+    {
+     "name": "Landsat Collection 2 Level-2",
+     "coverage": "1982 onward (sensor dependent)",
+     "resolution_m": 30,
+     "status": "ACCESS_REQUIRES_AUTHENTICATION"
+    },
+    {
+     "name": "Sentinel-2 Harmonized Surface Reflectance",
+     "coverage": "2017-03 onward",
+     "resolution_m": 10,
+     "status": "VERIFIED_METADATA_ONLY"
+    }
+   ],
+   "issues": [],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    },
+    {
+     "key": "vegetation",
+     "label": "vegetation",
+     "class": 3,
+     "primary": false
+    },
+    {
+     "key": "agriculture",
+     "label": "agriculture",
+     "class": 9,
+     "primary": false
+    },
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": false
+    }
+   ],
+   "designation": "illustrative",
+   "public_label": "Illustrative Dataset",
+   "provenance": {
+    "designation": "illustrative",
+    "generator": "backend/app/explorer/atlas.py",
+    "seed": 303,
+    "rules": [
+     "Built-up grows outward from eight settlement nuclei and along an outer ring corridor and radial roads; once built it stays built.",
+     "Agriculture and vegetation are lost where the built-up front passes.",
+     "Water bodies are nearly stable; tanks inside the densest fabric lose their edges after 2010."
+    ],
+    "clean_truth": "synthetic/hyderabad/clean_truth/",
+    "sensor_note": "Dry-season (February) illustrative scenes",
+    "cloud_fraction_by_year": {
+     "2010": 0.03
+    },
+    "resolution": "0.0003 degrees"
+   }
+  },
+  {
+   "id": "sundarbans-west-bengal",
+   "name": "Sundarbans, West Bengal (illustrative)",
+   "description": "Illustrative coastal change: spatially varying erosion and accretion, mudflat belts and mangrove cover around tidal rivers and islands.",
+   "is_synthetic": true,
+   "simulated_label": "Illustrative Dataset: a generated demonstration layer, not satellite imagery.",
+   "source": "Generated by the reusable pipeline app.explorer.atlas; no satellite data are used for these layers.",
+   "product": "Illustrative land-cover classification",
+   "format": "Cloud Optimized GeoTIFF",
+   "crs": "EPSG:4326",
+   "resolution_m": 41.3,
+   "temporal_resolution": "yearly",
+   "bbox": [
+    88.6,
+    21.55,
+    89.1,
+    22.05
+   ],
+   "coverage": {
+    "start": "2000-01-01",
+    "end": "2020-01-01"
+   },
+   "observation_count": 5,
+   "usable_count": 5,
+   "classes": {
+    "1": "Other land / exposed terrain",
+    "2": "Water",
+    "3": "Vegetation",
+    "4": "Built-up",
+    "5": "Snow",
+    "6": "Glacier ice",
+    "7": "Mudflat",
+    "8": "Mangrove",
+    "9": "Agriculture",
+    "10": "Aquatic vegetation",
+    "11": "Wetland fringe",
+    "255": "Uncertain or no data"
+   },
+   "real_dataset_targets": [
+    {
+     "name": "Landsat Collection 2 Level-2",
+     "coverage": "1982 onward (sensor dependent)",
+     "resolution_m": 30,
+     "status": "ACCESS_REQUIRES_AUTHENTICATION"
+    },
+    {
+     "name": "Sentinel-2 Harmonized Surface Reflectance",
+     "coverage": "2017-03 onward",
+     "resolution_m": 10,
+     "status": "VERIFIED_METADATA_ONLY"
+    }
+   ],
+   "issues": [],
+   "variables": [
+    {
+     "key": "mangrove",
+     "label": "mangrove",
+     "class": 8,
+     "primary": true
+    },
+    {
+     "key": "water",
+     "label": "open water",
+     "class": 2,
+     "primary": false
+    },
+    {
+     "key": "mudflat",
+     "label": "mudflat",
+     "class": 7,
+     "primary": false
+    },
+    {
+     "key": "land",
+     "label": "land (including mangrove)",
+     "class": [
+      1,
+      8
+     ],
+     "primary": false
+    }
+   ],
+   "designation": "illustrative",
+   "public_label": "Illustrative Dataset",
+   "provenance": {
+    "designation": "illustrative",
+    "generator": "backend/app/explorer/atlas.py",
+    "seed": 202,
+    "rules": [
+     "Shorelines move with a smooth random field: some stretches erode, others accrete, and the exposed south erodes more often.",
+     "Mudflat is the intertidal band next to land; mangrove needs land above a minimum height, so new land becomes mangrove only after it has emerged.",
+     "Embanked interior is non-mangrove land."
+    ],
+    "clean_truth": "synthetic/sundarbans/clean_truth/",
+    "sensor_note": "Dry-season (January) illustrative scenes",
+    "cloud_fraction_by_year": {
+     "2010": 0.04
+    },
+    "resolution": "0.0004 degrees"
+   }
+  }
+ ]
+}

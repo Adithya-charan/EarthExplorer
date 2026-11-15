@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-hyderabad",
+ "name": "Hyderabad lakes (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 164616.21,
+   "valid_ha": 164616.21,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 160865.51,
+    "Water (permanent or seasonal)": 3750.71
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 164616.21,
+   "valid_ha": 164616.21,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 158045.62,
+    "Water (permanent or seasonal)": 6570.59
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 3750.71,
+     "share_of_valid_pct": 2.278
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 6570.59,
+     "share_of_valid_pct": 3.991
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": 2819.88,
+   "net_change_pct": 75.18
+  }
+ },
+ "generated_at": "2026-11-15T02:09:20+00:00"
+}

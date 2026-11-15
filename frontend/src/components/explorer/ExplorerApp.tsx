@@ -5,12 +5,13 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { AlertTriangle, Globe2, Loader2, Menu } from "lucide-react";
 import { explorerApi } from "@/lib/explorer/api";
-import { bboxRadiusM, observationsInPeriod, planLayers, playDelayMs, stepIndex } from "@/lib/explorer/logic";
-import type { ChangeSummary, DatasetInfo, Explanation, HotspotCollection, MapMode, ObservationInfo, SessionResponse } from "@/lib/explorer/types";
+import { bboxRadiusM, dataLabel, isIllustrative, observationsInPeriod, planLayers, playDelayMs, stepIndex } from "@/lib/explorer/logic";
+import type { BoundaryOut, ChangeSummary, DatasetInfo, Explanation, HotspotCollection, LocationOut, MapMode, ObservationInfo, SessionResponse } from "@/lib/explorer/types";
+import { describeCommand, parseCommand, recognitionCtor, voiceErrorMessage, type VoiceCommand } from "@/lib/explorer/voice";
 import { toApiError } from "@/lib/api";
-import type { GlobeFocus } from "./Globe";
-import { HotspotNav, Legend, LatestCard, ModeBar, OutcomeBanner, StatusPill, type Phase } from "./Overlays";
-import { SearchPanel } from "./SearchPanel";
+import type { BoundaryShape, CameraState, GlobeFocus } from "./Globe";
+import { HotspotNav, Legend, LatestCard, ModeBar, OutcomeBanner, PlaceNotice, StatusPill, type Phase } from "./Overlays";
+import { SearchPanel, type VoiceUi } from "./SearchPanel";
 import { SummaryPanel, type ChatTurn } from "./SummaryPanel";
 import { Timeline } from "./Timeline";
 
@@ -43,6 +44,32 @@ function useReducedMotion(): boolean {
     () => false,
   );
 }
+
+/** One step of the visit history: enough to put the person back exactly where they were. */
+interface NavEntry {
+  query: string;
+  locationId: string;
+  startYear: number;
+  endYear: number;
+  datasetId: string | null;
+  variable: string | null;
+  mode: MapMode;
+  cursorDate: string | null;
+  camera: CameraState | null;
+}
+
+interface ExploreOpts {
+  locationId?: string;
+  datasetId?: string;
+  variable?: string;
+  /** Re-run for the same place (dataset switch): do not move the camera or add a history entry. */
+  keepView?: boolean;
+  restore?: NavEntry;
+}
+
+type Rec = InstanceType<NonNullable<ReturnType<typeof recognitionCtor>>>;
+type FocusInput = GlobeFocus extends infer U ? (U extends { token: number } ? Omit<U, "token"> : never) : never;
+const NEEDS_ANALYSIS: MapMode[] = ["beforeafter", "swipe", "difference", "hotspots"];
 
 export function ExplorerApp() {
   const reduced = useReducedMotion();
@@ -83,11 +110,27 @@ export function ExplorerApp() {
   const [globeError, setGlobeError] = useState<string | null>(null);
   const [layerBusy, setLayerBusy] = useState(false);
   const [layerError, setLayerError] = useState<string | null>(null);
+  const [boundary, setBoundary] = useState<BoundaryOut | null>(null);
+  const [navView, setNavView] = useState({ pos: -1, len: 0 });
+  const [listening, setListening] = useState(false);
+  const [heard, setHeard] = useState("");
+  const [voiceNote, setVoiceNote] = useState<VoiceUi["note"]>(null);
+  const voiceSupported = useSyncExternalStore(
+    () => () => undefined,
+    () => recognitionCtor() !== null,
+    () => false,
+  );
 
   const runRef = useRef(0);
   const tokenRef = useRef(0);
   const sessionToken = useRef(0);
   const autoZoomed = useRef<string | null>(null);
+  const cameraRef = useRef<CameraState | null>(null);
+  const navRef = useRef<{ entries: NavEntry[]; pos: number }>({ entries: [], pos: -1 });
+  const observationsRef = useRef<ObservationInfo[]>([]);
+  const recRef = useRef<Rec | null>(null);
+  const commandRef = useRef<(c: VoiceCommand) => void>(() => undefined);
+  const liveRef = useRef({ mode: "latest" as MapMode, cursorDate: null as string | null, variable: null as string | null, datasetId: null as string | null, startYear: 2000, endYear: 2025 });
 
   // ------------------------------------------------------------------ dataset availability
   useEffect(() => {
@@ -119,6 +162,28 @@ export function ExplorerApp() {
   const hasAnalysis = summary?.analysis_id != null && summary.outcome !== "insufficient_data";
   const bbox = ds?.bbox ?? null;
 
+  // Latest view state, read when a history entry is saved.
+  const liveCursorDate = periodObs[cursorIdx]?.date ?? null;
+  const liveVariable = summary?.variable?.key ?? null;
+  const liveDatasetId = ds?.id ?? null;
+  useEffect(() => {
+    liveRef.current = { mode, cursorDate: liveCursorDate, variable: liveVariable, datasetId: liveDatasetId, startYear, endYear };
+  }, [mode, liveCursorDate, liveVariable, liveDatasetId, startYear, endYear]);
+
+  // The outline of the searched place, from the backend (authoritative where one exists, otherwise marked approximate).
+  const locationId = session?.location?.id ?? null;
+  useEffect(() => {
+    setBoundary(null);
+    if (!locationId) return;
+    const c = new AbortController();
+    explorerApi
+      .boundary(locationId, c.signal)
+      .then(setBoundary)
+      .catch(() => undefined);
+    return () => c.abort();
+  }, [locationId]);
+  const boundaryShape: BoundaryShape | null = boundary?.geometry ? { id: boundary.location_id, geometry: boundary.geometry, approximate: !boundary.authoritative } : null;
+
   const plan = useMemo(
     () =>
       planLayers({
@@ -130,6 +195,7 @@ export function ExplorerApp() {
         cursorDate: periodObs[cursorIdx]?.date ?? null,
         baShowAfter,
         temporal,
+        variableLabel: summary?.variable?.label,
       }),
     [mode, summary, ds, bbox, session, periodObs, cursorIdx, baShowAfter, temporal],
   );
@@ -147,7 +213,7 @@ export function ExplorerApp() {
   const marker = session?.location && session.status !== "not_found" ? { lon: session.location.lon, lat: session.location.lat, label: session.location.name } : null;
 
   // ---------------------------------------------------------------------------------- camera
-  const flyTo = useCallback((f: Omit<Extract<GlobeFocus, { kind: "place" }>, "token"> | Omit<Extract<GlobeFocus, { kind: "sphere" }>, "token">) => {
+  const flyTo = useCallback((f: FocusInput) => {
     tokenRef.current += 1;
     setFocus({ ...f, token: tokenRef.current } as GlobeFocus);
     return tokenRef.current;
@@ -169,80 +235,294 @@ export function ExplorerApp() {
     if (session?.location && ds) flyTo({ kind: "place", lon: session.location.lon, lat: session.location.lat, altitude: session.location.zoom_altitude_m, bbox: ds.bbox });
   }, [session, ds, flyTo]);
 
-  // --------------------------------------------------------------------------------- explore
-  const explore = useCallback(
-    async (q: string, sy: number, ey: number) => {
-      const run = ++runRef.current;
-      const stale = () => run !== runRef.current;
-      setSpin(false);
-      setPlaying(false);
-      setError(null);
-      setLocating(true);
-      setSession(null);
-      setSummary(null);
-      setObservations([]);
-      setHotspotFc(null);
-      setExplanation(null);
-      setExplState("none");
-      setTurns([]);
-      setActiveHotspot(-1);
-      setExploredAnyway(false);
-      setLayerError(null);
-      setAnalysis("idle");
-      setMode("latest");
-      try {
-        const sess = await explorerApi.session({ query: q, start_year: sy, end_year: ey });
-        if (stale()) return;
-        setLocating(false);
-        setSession(sess);
-        if (sess.status === "not_found" || !sess.location) {
-          setSpin(true);
-          setAnalysis("done");
-          return;
-        }
-        const loc = sess.location;
-        sessionToken.current = flyTo({ kind: "place", lon: loc.lon, lat: loc.lat, altitude: loc.zoom_altitude_m, bbox: sess.dataset?.bbox ?? loc.bbox });
-        if (sess.status !== "ready" || !sess.dataset) {
-          setAnalysis("done");
-          return;
-        }
-        setAnalysis("running");
-        const [sum, obs] = await Promise.all([
-          explorerApi.detect({ dataset_id: sess.dataset.id, start_year: sy, end_year: ey }),
-          explorerApi.observations(sess.dataset.id),
-        ]);
-        if (stale()) return;
-        setObservations(obs);
-        setSummary(sum);
-        setMode(sum.outcome === "change_detected" ? "hotspots" : "latest");
-        const e = sum.period?.effective;
-        const inP = e ? observationsInPeriod(obs, e.start_year, e.end_year) : obs;
-        setCursor(Math.max(0, (inP.length || obs.length) - 1));
-        setAnalysis("done");
-        if (sum.analysis_id && sum.outcome !== "insufficient_data") {
-          explorerApi.hotspots(sum.analysis_id).then((fc) => !stale() && setHotspotFc(fc)).catch(() => undefined);
-          setExplState("loading");
-          explorerApi
-            .explain(sum.analysis_id)
-            .then((x) => {
-              if (stale()) return;
-              setExplanation(x);
-              setExplState("ready");
-            })
-            .catch(() => !stale() && setExplState("error"));
-        }
-      } catch (err) {
-        if (stale()) return;
-        setLocating(false);
-        setAnalysis("done");
-        setError(toApiError(err).message);
-        setSpin(true);
-      }
-    },
-    [flyTo],
-  );
+  // ------------------------------------------------------------------------- visit history
+  const syncNav = () => setNavView({ pos: navRef.current.pos, len: navRef.current.entries.length });
+  /** Save what the person is looking at into the current history entry, so Back can restore it. */
+  const saveCurrent = () => {
+    const n = navRef.current;
+    if (n.pos < 0 || !n.entries[n.pos]) return;
+    const l = liveRef.current;
+    n.entries[n.pos] = { ...n.entries[n.pos], mode: l.mode, cursorDate: l.cursorDate, variable: l.variable, datasetId: l.datasetId ?? n.entries[n.pos].datasetId, startYear: l.startYear, endYear: l.endYear, camera: cameraRef.current };
+  };
+  const record = (e: NavEntry) => {
+    saveCurrent();
+    const n = navRef.current;
+    n.entries = [...n.entries.slice(0, n.pos + 1), e];
+    n.pos = n.entries.length - 1;
+    syncNav();
+  };
 
-  const submit = () => void explore(query.trim(), startYear, endYear);
+  // ------------------------------------------------------------------------------ analysis
+  const analyse = useCallback(async (datasetId: string, sy: number, ey: number, variable: string | undefined, stale: () => boolean, opts: { loadObservations: boolean; restore?: NavEntry }) => {
+    setAnalysis("running");
+    const [sum, obs] = await Promise.all([
+      explorerApi.detect({ dataset_id: datasetId, start_year: sy, end_year: ey, ...(variable ? { params: { variable } } : {}) }),
+      opts.loadObservations ? explorerApi.observations(datasetId) : Promise.resolve(null),
+    ]);
+    if (stale()) return;
+    const all = obs ?? observationsRef.current;
+    if (obs) {
+      observationsRef.current = obs;
+      setObservations(obs);
+    }
+    setSummary(sum);
+    const usable = sum.analysis_id != null && sum.outcome !== "insufficient_data";
+    const r = opts.restore;
+    const wanted: MapMode = r && (!NEEDS_ANALYSIS.includes(r.mode) || usable) ? r.mode : sum.outcome === "change_detected" ? "hotspots" : "latest";
+    setMode(wanted);
+    const e = sum.period?.effective;
+    const inP = e ? observationsInPeriod(all, e.start_year, e.end_year) : all;
+    const list = inP.length ? inP : all;
+    const at = r?.cursorDate ? list.findIndex((o) => o.date === r.cursorDate) : -1;
+    setCursor(at >= 0 ? at : Math.max(0, list.length - 1));
+    if (r && sum.analysis_id) autoZoomed.current = sum.analysis_id;
+    setAnalysis("done");
+    if (usable && sum.analysis_id) {
+      const id = sum.analysis_id;
+      explorerApi
+        .hotspots(id)
+        .then((fc) => !stale() && setHotspotFc(fc))
+        .catch(() => undefined);
+      setExplState("loading");
+      explorerApi
+        .explain(id)
+        .then((x) => {
+          if (stale()) return;
+          setExplanation(x);
+          setExplState("ready");
+        })
+        .catch(() => !stale() && setExplState("error"));
+    }
+  }, []);
+
+  // --------------------------------------------------------------------------------- explore
+  const explore = async (q: string, sy: number, ey: number, opts: ExploreOpts = {}) => {
+    const run = ++runRef.current;
+    const stale = () => run !== runRef.current;
+    if (!opts.keepView && !opts.restore) saveCurrent();
+    setSpin(false);
+    setPlaying(false);
+    setError(null);
+    setLocating(true);
+    if (!opts.keepView) setSession(null);
+    setSummary(null);
+    setHotspotFc(null);
+    setExplanation(null);
+    setExplState("none");
+    setTurns([]);
+    setActiveHotspot(-1);
+    setExploredAnyway(false);
+    setLayerError(null);
+    setAnalysis("idle");
+    if (!opts.keepView) {
+      setObservations([]);
+      observationsRef.current = [];
+      setMode("latest");
+    }
+    try {
+      const sess = await explorerApi.session({ ...(opts.locationId ? { location_id: opts.locationId } : { query: q }), start_year: sy, end_year: ey, ...(opts.datasetId ? { dataset_id: opts.datasetId } : {}) });
+      if (stale()) return;
+      setLocating(false);
+      setSession(sess);
+      if (sess.status === "not_found" || !sess.location) {
+        setSpin(true);
+        setAnalysis("done");
+        return;
+      }
+      const loc = sess.location;
+      if (!opts.keepView) {
+        if (opts.restore?.camera) sessionToken.current = flyTo({ kind: "camera", ...opts.restore.camera });
+        else sessionToken.current = flyTo({ kind: "place", lon: loc.lon, lat: loc.lat, altitude: loc.zoom_altitude_m, bbox: sess.dataset?.bbox ?? loc.bbox });
+      }
+      if (!opts.restore && !opts.keepView) {
+        record({ query: q, locationId: loc.id, startYear: sy, endYear: ey, datasetId: sess.dataset?.id ?? null, variable: opts.variable ?? null, mode: "latest", cursorDate: null, camera: null });
+      }
+      if (sess.status !== "ready" || !sess.dataset) {
+        setAnalysis("done");
+        return;
+      }
+      await analyse(sess.dataset.id, sy, ey, opts.variable, stale, { loadObservations: true, restore: opts.restore });
+    } catch (err) {
+      if (stale()) return;
+      setLocating(false);
+      setAnalysis("done");
+      setError(toApiError(err).message);
+      setSpin(true);
+    }
+  };
+
+  const pickVariable = (key: string) => {
+    if (!ds || key === summary?.variable?.key) return;
+    const run = ++runRef.current;
+    setPlaying(false);
+    setHotspotFc(null);
+    setExplanation(null);
+    setExplState("none");
+    setActiveHotspot(-1);
+    setLayerError(null);
+    analyse(ds.id, startYear, endYear, key, () => run !== runRef.current, { loadObservations: false }).catch((err) => {
+      if (run !== runRef.current) return;
+      setAnalysis("done");
+      setError(toApiError(err).message);
+    });
+  };
+  const pickDataset = (id: string) => {
+    if (!session?.location || id === ds?.id) return;
+    void explore(session.location.name, startYear, endYear, { locationId: session.location.id, datasetId: id, keepView: true });
+  };
+  // A dataset inside a larger area: go to the dataset's own place (its name resolves through the same search).
+  const openNearby = (d: DatasetInfo) => {
+    const place = d.name.replace(/ \((?:illustrative|simulated)[^)]*\)$/i, "");
+    setQuery(place);
+    void explore(place, startYear, endYear, { datasetId: d.id });
+  };
+  const pickPlace = (loc: LocationOut) => {
+    setQuery(loc.name);
+    void explore(loc.name, startYear, endYear, { locationId: loc.id });
+  };
+
+  const restoreEntry = (e: NavEntry) => {
+    setQuery(e.query);
+    setStartYear(e.startYear);
+    setEndYear(e.endYear);
+    void explore(e.query, e.startYear, e.endYear, { locationId: e.locationId, datasetId: e.datasetId ?? undefined, variable: e.variable ?? undefined, restore: e });
+  };
+  const goBack = () => {
+    const n = navRef.current;
+    if (n.pos <= 0) return;
+    saveCurrent();
+    n.pos -= 1;
+    syncNav();
+    restoreEntry(n.entries[n.pos]);
+  };
+  const goForward = () => {
+    const n = navRef.current;
+    if (n.pos >= n.entries.length - 1) return;
+    saveCurrent();
+    n.pos += 1;
+    syncNav();
+    restoreEntry(n.entries[n.pos]);
+  };
+
+  // Same functions as the buttons: typed and spoken commands both end up here.
+  const say = (tone: "info" | "ok" | "error", text: string) => setVoiceNote({ tone, text });
+  const runCommand = (c: VoiceCommand) => {
+    const needPlace = () => say("error", "Search a place first, then I can do that.");
+    switch (c.type) {
+      case "goto":
+        say("ok", describeCommand(c));
+        setQuery(c.place);
+        void explore(c.place, startYear, endYear);
+        break;
+      case "compare":
+        if (!session?.location) return needPlace();
+        say("ok", describeCommand(c));
+        setStartYear(c.start);
+        setEndYear(c.end);
+        void explore(session.location.name, c.start, c.end, { locationId: session.location.id, datasetId: ds?.id });
+        break;
+      case "latest":
+        if (!ds) return needPlace();
+        say("ok", describeCommand(c));
+        setMode("latest");
+        setPlaying(false);
+        break;
+      case "history":
+        if (!ds) return needPlace();
+        say("ok", describeCommand(c));
+        setMode("history");
+        break;
+      case "changes":
+      case "hotspots":
+      case "beforeafter":
+      case "swipe":
+        if (!ds) return needPlace();
+        if (!hasAnalysis) return say("error", "There is no change analysis for this place and period, so there is nothing to show.");
+        say("ok", describeCommand(c));
+        setPlaying(false);
+        setMode(c.type === "changes" ? "difference" : c.type);
+        break;
+      case "zoom":
+        if (!session?.location) return needPlace();
+        say("ok", describeCommand(c));
+        overview();
+        break;
+      case "back":
+        if (navRef.current.pos <= 0) return say("error", "There is no earlier location to go back to.");
+        say("ok", describeCommand(c));
+        goBack();
+        break;
+      case "forward":
+        if (navRef.current.pos >= navRef.current.entries.length - 1) return say("error", "There is no later location to go forward to.");
+        say("ok", describeCommand(c));
+        goForward();
+        break;
+      case "unknown":
+        say("error", `Sorry, I did not understand "${c.text}". Try "Take me to Hyderabad" or "Compare this location between 2000 and 2020".`);
+        break;
+    }
+  };
+  useEffect(() => {
+    commandRef.current = runCommand;
+  });
+
+  const toggleVoice = () => {
+    if (listening) {
+      recRef.current?.stop();
+      return;
+    }
+    const Ctor = recognitionCtor();
+    if (!Ctor) return;
+    const rec = new Ctor();
+    rec.lang = typeof navigator !== "undefined" && navigator.language ? navigator.language : "en-IN";
+    rec.continuous = false;
+    rec.interimResults = true;
+    rec.maxAlternatives = 1;
+    let finalText = "";
+    rec.onstart = () => {
+      setListening(true);
+      setHeard("");
+      setVoiceNote(null);
+    };
+    rec.onresult = (e) => {
+      let text = "";
+      for (let i = 0; i < e.results.length; i++) {
+        text += e.results[i][0].transcript;
+        if (e.results[i].isFinal) finalText = text;
+      }
+      setHeard(text);
+    };
+    rec.onerror = (e) => {
+      const m = voiceErrorMessage(e.error);
+      if (m) say("error", m);
+    };
+    rec.onend = () => {
+      setListening(false);
+      recRef.current = null;
+      const t = finalText.trim();
+      if (t) {
+        setQuery(t);
+        commandRef.current(parseCommand(t));
+      }
+    };
+    recRef.current = rec;
+    try {
+      rec.start();
+    } catch {
+      say("error", "Voice input could not start. You can type the command instead.");
+    }
+  };
+  useEffect(() => () => recRef.current?.abort(), []);
+
+  const submit = () => {
+    const c = parseCommand(query);
+    // Commands typed in the search box work like spoken ones; anything else is searched as a place name.
+    if (c.type !== "goto" && c.type !== "unknown" && !(c.type === "compare" && !/compare/i.test(query))) {
+      runCommand(c);
+      return;
+    }
+    void explore(query.trim(), startYear, endYear);
+  };
   const pickExample = (e: string) => {
     setQuery(e);
     void explore(e, startYear, endYear);
@@ -250,7 +530,7 @@ export function ExplorerApp() {
   const useSuggestion = (s: number, e: number) => {
     setStartYear(s);
     setEndYear(e);
-    void explore(query.trim() || session?.location?.name || "", s, e);
+    void explore(query.trim() || session?.location?.name || "", s, e, session?.location ? { locationId: session.location.id } : {});
   };
 
   // After the flight and the analysis are both done and change was found, move in on the biggest hotspot.
@@ -304,8 +584,10 @@ export function ExplorerApp() {
     }
   };
 
-  const panelOpen = Boolean(summary) && revealed && !panelCollapsed;
-  const simulated = Boolean(session?.is_synthetic);
+  const panelVisible = summary != null && session != null && flightComplete && (analysis === "done" || analysis === "running");
+  const panelOpen = panelVisible && !panelCollapsed;
+  const simulated = isIllustrative(ds);
+  const voice: VoiceUi = { supported: voiceSupported, listening, heard, onToggle: toggleVoice, note: voiceNote };
 
   return (
     <div className="nx" data-testid="explorer" data-phase={phase}>
@@ -317,6 +599,10 @@ export function ExplorerApp() {
         prefetch={prefetch}
         splitPosition={split}
         hotspots={hotspotFc}
+        boundary={boundaryShape}
+        onCamera={(c) => {
+          cameraRef.current = c;
+        }}
         showHotspots={plan.hotspots && Boolean(hotspotFc)}
         activeHotspot={summary?.hotspots[activeHotspot]?.id ?? null}
         spin={spin}
@@ -355,7 +641,7 @@ export function ExplorerApp() {
 
       {/* search + status + outcome */}
       <div className={`pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-3 pt-12 sm:pt-0 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
-        <div className="pointer-events-auto">
+        <div className="pointer-events-auto relative z-30">
           <SearchPanel
             query={query}
             onQuery={setQuery}
@@ -365,6 +651,12 @@ export function ExplorerApp() {
             onEnd={setEndYear}
             onSubmit={submit}
             onExample={pickExample}
+            onPick={pickPlace}
+            canBack={navView.pos > 0}
+            canForward={navView.pos < navView.len - 1}
+            onBack={goBack}
+            onForward={goForward}
+            voice={voice}
             busy={locating || analysis === "running"}
             compact={Boolean(session)}
             datasets={datasets}
@@ -388,6 +680,11 @@ export function ExplorerApp() {
             <OutcomeBanner summary={summary} session={session} onUseSuggestion={useSuggestion} onExploreAnyway={exploreAnyway} onExample={pickExample} exploredAnyway={exploredAnyway} />
           </div>
         ) : null}
+        {showResults && !error ? (
+          <div className="pointer-events-auto">
+            <PlaceNotice session={session} onPickPlace={pickPlace} onOpenDataset={openNearby} />
+          </div>
+        ) : null}
         {globeError ? (
           <p role="alert" data-testid="globe-error" className="nx-glass pointer-events-auto max-w-[560px] p-3 text-[12.5px] text-amber-200">
             The 3D globe could not start ({globeError}). It needs WebGL. Search and analysis still work and show here as text.
@@ -395,10 +692,13 @@ export function ExplorerApp() {
         ) : null}
       </div>
 
-      {/* simulated-data tag, always visible while simulated data is on screen */}
-      {simulated ? (
-        <p data-testid="simulated-banner" className="absolute left-4 top-[68px] z-20 rounded-md border border-amber-400/50 bg-amber-400/15 px-2.5 py-1 text-[11px] font-bold tracking-wide text-amber-200 backdrop-blur">
-          SIMULATED DEMONSTRATION DATA
+      {/* data-source badge, always visible while a dataset is on screen */}
+      {ds ? (
+        <p
+          data-testid="data-badge"
+          className={`absolute left-4 top-[68px] z-20 rounded-md border px-2.5 py-1 text-[11px] font-bold tracking-wide backdrop-blur ${simulated ? "border-amber-400/50 bg-amber-400/15 text-amber-200" : "border-emerald-400/50 bg-emerald-400/15 text-emerald-200"}`}
+        >
+          {dataLabel(ds).toUpperCase()}
         </p>
       ) : null}
 
@@ -409,7 +709,7 @@ export function ExplorerApp() {
             {latestOpen ? "Hide" : "Show"} latest observation
           </button>
           {latestOpen ? <LatestCard latest={session.latest} session={session} /> : null}
-          {plan.primary ? <Legend kind={plan.legend} simulated={simulated} /> : null}
+          {plan.primary ? <Legend kind={plan.legend} simulated={simulated} classes={ds?.classes} variableLabel={summary?.variable?.label} /> : null}
         </div>
       ) : null}
 
@@ -419,7 +719,7 @@ export function ExplorerApp() {
           {plan.caption ? (
             <p className="nx-glass pointer-events-none px-3 py-1 text-[12px] text-[color:var(--nx-soft)]" data-testid="map-caption">
               {plan.caption}
-              {simulated ? " · SIMULATED" : ""}
+              {simulated ? " · Illustrative Dataset" : ""}
               {layerBusy ? " · loading…" : ""}
             </p>
           ) : null}
@@ -463,7 +763,7 @@ export function ExplorerApp() {
       ) : null}
 
       {/* summary panel */}
-      {summary && revealed ? (
+      {summary && panelVisible ? (
         <div className="absolute right-4 top-[84px] z-10">
           <SummaryPanel
             summary={summary}
@@ -476,6 +776,12 @@ export function ExplorerApp() {
             onAsk={ask}
             collapsed={panelCollapsed}
             onToggle={() => setPanelCollapsed((c) => !c)}
+            details={{ location: session?.location ?? null, boundary, dataset: ds, latest: session?.latest ?? null, summary }}
+            datasets={(datasets ?? []).filter((d) => !session?.location || (session.location.lon >= d.bbox[0] && session.location.lon <= d.bbox[2] && session.location.lat >= d.bbox[1] && session.location.lat <= d.bbox[3]))}
+            activeDatasetId={ds?.id ?? null}
+            onPickDataset={pickDataset}
+            onPickVariable={pickVariable}
+            busy={analysis === "running" || locating}
           />
         </div>
       ) : null}

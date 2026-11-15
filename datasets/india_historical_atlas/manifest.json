@@ -1,0 +1,732 @@
+{
+ "schema": "nasax-atlas-manifest-1",
+ "name": "NASAX India Historical Atlas",
+ "generated_at": "2026-11-15T02:09:34+00:00",
+ "layout": {
+  "synthetic": "generated clean-truth rasters and generator configs (internal origin, shown publicly as 'Illustrative Dataset')",
+  "official": "original official files downloaded by scripts/download_official_data.py (not committed; re-download)",
+  "processed": "analysis-ready Cloud Optimized GeoTIFF datasets with dataset.json provenance",
+  "geographical_boundaries": "GeoJSON boundaries by level",
+  "documentation": "registry, catalogue, validation and provenance reports"
+ },
+ "datasets": [
+  {
+   "id": "ghsl-built-up-bengaluru",
+   "path": "processed/official/bengaluru/ghsl-built-up-bengaluru",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    77.55,
+    12.85,
+    77.8,
+    13.05
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/bengaluru/ghsl-built-up-bengaluru/observations/2000.tif",
+     "bytes": 10146,
+     "sha256": "737c7be3f42a73462ccf0922ef6ffc98d0de0dda0016e68c561b03cfe83cad1b",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/bengaluru/ghsl-built-up-bengaluru/observations/2010.tif",
+     "bytes": 11950,
+     "sha256": "f4e0ba7a98110fbf175e871ac6dd938aac45bcd44d40b6e7028aca4ec1ac22ef",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/bengaluru/ghsl-built-up-bengaluru/observations/2020.tif",
+     "bytes": 12412,
+     "sha256": "80c9bcc0f147443d0023e5c1343555836d6de07813c3d92d6db0efbbd76ea1b5",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/bengaluru/ghsl-built-up-bengaluru/pipeline.json",
+    "historical_statistics.json": "processed/official/bengaluru/ghsl-built-up-bengaluru/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/bengaluru/ghsl-built-up-bengaluru/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/bengaluru/ghsl-built-up-bengaluru/change/built_up_2000_2020.difference.tif",
+    "processed/official/bengaluru/ghsl-built-up-bengaluru/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/bengaluru/ghsl-built-up-bengaluru/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-bellandur",
+   "path": "processed/official/bengaluru/jrc-water-bellandur",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    77.62,
+    12.9,
+    77.72,
+    12.99
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/bengaluru/jrc-water-bellandur/observations/1984.tif",
+     "bytes": 3838,
+     "sha256": "57113a626c65e706c957bac2dd85b44d80c06aed3b69ac13aedda0a94c7bed45",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/bengaluru/jrc-water-bellandur/observations/2021.tif",
+     "bytes": 3577,
+     "sha256": "f47157e25681bbaf89d515c671f4a1fe286f1d25bac9ccfc161b1fbccd36185a",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/bengaluru/jrc-water-bellandur/pipeline.json",
+    "historical_statistics.json": "processed/official/bengaluru/jrc-water-bellandur/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/bengaluru/jrc-water-bellandur/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/bengaluru/jrc-water-bellandur/change/water_1984_2021.difference.tif",
+    "processed/official/bengaluru/jrc-water-bellandur/change/water_1984_2021.hotspots.geojson",
+    "processed/official/bengaluru/jrc-water-bellandur/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-hyderabad",
+   "path": "processed/official/hyderabad/ghsl-built-up-hyderabad",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    78.25,
+    17.25,
+    78.65,
+    17.6
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/hyderabad/ghsl-built-up-hyderabad/observations/2000.tif",
+     "bytes": 20290,
+     "sha256": "a53a3bf7dc2a54958bdcd97b8556f7032c3466e92ff1182bae007b44f3bacc50",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/hyderabad/ghsl-built-up-hyderabad/observations/2010.tif",
+     "bytes": 24177,
+     "sha256": "76456db9db226833e2285fcd0b433b21da2fb239defa01bda2cc1a97d90c2ec7",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/hyderabad/ghsl-built-up-hyderabad/observations/2020.tif",
+     "bytes": 26920,
+     "sha256": "62b027096da948577b31738adfc50da07690b33ad802dc1c713b23d890cec264",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/hyderabad/ghsl-built-up-hyderabad/pipeline.json",
+    "historical_statistics.json": "processed/official/hyderabad/ghsl-built-up-hyderabad/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/hyderabad/ghsl-built-up-hyderabad/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/hyderabad/ghsl-built-up-hyderabad/change/built_up_2000_2020.difference.tif",
+    "processed/official/hyderabad/ghsl-built-up-hyderabad/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/hyderabad/ghsl-built-up-hyderabad/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-hyderabad",
+   "path": "processed/official/hyderabad/jrc-water-hyderabad",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    78.25,
+    17.25,
+    78.65,
+    17.6
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/hyderabad/jrc-water-hyderabad/observations/1984.tif",
+     "bytes": 29975,
+     "sha256": "45a4b7f79044b5b9cf7c1dfc4d9c9b14f1bd8beaf7f9e787e7f0bbde67ce5ca6",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/hyderabad/jrc-water-hyderabad/observations/2021.tif",
+     "bytes": 37770,
+     "sha256": "0be545b19e21fa1cdc8097c2a3dd2dfd75eadb2fd74cd1afbde2e22c0ef9b9c9",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/hyderabad/jrc-water-hyderabad/pipeline.json",
+    "historical_statistics.json": "processed/official/hyderabad/jrc-water-hyderabad/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/hyderabad/jrc-water-hyderabad/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/hyderabad/jrc-water-hyderabad/change/water_1984_2021.difference.tif",
+    "processed/official/hyderabad/jrc-water-hyderabad/change/water_1984_2021.hotspots.geojson",
+    "processed/official/hyderabad/jrc-water-hyderabad/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "worldcover-sundarbans-2021",
+   "path": "processed/official/sundarbans/worldcover-sundarbans-2021",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    88.6,
+    21.55,
+    89.1,
+    22.05
+   ],
+   "observation_files": [
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/sundarbans/worldcover-sundarbans-2021/observations/2021.tif",
+     "bytes": 201194,
+     "sha256": "84e13134409f3ab4ffc11c22827eb7371a3402375782fdafd1c0ae37a115ed0c",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "mangrove",
+     "label": "mangrove",
+     "class": 8,
+     "primary": true
+    },
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/sundarbans/worldcover-sundarbans-2021/pipeline.json",
+    "historical_statistics.json": "processed/official/sundarbans/worldcover-sundarbans-2021/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/sundarbans/worldcover-sundarbans-2021/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/sundarbans/worldcover-sundarbans-2021/change/mangrove_2021_2021.summary.json",
+    "processed/official/sundarbans/worldcover-sundarbans-2021/change/water_2021_2021.summary.json"
+   ]
+  },
+  {
+   "id": "bellandur-lake",
+   "path": "processed/synthetic/bengaluru",
+   "designation": "illustrative",
+   "public_label": "Illustrative Dataset",
+   "internal_origin": "generated (illustrative)",
+   "bbox": [
+    77.62,
+    12.9,
+    77.72,
+    12.99
+   ],
+   "observation_files": [
+    {
+     "date": "2002-02-01",
+     "file": "processed/synthetic/bengaluru/observations/2002.tif",
+     "bytes": 22091,
+     "sha256": "7dec2d6f2ed90c25a9e23a37cf05f7908388eaa4bf21b8f5915f4d5e9275c538",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2005-02-01",
+     "file": "processed/synthetic/bengaluru/observations/2005.tif",
+     "bytes": 22034,
+     "sha256": "a135f3b0013b29225114b87d86e2764e3b086ec858aed640c41f73eae7ad66b9",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-02-01",
+     "file": "processed/synthetic/bengaluru/observations/2010.tif",
+     "bytes": 22009,
+     "sha256": "7d87274647f96d02f7a058d8c7ee21b56c2abf6a7409ada6608b62921d3c31ca",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2015-02-01",
+     "file": "processed/synthetic/bengaluru/observations/2015.tif",
+     "bytes": 22852,
+     "sha256": "867ce0b881725e84fa4d87f548ff709bc7b8630275bb5dcd7453a2bdbaffa5cd",
+     "quality": "good",
+     "valid_fraction": 0.97
+    },
+    {
+     "date": "2019-02-01",
+     "file": "processed/synthetic/bengaluru/observations/2019.tif",
+     "bytes": 20879,
+     "sha256": "99ab77cf12ce29413004f87e04634080f0b11386b05e70ac191dcdf5fd789be7",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2022-02-01",
+     "file": "processed/synthetic/bengaluru/observations/2022.tif",
+     "bytes": 20082,
+     "sha256": "29fe4b3fd5cdeca0c77accafed0c503b9e663fec42c419f6c1d6711c83143f11",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "open water",
+     "class": 2,
+     "primary": true
+    },
+    {
+     "key": "lake_extent",
+     "label": "lake extent (open water and aquatic vegetation)",
+     "class": [
+      2,
+      10
+     ],
+     "primary": false
+    },
+    {
+     "key": "aquatic_vegetation",
+     "label": "aquatic vegetation",
+     "class": 10,
+     "primary": false
+    },
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": false
+    },
+    {
+     "key": "vegetation",
+     "label": "vegetation",
+     "class": 3,
+     "primary": false
+    },
+    {
+     "key": "wetland",
+     "label": "wetland fringe",
+     "class": 11,
+     "primary": false
+    }
+   ],
+   "documents": {
+    "historical_statistics.json": "processed/synthetic/bengaluru/historical_statistics.json",
+    "historical_statistics.csv": "processed/synthetic/bengaluru/historical_statistics.csv",
+    "ground_truth.json": "processed/synthetic/bengaluru/ground_truth.json"
+   },
+   "change_products": [
+    "processed/synthetic/bengaluru/change/aquatic_vegetation_2002_2022.difference.tif",
+    "processed/synthetic/bengaluru/change/aquatic_vegetation_2002_2022.hotspots.geojson",
+    "processed/synthetic/bengaluru/change/aquatic_vegetation_2002_2022.summary.json",
+    "processed/synthetic/bengaluru/change/built_up_2002_2022.difference.tif",
+    "processed/synthetic/bengaluru/change/built_up_2002_2022.hotspots.geojson",
+    "processed/synthetic/bengaluru/change/built_up_2002_2022.summary.json",
+    "processed/synthetic/bengaluru/change/lake_extent_2002_2022.difference.tif",
+    "processed/synthetic/bengaluru/change/lake_extent_2002_2022.hotspots.geojson",
+    "processed/synthetic/bengaluru/change/lake_extent_2002_2022.summary.json",
+    "processed/synthetic/bengaluru/change/vegetation_2002_2022.difference.tif",
+    "processed/synthetic/bengaluru/change/vegetation_2002_2022.hotspots.geojson",
+    "processed/synthetic/bengaluru/change/vegetation_2002_2022.summary.json",
+    "processed/synthetic/bengaluru/change/water_2002_2022.difference.tif",
+    "processed/synthetic/bengaluru/change/water_2002_2022.hotspots.geojson",
+    "processed/synthetic/bengaluru/change/water_2002_2022.summary.json",
+    "processed/synthetic/bengaluru/change/wetland_2002_2022.difference.tif",
+    "processed/synthetic/bengaluru/change/wetland_2002_2022.hotspots.geojson",
+    "processed/synthetic/bengaluru/change/wetland_2002_2022.summary.json"
+   ]
+  },
+  {
+   "id": "himalayas-dhauliganga",
+   "path": "processed/synthetic/himalayas",
+   "designation": "illustrative",
+   "public_label": "Illustrative Dataset",
+   "internal_origin": "generated (illustrative)",
+   "bbox": [
+    79.6,
+    30.55,
+    80.05,
+    30.95
+   ],
+   "observation_files": [
+    {
+     "date": "2001-09-01",
+     "file": "processed/synthetic/himalayas/observations/2001.tif",
+     "bytes": 26555,
+     "sha256": "98ba2fb7b55bb5fa7aed8d393746bafc8d991d8d515b8754385c209a9d9d8a73",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2005-09-01",
+     "file": "processed/synthetic/himalayas/observations/2005.tif",
+     "bytes": 28730,
+     "sha256": "7623defc1fb8fba9b516af4baff33e7e463f0a22b54f64eb28a9115b8221de15",
+     "quality": "good",
+     "valid_fraction": 0.93
+    },
+    {
+     "date": "2010-09-01",
+     "file": "processed/synthetic/himalayas/observations/2010.tif",
+     "bytes": 26665,
+     "sha256": "461a621769884f9b252581f80559172cfeaec5eb8cb4d1d08b5f997cb9a12b2e",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2015-09-01",
+     "file": "processed/synthetic/himalayas/observations/2015.tif",
+     "bytes": 27317,
+     "sha256": "e27a9727760cda54902a79bf2e55643901287bdf2136092f7278392a64c6a664",
+     "quality": "good",
+     "valid_fraction": 0.97
+    },
+    {
+     "date": "2020-09-01",
+     "file": "processed/synthetic/himalayas/observations/2020.tif",
+     "bytes": 25909,
+     "sha256": "f203961b4129476bbe28a99bef9b8d914be38503279b595d2c993edfa740c559",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "glacier",
+     "label": "glacier ice",
+     "class": 6,
+     "primary": true
+    },
+    {
+     "key": "snow",
+     "label": "snow cover",
+     "class": 5,
+     "primary": false
+    },
+    {
+     "key": "glacial_lake",
+     "label": "glacial lake",
+     "class": 2,
+     "primary": false
+    },
+    {
+     "key": "exposed_terrain",
+     "label": "exposed terrain",
+     "class": 1,
+     "primary": false
+    }
+   ],
+   "documents": {
+    "historical_statistics.json": "processed/synthetic/himalayas/historical_statistics.json",
+    "historical_statistics.csv": "processed/synthetic/himalayas/historical_statistics.csv",
+    "ground_truth.json": "processed/synthetic/himalayas/ground_truth.json"
+   },
+   "change_products": [
+    "processed/synthetic/himalayas/change/exposed_terrain_2001_2020.difference.tif",
+    "processed/synthetic/himalayas/change/exposed_terrain_2001_2020.hotspots.geojson",
+    "processed/synthetic/himalayas/change/exposed_terrain_2001_2020.summary.json",
+    "processed/synthetic/himalayas/change/glacial_lake_2001_2020.difference.tif",
+    "processed/synthetic/himalayas/change/glacial_lake_2001_2020.hotspots.geojson",
+    "processed/synthetic/himalayas/change/glacial_lake_2001_2020.summary.json",
+    "processed/synthetic/himalayas/change/glacier_2001_2020.difference.tif",
+    "processed/synthetic/himalayas/change/glacier_2001_2020.hotspots.geojson",
+    "processed/synthetic/himalayas/change/glacier_2001_2020.summary.json",
+    "processed/synthetic/himalayas/change/snow_2001_2020.difference.tif",
+    "processed/synthetic/himalayas/change/snow_2001_2020.hotspots.geojson",
+    "processed/synthetic/himalayas/change/snow_2001_2020.summary.json"
+   ]
+  },
+  {
+   "id": "hyderabad-metro",
+   "path": "processed/synthetic/hyderabad",
+   "designation": "illustrative",
+   "public_label": "Illustrative Dataset",
+   "internal_origin": "generated (illustrative)",
+   "bbox": [
+    78.25,
+    17.25,
+    78.65,
+    17.6
+   ],
+   "observation_files": [
+    {
+     "date": "2000-02-01",
+     "file": "processed/synthetic/hyderabad/observations/2000.tif",
+     "bytes": 98892,
+     "sha256": "4199e5bcc68c2ad58270f7c6529cd9a2405df346e9fe7539af48d0a0fa92288b",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2005-02-01",
+     "file": "processed/synthetic/hyderabad/observations/2005.tif",
+     "bytes": 98393,
+     "sha256": "abc112661e7249cb6aa82358065aad54fbfbb23f0bc200745e119cefbe211084",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-02-01",
+     "file": "processed/synthetic/hyderabad/observations/2010.tif",
+     "bytes": 99804,
+     "sha256": "fa794b0d3474bb614999f53f854a347f5783216e1ee3d14cad1d733eb0bbcf26",
+     "quality": "good",
+     "valid_fraction": 0.97
+    },
+    {
+     "date": "2015-02-01",
+     "file": "processed/synthetic/hyderabad/observations/2015.tif",
+     "bytes": 94376,
+     "sha256": "6e733deaf1a076d719c5fb71d4e821af9eeec8805a34e313187cbb0f05749090",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-02-01",
+     "file": "processed/synthetic/hyderabad/observations/2020.tif",
+     "bytes": 91962,
+     "sha256": "3fb66a9a08fdbf2bbf81ece8f6ef7212ec1d14aaed6ea3fd9f3571c6c922e33e",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2024-02-01",
+     "file": "processed/synthetic/hyderabad/observations/2024.tif",
+     "bytes": 90027,
+     "sha256": "93cb1025e599b887e796a78fe33f5a80b0e12cfc1b95f8c98a318944453a4bbc",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    },
+    {
+     "key": "vegetation",
+     "label": "vegetation",
+     "class": 3,
+     "primary": false
+    },
+    {
+     "key": "agriculture",
+     "label": "agriculture",
+     "class": 9,
+     "primary": false
+    },
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": false
+    }
+   ],
+   "documents": {
+    "historical_statistics.json": "processed/synthetic/hyderabad/historical_statistics.json",
+    "historical_statistics.csv": "processed/synthetic/hyderabad/historical_statistics.csv",
+    "ground_truth.json": "processed/synthetic/hyderabad/ground_truth.json"
+   },
+   "change_products": [
+    "processed/synthetic/hyderabad/change/agriculture_2000_2024.difference.tif",
+    "processed/synthetic/hyderabad/change/agriculture_2000_2024.hotspots.geojson",
+    "processed/synthetic/hyderabad/change/agriculture_2000_2024.summary.json",
+    "processed/synthetic/hyderabad/change/built_up_2000_2024.difference.tif",
+    "processed/synthetic/hyderabad/change/built_up_2000_2024.hotspots.geojson",
+    "processed/synthetic/hyderabad/change/built_up_2000_2024.summary.json",
+    "processed/synthetic/hyderabad/change/vegetation_2000_2024.difference.tif",
+    "processed/synthetic/hyderabad/change/vegetation_2000_2024.hotspots.geojson",
+    "processed/synthetic/hyderabad/change/vegetation_2000_2024.summary.json",
+    "processed/synthetic/hyderabad/change/water_2000_2024.difference.tif",
+    "processed/synthetic/hyderabad/change/water_2000_2024.hotspots.geojson",
+    "processed/synthetic/hyderabad/change/water_2000_2024.summary.json"
+   ]
+  },
+  {
+   "id": "sundarbans-west-bengal",
+   "path": "processed/synthetic/sundarbans",
+   "designation": "illustrative",
+   "public_label": "Illustrative Dataset",
+   "internal_origin": "generated (illustrative)",
+   "bbox": [
+    88.6,
+    21.55,
+    89.1,
+    22.05
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/synthetic/sundarbans/observations/2000.tif",
+     "bytes": 158757,
+     "sha256": "88e23e68333cbd4be55f0ecdd3702daad2287d8cf6522d77d5524a643e7eeb21",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2005-01-01",
+     "file": "processed/synthetic/sundarbans/observations/2005.tif",
+     "bytes": 155582,
+     "sha256": "747dc80dbb42d3b7e85dd501f8a8383a547a33f1044c65267caa96db6d3b8cfe",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/synthetic/sundarbans/observations/2010.tif",
+     "bytes": 154337,
+     "sha256": "d3659438f1db85f8d9e41fed23185840772d6a47fa36fefb064a05a81984750e",
+     "quality": "good",
+     "valid_fraction": 0.96
+    },
+    {
+     "date": "2015-01-01",
+     "file": "processed/synthetic/sundarbans/observations/2015.tif",
+     "bytes": 149955,
+     "sha256": "8e85ed049a144ae6337a711825bf3f3f352eb7d7b8d2ba47163ab49377e292ff",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/synthetic/sundarbans/observations/2020.tif",
+     "bytes": 147992,
+     "sha256": "8213c634f50e151c0cfbcce004bff933e81e2d135f0139e40c86152124b3de2c",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "mangrove",
+     "label": "mangrove",
+     "class": 8,
+     "primary": true
+    },
+    {
+     "key": "water",
+     "label": "open water",
+     "class": 2,
+     "primary": false
+    },
+    {
+     "key": "mudflat",
+     "label": "mudflat",
+     "class": 7,
+     "primary": false
+    },
+    {
+     "key": "land",
+     "label": "land (including mangrove)",
+     "class": [
+      1,
+      8
+     ],
+     "primary": false
+    }
+   ],
+   "documents": {
+    "historical_statistics.json": "processed/synthetic/sundarbans/historical_statistics.json",
+    "historical_statistics.csv": "processed/synthetic/sundarbans/historical_statistics.csv",
+    "ground_truth.json": "processed/synthetic/sundarbans/ground_truth.json"
+   },
+   "change_products": [
+    "processed/synthetic/sundarbans/change/land_2000_2020.difference.tif",
+    "processed/synthetic/sundarbans/change/land_2000_2020.hotspots.geojson",
+    "processed/synthetic/sundarbans/change/land_2000_2020.summary.json",
+    "processed/synthetic/sundarbans/change/mangrove_2000_2020.difference.tif",
+    "processed/synthetic/sundarbans/change/mangrove_2000_2020.hotspots.geojson",
+    "processed/synthetic/sundarbans/change/mangrove_2000_2020.summary.json",
+    "processed/synthetic/sundarbans/change/mudflat_2000_2020.difference.tif",
+    "processed/synthetic/sundarbans/change/mudflat_2000_2020.hotspots.geojson",
+    "processed/synthetic/sundarbans/change/mudflat_2000_2020.summary.json",
+    "processed/synthetic/sundarbans/change/water_2000_2020.difference.tif",
+    "processed/synthetic/sundarbans/change/water_2000_2020.hotspots.geojson",
+    "processed/synthetic/sundarbans/change/water_2000_2020.summary.json"
+   ]
+  }
+ ],
+ "official_source_status": {
+  "VERIFIED_DOWNLOADED": 9,
+  "VERIFIED_METADATA_ONLY": 3,
+  "ACCESS_REQUIRES_AUTHENTICATION": 5
+ },
+ "boundary_files": {
+  "countries": 1,
+  "states": 36,
+  "districts": 735,
+  "cities": 22,
+  "localities": 21,
+  "geographical_features": 11
+ },
+ "boundary_status_counts": {
+  "administrative_proxy": 22,
+  "approximate_point": 22,
+  "derived_from_official_data": 4,
+  "approximate_bbox": 4,
+  "analysis_window": 2,
+  "authoritative_simplified": 771
+ }
+}

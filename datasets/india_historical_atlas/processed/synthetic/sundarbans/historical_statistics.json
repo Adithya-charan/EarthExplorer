@@ -1,0 +1,239 @@
+{
+ "dataset_id": "sundarbans-west-bengal",
+ "name": "Sundarbans, West Bengal (illustrative)",
+ "designation": "illustrative",
+ "public_label": "Illustrative Dataset",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 286247.39,
+   "valid_ha": 286247.39,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 39977.37,
+    "Water": 174665.64,
+    "Mudflat": 12356.11,
+    "Mangrove": 59248.27
+   }
+  },
+  {
+   "date": "2005-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 286247.39,
+   "valid_ha": 286247.39,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 39402.25,
+    "Water": 177468.47,
+    "Mudflat": 11492.45,
+    "Mangrove": 57884.22
+   }
+  },
+  {
+   "date": "2010-01-01",
+   "quality": "good",
+   "valid_fraction": 0.96,
+   "readable": true,
+   "footprint_ha": 286247.39,
+   "valid_ha": 274796.22,
+   "nodata_ha": 11451.17,
+   "nodata_pct": 4.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 36621.8,
+    "Water": 172701.44,
+    "Mudflat": 10011.48,
+    "Mangrove": 55461.51
+   }
+  },
+  {
+   "date": "2015-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 286247.39,
+   "valid_ha": 286247.39,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 38367.55,
+    "Water": 181570.58,
+    "Mudflat": 9524.14,
+    "Mangrove": 56785.12
+   }
+  },
+  {
+   "date": "2020-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 286247.39,
+   "valid_ha": 286247.39,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 38122.18,
+    "Water": 182802.68,
+    "Mudflat": 8829.94,
+    "Mangrove": 56492.59
+   }
+  }
+ ],
+ "variables": {
+  "mangrove": {
+   "label": "mangrove",
+   "classes": 8,
+   "primary": true,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 59248.27,
+     "share_of_valid_pct": 20.698
+    },
+    {
+     "date": "2005-01-01",
+     "area_ha": 57884.22,
+     "share_of_valid_pct": 20.222
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 55461.51,
+     "share_of_valid_pct": 20.183
+    },
+    {
+     "date": "2015-01-01",
+     "area_ha": 56785.12,
+     "share_of_valid_pct": 19.838
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 56492.59,
+     "share_of_valid_pct": 19.736
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": -2755.68,
+   "net_change_pct": -4.65
+  },
+  "water": {
+   "label": "open water",
+   "classes": 2,
+   "primary": false,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 174665.64,
+     "share_of_valid_pct": 61.019
+    },
+    {
+     "date": "2005-01-01",
+     "area_ha": 177468.47,
+     "share_of_valid_pct": 61.998
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 172701.44,
+     "share_of_valid_pct": 62.847
+    },
+    {
+     "date": "2015-01-01",
+     "area_ha": 181570.58,
+     "share_of_valid_pct": 63.431
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 182802.68,
+     "share_of_valid_pct": 63.862
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": 8137.04,
+   "net_change_pct": 4.66
+  },
+  "mudflat": {
+   "label": "mudflat",
+   "classes": 7,
+   "primary": false,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 12356.11,
+     "share_of_valid_pct": 4.317
+    },
+    {
+     "date": "2005-01-01",
+     "area_ha": 11492.45,
+     "share_of_valid_pct": 4.015
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 10011.48,
+     "share_of_valid_pct": 3.643
+    },
+    {
+     "date": "2015-01-01",
+     "area_ha": 9524.14,
+     "share_of_valid_pct": 3.327
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 8829.94,
+     "share_of_valid_pct": 3.085
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": -3526.17,
+   "net_change_pct": -28.54
+  },
+  "land": {
+   "label": "land (including mangrove)",
+   "classes": [
+    1,
+    8
+   ],
+   "primary": false,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 99225.64,
+     "share_of_valid_pct": 34.664
+    },
+    {
+     "date": "2005-01-01",
+     "area_ha": 97286.47,
+     "share_of_valid_pct": 33.987
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 92083.31,
+     "share_of_valid_pct": 33.51
+    },
+    {
+     "date": "2015-01-01",
+     "area_ha": 95152.67,
+     "share_of_valid_pct": 33.241
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 94614.77,
+     "share_of_valid_pct": 33.053
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": -4610.87,
+   "net_change_pct": -4.65
+  }
+ },
+ "generated_at": "2026-11-15T02:09:22+00:00"
+}

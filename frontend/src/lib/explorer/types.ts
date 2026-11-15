@@ -2,6 +2,13 @@ export type Outcome = "change_detected" | "no_clear_change" | "insufficient_data
 export type Quality = "good" | "fair" | "poor";
 export type BBox = [number, number, number, number]; // west, south, east, north
 
+export interface DatasetVariable {
+  key: string;
+  label: string;
+  class: number | number[];
+  primary: boolean;
+}
+
 export interface DatasetInfo {
   id: string;
   name: string;
@@ -21,6 +28,10 @@ export interface DatasetInfo {
   classes: Record<string, string>;
   real_dataset_targets: { name: string; coverage: string; resolution_m: number }[];
   issues: string[];
+  variables: DatasetVariable[];
+  designation: string;
+  public_label: string;
+  provenance: Record<string, unknown>;
 }
 
 export interface LocationOut {
@@ -33,6 +44,25 @@ export interface LocationOut {
   source: string;
   bbox: BBox | null;
   zoom_altitude_m: number;
+  level: string;
+  hierarchy: string[];
+  boundary_status: string | null;
+}
+
+export interface BoundaryOut {
+  location_id: string;
+  name: string;
+  level: string;
+  status: string;
+  authoritative: boolean;
+  note: string;
+  source: string;
+  license: string;
+  source_id: string | null;
+  bbox: BBox | null;
+  geometry: { type: string; coordinates: unknown } | null;
+  area_km2: number | null;
+  area_is_approximate: boolean;
 }
 
 export interface PeriodCheck {
@@ -77,6 +107,7 @@ export interface SessionResponse {
   period: PeriodCheck | null;
   latest: LatestObservation | null;
   insufficient: Insufficient | null;
+  nearby_datasets: DatasetInfo[];
   is_synthetic: boolean;
   simulated_label: string | null;
 }
@@ -133,6 +164,7 @@ export interface ChangeSummary {
   thresholds: Record<string, number>;
   bbox: BBox | null;
   layers: Record<string, string>;
+  variable: DatasetVariable | null;
   is_synthetic: boolean;
   simulated_label: string | null;
 }

@@ -21,7 +21,7 @@ class HistoricalAnalysisService:
         usable = [o for o in ds.observations if ds.usable(o, min_valid)]
         o = usable[-1] if usable else ds.observations[-1]
         m = ds.meta
-        note = "The most recent observation in this dataset. Satellite products are processed after acquisition, so this is not live or real-time." + (" It is simulated." if ds.is_synthetic else "")
+        note = "The most recent observation in this dataset. Satellite products are processed after acquisition, so this is not live or real-time." + (" It belongs to an Illustrative Dataset (a generated demonstration layer)." if ds.is_synthetic else "")
         if not usable:
             note += " No observation meets the quality minimum; the newest is shown with its quality."
         return LatestObservation(

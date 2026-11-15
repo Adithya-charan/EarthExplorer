@@ -69,6 +69,23 @@ class Dataset:
         return int(self.meta.get("water_class", 2))
 
     @property
+    def variables(self) -> list[dict[str, Any]]:
+        """Trackable classes. Datasets without an explicit list track water only (the original behaviour)."""
+        vs = self.meta.get("variables")
+        if vs:
+            return [{"key": v["key"], "label": v.get("label", v["key"]), "class": [int(c) for c in v["class"]] if isinstance(v["class"], list) else int(v["class"]), "primary": bool(v.get("primary"))} for v in vs]
+        return [{"key": "water", "label": "water", "class": self.water_class, "primary": True}]
+
+    def variable(self, key: str | None = None) -> dict[str, Any]:
+        vs = self.variables
+        if key is None:
+            return next((v for v in vs if v["primary"]), vs[0])
+        for v in vs:
+            if v["key"] == key:
+                return v
+        raise ValueError(f"unknown variable '{key}'; available: {', '.join(v['key'] for v in vs)}")
+
+    @property
     def uncertain(self) -> int:
         return int(self.meta.get("uncertain_value", 255))
 
@@ -150,7 +167,7 @@ class DatasetService:
             self.rejected.clear()
             if not self.root.exists():
                 return
-            for meta_path in sorted(self.root.glob("*/dataset.json")):
+            for meta_path in sorted(p for p in self.root.rglob("dataset.json") if len(p.relative_to(self.root).parts) <= 4):
                 try:
                     ds = self._load(meta_path)
                 except Exception as exc:  # a broken dataset must not stop the others loading
@@ -218,6 +235,13 @@ class DatasetService:
 
     def covering(self, lat: float, lon: float) -> list[Dataset]:
         return [d for d in self._datasets.values() if d.covers(lat, lon)]
+
+    def intersecting(self, bbox: list[float] | None) -> list[Dataset]:
+        """Datasets whose footprint overlaps a place's extent (a state or district contains the data without the data covering its centre)."""
+        if not bbox:
+            return []
+        w, s, e, n = bbox
+        return [d for d in self._datasets.values() if not (d.bbox[2] < w or d.bbox[0] > e or d.bbox[3] < s or d.bbox[1] > n)]
 
     # ------------------------------------------------------------------------------ reads
     def read(self, ds: Dataset, o: Obs) -> np.ndarray:
@@ -320,7 +344,7 @@ class DatasetService:
                 out[o.iso] = None
                 continue
             valid = a != ds.uncertain
-            out[o.iso] = float(((a == ds.water_class) & valid).sum() / valid.sum()) if valid.any() else None
+            out[o.iso] = float((np.isin(a, ds.variable()["class"]) & valid).sum() / valid.sum()) if valid.any() else None
         return out
 
 

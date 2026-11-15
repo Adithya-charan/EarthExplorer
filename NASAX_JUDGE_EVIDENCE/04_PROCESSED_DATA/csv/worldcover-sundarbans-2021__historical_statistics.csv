@@ -1,0 +1,3 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+worldcover-sundarbans-2021,official_derived,2021-01-01,mangrove,mangrove,146454.89,51.164,whole footprint,0.0,good
+worldcover-sundarbans-2021,official_derived,2021-01-01,water,water,135580.76,47.365,whole footprint,0.0,good

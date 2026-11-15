@@ -1,0 +1,54 @@
+{
+ "dataset_id": "worldcover-sundarbans-2021",
+ "name": "Sundarbans (ESA WorldCover 2021)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2021-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 286247.39,
+   "valid_ha": 286247.39,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 367.74,
+    "Water": 135580.76,
+    "Vegetation": 1041.98,
+    "Built-up": 4.72,
+    "Mangrove": 146454.89,
+    "Agriculture": 2797.3
+   }
+  }
+ ],
+ "variables": {
+  "mangrove": {
+   "label": "mangrove",
+   "classes": 8,
+   "primary": true,
+   "series": [
+    {
+     "date": "2021-01-01",
+     "area_ha": 146454.89,
+     "share_of_valid_pct": 51.164
+    }
+   ]
+  },
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": false,
+   "series": [
+    {
+     "date": "2021-01-01",
+     "area_ha": 135580.76,
+     "share_of_valid_pct": 47.365
+    }
+   ]
+  }
+ },
+ "generated_at": "2026-11-15T02:09:21+00:00"
+}

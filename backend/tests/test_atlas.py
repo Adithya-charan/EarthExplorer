@@ -1,0 +1,114 @@
+"""India historical atlas: gazetteer, suggestions, boundaries, variables, statistics and ranking, against the real atlas on disk."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
+from fastapi.testclient import TestClient
+
+from app.config import Settings
+from app.main import create_app
+
+ATLAS = Path(__file__).resolve().parents[2] / "datasets" / "india_historical_atlas"
+pytestmark = pytest.mark.skipif(not (ATLAS / "geographical_boundaries" / "index.json").exists() or not (ATLAS / "processed").exists(), reason="atlas not generated")
+
+
+@pytest.fixture(scope="module")
+def client(tmp_path_factory) -> TestClient:
+    t = tmp_path_factory.mktemp("atlas")
+    s = Settings(upload_dir=t / "u", datasets_dir=t / "n", explorer_dir=ATLAS / "processed", atlas_dir=ATLAS, explorer_generate_demo=False, groq_api_key=None)
+    return TestClient(create_app(s))
+
+
+def session(c: TestClient, q: str, sy: int = 2000, ey: int = 2020, **kw) -> dict:
+    r = c.post("/api/explorer/session", json={"query": q, "start_year": sy, "end_year": ey, **kw})
+    assert r.status_code == 200, r.text
+    return r.json()
+
+
+def test_all_required_regions_are_loaded_and_labelled(client):
+    ds = {d["id"]: d for d in client.get("/api/explorer/datasets").json()}
+    for needed in ("himalayas-dhauliganga", "sundarbans-west-bengal", "hyderabad-metro", "bellandur-lake"):
+        assert needed in ds, needed
+        assert ds[needed]["public_label"] == "Illustrative Dataset"
+        assert ds[needed]["designation"] == "illustrative"
+    official = [d for d in ds.values() if d["designation"] != "illustrative"]
+    assert official and all(d["public_label"] == "Satellite Observations" for d in official)
+
+
+def test_suggestions_show_name_hierarchy_and_type(client):
+    r = client.get("/api/explorer/locations/suggest", params={"q": "Bellan"}).json()
+    assert r and r[0]["name"].startswith("Bellandur")
+    assert r[0]["level"] and r[0]["hierarchy"]
+    assert client.get("/api/explorer/locations/suggest", params={"q": "z"}).json() == []
+
+
+def test_similar_names_are_disambiguated_by_hierarchy(client):
+    r = client.get("/api/explorer/locations/suggest", params={"q": "Hyderabad"}).json()
+    assert len({tuple(x["hierarchy"]) + (x["level"],) for x in r}) == len(r)
+
+
+def test_boundaries_are_real_or_honestly_approximate(client):
+    loc = session(client, "Bellandur Lake")["location"]
+    b = client.get(f"/api/explorer/locations/{loc['id']}/boundary").json()
+    assert b["geometry"] and b["status"] in {"derived_from_official_data", "authoritative_simplified"}
+    assert b["area_km2"] and 0.5 < b["area_km2"] < 10
+    pt = session(client, "Gachibowli")["location"]
+    bp = client.get(f"/api/explorer/locations/{pt['id']}/boundary").json()
+    assert bp["authoritative"] is False and bp["status"] in {"approximate_point", "approximate_bbox"}
+
+
+def test_a_place_without_a_dataset_is_never_given_history(client):
+    s = session(client, "Chennai")
+    assert s["status"] == "no_dataset" and s["dataset"] is None and s["latest"] is None
+    assert s["insufficient"]["code"] == "no_dataset"
+
+
+def test_a_parent_area_points_to_the_datasets_inside_it(client):
+    s = session(client, "Uttarakhand")
+    assert s["status"] == "no_dataset"
+    assert any(d["id"] == "himalayas-dhauliganga" for d in s["nearby_datasets"])
+
+
+def test_unknown_place_is_not_found(client):
+    assert session(client, "Zzzzqqq")["status"] == "not_found"
+
+
+def test_official_data_is_preferred_where_it_covers_the_period(client):
+    s = session(client, "Hyderabad", 2000, 2020)
+    assert s["status"] == "ready"
+    assert s["dataset"]["designation"] != "illustrative"
+    s2 = session(client, "Bellandur Lake", 2002, 2022)
+    assert s2["status"] == "ready" and s2["dataset"]["public_label"] in {"Illustrative Dataset", "Satellite Observations"}
+
+
+def test_variables_are_analysed_separately_and_unknown_variables_are_rejected(client):
+    ds = next(d for d in client.get("/api/explorer/datasets").json() if d["id"] == "himalayas-dhauliganga")
+    keys = {v["key"] for v in ds["variables"]}
+    assert {"glacier", "snow"} <= keys or len(keys) >= 2
+    a = client.post("/api/explorer/analysis/detect-change", json={"dataset_id": ds["id"], "start_year": 2001, "end_year": 2020, "params": {"variable": sorted(keys)[0]}}).json()
+    b = client.post("/api/explorer/analysis/detect-change", json={"dataset_id": ds["id"], "start_year": 2001, "end_year": 2020, "params": {"variable": sorted(keys)[-1]}}).json()
+    assert a["variable"]["key"] != b["variable"]["key"]
+    bad = client.post("/api/explorer/analysis/detect-change", json={"dataset_id": ds["id"], "start_year": 2001, "end_year": 2020, "params": {"variable": "nonsense"}})
+    assert bad.status_code == 422
+
+
+def test_single_date_datasets_never_report_zero_change(client):
+    ds = next(d for d in client.get("/api/explorer/datasets").json() if d["id"] == "worldcover-sundarbans-2021")
+    r = client.post("/api/explorer/analysis/detect-change", json={"dataset_id": ds["id"], "start_year": 2000, "end_year": 2024}).json()
+    assert r["outcome"] == "insufficient_data" and r["areas"].get("net_ha") in (None, "")
+
+
+def test_statistics_endpoint_serves_measured_series(client):
+    st = client.get("/api/explorer/datasets/bellandur-lake/statistics").json()
+    assert st["observations"] and st["variables"]
+    water = st["variables"].get("water") or next(iter(st["variables"].values()))
+    assert all(p["area_ha"] >= 0 for p in water["series"])
+
+
+def test_metadata_catalogue_and_registry_endpoints(client):
+    assert client.get("/api/explorer/datasets/bellandur-lake/metadata").status_code == 200
+    assert client.get("/api/explorer/catalogue").status_code == 200
+    r = client.get("/api/explorer/source-registry")
+    assert r.status_code in (200, 404)

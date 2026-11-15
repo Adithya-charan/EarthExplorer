@@ -12,7 +12,7 @@ from app.explorer.change import ChangeDetectionService, check_period, dataset_in
 from app.explorer.datasets import inspect_file
 from app.explorer.rendering import difference_geotiff
 from app.explorer.schemas import (
-    ChangeSummary, ChatAnswer, ChatRequest, DatasetInfo, DetectRequest, Explanation, Insufficient, LocationOut, ObservationInfo, SessionRequest, SessionResponse,
+    BoundaryOut, ChangeSummary, ChatAnswer, ChatRequest, DatasetInfo, DetectRequest, Explanation, Insufficient, LocationOut, ObservationInfo, SessionRequest, SessionResponse,
 )
 from app.explorer.services import ExplorerServices
 
@@ -38,6 +38,19 @@ def search_locations(svc: Svc, q: Annotated[str, Query(min_length=1, max_length=
     return svc.locations.search(q, online=online)
 
 
+@router.get("/locations/suggest", response_model=list[LocationOut])
+def suggest_locations(svc: Svc, q: Annotated[str, Query(min_length=1, max_length=200)], limit: Annotated[int, Query(ge=1, le=12)] = 8) -> list[LocationOut]:
+    return svc.locations.suggest(q, limit)
+
+
+@router.get("/locations/{location_id:path}/boundary", response_model=BoundaryOut)
+def location_boundary(location_id: str, svc: Svc) -> BoundaryOut:
+    b = svc.locations.boundary(location_id)
+    if b is None:
+        raise not_found("location_not_found", f"No location with id '{location_id}'.")
+    return b
+
+
 @router.get("/locations/{location_id:path}", response_model=LocationOut)
 def get_location(location_id: str, svc: Svc) -> LocationOut:
     loc = svc.locations.get(location_id)
@@ -52,6 +65,7 @@ def start_session(body: SessionRequest, svc: Svc) -> SessionResponse:
     _need_order(body.start_year, body.end_year)
     examples = svc.locations.examples()
     alternatives: list[LocationOut] = []
+    ambiguous = False
     if body.lat is not None and body.lon is not None:
         loc = svc.locations.from_point(body.lat, body.lon)
     elif body.location_id:
@@ -66,19 +80,21 @@ def start_session(body: SessionRequest, svc: Svc) -> SessionResponse:
                 message=f"No place called \"{body.query.strip()}\" could be found. Check the spelling, add the city or country, or try one of the examples.",
             )
         loc, alternatives = found[0], found[1:]
+        ambiguous = any(a.name.lower() == loc.name.lower() and a.hierarchy != loc.hierarchy for a in alternatives)
     else:
         raise unprocessable("missing_location", "Give a place name, a location id, or coordinates.")
 
-    datasets = svc.datasets.covering(loc.lat, loc.lon)
+    datasets = _rank(svc.datasets.covering(loc.lat, loc.lon), body.start_year, body.end_year, loc.level)
+    if body.dataset_id:
+        datasets = sorted(datasets, key=lambda d: 0 if d.id == body.dataset_id else 1)
     if not datasets:
+        nearby = [dataset_info(svc.datasets, d) for d in svc.datasets.intersecting(loc.bbox)]
         ins = Insufficient(
             code="no_dataset", reason=f"No loaded dataset covers {loc.name}. The globe can show the place, but there are no observations to compare over time.",
             missing=["a dataset whose footprint contains this location"],
         )
-        return SessionResponse(
-            status="no_dataset", location=loc, alternatives=alternatives, examples=examples, insufficient=ins,
-            message=f"Found {loc.display_name}, but no dataset covers it. Places with data: " + ", ".join(d.meta["name"] for d in svc.datasets.list()) + ".",
-        )
+        msg = (f"Found {loc.display_name}. Historical layers exist inside this area: " + ", ".join(d.name for d in nearby) + ".") if nearby else f"Found {loc.display_name}, but no dataset covers it, so there is no observation history to show here."
+        return SessionResponse(status="no_dataset", location=loc, alternatives=alternatives, examples=examples, insufficient=ins, nearby_datasets=nearby, message=msg)
     infos = [dataset_info(svc.datasets, d) for d in datasets]
     ds = datasets[0]
     period = check_period(ds, body.start_year, body.end_year)
@@ -87,7 +103,26 @@ def start_session(body: SessionRequest, svc: Svc) -> SessionResponse:
     if period.status in ("outside", "too_short"):
         ins = Insufficient(code=f"period_{period.status}", reason=" ".join(period.messages), missing=["observations inside the requested period"], suggested_period={"start_year": int(ds.meta["coverage"]["start"][:4]), "end_year": int(ds.meta["coverage"]["end"][:4])})
         return SessionResponse(status="period_unsupported", message=" ".join(period.messages), insufficient=ins, **base)
-    return SessionResponse(status="ready", message=" ".join(period.messages) or f"Dataset {ds.meta['name']} covers this location.", **base)
+    msg = " ".join(period.messages) or f"Dataset {ds.meta['name']} covers this location."
+    if ambiguous:
+        return SessionResponse(status="ambiguous", message=f"Several places are called {loc.name}. Showing {loc.display_name}; pick another below if you meant a different one. " + msg, **base)
+    return SessionResponse(status="ready", message=msg, **base)
+
+
+AFFINITY = {"lake": {"water", "lake_extent"}, "river": {"water", "glacier"}, "coast": {"mangrove", "land", "water"}, "island": {"mangrove", "land"}, "forest": {"mangrove"}, "glacier": {"glacier"}, "mountain": {"glacier"},
+            "city": {"built_up"}, "locality": {"built_up"}, "landmark": {"built_up"}, "district": {"built_up"}}
+
+
+def _rank(found: list, start_year: int, end_year: int, level: str = "place") -> list:
+    """Datasets that can answer the requested period come first, then those whose main variable suits the place type; official-derived data before illustrative layers."""
+    want = AFFINITY.get(level, set())
+
+    def key(d) -> tuple:
+        ok = check_period(d, start_year, end_year).status in ("ok", "clipped")
+        fits = d.variable()["key"] in want if want else True
+        return (0 if ok else 1, 0 if fits else 1, 1 if d.is_synthetic else 0, -len(d.observations), d.id)
+
+    return sorted(found, key=key)
 
 
 # ------------------------------------------------------------------------------------ datasets
@@ -106,6 +141,36 @@ def list_observations(dataset_id: str, svc: Svc, start_year: int | None = None, 
     ds = svc.datasets.get(dataset_id)
     obs = svc.history.timeline(ds)
     return [o for o in obs if (start_year is None or int(o.date[:4]) >= start_year) and (end_year is None or int(o.date[:4]) <= end_year)]
+
+
+@router.get("/datasets/{dataset_id}/metadata")
+def dataset_metadata(dataset_id: str, svc: Svc) -> dict[str, Any]:
+    ds = svc.datasets.get(dataset_id)
+    meta = dict(ds.meta)
+    reg = svc.registry()
+    linked = sorted({o.get("provenance", {}).get("source_id") for o in meta["observations"] if o.get("provenance", {}).get("source_id")})
+    meta["linked_sources"] = [reg[i] for i in linked if i in reg]
+    return meta
+
+
+@router.get("/datasets/{dataset_id}/statistics")
+def dataset_stats(dataset_id: str, svc: Svc) -> dict[str, Any]:
+    return svc.statistics(svc.datasets.get(dataset_id))
+
+
+@router.get("/catalogue")
+def catalogue(svc: Svc) -> dict[str, Any]:
+    rows = []
+    for d in svc.datasets.list():
+        m = d.meta
+        rows.append({"id": d.id, "name": m["name"], "designation": m.get("designation", "illustrative" if d.is_synthetic else "official"), "public_label": m.get("public_label"), "bbox": d.bbox, "coverage": m["coverage"],
+                     "observations": len(d.observations), "temporal_resolution": d.temporal, "resolution_m": m.get("resolution_m"), "variables": [v["key"] for v in d.variables], "source": m.get("source"), "format": m.get("format")})
+    return {"datasets": rows, "count": len(rows)}
+
+
+@router.get("/source-registry")
+def source_registry(svc: Svc) -> dict[str, Any]:
+    return {"entries": list(svc.registry().values())}
 
 
 @router.get("/datasets/{dataset_id}/validate")
@@ -163,9 +228,10 @@ def change_layers(analysis_id: str, svc: Svc) -> dict[str, Any]:
     s = svc.changes.get(analysis_id).summary
     return {
         "bbox": s.bbox, "layers": s.layers, "first_observation": s.first_observation, "last_observation": s.last_observation,
+        "variable": (s.variable or {}).get("label", "water"),
         "legend": [
-            {"key": "water", "label": "Water (unchanged)", "color": "#388bfd"}, {"key": "loss", "label": "Water lost", "color": "#e63946"},
-            {"key": "gain", "label": "Water gained", "color": "#2ecc71"}, {"key": "land", "label": "Unchanged land", "color": "#7a808c"},
+            {"key": "water", "label": f"{(s.variable or {}).get('label', 'water').capitalize()} (unchanged)", "color": "#388bfd"}, {"key": "loss", "label": f"{(s.variable or {}).get('label', 'water').capitalize()} lost", "color": "#e63946"},
+            {"key": "gain", "label": f"{(s.variable or {}).get('label', 'water').capitalize()} gained", "color": "#2ecc71"}, {"key": "land", "label": "Unchanged other", "color": "#7a808c"},
             {"key": "uncertain", "label": "Uncertain (cloud / no data)", "color": "#cdd7e8", "hatched": True},
         ],
     }

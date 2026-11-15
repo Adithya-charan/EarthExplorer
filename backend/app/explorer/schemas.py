@@ -21,8 +21,9 @@ class ChangeParams(BaseModel):
     water_frequency: float = Field(0.5, gt=0.0, le=1.0, description="A pixel is water when it is water in at least this share of its valid observations.")
     min_change_pct: float = Field(5.0, ge=0.0, le=100.0, description="Gross change (gain + loss) must exceed this % of the starting water area.")
     min_hotspot_ha: float = Field(2.0, ge=0.0, le=10_000.0, description="Smallest change area reported as a hotspot.")
-    min_feature_px: int = Field(3, ge=1, le=15, description="Change features narrower than this many pixels are treated as positional noise.")
+    min_feature_px: int | None = Field(None, ge=1, le=15, description="Change features narrower than this many pixels are treated as positional noise. Default: the dataset setting, else 3.")
     noise_factor: float = Field(2.0, ge=0.0, le=20.0, description="Gross change must exceed this multiple of the year-to-year scatter.")
+    variable: str | None = Field(None, max_length=40, description="Which tracked variable to analyse (see the dataset's variables); default is the dataset's primary one.")
 
 
 class DetectRequest(BaseModel):
@@ -42,6 +43,7 @@ class SessionRequest(BaseModel):
     start_year: int = Field(ge=1800, le=2200)
     end_year: int = Field(ge=1800, le=2200)
     online: bool = True
+    dataset_id: str | None = Field(None, max_length=120, description="Prefer this dataset (when it covers the place) as the primary one.")
 
 
 class ChatRequest(BaseModel):
@@ -78,6 +80,10 @@ class DatasetInfo(BaseModel):
     classes: dict[str, str]
     real_dataset_targets: list[dict[str, Any]] = Field(default_factory=list)
     issues: list[str] = Field(default_factory=list)
+    variables: list[dict[str, Any]] = Field(default_factory=list)
+    designation: str = "official"
+    public_label: str = "Historical Observations"
+    provenance: dict[str, Any] = Field(default_factory=dict)
 
 
 class LocationOut(BaseModel):
@@ -90,6 +96,25 @@ class LocationOut(BaseModel):
     source: str
     bbox: list[float] | None = None
     zoom_altitude_m: float = 12_000.0
+    level: str = "place"
+    hierarchy: list[str] = Field(default_factory=list)
+    boundary_status: str | None = None
+
+
+class BoundaryOut(BaseModel):
+    location_id: str
+    name: str
+    level: str
+    status: str
+    authoritative: bool
+    note: str
+    source: str = ""
+    license: str = ""
+    source_id: str | None = None
+    bbox: list[float] | None = None
+    geometry: dict[str, Any] | None = None
+    area_km2: float | None = None
+    area_is_approximate: bool = False
 
 
 class PeriodCheck(BaseModel):
@@ -134,6 +159,7 @@ class SessionResponse(BaseModel):
     period: PeriodCheck | None = None
     latest: LatestObservation | None = None
     insufficient: Insufficient | None = None
+    nearby_datasets: list[DatasetInfo] = Field(default_factory=list)
     is_synthetic: bool = False
     simulated_label: str | None = None
 
@@ -183,6 +209,7 @@ class ChangeSummary(BaseModel):
     thresholds: dict[str, Any] = Field(default_factory=dict)
     bbox: list[float] | None = None
     layers: dict[str, str] = Field(default_factory=dict)
+    variable: dict[str, Any] | None = None
     is_synthetic: bool = False
     simulated_label: str | None = None
 

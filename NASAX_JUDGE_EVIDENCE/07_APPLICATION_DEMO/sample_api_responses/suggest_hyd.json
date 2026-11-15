@@ -1,0 +1,84 @@
+{
+ "request": "GET /api/explorer/locations/suggest?q=Hyd",
+ "status_code": 200,
+ "response": [
+  {
+   "id": "city:hyderabad",
+   "name": "Hyderabad",
+   "display_name": "Hyderabad, Telangana, India",
+   "lat": 17.385,
+   "lon": 78.4867,
+   "kind": "city",
+   "source": "reference point (approximate), district from geoBoundaries ADM2",
+   "bbox": [
+    78.3467,
+    17.2577,
+    78.6267,
+    17.5123
+   ],
+   "zoom_altitude_m": 71216.71199999997,
+   "level": "city",
+   "hierarchy": [
+    "India",
+    "Telangana"
+   ],
+   "boundary_status": "administrative_proxy"
+  },
+  {
+   "id": "district:telangana:hydrabad:211579",
+   "name": "Hydrabad",
+   "display_name": "Hydrabad, Telangana, India",
+   "lat": 17.41437,
+   "lon": 78.4673,
+   "kind": "district",
+   "source": "geoBoundaries gbOpen IND ADM2",
+   "bbox": [
+    78.35824,
+    17.31003,
+    78.57936,
+    17.51883
+   ],
+   "zoom_altitude_m": 58405.53600000003,
+   "level": "district",
+   "hierarchy": [
+    "India",
+    "Telangana"
+   ],
+   "boundary_status": "authoritative_simplified"
+  },
+  {
+   "id": "ne:place:1159150649",
+   "name": "Hyderabad",
+   "display_name": "Hyderabad, Sind, Pakistan",
+   "lat": 25.381933,
+   "lon": 68.373043,
+   "kind": "city or town",
+   "source": "Natural Earth",
+   "bbox": null,
+   "zoom_altitude_m": 12000.0,
+   "level": "city or town",
+   "hierarchy": [
+    "Pakistan",
+    "Sind"
+   ],
+   "boundary_status": null
+  },
+  {
+   "id": "ne:place:1159126305",
+   "name": "Hydaburg",
+   "display_name": "Hydaburg, Alaska, United States of America",
+   "lat": 55.21398,
+   "lon": -132.800639,
+   "kind": "city or town",
+   "source": "Natural Earth",
+   "bbox": null,
+   "zoom_altitude_m": 12000.0,
+   "level": "city or town",
+   "hierarchy": [
+    "United States of America",
+    "Alaska"
+   ],
+   "boundary_status": null
+  }
+ ]
+}

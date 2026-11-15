@@ -1,0 +1,29 @@
+{
+ "region": "bellandur-lake",
+ "seed": 404,
+ "bbox": [
+  77.62,
+  12.9,
+  77.72,
+  12.99
+ ],
+ "res_deg": 0.00015,
+ "years": [
+  2002,
+  2005,
+  2010,
+  2015,
+  2019,
+  2022
+ ],
+ "month": 2,
+ "rules": [
+  "The lake outline is nearly constant (a small shore sector is built over, about 2 percent of the lake).",
+  "Aquatic vegetation expands in the shallow zones, replacing open water cover while the lake extent stays nearly the same.",
+  "Built-up area grows around village nuclei and an east-west corridor, outside the lake zone only."
+ ],
+ "cloud_fraction_by_year": {
+  "2015": 0.03
+ },
+ "designation": "illustrative"
+}

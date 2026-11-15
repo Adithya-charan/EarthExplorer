@@ -81,7 +81,7 @@ export function Timeline(p: Props) {
           </span>
           <span className="ml-2 text-[11px] text-[color:var(--nx-muted)]">
             {p.index + 1} of {n}
-            {p.simulated ? " · simulated" : ""}
+            {p.simulated ? " · illustrative" : ""}
           </span>
         </div>
       </div>

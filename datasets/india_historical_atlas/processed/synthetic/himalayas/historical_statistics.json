@@ -1,0 +1,239 @@
+{
+ "dataset_id": "himalayas-dhauliganga",
+ "name": "Dhauliganga catchment, Uttarakhand (illustrative)",
+ "designation": "illustrative",
+ "public_label": "Illustrative Dataset",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2001-09-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 191176.48,
+   "valid_ha": 191176.48,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 56412.2,
+    "Vegetation": 96497.73,
+    "Snow": 20182.7,
+    "Glacier ice": 18083.85
+   }
+  },
+  {
+   "date": "2005-09-01",
+   "quality": "good",
+   "valid_fraction": 0.93,
+   "readable": true,
+   "footprint_ha": 191176.48,
+   "valid_ha": 177797.38,
+   "nodata_ha": 13379.1,
+   "nodata_pct": 7.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 55451.11,
+    "Vegetation": 90475.72,
+    "Snow": 15054.96,
+    "Glacier ice": 16815.58
+   }
+  },
+  {
+   "date": "2010-09-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 191176.48,
+   "valid_ha": 191176.48,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 64993.98,
+    "Water": 0.38,
+    "Vegetation": 96502.7,
+    "Snow": 13357.25,
+    "Glacier ice": 16322.16
+   }
+  },
+  {
+   "date": "2015-09-01",
+   "quality": "good",
+   "valid_fraction": 0.97,
+   "readable": true,
+   "footprint_ha": 191176.48,
+   "valid_ha": 185442.63,
+   "nodata_ha": 5733.85,
+   "nodata_pct": 3.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 57822.43,
+    "Water": 8.78,
+    "Vegetation": 94070.86,
+    "Snow": 19334.77,
+    "Glacier ice": 14205.78
+   }
+  },
+  {
+   "date": "2020-09-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 191176.48,
+   "valid_ha": 191176.48,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Other land / exposed terrain": 63225.46,
+    "Water": 32.46,
+    "Vegetation": 96491.24,
+    "Snow": 16888.08,
+    "Glacier ice": 14539.24
+   }
+  }
+ ],
+ "variables": {
+  "glacier": {
+   "label": "glacier ice",
+   "classes": 6,
+   "primary": true,
+   "series": [
+    {
+     "date": "2001-09-01",
+     "area_ha": 18083.85,
+     "share_of_valid_pct": 9.459
+    },
+    {
+     "date": "2005-09-01",
+     "area_ha": 16815.58,
+     "share_of_valid_pct": 9.458
+    },
+    {
+     "date": "2010-09-01",
+     "area_ha": 16322.16,
+     "share_of_valid_pct": 8.538
+    },
+    {
+     "date": "2015-09-01",
+     "area_ha": 14205.78,
+     "share_of_valid_pct": 7.66
+    },
+    {
+     "date": "2020-09-01",
+     "area_ha": 14539.24,
+     "share_of_valid_pct": 7.605
+    }
+   ],
+   "first_date": "2001-09-01",
+   "last_date": "2020-09-01",
+   "net_change_ha": -3544.61,
+   "net_change_pct": -19.6
+  },
+  "snow": {
+   "label": "snow cover",
+   "classes": 5,
+   "primary": false,
+   "series": [
+    {
+     "date": "2001-09-01",
+     "area_ha": 20182.7,
+     "share_of_valid_pct": 10.557
+    },
+    {
+     "date": "2005-09-01",
+     "area_ha": 15054.96,
+     "share_of_valid_pct": 8.467
+    },
+    {
+     "date": "2010-09-01",
+     "area_ha": 13357.25,
+     "share_of_valid_pct": 6.987
+    },
+    {
+     "date": "2015-09-01",
+     "area_ha": 19334.77,
+     "share_of_valid_pct": 10.426
+    },
+    {
+     "date": "2020-09-01",
+     "area_ha": 16888.08,
+     "share_of_valid_pct": 8.834
+    }
+   ],
+   "first_date": "2001-09-01",
+   "last_date": "2020-09-01",
+   "net_change_ha": -3294.62,
+   "net_change_pct": -16.32
+  },
+  "glacial_lake": {
+   "label": "glacial lake",
+   "classes": 2,
+   "primary": false,
+   "series": [
+    {
+     "date": "2001-09-01",
+     "area_ha": 0.0,
+     "share_of_valid_pct": 0.0
+    },
+    {
+     "date": "2005-09-01",
+     "area_ha": 0.0,
+     "share_of_valid_pct": 0.0
+    },
+    {
+     "date": "2010-09-01",
+     "area_ha": 0.38,
+     "share_of_valid_pct": 0.0
+    },
+    {
+     "date": "2015-09-01",
+     "area_ha": 8.78,
+     "share_of_valid_pct": 0.005
+    },
+    {
+     "date": "2020-09-01",
+     "area_ha": 32.46,
+     "share_of_valid_pct": 0.017
+    }
+   ],
+   "first_date": "2001-09-01",
+   "last_date": "2020-09-01",
+   "net_change_ha": 32.46,
+   "net_change_pct": null
+  },
+  "exposed_terrain": {
+   "label": "exposed terrain",
+   "classes": 1,
+   "primary": false,
+   "series": [
+    {
+     "date": "2001-09-01",
+     "area_ha": 56412.2,
+     "share_of_valid_pct": 29.508
+    },
+    {
+     "date": "2005-09-01",
+     "area_ha": 55451.11,
+     "share_of_valid_pct": 31.188
+    },
+    {
+     "date": "2010-09-01",
+     "area_ha": 64993.98,
+     "share_of_valid_pct": 33.997
+    },
+    {
+     "date": "2015-09-01",
+     "area_ha": 57822.43,
+     "share_of_valid_pct": 31.181
+    },
+    {
+     "date": "2020-09-01",
+     "area_ha": 63225.46,
+     "share_of_valid_pct": 33.072
+    }
+   ],
+   "first_date": "2001-09-01",
+   "last_date": "2020-09-01",
+   "net_change_ha": 6813.26,
+   "net_change_pct": 12.08
+  }
+ },
+ "generated_at": "2026-11-15T02:09:21+00:00"
+}

@@ -15,9 +15,26 @@ import type { BBox, HotspotCollection } from "@/lib/explorer/types";
 
 type Cesium = typeof import("cesium");
 
+export interface CameraState {
+  lon: number;
+  lat: number;
+  height: number;
+  heading: number;
+  pitch: number;
+  roll: number;
+}
+
 export type GlobeFocus =
   | { kind: "place"; token: number; lon: number; lat: number; altitude: number; bbox: BBox | null }
-  | { kind: "sphere"; token: number; lon: number; lat: number; radius: number };
+  | { kind: "sphere"; token: number; lon: number; lat: number; radius: number }
+  | ({ kind: "camera"; token: number } & CameraState);
+
+export interface BoundaryShape {
+  id: string;
+  geometry: { type: string; coordinates: unknown };
+  /** Approximate outlines are drawn dashed and amber so they are never mistaken for an authoritative boundary. */
+  approximate: boolean;
+}
 
 export interface GlobeProps {
   focus: GlobeFocus | null;
@@ -27,6 +44,8 @@ export interface GlobeProps {
   prefetch: LayerSpec[];
   splitPosition: number;
   hotspots: HotspotCollection | null;
+  boundary?: BoundaryShape | null;
+  onCamera?: (c: CameraState) => void;
   showHotspots: boolean;
   activeHotspot: string | null;
   spin: boolean;
@@ -58,6 +77,7 @@ export default function Globe(props: GlobeProps) {
   const providerCache = useRef(new Map<string, Promise<import("cesium").SingleTileImageryProvider>>());
   const markerRef = useRef<import("cesium").Entity[]>([]);
   const hotspotRef = useRef<import("cesium").Entity[]>([]);
+  const boundaryRef = useRef<import("cesium").Entity[]>([]);
   const lastFocus = useRef(0);
   const readyRef = useRef(false);
   const syncRef = useRef<() => void>(() => undefined);
@@ -118,6 +138,12 @@ export default function Globe(props: GlobeProps) {
 
         viewer.scene.preRender.addEventListener(() => {
           if (propsRef.current.spin && !propsRef.current.reducedMotion) viewer!.camera.rotate(C.Cartesian3.UNIT_Z, -0.0005);
+        });
+        viewer.camera.moveEnd.addEventListener(() => {
+          const v = viewerRef.current;
+          if (!v || v.isDestroyed()) return;
+          const c = v.camera.positionCartographic;
+          propsRef.current.onCamera?.({ lon: C.Math.toDegrees(c.longitude), lat: C.Math.toDegrees(c.latitude), height: c.height, heading: v.camera.heading, pitch: v.camera.pitch, roll: v.camera.roll });
         });
         const handler = new C.ScreenSpaceEventHandler(viewer.canvas);
         for (const t of [C.ScreenSpaceEventType.LEFT_DOWN, C.ScreenSpaceEventType.WHEEL, C.ScreenSpaceEventType.PINCH_START, C.ScreenSpaceEventType.RIGHT_DOWN]) {
@@ -299,6 +325,34 @@ export default function Globe(props: GlobeProps) {
     }
   };
 
+  const applyBoundary = () => {
+    const C = cesiumRef.current;
+    const viewer = viewerRef.current;
+    if (!C || !viewer || viewer.isDestroyed()) return;
+    for (const e of boundaryRef.current) viewer.entities.remove(e);
+    boundaryRef.current = [];
+    const b = propsRef.current.boundary;
+    if (!b || !b.geometry) return;
+    const color = C.Color.fromCssColorString(b.approximate ? "#fbbf24" : "#22d3ee");
+    const polys: number[][][][] = b.geometry.type === "Polygon" ? [b.geometry.coordinates as number[][][]] : b.geometry.type === "MultiPolygon" ? (b.geometry.coordinates as number[][][][]) : [];
+    for (const poly of polys) {
+      const outer = poly[0].flat();
+      if (outer.length < 6) continue;
+      const holes = poly.slice(1).map((h) => new C.PolygonHierarchy(C.Cartesian3.fromDegreesArray(h.flat())));
+      boundaryRef.current.push(
+        viewer.entities.add({
+          polygon: { hierarchy: new C.PolygonHierarchy(C.Cartesian3.fromDegreesArray(outer), holes), material: color.withAlpha(b.approximate ? 0.05 : 0.08), classificationType: C.ClassificationType.TERRAIN },
+          polyline: {
+            positions: C.Cartesian3.fromDegreesArray(outer),
+            width: b.approximate ? 2.5 : 3,
+            clampToGround: true,
+            material: b.approximate ? new C.PolylineDashMaterialProperty({ color, dashLength: 14 }) : new C.PolylineGlowMaterialProperty({ color, glowPower: 0.18 }),
+          },
+        }),
+      );
+    }
+  };
+
   // ------------------------------------------------------------------------------------ camera
   const flyTo = (f: GlobeFocus) => {
     const C = cesiumRef.current;
@@ -310,6 +364,16 @@ export default function Globe(props: GlobeProps) {
     cam.cancelFlight();
     const done = () => propsRef.current.onFlightEnd(f.token);
     const topDown = { heading: 0, pitch: -C.Math.PI_OVER_TWO, roll: 0 };
+    if (f.kind === "camera") {
+      const dest = C.Cartesian3.fromDegrees(f.lon, f.lat, f.height);
+      if (reduced) {
+        cam.setView({ destination: dest, orientation: { heading: f.heading, pitch: f.pitch, roll: f.roll } });
+        done();
+      } else {
+        cam.flyTo({ destination: dest, orientation: { heading: f.heading, pitch: f.pitch, roll: f.roll }, duration: 1.8, easingFunction: C.EasingFunction.QUADRATIC_IN_OUT, complete: done, cancel: done });
+      }
+      return;
+    }
     if (f.kind === "sphere") {
       const sphere = new C.BoundingSphere(C.Cartesian3.fromDegrees(f.lon, f.lat), f.radius);
       const offset = new C.HeadingPitchRange(0, -C.Math.PI_OVER_TWO, f.radius * 3.4);
@@ -354,6 +418,7 @@ export default function Globe(props: GlobeProps) {
     applySlot("secondary", p.secondary);
     applyMarker();
     applyHotspots();
+    applyBoundary();
     const v = viewerRef.current;
     if (v && !v.isDestroyed()) v.scene.splitPosition = p.splitPosition;
     if (p.focus) flyTo(p.focus);
@@ -380,6 +445,9 @@ export default function Globe(props: GlobeProps) {
     if (readyRef.current) applyHotspots();
      
   }, [props.hotspots, props.showHotspots, props.activeHotspot]);
+  useEffect(() => {
+    if (readyRef.current) applyBoundary();
+  }, [props.boundary?.id, props.boundary?.approximate]);
   useEffect(() => {
     const v = viewerRef.current;
     if (readyRef.current && v && !v.isDestroyed()) v.scene.splitPosition = props.splitPosition;

@@ -102,7 +102,7 @@ def test_outcome_a_matches_ground_truth(ex_client, data_dir):
     assert ne["centroid"]["lat"] > BELL.lat and ne["centroid"]["lon"] > BELL.lon
     assert s["most_affected"]["kind"] == "loss" and s["trend"]["direction"] == "decreasing"
     assert s["progression"][0]["year"] == 2005 and s["progression"][-1]["cumulative_loss_ha"] == pytest.approx(a["lost_ha"], rel=0.15)
-    assert s["confidence"] in {"high", "medium"} and s["limitations"] and "SIMULATED" in s["limitations"][0]
+    assert s["confidence"] in {"high", "medium"} and s["limitations"] and "Illustrative Dataset" in s["limitations"][0]
 
 
 def test_outcome_b_stable_lake_is_not_reported_as_change(ex_client):

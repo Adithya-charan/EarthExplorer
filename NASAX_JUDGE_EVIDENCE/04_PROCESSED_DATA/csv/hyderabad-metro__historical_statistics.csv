@@ -1,0 +1,25 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+hyderabad-metro,illustrative,2000-02-01,built_up,built-up area,37605.52,22.844,whole footprint,0.0,good
+hyderabad-metro,illustrative,2005-02-01,built_up,built-up area,42026.19,25.529,whole footprint,0.0,good
+hyderabad-metro,illustrative,2010-02-01,built_up,built-up area,47402.77,29.686,whole footprint,3.0,good
+hyderabad-metro,illustrative,2015-02-01,built_up,built-up area,54932.06,33.369,whole footprint,0.0,good
+hyderabad-metro,illustrative,2020-02-01,built_up,built-up area,62216.63,37.794,whole footprint,0.0,good
+hyderabad-metro,illustrative,2024-02-01,built_up,built-up area,68732.51,41.752,whole footprint,0.0,good
+hyderabad-metro,illustrative,2000-02-01,vegetation,vegetation,20689.21,12.568,whole footprint,0.0,good
+hyderabad-metro,illustrative,2005-02-01,vegetation,vegetation,19957.67,12.123,whole footprint,0.0,good
+hyderabad-metro,illustrative,2010-02-01,vegetation,vegetation,18214.91,11.407,whole footprint,3.0,good
+hyderabad-metro,illustrative,2015-02-01,vegetation,vegetation,17783.93,10.803,whole footprint,0.0,good
+hyderabad-metro,illustrative,2020-02-01,vegetation,vegetation,16360.11,9.938,whole footprint,0.0,good
+hyderabad-metro,illustrative,2024-02-01,vegetation,vegetation,15192.07,9.228,whole footprint,0.0,good
+hyderabad-metro,illustrative,2000-02-01,agriculture,agriculture,60136.47,36.53,whole footprint,0.0,good
+hyderabad-metro,illustrative,2005-02-01,agriculture,agriculture,57815.93,35.12,whole footprint,0.0,good
+hyderabad-metro,illustrative,2010-02-01,agriculture,agriculture,52642.26,32.967,whole footprint,3.0,good
+hyderabad-metro,illustrative,2015-02-01,agriculture,agriculture,50704.47,30.801,whole footprint,0.0,good
+hyderabad-metro,illustrative,2020-02-01,agriculture,agriculture,47079.95,28.599,whole footprint,0.0,good
+hyderabad-metro,illustrative,2024-02-01,agriculture,agriculture,44184.96,26.84,whole footprint,0.0,good
+hyderabad-metro,illustrative,2000-02-01,water,water,2528.74,1.536,whole footprint,0.0,good
+hyderabad-metro,illustrative,2005-02-01,water,water,2529.37,1.536,whole footprint,0.0,good
+hyderabad-metro,illustrative,2010-02-01,water,water,2380.8,1.491,whole footprint,3.0,good
+hyderabad-metro,illustrative,2015-02-01,water,water,2381.33,1.447,whole footprint,0.0,good
+hyderabad-metro,illustrative,2020-02-01,water,water,2380.69,1.446,whole footprint,0.0,good
+hyderabad-metro,illustrative,2024-02-01,water,water,2382.28,1.447,whole footprint,0.0,good

@@ -1,0 +1,46 @@
+{
+ "period": {
+  "start_year": 2000,
+  "end_year": 2020
+ },
+ "method": "Per-variable areas from the noise-free generator rasters of the first and last year.",
+ "rules": [
+  "Shorelines move with a smooth random field: some stretches erode, others accrete, and the exposed south erodes more often.",
+  "Mudflat is the intertidal band next to land; mangrove needs land above a minimum height, so new land becomes mangrove only after it has emerged.",
+  "Embanked interior is non-mangrove land."
+ ],
+ "variables": {
+  "mangrove": {
+   "label": "mangrove",
+   "start_ha": 59238.75,
+   "end_ha": 56487.1,
+   "loss_ha": 7946.2,
+   "gain_ha": 5194.54,
+   "unchanged_ha": 51292.56
+  },
+  "water": {
+   "label": "open water",
+   "start_ha": 174672.24,
+   "end_ha": 182811.65,
+   "loss_ha": 7162.16,
+   "gain_ha": 15301.57,
+   "unchanged_ha": 167510.08
+  },
+  "mudflat": {
+   "label": "mudflat",
+   "start_ha": 12362.16,
+   "end_ha": 8825.73,
+   "loss_ha": 10855.86,
+   "gain_ha": 7319.43,
+   "unchanged_ha": 1506.3
+  },
+  "land": {
+   "label": "land (including mangrove)",
+   "start_ha": 99213.0,
+   "end_ha": 94610.02,
+   "loss_ha": 13142.35,
+   "gain_ha": 8539.37,
+   "unchanged_ha": 86070.65
+  }
+ }
+}

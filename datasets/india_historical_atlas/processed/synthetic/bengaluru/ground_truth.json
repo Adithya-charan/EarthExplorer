@@ -1,0 +1,62 @@
+{
+ "period": {
+  "start_year": 2002,
+  "end_year": 2022
+ },
+ "method": "Per-variable areas from the noise-free generator rasters of the first and last year.",
+ "rules": [
+  "The lake outline is nearly constant (a small shore sector is built over, about 2 percent of the lake).",
+  "Aquatic vegetation expands in the shallow zones, replacing open water cover while the lake extent stays nearly the same.",
+  "Built-up area grows around village nuclei and an east-west corridor, outside the lake zone only."
+ ],
+ "variables": {
+  "water": {
+   "label": "open water",
+   "start_ha": 383.98,
+   "end_ha": 304.46,
+   "loss_ha": 83.63,
+   "gain_ha": 4.11,
+   "unchanged_ha": 300.36
+  },
+  "lake_extent": {
+   "label": "lake extent (open water and aquatic vegetation)",
+   "start_ha": 392.68,
+   "end_ha": 387.5,
+   "loss_ha": 11.53,
+   "gain_ha": 6.35,
+   "unchanged_ha": 381.15
+  },
+  "aquatic_vegetation": {
+   "label": "aquatic vegetation",
+   "start_ha": 8.7,
+   "end_ha": 83.03,
+   "loss_ha": 2.35,
+   "gain_ha": 76.68,
+   "unchanged_ha": 6.35
+  },
+  "built_up": {
+   "label": "built-up area",
+   "start_ha": 4097.5,
+   "end_ha": 6685.8,
+   "loss_ha": 0.0,
+   "gain_ha": 2588.29,
+   "unchanged_ha": 4097.5
+  },
+  "vegetation": {
+   "label": "vegetation",
+   "start_ha": 2749.2,
+   "end_ha": 1481.1,
+   "loss_ha": 1270.24,
+   "gain_ha": 2.13,
+   "unchanged_ha": 1478.96
+  },
+  "wetland": {
+   "label": "wetland fringe",
+   "start_ha": 102.69,
+   "end_ha": 79.92,
+   "loss_ha": 22.77,
+   "gain_ha": 0.0,
+   "unchanged_ha": 79.92
+  }
+ }
+}

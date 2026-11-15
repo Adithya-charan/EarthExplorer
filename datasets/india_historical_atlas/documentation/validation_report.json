@@ -1,0 +1,3139 @@
+{
+ "generated_at": "2026-11-15T02:09:38+00:00",
+ "summary": {
+  "pass": 521,
+  "warn": 0,
+  "fail": 0
+ },
+ "total": 521,
+ "failures": [],
+ "warnings": [],
+ "checks": [
+  {
+   "scope": "registry",
+   "check": "has entries",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_occurrence_70E_20N status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_occurrence_70E_20N download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_occurrence_70E_20N file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_transitions_70E_20N status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_transitions_70E_20N download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_transitions_70E_20N file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_occurrence_80E_30N status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_occurrence_80E_30N download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_occurrence_80E_30N file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2000_R8_C26 status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2000_R8_C26 download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2000_R8_C26 file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2010_R8_C26 status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2010_R8_C26 download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2010_R8_C26 file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2020_R8_C26 status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2020_R8_C26 download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "ghsl_built_s_2020_R8_C26 file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "esa_worldcover_2021_N21E087 status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "esa_worldcover_2021_N21E087 download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "esa_worldcover_2021_N21E087 file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "geoboundaries_IND_ADM1 status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "geoboundaries_IND_ADM1 download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "geoboundaries_IND_ADM1 file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "geoboundaries_IND_ADM2 status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "registry",
+   "check": "geoboundaries_IND_ADM2 download has a checksum and size",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "geoboundaries_IND_ADM2 file is on disk and unchanged",
+   "status": "pass",
+   "detail": "re-run the downloader if missing"
+  },
+  {
+   "scope": "registry",
+   "check": "landsat_c2_l2_ee_catalog status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_METADATA_ONLY"
+  },
+  {
+   "scope": "registry",
+   "check": "landsat_c2_l2_ee_catalog does not claim a checksum it did not compute",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_monthly_history_ee_catalog status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_METADATA_ONLY"
+  },
+  {
+   "scope": "registry",
+   "check": "jrc_gsw_monthly_history_ee_catalog does not claim a checksum it did not compute",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "sentinel2_sr_harmonized_ee_catalog status is one of the allowed values",
+   "status": "pass",
+   "detail": "VERIFIED_METADATA_ONLY"
+  },
+  {
+   "scope": "registry",
+   "check": "sentinel2_sr_harmonized_ee_catalog does not claim a checksum it did not compute",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "copernicus_dataspace status is one of the allowed values",
+   "status": "pass",
+   "detail": "ACCESS_REQUIRES_AUTHENTICATION"
+  },
+  {
+   "scope": "registry",
+   "check": "copernicus_dataspace does not claim a checksum it did not compute",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "usgs_earthexplorer status is one of the allowed values",
+   "status": "pass",
+   "detail": "ACCESS_REQUIRES_AUTHENTICATION"
+  },
+  {
+   "scope": "registry",
+   "check": "usgs_earthexplorer does not claim a checksum it did not compute",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "bhuvan_nrsc status is one of the allowed values",
+   "status": "pass",
+   "detail": "ACCESS_REQUIRES_AUTHENTICATION"
+  },
+  {
+   "scope": "registry",
+   "check": "bhuvan_nrsc does not claim a checksum it did not compute",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "rgi7_glaciers_nsidc status is one of the allowed values",
+   "status": "pass",
+   "detail": "ACCESS_REQUIRES_AUTHENTICATION"
+  },
+  {
+   "scope": "registry",
+   "check": "rgi7_glaciers_nsidc does not claim a checksum it did not compute",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "registry",
+   "check": "gpm_imerg status is one of the allowed values",
+   "status": "pass",
+   "detail": "ACCESS_REQUIRES_AUTHENTICATION"
+  },
+  {
+   "scope": "registry",
+   "check": "gpm_imerg does not claim a checksum it did not compute",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Satellite Observations"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "official_derived / Satellite Observations"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "official-derived dataset is not flagged as generated",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "2000-01-01, 2010-01-01, 2020-01-01"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.5496, 12.8504, 77.7996, 13.0504)"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "ghsl_built_s_2000_R8_C26"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2000-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "55643aba2753"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.5496, 12.8504, 77.7996, 13.0504)"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "ghsl_built_s_2010_R8_C26"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2010-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "12d2c30731d6"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.5496, 12.8504, 77.7996, 13.0504)"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "ghsl_built_s_2020_R8_C26"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "2020-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "cb95a4337c7e"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(240, 300)}"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "change analysis exists for built_up",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "built_up_2000_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "13610.59 - 0.0 = 13610.59"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "built_up_2000_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "60020.2 vs 60020.24"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "built_up_2000_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "21179.34 -> 34789.93 = 13610.59"
+  },
+  {
+   "scope": "ghsl-built-up-bengaluru",
+   "check": "built_up_2000_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Satellite Observations"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "official_derived / Satellite Observations"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "official-derived dataset is not flagged as generated",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "1984-01-01, 2021-01-01"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.62, 12.9, 77.72, 12.99)"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "jrc_gsw_transitions_70E_20N"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "1984-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "23efd8b1f3ec"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.62, 12.9, 77.72, 12.99)"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "jrc_gsw_transitions_70E_20N"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "2021-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "23efd8b1f3ec"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(360, 400)}"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "change analysis exists for water",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "water_1984_2021.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "53.12 - 122.14 = -69.02"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "water_1984_2021.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "10803.9 vs 10803.88"
+  },
+  {
+   "scope": "jrc-water-bellandur",
+   "check": "water_1984_2021.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Satellite Observations"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "official_derived / Satellite Observations"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "official-derived dataset is not flagged as generated",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "2000-01-01, 2010-01-01, 2020-01-01"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.2496, 17.2504, 78.6496, 17.6004)"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "ghsl_built_s_2000_R8_C26"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2000-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "55643aba2753"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.2496, 17.2504, 78.6496, 17.6004)"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "ghsl_built_s_2010_R8_C26"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2010-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "12d2c30731d6"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.2496, 17.2504, 78.6496, 17.6004)"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "ghsl_built_s_2020_R8_C26"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "2020-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "cb95a4337c7e"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(420, 480)}"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "change analysis exists for built_up",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "built_up_2000_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "23423.47 - 0.0 = 23423.47"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "built_up_2000_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "164615.8 vs 164615.85"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "built_up_2000_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "37715.5 -> 61138.97 = 23423.47"
+  },
+  {
+   "scope": "ghsl-built-up-hyderabad",
+   "check": "built_up_2000_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Satellite Observations"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "official_derived / Satellite Observations"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "official-derived dataset is not flagged as generated",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "1984-01-01, 2021-01-01"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.25, 17.25, 78.65, 17.6)"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "jrc_gsw_transitions_70E_20N"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "1984-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "23efd8b1f3ec"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.25, 17.25, 78.65, 17.6)"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "jrc_gsw_transitions_70E_20N"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "2021-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "23efd8b1f3ec"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(1400, 1600)}"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "change analysis exists for water",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "water_1984_2021.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "2743.83 - 214.38 = 2529.45"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "water_1984_2021.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "164616.2 vs 164616.21"
+  },
+  {
+   "scope": "jrc-water-hyderabad",
+   "check": "water_1984_2021.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Satellite Observations"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "official_derived / Satellite Observations"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "official-derived dataset is not flagged as generated",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "2021-01-01"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(88.6, 21.55, 89.1, 22.05)"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 source id is in the source registry",
+   "status": "pass",
+   "detail": "esa_worldcover_2021_N21E087"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 source was really downloaded",
+   "status": "pass",
+   "detail": "VERIFIED_DOWNLOADED"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "2021-01-01 original file checksum matches the registry",
+   "status": "pass",
+   "detail": "a652fbd8e327"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(2000, 2000)}"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "change analysis exists for mangrove",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "mangrove_2021_2021.summary.json: insufficient data is not reported as zero change",
+   "status": "pass",
+   "detail": "None"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "mangrove_2021_2021.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "change analysis exists for water",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "water_2021_2021.summary.json: insufficient data is not reported as zero change",
+   "status": "pass",
+   "detail": "None"
+  },
+  {
+   "scope": "worldcover-sundarbans-2021",
+   "check": "water_2021_2021.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Illustrative Dataset"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "illustrative / Illustrative Dataset"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "2002-02-01, 2005-02-01, 2010-02-01, 2015-02-01, 2019-02-01, 2022-02-01"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2002-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2002-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2002-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2002-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2002-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2002-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.62, 12.9, 77.7201, 12.99)"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2002-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2005-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2005-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2005-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2005-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2005-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2005-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.62, 12.9, 77.7201, 12.99)"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2005-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2010-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2010-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2010-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2010-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2010-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2010-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.62, 12.9, 77.7201, 12.99)"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2010-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2015-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2015-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2015-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2015-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 0.970 vs recorded 0.97"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2015-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2015-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.62, 12.9, 77.7201, 12.99)"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2015-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2019-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2019-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2019-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2019-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2019-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2019-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.62, 12.9, 77.7201, 12.99)"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2019-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2022-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2022-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2022-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2022-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2022-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2022-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(77.62, 12.9, 77.7201, 12.99)"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "2022-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(600, 667)}"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "change analysis exists for water",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "water_2002_2022.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "4.19 - 83.54 = -79.36"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "water_2002_2022.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "10809.3 vs 10809.28"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "water_2002_2022.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "383.93 -> 304.57 = -79.36"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "water_2002_2022.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "change analysis exists for lake_extent",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "lake_extent_2002_2022.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "6.37 - 11.59 = -5.21"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "lake_extent_2002_2022.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "10809.3 vs 10809.28"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "lake_extent_2002_2022.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "392.68 -> 387.47 = -5.21"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "lake_extent_2002_2022.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "change analysis exists for aquatic_vegetation",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "aquatic_vegetation_2002_2022.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "76.55 - 2.4 = 74.14"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "aquatic_vegetation_2002_2022.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "10809.3 vs 10809.28"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "aquatic_vegetation_2002_2022.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "8.75 -> 82.9 = 74.14"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "aquatic_vegetation_2002_2022.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "change analysis exists for built_up",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "built_up_2002_2022.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "2589.0 - 0.27 = 2588.73"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "built_up_2002_2022.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "10809.3 vs 10809.28"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "built_up_2002_2022.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "4097.04 -> 6685.77 = 2588.73"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "built_up_2002_2022.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "change analysis exists for vegetation",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "vegetation_2002_2022.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "5.29 - 1273.13 = -1267.84"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "vegetation_2002_2022.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "10809.3 vs 10809.28"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "vegetation_2002_2022.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "2749.12 -> 1481.28 = -1267.84"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "vegetation_2002_2022.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "change analysis exists for wetland",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "wetland_2002_2022.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "0.38 - 23.36 = -22.99"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "wetland_2002_2022.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "10809.3 vs 10809.28"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "wetland_2002_2022.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "102.86 -> 79.87 = -22.99"
+  },
+  {
+   "scope": "bellandur-lake",
+   "check": "wetland_2002_2022.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Illustrative Dataset"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "illustrative / Illustrative Dataset"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "2001-09-01, 2005-09-01, 2010-09-01, 2015-09-01, 2020-09-01"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2001-09-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2001-09-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2001-09-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2001-09-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2001-09-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2001-09-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(79.6, 30.5498, 80.05, 30.95)"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2001-09-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2005-09-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2005-09-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2005-09-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2005-09-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 0.930 vs recorded 0.93"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2005-09-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2005-09-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(79.6, 30.5498, 80.05, 30.95)"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2005-09-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2010-09-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2010-09-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2010-09-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2010-09-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2010-09-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2010-09-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(79.6, 30.5498, 80.05, 30.95)"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2010-09-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2015-09-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2015-09-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2015-09-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2015-09-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 0.970 vs recorded 0.97"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2015-09-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2015-09-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(79.6, 30.5498, 80.05, 30.95)"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2015-09-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2020-09-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2020-09-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2020-09-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2020-09-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2020-09-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2020-09-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(79.6, 30.5498, 80.05, 30.95)"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "2020-09-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(667, 750)}"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "change analysis exists for glacier",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "glacier_2001_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "43.88 - 3588.49 = -3544.61"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "glacier_2001_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "191176.5 vs 191176.48"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "glacier_2001_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "18083.85 -> 14539.24 = -3544.61"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "glacier_2001_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "change analysis exists for snow",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "snow_2001_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "31.66 - 3326.28 = -3294.62"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "snow_2001_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "191176.5 vs 191176.48"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "snow_2001_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "20182.7 -> 16888.08 = -3294.62"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "snow_2001_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "change analysis exists for glacial_lake",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "glacial_lake_2001_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "32.46 - 0.0 = 32.46"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "glacial_lake_2001_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "191176.5 vs 191176.48"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "glacial_lake_2001_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "0.0 -> 32.46 = 32.46"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "glacial_lake_2001_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "change analysis exists for exposed_terrain",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "exposed_terrain_2001_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "6871.34 - 58.08 = 6813.26"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "exposed_terrain_2001_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "191176.5 vs 191176.48"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "exposed_terrain_2001_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "56412.2 -> 63225.46 = 6813.26"
+  },
+  {
+   "scope": "himalayas-dhauliganga",
+   "check": "exposed_terrain_2001_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Illustrative Dataset"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "illustrative / Illustrative Dataset"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "2000-02-01, 2005-02-01, 2010-02-01, 2015-02-01, 2020-02-01, 2024-02-01"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2000-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2000-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2000-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2000-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2000-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2000-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.25, 17.2499, 78.6499, 17.6)"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2000-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2005-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2005-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2005-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2005-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2005-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2005-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.25, 17.2499, 78.6499, 17.6)"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2005-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2010-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2010-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2010-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2010-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 0.970 vs recorded 0.97"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2010-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2010-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.25, 17.2499, 78.6499, 17.6)"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2010-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2015-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2015-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2015-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2015-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2015-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2015-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.25, 17.2499, 78.6499, 17.6)"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2015-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2020-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2020-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2020-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2020-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2020-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2020-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.25, 17.2499, 78.6499, 17.6)"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2020-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2024-02-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2024-02-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2024-02-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2024-02-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2024-02-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2024-02-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(78.25, 17.2499, 78.6499, 17.6)"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "2024-02-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(1167, 1333)}"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "change analysis exists for built_up",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "built_up_2000_2024.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "31127.2 - 0.21 = 31126.99"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "built_up_2000_2024.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "164622.1 vs 164622.12"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "built_up_2000_2024.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "37605.52 -> 68732.51 = 31126.99"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "built_up_2000_2024.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "change analysis exists for vegetation",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "vegetation_2000_2024.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "29.63 - 5526.77 = -5497.14"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "vegetation_2000_2024.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "164622.1 vs 164622.12"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "vegetation_2000_2024.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "20689.21 -> 15192.07 = -5497.14"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "vegetation_2000_2024.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "change analysis exists for agriculture",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "agriculture_2000_2024.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "35.87 - 15987.38 = -15951.51"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "agriculture_2000_2024.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "164622.1 vs 164622.12"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "agriculture_2000_2024.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "60136.47 -> 44184.96 = -15951.51"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "agriculture_2000_2024.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "change analysis exists for water",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "water_2000_2024.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "3.92 - 150.38 = -146.46"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "water_2000_2024.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "164622.1 vs 164622.12"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "water_2000_2024.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "2528.74 -> 2382.28 = -146.46"
+  },
+  {
+   "scope": "hyderabad-metro",
+   "check": "water_2000_2024.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "required metadata fields present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "public label never says synthetic or simulated",
+   "status": "pass",
+   "detail": "Illustrative Dataset"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "public label matches designation",
+   "status": "pass",
+   "detail": "illustrative / Illustrative Dataset"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "observation dates strictly increasing",
+   "status": "pass",
+   "detail": "2000-01-01, 2005-01-01, 2010-01-01, 2015-01-01, 2020-01-01"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2000-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2000-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2000-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2000-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2000-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2000-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(88.6, 21.55, 89.1, 22.05)"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2000-01-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2005-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2005-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2005-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2005-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2005-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2005-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(88.6, 21.55, 89.1, 22.05)"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2005-01-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2010-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2010-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2010-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2010-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 0.960 vs recorded 0.96"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2010-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2010-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(88.6, 21.55, 89.1, 22.05)"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2010-01-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2015-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2015-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2015-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2015-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2015-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2015-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(88.6, 21.55, 89.1, 22.05)"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2015-01-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2020-01-01 CRS is EPSG:4326",
+   "status": "pass",
+   "detail": "EPSG:4326"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2020-01-01 class codes all documented",
+   "status": "pass",
+   "detail": "undocumented: []"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2020-01-01 tiled (cloud optimised layout)",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2020-01-01 recorded valid fraction matches raster",
+   "status": "pass",
+   "detail": "raster 1.000 vs recorded 1.0"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2020-01-01 is not blank",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2020-01-01 bounds match dataset bbox",
+   "status": "pass",
+   "detail": "(88.6, 21.55, 89.1, 22.05)"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "2020-01-01 illustrative provenance says generated",
+   "status": "pass",
+   "detail": "generated by app.explorer.atlas"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "all observations share one grid",
+   "status": "pass",
+   "detail": "{(1250, 1250)}"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "variables reference documented classes",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "exactly one primary variable",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "change analysis exists for mangrove",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "mangrove_2000_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "5355.54 - 8111.22 = -2755.68"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "mangrove_2000_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "286247.4 vs 286247.39"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "mangrove_2000_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "59248.27 -> 56492.59 = -2755.68"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "mangrove_2000_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "change analysis exists for water",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "water_2000_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "15518.79 - 7381.75 = 8137.04"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "water_2000_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "286247.4 vs 286247.39"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "water_2000_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "174665.64 -> 182802.68 = 8137.04"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "water_2000_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "change analysis exists for mudflat",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "mudflat_2000_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "7332.61 - 10858.78 = -3526.17"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "mudflat_2000_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "286247.4 vs 286247.39"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "mudflat_2000_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "12356.11 -> 8829.94 = -3526.17"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "mudflat_2000_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "change analysis exists for land",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "land_2000_2020.summary.json: net change equals gained minus lost",
+   "status": "pass",
+   "detail": "8734.06 - 13344.93 = -4610.87"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "land_2000_2020.summary.json: changed, unchanged and noise-filtered areas add up to the analysed area",
+   "status": "pass",
+   "detail": "286247.4 vs 286247.39"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "land_2000_2020.summary.json: no noise filter, so net change equals end minus start",
+   "status": "pass",
+   "detail": "99225.64 -> 94614.77 = -4610.87"
+  },
+  {
+   "scope": "sundarbans-west-bengal",
+   "check": "land_2000_2020.summary.json: no forbidden public wording",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "index present",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "countries/india.geojson is a FeatureCollection",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "states/india_states.geojson is a FeatureCollection",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "districts/india_districts.geojson is a FeatureCollection",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "cities/cities.geojson is a FeatureCollection",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "localities/localities.geojson is a FeatureCollection",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Gachibowli: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "HITEC City: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Madhapur: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Kukatpally: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Banjara Hills: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Uppal: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Begumpet: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Bellandur: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Whitefield: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Koramangala: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "HSR Layout: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Indiranagar: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Andheri: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Bandra: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Charminar: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Golconda Fort: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Lalbagh Botanical Garden: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Gateway of India: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "India Gate: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Taj Mahal: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Hawa Mahal: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "geographical_features/features.geojson is a FeatureCollection",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Himayat Sagar: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Chilika Lake: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Sagar Island: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Gangotri Glacier: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Himalayas: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Dhauliganga catchment: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "Bay of Bengal coast, Sundarbans: approximate outline is not labelled authoritative",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "boundaries",
+   "check": "826 features checked, geometry non-empty and valid, status known",
+   "status": "pass",
+   "detail": "0 problems"
+  },
+  {
+   "scope": "package",
+   "check": "manifest.json exists",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "package",
+   "check": "documentation/source_registry.json exists",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "package",
+   "check": "documentation/dataset_catalogue.csv exists",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "package",
+   "check": "documentation/dataset_catalogue.pdf exists",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "package",
+   "check": "documentation/historical_statistics.csv exists",
+   "status": "pass",
+   "detail": ""
+  },
+  {
+   "scope": "package",
+   "check": "documentation/change_summary.json exists",
+   "status": "pass",
+   "detail": ""
+  }
+ ]
+}

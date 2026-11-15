@@ -1,0 +1,77 @@
+{
+ "request": "POST /api/explorer/session",
+ "status_code": 200,
+ "response": {
+  "status": "no_dataset",
+  "message": "Found Chennai, Tamil Nadu, India, but no dataset covers it, so there is no observation history to show here.",
+  "location": {
+   "id": "city:chennai",
+   "name": "Chennai",
+   "display_name": "Chennai, Tamil Nadu, India",
+   "lat": 13.0827,
+   "lon": 80.2707,
+   "kind": "city",
+   "source": "reference point (approximate), district from geoBoundaries ADM2",
+   "bbox": [
+    80.1507,
+    12.9736,
+    80.3907,
+    13.1918
+   ],
+   "zoom_altitude_m": 61034.90400000036,
+   "level": "city",
+   "hierarchy": [
+    "India",
+    "Tamil Nadu"
+   ],
+   "boundary_status": "administrative_proxy"
+  },
+  "alternatives": [
+   {
+    "id": "district:tamil-nadu:chennai:489955",
+    "name": "Chennai",
+    "display_name": "Chennai, Tamil Nadu, India",
+    "lat": 13.05356,
+    "lon": 80.23486,
+    "kind": "district",
+    "source": "geoBoundaries gbOpen IND ADM2",
+    "bbox": [
+     80.18339,
+     12.96704,
+     80.3101,
+     13.1489
+    ],
+    "zoom_altitude_m": 50869.8791999996,
+    "level": "district",
+    "hierarchy": [
+     "India",
+     "Tamil Nadu"
+    ],
+    "boundary_status": "authoritative_simplified"
+   }
+  ],
+  "examples": [
+   "Bellandur Lake, Bengaluru",
+   "Hyderabad",
+   "Sundarbans",
+   "Himalayas",
+   "Uttarakhand"
+  ],
+  "datasets": [],
+  "dataset": null,
+  "period": null,
+  "latest": null,
+  "insufficient": {
+   "code": "no_dataset",
+   "reason": "No loaded dataset covers Chennai. The globe can show the place, but there are no observations to compare over time.",
+   "missing": [
+    "a dataset whose footprint contains this location"
+   ],
+   "available_dates": [],
+   "suggested_period": null
+  },
+  "nearby_datasets": [],
+  "is_synthetic": false,
+  "simulated_label": null
+ }
+}

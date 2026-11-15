@@ -35,3 +35,7 @@ frontend/public/vendor/
 frontend/.next-verify/
 datasets/user_uploads/
 *.log
+
+# India Historical Atlas: the original official files are 326 MB; re-download with scripts/download_official_data.py (checksums are in documentation/source_registry.json)
+datasets/india_historical_atlas/official/**/originals/
+datasets/india_historical_atlas/geographical_boundaries/originals/

@@ -1,8 +1,8 @@
 "use client";
 
 import { AlertTriangle, CheckCircle2, ChevronLeft, ChevronRight, Info, Layers, Loader2, Sparkles } from "lucide-react";
-import { fmtDate, fmtHa, OUTCOME_COPY } from "@/lib/explorer/logic";
-import type { ChangeSummary, Hotspot, LatestObservation, MapMode, SessionResponse } from "@/lib/explorer/types";
+import { cap, dataLabel, fmtDate, fmtHa, isIllustrative, OUTCOME_COPY } from "@/lib/explorer/logic";
+import type { ChangeSummary, DatasetInfo, Hotspot, LatestObservation, LocationOut, MapMode, SessionResponse } from "@/lib/explorer/types";
 
 export type Phase = "idle" | "locating" | "flying" | "analysing" | "ready" | "error";
 
@@ -52,7 +52,7 @@ export function LatestCard({ latest, session }: { latest: LatestObservation; ses
       </dl>
       {latest.is_synthetic ? (
         <p data-testid="simulated-tag" className="mt-3 rounded-md border border-amber-400/40 bg-amber-400/10 px-2 py-1 text-[11.5px] font-semibold text-amber-200">
-          {latest.simulated_label ?? "SIMULATED DEMONSTRATION DATA"}
+          {latest.simulated_label ?? "Illustrative Dataset: a generated demonstration layer, not satellite imagery."}
         </p>
       ) : null}
       <p className="mt-2 text-[11.5px] leading-snug text-[color:var(--nx-muted)]">{latest.note}</p>
@@ -100,7 +100,7 @@ export function OutcomeBanner({ summary, session, onUseSuggestion, onExploreAnyw
   return (
     <div role="status" aria-live="polite" data-testid={`banner-${outcome}`} className={`nx-glass nx-rise w-[620px] max-w-[92vw] p-4 ${tone}`}>
       <p className={`flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.1em] ${iconColor}`}>
-        <Icon className="h-4 w-4" aria-hidden /> {copy.badge}
+        <Icon className="h-4 w-4" aria-hidden /> {session?.status === "no_dataset" ? "Data Unavailable" : copy.badge}
       </p>
       <p className="mt-1 text-[15px] font-medium leading-snug">{summary?.headline ?? session?.message}</p>
       {outcome === "no_clear_change" && summary ? (
@@ -147,6 +147,42 @@ export function OutcomeBanner({ summary, session, onUseSuggestion, onExploreAnyw
           <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
           {summary.period.messages.join(" ")}
         </p>
+      ) : null}
+    </div>
+  );
+}
+
+/** Extra context under the outcome banner: other places with the same name, or data that exists inside a larger area. */
+export function PlaceNotice({ session, onPickPlace, onOpenDataset }: { session: SessionResponse | null; onPickPlace: (l: LocationOut) => void; onOpenDataset: (d: DatasetInfo) => void }) {
+  if (!session || session.status === "not_found" || !session.location) return null;
+  const alts = session.status === "ambiguous" ? session.alternatives.filter((a) => a.name.toLowerCase() === session.location!.name.toLowerCase()) : [];
+  const nearby = session.status === "no_dataset" ? session.nearby_datasets : [];
+  if (alts.length === 0 && nearby.length === 0) return null;
+  return (
+    <div className="nx-glass nx-rise w-[620px] max-w-[92vw] p-3" data-testid="place-notice">
+      {alts.length ? (
+        <>
+          <p className="text-[12.5px] text-[color:var(--nx-soft)]">Several places share this name. Did you mean:</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {alts.map((a) => (
+              <button key={a.id} type="button" className="nx-chip" onClick={() => onPickPlace(a)}>
+                {a.display_name}
+              </button>
+            ))}
+          </div>
+        </>
+      ) : null}
+      {nearby.length ? (
+        <>
+          <p className="text-[12.5px] text-[color:var(--nx-soft)]">Historical layers exist inside this area. Open one:</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {nearby.map((d) => (
+              <button key={d.id} type="button" className="nx-chip" onClick={() => onOpenDataset(d)} data-testid="nearby-dataset">
+                <span className={isIllustrative(d) ? "text-amber-200" : "text-emerald-300"}>●</span> {d.name.replace(/ \((?:illustrative|simulated)[^)]*\)$/i, "")} · {dataLabel(d)}
+              </button>
+            ))}
+          </div>
+        </>
       ) : null}
     </div>
   );
@@ -207,21 +243,24 @@ export function HotspotNav({ hotspots, active, onPick, onOverview }: { hotspots:
   );
 }
 
-export function Legend({ kind, simulated }: { kind: "diff" | "classes"; simulated: boolean }) {
-  const rows =
+// Same colours as the raster palette in backend/app/explorer/rendering.py.
+const CLASS_COLOR: Record<string, string> = {
+  "1": "#a89678", "2": "#328cff", "3": "#4a8c50", "4": "#d67650", "5": "#f0f6ff", "6": "#96d6ec", "7": "#c4b278", "8": "#186e46", "9": "#d6c460", "10": "#78c85a", "11": "#60a896",
+};
+
+export function Legend({ kind, simulated, classes, variableLabel }: { kind: "diff" | "classes"; simulated: boolean; classes?: Record<string, string>; variableLabel?: string }) {
+  const vl = cap(variableLabel ?? "water");
+  const rows: string[][] =
     kind === "diff"
       ? [
-          ["#388bfd", "Water (unchanged)"],
-          ["#e63946", "Water lost"],
-          ["#2ecc71", "Water gained"],
-          ["#7a808c", "Unchanged land"],
+          ["#388bfd", `${vl} (unchanged)`],
+          ["#e63946", `${vl} lost`],
+          ["#2ecc71", `${vl} gained`],
+          ["#7a808c", "Unchanged other"],
         ]
-      : [
-          ["#388bfd", "Water"],
-          ["#4a8c50", "Vegetation"],
-          ["#d67650", "Built-up"],
-          ["#a89678", "Other land"],
-        ];
+      : Object.entries(classes ?? { "2": "Water", "3": "Vegetation", "4": "Built-up", "1": "Other land" })
+          .filter(([k]) => k !== "255")
+          .map(([k, label]) => [CLASS_COLOR[k] ?? "#888", label]);
   return (
     <aside aria-label="Legend" data-testid="legend" className="nx-glass nx-rise w-[196px] p-3 text-[12px]">
       <ul className="space-y-1">
@@ -236,7 +275,7 @@ export function Legend({ kind, simulated }: { kind: "diff" | "classes"; simulate
           Uncertain (cloud / no data)
         </li>
       </ul>
-      {simulated ? <p className="mt-2 border-t border-[color:var(--nx-line)] pt-2 text-[11px] font-semibold text-amber-200">Simulated demonstration data</p> : null}
+      {simulated ? <p className="mt-2 border-t border-[color:var(--nx-line)] pt-2 text-[11px] font-semibold text-amber-200">Illustrative Dataset</p> : null}
     </aside>
   );
 }

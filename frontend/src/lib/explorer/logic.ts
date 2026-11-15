@@ -98,6 +98,8 @@ export interface PlanInput {
   cursorDate: string | null;
   baShowAfter: boolean;
   temporal: string;
+  /** What the analysis measures, e.g. "glacier ice"; defaults to water. */
+  variableLabel?: string;
 }
 
 /** Decide which raster layers the globe shows for a map mode. Every layer URL points at a real observation or analysis product. */
@@ -126,7 +128,7 @@ export function planLayers(i: PlanInput): MapPlan {
     case "hotspots": {
       if (!hasAnalysis || !s) return none;
       const diff: LayerSpec = { key: `diff:${s.analysis_id}`, url: layerUrl(s.layers.difference_png), bbox, alpha: i.mode === "hotspots" ? 0.55 : 0.95, side: "none" };
-      return { ...none, primary: diff, hotspots: i.mode === "hotspots", legend: "diff", caption: i.mode === "hotspots" ? "Change hotspots" : "Difference layer: water gained and lost" };
+      return { ...none, primary: diff, hotspots: i.mode === "hotspots", legend: "diff", caption: i.mode === "hotspots" ? "Change hotspots" : `Difference layer: ${i.variableLabel ?? "water"} gained and lost` };
     }
   }
 }
@@ -144,3 +146,32 @@ export function bboxRadiusM(b: BBox): number {
   const h = (b[3] - b[1]) * 110_574;
   return Math.max(120, Math.hypot(w, h) / 2);
 }
+
+/** Public wording for where a dataset comes from. The internal origin stays in the metadata; the UI never calls generated layers imagery. */
+export function dataLabel(d: { designation?: string; public_label?: string; is_synthetic?: boolean } | null | undefined): string {
+  if (!d) return "Data Unavailable";
+  if (d.public_label) return d.public_label;
+  return d.is_synthetic ? "Illustrative Dataset" : "Historical Observations";
+}
+
+export const isIllustrative = (d: { designation?: string; is_synthetic?: boolean } | null | undefined) => Boolean(d && (d.designation === "illustrative" || d.is_synthetic));
+
+/** Capitalise the first letter of a phrase. */
+export const cap = (t: string) => (t ? t[0].toUpperCase() + t.slice(1) : t);
+
+export const LEVEL_NAME: Record<string, string> = {
+  country: "Country", state: "State", district: "District", city: "City", locality: "Locality", landmark: "Landmark", lake: "Lake", river: "River / catchment",
+  forest: "Forest / mangrove", mountain: "Mountain range", glacier: "Glacier", island: "Island", coast: "Coast",
+};
+export const levelName = (level: string) => LEVEL_NAME[level] ?? cap(level);
+
+export const BOUNDARY_NAME: Record<string, string> = {
+  authoritative_simplified: "Administrative boundary (simplified)",
+  derived_from_official_data: "Outline derived from official data",
+  administrative_proxy: "District outline (approximate for the city)",
+  analysis_window: "Analysis window (not a natural boundary)",
+  approximate_bbox: "Approximate extent",
+  approximate_point: "Approximate area around a point",
+  geocoder_geometry: "Outline from the geocoder",
+  unavailable: "No outline available",
+};

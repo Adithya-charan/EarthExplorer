@@ -1,0 +1,47 @@
+[
+ {
+  "id": "1_search_and_suggest",
+  "steps": "Type 'Bella' in the search box. Suggestions appear with name, hierarchy and type. Choose 'Bellandur Lake'.",
+  "expected": "Globe flies to the lake; the outline shown is derived from JRC water occurrence (solid), never invented."
+ },
+ {
+  "id": "2_historical_analysis_bellandur",
+  "steps": "Press Explore for 2002 to 2022. Open the Details tab.",
+  "expected": "Illustrative Dataset badge; water, lake extent, aquatic vegetation, wetland and built-up can be selected under Measure. Lake change is modest and separate from the surroundings."
+ },
+ {
+  "id": "3_official_hyderabad",
+  "steps": "Search 'Hyderabad', 2000 to 2020.",
+  "expected": "Satellite Observations badge (GHSL built-up, epochs 2000, 2010, 2020). The timeline has three real dates."
+ },
+ {
+  "id": "4_himalayas",
+  "steps": "Search 'Himalayas' or say 'Show the Himalayas'.",
+  "expected": "Illustrative Dataset: glacier, snow, glacial lake and exposed terrain are separate measures."
+ },
+ {
+  "id": "5_no_history",
+  "steps": "Search 'Chennai'.",
+  "expected": "Place is shown; banner says Data Unavailable; no timeline, no analysis, no fictional history."
+ },
+ {
+  "id": "6_parent_area",
+  "steps": "Search 'Uttarakhand'.",
+  "expected": "No dataset covers the whole state; chips offer the dataset that exists inside it."
+ },
+ {
+  "id": "7_voice",
+  "steps": "Press the microphone and say 'Compare this location between 2000 and 2020'.",
+  "expected": "Same function as the Explore button runs; the confirmation text shows what was understood."
+ },
+ {
+  "id": "8_back_forward",
+  "steps": "After two searches press Back, then Forward.",
+  "expected": "Location, years, measure, map mode, timeline date and camera are restored."
+ },
+ {
+  "id": "9_insufficient",
+  "steps": "Open the Sundarbans WorldCover dataset for 2000 to 2024.",
+  "expected": "Single-date data: outcome is insufficient_data with a reason, never 'zero change'."
+ }
+]

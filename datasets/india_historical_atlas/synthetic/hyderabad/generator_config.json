@@ -1,0 +1,29 @@
+{
+ "region": "hyderabad-metro",
+ "seed": 303,
+ "bbox": [
+  78.25,
+  17.25,
+  78.65,
+  17.6
+ ],
+ "res_deg": 0.0003,
+ "years": [
+  2000,
+  2005,
+  2010,
+  2015,
+  2020,
+  2024
+ ],
+ "month": 2,
+ "rules": [
+  "Built-up grows outward from eight settlement nuclei and along an outer ring corridor and radial roads; once built it stays built.",
+  "Agriculture and vegetation are lost where the built-up front passes.",
+  "Water bodies are nearly stable; tanks inside the densest fabric lose their edges after 2010."
+ ],
+ "cloud_fraction_by_year": {
+  "2010": 0.03
+ },
+ "designation": "illustrative"
+}

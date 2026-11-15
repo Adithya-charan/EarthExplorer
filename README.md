@@ -214,12 +214,11 @@ then compares the two ends of your period and reports one of three outcomes:
 Map modes: latest, historical (bottom timeline: only dates that exist, draggable, play/pause, speed, prev/next), before/after,
 swipe, difference, hotspots. Years outside a dataset's coverage are explained, and a partial overlap is analysed with an explicit notice.
 
-**Data.** `backend/data/explorer/<id>/` holds `dataset.json`, `observations/*.tif` (GeoTIFF/COG; GeoJSON and CSV with lon/lat also load) and,
-for demo data, `ground_truth.json`. The three bundled datasets are **simulated** and labelled so everywhere: Bellandur Lake (monthly 2000-2025,
-controlled encroachment, drying and a new pond, missing months, cloud), Hussain Sagar (yearly, stable) and a sparse Chilika patch (2014-2019).
-Regenerate with `python -m app.explorer.synthetic` (also runs on first start if the folder is empty). The loader is dataset-agnostic (own dates,
-resolution and CRS per dataset), ready for JRC Global Surface Water Monthly History (1984-03 to 2021-12), Landsat Collection 2 and Sentinel-2 SR
-(2017-03 onward) once files are converted to the same layout.
+**Data.** The app reads the **India Historical Atlas** in `datasets/india_historical_atlas/processed/` (see the next section). Each dataset is a
+folder with `dataset.json` and `observations/*.tif` (Cloud Optimized GeoTIFF). Two kinds exist and are labelled everywhere in the interface:
+**Satellite Observations** (derived from official JRC / ESA files that were really downloaded) and **Illustrative Dataset** (generated demonstration
+layers, not satellite imagery). A place with no dataset is shown on the globe with **Data Unavailable**; no history is ever invented.
+Search covers states, districts, cities, localities, landmarks and natural features with suggestions, voice commands and Back/Forward.
 
 **Method.** Same-season composites at both ends, water-frequency threshold, common-grid alignment, cloud/no-data excluded, feature clean-up,
 geodesic per-row pixel areas (hotspot polygons re-measured in UTM), Theil-Sen/Kendall progression, a year-to-year scatter test, configurable
@@ -228,11 +227,47 @@ thresholds (`params` on `POST /api/explorer/analysis/detect-change`).
 **AI.** Set `GROQ_API_KEY` (env only) to have Groq explain results through backend tools (summary, hotspots, area series, quality). With no key, or on
 any failure, a deterministic report from the same numbers is used and the UI says which one you are reading. Neither claims causes.
 
-API: `/api/explorer/` - `locations/search`, `session`, `datasets`, `datasets/{id}/observations`, `.../observations/{date}/layer.png`,
+API: `/api/explorer/` - `locations/{search,suggest}`, `locations/{id}/boundary`, `session`, `datasets`, `datasets/{id}/{metadata,statistics}`, `catalogue`, `source-registry`, `datasets/{id}/observations`, `.../observations/{date}/layer.png`,
 `analysis/detect-change`, `analysis/{id}/{change-summary,hotspots,change-layers,layers/{difference.png,before.png,after.png,difference.tif},explain}`, `ai/chat`.
 
 Run: `python scripts/dev.py`, or backend `uvicorn app.main:app --port 8000` plus `npm run dev` in `frontend/` (the `predev` script copies Cesium assets to `public/vendor/cesium`).
 The earlier story/trend/upload pages remain under `/story`, `/trend`, `/upload`.
+
+## India Historical Atlas
+
+```
+datasets/india_historical_atlas/
+  manifest.json                 every dataset, file, size and SHA-256
+  official/<region>/originals/  original official downloads (git-ignored; re-download with the script below)
+  synthetic/<region>/           clean-truth rasters and generator configs for the Illustrative Datasets
+  processed/{official,synthetic}/<region>/<dataset>/   analysis-ready COGs, dataset.json, statistics, change products
+  geographical_boundaries/      GeoJSON: countries, states, districts, cities, localities, geographical_features
+  previews/                     PNG previews rendered from the rasters
+  documentation/                source_registry.json, dataset_catalogue.{csv,pdf}, validation_report.json, data_provenance_report.pdf, ...
+NASAX_JUDGE_EVIDENCE/           evidence package with checksums (see its EVIDENCE_REPORT.md)
+```
+
+| Region | Official-derived data | Illustrative Dataset |
+| --- | --- | --- |
+| Himalayas (Dhauliganga) | none (glacier inventories need an account) | 2001-2020: glacier, snow, glacial lake, exposed terrain |
+| Sundarbans | ESA WorldCover 2021 (one date, so no change analysis) | 2000-2020: mangrove, water, mudflat, erosion / accretion |
+| Hyderabad | GHSL built-up 2000 / 2010 / 2020, JRC water 1984 / 2021 | 2000-2024: built-up, vegetation, agriculture, water |
+| Bellandur Lake | GHSL (east Bengaluru), JRC water 1984 / 2021 | 2002-2022: water, aquatic vegetation, wetland, built-up |
+
+Build and check (from the repository root, with the backend virtualenv active):
+
+```bash
+python scripts/generate_india_atlas.py --all    # download, generate, process, boundaries, statistics, change detection, manifest, catalogue
+python scripts/generate_previews.py             # PNG previews
+python scripts/validate_datasets.py             # writes documentation/validation_report.json
+python scripts/generate_evidence.py             # NASAX_JUDGE_EVIDENCE/
+```
+
+`generate_india_atlas.py` without flags only rebuilds the manifest and catalogue. Each step can run alone (`--steps official,process`). Official downloads
+are recorded as `VERIFIED_DOWNLOADED`, `VERIFIED_METADATA_ONLY`, `ACCESS_REQUIRES_AUTHENTICATION` or `NOT_ACCESSED`; nothing is marked downloaded without a checksum.
+To add a place: add a `Region` in `backend/app/explorer/atlas.py` (illustrative) or a recipe in `scripts/process_satellite_data.py` (official), then re-run.
+Honest limits: no Landsat, Sentinel-2 or Bhuvan scenes were downloaded; the Himalayas region is entirely illustrative; city, locality and landmark outlines are
+approximate areas marked as such; Cesium shows no real terrain relief.
 
 ## 3D story map
 

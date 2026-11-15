@@ -1,0 +1,28 @@
+{
+ "region": "sundarbans-west-bengal",
+ "seed": 202,
+ "bbox": [
+  88.6,
+  21.55,
+  89.1,
+  22.05
+ ],
+ "res_deg": 0.0004,
+ "years": [
+  2000,
+  2005,
+  2010,
+  2015,
+  2020
+ ],
+ "month": 1,
+ "rules": [
+  "Shorelines move with a smooth random field: some stretches erode, others accrete, and the exposed south erodes more often.",
+  "Mudflat is the intertidal band next to land; mangrove needs land above a minimum height, so new land becomes mangrove only after it has emerged.",
+  "Embanked interior is non-mangrove land."
+ ],
+ "cloud_fraction_by_year": {
+  "2010": 0.04
+ },
+ "designation": "illustrative"
+}

@@ -34,7 +34,7 @@ from scipy import stats
 from shapely.geometry import mapping, shape
 from shapely.ops import unary_union
 
-from app.errors import AppError
+from app.errors import AppError, unprocessable
 from app.explorer.datasets import Dataset, DatasetService, Obs
 from app.explorer.geoutil import area_ha, compass
 from app.explorer.rendering import D_GAIN, D_LAND, D_LOSS, D_UNCERTAIN, D_WATER
@@ -72,11 +72,18 @@ def check_period(ds: Dataset, start_year: int, end_year: int) -> PeriodCheck:
         msgs.append(f"Choose a period inside {cs}–{ce}.")
         return PeriodCheck(requested=req, supported=supported, effective=None, status="outside", messages=msgs)
     es, ee = max(start_year, cs), min(end_year, ce)
+    years = sorted({o.date.year for o in ds.observations if es <= o.date.year <= ee})
+    if len(years) >= 2:  # snap to the first and last year that actually has an observation (sparse datasets)
+        es, ee = years[0], years[-1]
+    elif es < ee:
+        found = ", ".join(str(y) for y in years) or "none"
+        msgs.append(f"Only {len(years)} observation year(s) fall inside {start_year}–{end_year} (years with data: {found}), so two dates cannot be compared.")
+        return PeriodCheck(requested=req, supported=supported, effective={"start_year": es, "end_year": ee}, status="too_short", messages=msgs)
     if es >= ee:
         msgs.append(f"Only {es} overlaps the dataset ({cs}–{ce}), which is too short to compare two periods.")
         return PeriodCheck(requested=req, supported=supported, effective={"start_year": es, "end_year": ee}, status="too_short", messages=msgs)
     if (es, ee) != (start_year, end_year):
-        msgs.append(f"The dataset covers {cs}–{ce}, so the analysis uses {es}–{ee} instead of {start_year}–{end_year}. Nothing was estimated for the missing years.")
+        msgs.append(f"The dataset has observations from {es} to {ee} inside the requested {start_year}–{end_year}, so the analysis uses {es}–{ee}. Nothing was estimated for the missing years.")
         return PeriodCheck(requested=req, supported=supported, effective={"start_year": es, "end_year": ee}, status="clipped", messages=msgs)
     return PeriodCheck(requested=req, supported=supported, effective={"start_year": es, "end_year": ee}, status="ok", messages=[])
 
@@ -89,6 +96,8 @@ def dataset_info(svc: DatasetService, ds: Dataset) -> DatasetInfo:
         resolution_m=float(m.get("resolution_m", 0.0)), temporal_resolution=m["temporal_resolution"], bbox=ds.bbox, coverage=dict(m["coverage"]),
         observation_count=len(ds.observations), usable_count=len(svc.usable(ds)), classes=dict(m.get("classes", {})),
         real_dataset_targets=list(m.get("real_dataset_targets", [])), issues=list(ds.issues),
+        variables=ds.variables, designation=str(m.get("designation", "illustrative" if ds.is_synthetic else "official")), public_label=str(m.get("public_label", "Illustrative Dataset" if ds.is_synthetic else "Historical Observations")),
+        provenance=dict(m.get("provenance", {})),
     )
 
 
@@ -97,10 +106,15 @@ def _composite(arrs: list[np.ndarray], water_class: int, uncertain: int, freq: f
     stack = np.stack(arrs)
     valid = stack != uncertain
     vc = valid.sum(axis=0)
-    wc = ((stack == water_class) & valid).sum(axis=0)
+    wc = (np.isin(stack, water_class) & valid).sum(axis=0)
     ok = vc >= max(1, math.ceil(min_obs_fraction * len(arrs)))
     water = ok & (wc >= freq * np.maximum(vc, 1))
     return water, ok
+
+
+def _mfp(ds: Dataset, p: ChangeParams) -> int:
+    """Positional-noise filter width: the request, else the dataset's own setting (classification products need none), else 3."""
+    return p.min_feature_px if p.min_feature_px is not None else int(ds.meta.get("min_feature_px", 3))
 
 
 def _clean(mask: np.ndarray, min_feature_px: int) -> np.ndarray:
@@ -254,15 +268,20 @@ class ChangeDetectionService:
                 [f"{need - len(s0)} more usable observation(s) in {label0}" if len(s0) < need else "", f"{need - len(s1)} more usable observation(s) in {label1}" if len(s1) < need else ""] + (n0 + n1 + notes)[:6], p,
             )
 
-        W, U = ds.water_class, ds.uncertain
+        try:
+            var = ds.variable(p.variable)
+        except ValueError as exc:
+            raise unprocessable("unknown_variable", str(exc)) from exc
+        W, U, vlab = var["class"], ds.uncertain, var["label"]
         w0, ok0 = _composite([arrays[o.iso] for o in s0], W, U, p.water_frequency, p.min_pixel_obs_fraction)
         w1, ok1 = _composite([arrays[o.iso] for o in s1], W, U, p.water_frequency, p.min_pixel_obs_fraction)
         valid = ok0 & ok1
         rows = ds.row_area_m2
         assert rows is not None
         total_ha = area_ha(np.ones_like(valid), rows)
-        loss = _clean(w0 & ~w1 & valid, p.min_feature_px)
-        gain = _clean(~w0 & w1 & valid, p.min_feature_px)
+        mfp = _mfp(ds, p)
+        loss = _clean(w0 & ~w1 & valid, mfp)
+        gain = _clean(~w0 & w1 & valid, mfp)
         diff = np.full(valid.shape, D_UNCERTAIN, dtype=np.uint8)
         diff[valid & ~w1] = D_LAND
         diff[valid & w1] = D_WATER
@@ -274,14 +293,16 @@ class ChangeDetectionService:
         unchanged_water_ha = area_ha(w0 & w1 & valid & ~loss & ~gain, rows)
         unchanged_land_ha = area_ha(~w0 & ~w1 & valid & ~loss & ~gain, rows)
         analysed_ha, uncertain_ha = area_ha(valid, rows), area_ha(~valid, rows)
+        # Changes narrower than the noise filter are not counted as change; report how much area that is so the totals reconcile.
+        noise_filtered_ha = area_ha(((w0 & ~w1) | (~w0 & w1)) & valid & ~loss & ~gain, rows)
         net_ha = gained_ha - lost_ha
         pct_net = 100.0 * net_ha / water_start_ha if water_start_ha > 0 else None
         pct_gross = 100.0 * (gained_ha + lost_ha) / water_start_ha if water_start_ha > 0 else None
 
-        aid = hashlib.sha1(f"{ds.id}|{es}|{ee}|{p.model_dump_json()}|{len(ds.observations)}".encode()).hexdigest()[:12]
-        hotspots, fc = self._hotspots(ds, loss, gain, w0, valid, aid, p.min_hotspot_ha)
-        progression = self._progression(ds, arrays, common, es, ee, w0, ok0, p)
-        trend, sigma = self._trend(progression)
+        aid = hashlib.sha1(f"{ds.id}|{es}|{ee}|{p.model_dump_json()}|{mfp}|{len(ds.observations)}".encode()).hexdigest()[:12]
+        hotspots, fc = self._hotspots(ds, loss, gain, w0, valid, aid, p.min_hotspot_ha, vlab)
+        progression = self._progression(ds, arrays, common, es, ee, w0, ok0, p, W)
+        trend, sigma = self._trend(progression, vlab)
 
         # seasonal amplitude from the starting window (reported, and used in the limitations)
         shares = []
@@ -289,7 +310,7 @@ class ChangeDetectionService:
             a = arrays[o.iso]
             v = a != U
             if v.any():
-                shares.append(float(((a == W) & v).sum() / v.sum()))
+                shares.append(float((np.isin(a, W) & v).sum() / v.sum()))
         seasonal_amp = 100.0 * (max(shares) - min(shares)) / (sum(shares) / len(shares)) if len(shares) >= 4 and sum(shares) > 0 else None
 
         gross_ha = gained_ha + lost_ha
@@ -317,16 +338,16 @@ class ChangeDetectionService:
             confidence = "medium"
             reasons.append("each end rests on a single yearly observation")
 
-        limits = self._limitations(ds, info, p, common, n0 + n1 + notes, period, seasonal_amp, sigma, trend)
-        most = self._most_affected(hotspots)
+        limits = self._limitations(ds, info, p, common, n0 + n1 + notes, period, seasonal_amp, sigma, trend, vlab)
+        most = self._most_affected(hotspots, vlab)
         lab_period = f"{es}–{ee}"
         if outcome == "change_detected":
-            headline = f"Change detected: {lost_ha:.1f} ha of water lost and {gained_ha:.1f} ha gained between {es} and {ee} (net {net_ha:+.1f} ha{'' if pct_net is None else f', {pct_net:+.1f}%'})."
+            headline = f"Change detected: {lost_ha:.1f} ha of {vlab} lost and {gained_ha:.1f} ha gained between {es} and {ee} (net {net_ha:+.1f} ha{'' if pct_net is None else f', {pct_net:+.1f}%'})."
         else:
             why = ""
             if big_enough and not above_noise:
                 why = " The measured difference is no larger than normal year-to-year scatter."
-            headline = f"No clear change in water extent between {es} and {ee} (net {net_ha:+.1f} ha{'' if pct_net is None else f', {pct_net:+.1f}%'}).{why}"
+            headline = f"No clear change in {vlab} extent between {es} and {ee} (net {net_ha:+.1f} ha{'' if pct_net is None else f', {pct_net:+.1f}%'}).{why}"
 
         first, last = min(s0, key=lambda o: o.date), max(s1, key=lambda o: o.date)
         base = "/api/explorer"
@@ -338,7 +359,7 @@ class ChangeDetectionService:
             areas={
                 "footprint_ha": round(total_ha, 2), "analysed_ha": round(analysed_ha, 2), "uncertain_ha": round(uncertain_ha, 2),
                 "water_start_ha": round(water_start_ha, 2), "water_end_ha": round(water_end_ha, 2), "gained_ha": round(gained_ha, 2), "lost_ha": round(lost_ha, 2),
-                "net_ha": round(net_ha, 2), "unchanged_water_ha": round(unchanged_water_ha, 2), "unchanged_land_ha": round(unchanged_land_ha, 2),
+                "net_ha": round(net_ha, 2), "unchanged_water_ha": round(unchanged_water_ha, 2), "unchanged_land_ha": round(unchanged_land_ha, 2), "noise_filtered_ha": round(noise_filtered_ha, 2),
                 "pct_net_change": None if pct_net is None else round(pct_net, 2), "pct_gross_change": None if pct_gross is None else round(pct_gross, 2),
                 "seasonal_amplitude_pct": None if seasonal_amp is None else round(seasonal_amp, 1), "year_to_year_scatter_ha": None if sigma is None else round(sigma, 2),
             },
@@ -347,9 +368,9 @@ class ChangeDetectionService:
             confidence=confidence, confidence_reasons=reasons, limitations=limits,
             what_was_analysed=(
                 f"Same-season composites of {label0} ({len(s0)} observations) and {label1} ({len(s1)} observations), using only {_fmt_months(common)} so seasons match. "
-                f"A pixel counts as water if it is water in at least {p.water_frequency:.0%} of its valid observations; {uncertain_ha:.0f} ha ({unc_share:.0%}) were uncertain and excluded."
+                f"A pixel counts as {vlab} if it is {vlab} in at least {p.water_frequency:.0%} of its valid observations; {uncertain_ha:.0f} ha ({unc_share:.0%}) were uncertain and excluded."
             ),
-            thresholds=p.model_dump(), bbox=ds.bbox, is_synthetic=ds.is_synthetic, simulated_label=ds.meta.get("simulated_label"),
+            thresholds=p.model_dump(), bbox=ds.bbox, is_synthetic=ds.is_synthetic, simulated_label=ds.meta.get("simulated_label"), variable=var,
             layers={
                 "difference_png": f"{base}/analysis/{aid}/layers/difference.png", "before_png": f"{base}/analysis/{aid}/layers/before.png", "after_png": f"{base}/analysis/{aid}/layers/after.png",
                 "difference_tif": f"{base}/analysis/{aid}/layers/difference.tif", "hotspots_geojson": f"{base}/analysis/{aid}/hotspots",
@@ -360,7 +381,7 @@ class ChangeDetectionService:
         return rec
 
     # ------------------------------------------------------------------------------- pieces
-    def _hotspots(self, ds: Dataset, loss: np.ndarray, gain: np.ndarray, w0: np.ndarray, valid: np.ndarray, aid: str, min_ha: float) -> tuple[list[Hotspot], dict[str, Any]]:
+    def _hotspots(self, ds: Dataset, loss: np.ndarray, gain: np.ndarray, w0: np.ndarray, valid: np.ndarray, aid: str, min_ha: float, lab: str = "water") -> tuple[list[Hotspot], dict[str, Any]]:
         rows = ds.row_area_m2
         assert rows is not None
         tr = _lonlat_transformer(ds)
@@ -390,7 +411,7 @@ class ChangeDetectionService:
             g4 = gs4326.iloc[0]
             cen = g4.centroid
             region = compass((cen.x - cx) * math.cos(math.radians(cen.y)), cen.y - cy) if len(r0) else "central"
-            desc = f"{region} {'shore' if kind == 'loss' else 'area'}: {a:.1f} ha of water {'lost' if kind == 'loss' else 'gained'}"
+            desc = f"{region} {'shore' if kind == 'loss' and ('water' in lab or 'lake' in lab) else 'area'}: {a:.1f} ha of {lab} {'lost' if kind == 'loss' else 'gained'}"
             hid = f"{aid}-{kind[0]}{rank}"
             out.append(Hotspot(
                 id=hid, rank=rank, kind=kind, area_ha=round(a, 2), geometry_area_ha=round(g_area, 2), share_of_change_pct=round(100 * a / total, 1),
@@ -399,10 +420,10 @@ class ChangeDetectionService:
             feats.append({"type": "Feature", "id": hid, "geometry": mapping(g4), "properties": {"id": hid, "rank": rank, "kind": kind, "area_ha": round(a, 2), "region": region, "description": desc}})
         return out, {"type": "FeatureCollection", "features": feats}
 
-    def _progression(self, ds: Dataset, arrays: dict[str, np.ndarray], common: list[int], es: int, ee: int, w0: np.ndarray, ok0: np.ndarray, p: ChangeParams) -> list[ProgressionPoint]:
+    def _progression(self, ds: Dataset, arrays: dict[str, np.ndarray], common: list[int], es: int, ee: int, w0: np.ndarray, ok0: np.ndarray, p: ChangeParams, W: int) -> list[ProgressionPoint]:
         rows = ds.row_area_m2
         assert rows is not None
-        W, U = ds.water_class, ds.uncertain
+        U = ds.uncertain
         need = max(1, math.ceil(len(common) / 2)) if ds.temporal == "monthly" else 1
         pts: list[ProgressionPoint] = []
         for y in range(es, ee + 1):
@@ -424,12 +445,13 @@ class ChangeDetectionService:
             ok_ha = area_ha(oky, rows)
             full = area_ha(np.ones_like(oky), rows)
             water_ha = area_ha(wy & oky, rows) / ok_ha * full if ok_ha > 0 else 0.0
-            cl = area_ha(_clean(w0 & ~wy & both, p.min_feature_px), rows)
-            cg = area_ha(_clean(~w0 & wy & both, p.min_feature_px), rows)
+            mfp = _mfp(ds, p)
+            cl = area_ha(_clean(w0 & ~wy & both, mfp), rows)
+            cg = area_ha(_clean(~w0 & wy & both, mfp), rows)
             pts.append(ProgressionPoint(year=y, water_ha=round(water_ha, 2), cumulative_loss_ha=round(cl, 2), cumulative_gain_ha=round(cg, 2), observations=len(arrs)))
         return pts
 
-    def _trend(self, prog: list[ProgressionPoint]) -> tuple[dict[str, Any] | None, float | None]:
+    def _trend(self, prog: list[ProgressionPoint], lab: str = "water") -> tuple[dict[str, Any] | None, float | None]:
         if len(prog) < 4:
             return None, None
         x = np.array([q.year for q in prog], dtype=float)
@@ -439,9 +461,9 @@ class ChangeDetectionService:
         resid = y - (intercept + slope * x)
         sigma = float(np.std(resid, ddof=1)) if len(prog) >= 5 else None
         direction = "decreasing" if (pval < 0.05 and slope < 0) else "increasing" if (pval < 0.05 and slope > 0) else "no clear trend"
-        return {"method": "Theil-Sen slope with Kendall tau test on yearly same-season water area", "slope_ha_per_year": round(float(slope), 3), "p_value": round(float(pval), 4), "tau": round(float(tau), 3), "direction": direction, "years": len(prog)}, sigma
+        return {"method": f"Theil-Sen slope with Kendall tau test on yearly same-season {lab} area", "slope_ha_per_year": round(float(slope), 3), "p_value": round(float(pval), 4), "tau": round(float(tau), 3), "direction": direction, "years": len(prog)}, sigma
 
-    def _most_affected(self, hs: list[Hotspot]) -> dict[str, Any] | None:
+    def _most_affected(self, hs: list[Hotspot], lab: str = "water") -> dict[str, Any] | None:
         if not hs:
             return None
         agg: dict[tuple[str, str], float] = {}
@@ -449,21 +471,22 @@ class ChangeDetectionService:
             agg[(h.region, h.kind)] = agg.get((h.region, h.kind), 0.0) + h.area_ha
         (region, kind), a = max(agg.items(), key=lambda kv: kv[1])
         top = next(h for h in hs if h.region == region and h.kind == kind)
-        return {"region": region, "kind": kind, "area_ha": round(a, 2), "description": f"{region} {'shore' if kind == 'loss' else 'area'}: {a:.1f} ha of water {'lost' if kind == 'loss' else 'gained'}", "hotspot_id": top.id, "centroid": top.centroid}
+        return {"region": region, "kind": kind, "area_ha": round(a, 2), "description": f"{region} {'shore' if kind == 'loss' and ('water' in lab or 'lake' in lab) else 'area'}: {a:.1f} ha of {lab} {'lost' if kind == 'loss' else 'gained'}", "hotspot_id": top.id, "centroid": top.centroid}
 
-    def _limitations(self, ds: Dataset, info: DatasetInfo, p: ChangeParams, common: list[int], notes: list[str], period: PeriodCheck, seasonal_amp: float | None, sigma: float | None, trend: dict[str, Any] | None) -> list[str]:
+    def _limitations(self, ds: Dataset, info: DatasetInfo, p: ChangeParams, common: list[int], notes: list[str], period: PeriodCheck, seasonal_amp: float | None, sigma: float | None, trend: dict[str, Any] | None, lab: str = "water") -> list[str]:
+        mfp = _mfp(ds, p)
         out = [
-            f"Spatial resolution is about {info.resolution_m:.0f} m per pixel; shoreline shifts smaller than ~{p.min_feature_px - 1} pixels are treated as positional noise.",
+            f"Spatial resolution is about {info.resolution_m:.0f} m per pixel; " + (f"boundary shifts smaller than ~{mfp - 1} pixels are treated as positional noise." if mfp > 1 else "no positional-noise filter is applied to this classification product, so single-pixel changes are kept."),
             f"Only {_fmt_months(common)} were compared so that seasons match; other months were not used for the start/end maps.",
         ]
         if ds.is_synthetic:
-            out.insert(0, "This is SIMULATED demonstration data, not satellite observations. Results show the method working on known, built-in changes.")
+            out.insert(0, "Illustrative Dataset: a generated demonstration layer, not satellite imagery. Results show the method working on known, built-in changes.")
         out.extend(period.messages)
         if notes:
             out.append("Some observations were excluded: " + "; ".join(notes[:4]) + ("…" if len(notes) > 4 else "."))
         if seasonal_amp is not None:
-            out.append(f"Within a single year the water area varies by about {seasonal_amp:.0f}% between seasons; that cycle alone is not treated as lasting change.")
+            out.append(f"Within a single year the {lab} area varies by about {seasonal_amp:.0f}% between seasons; that cycle alone is not treated as lasting change.")
         if sigma is None:
             out.append("Fewer than five yearly composites exist, so the year-to-year scatter test could not be applied.")
-        out.append("The data describe where and how much water extent changed. They cannot, by themselves, establish why.")
+        out.append(f"The data describe where and how much {lab} extent changed. They cannot, by themselves, establish why.")
         return out

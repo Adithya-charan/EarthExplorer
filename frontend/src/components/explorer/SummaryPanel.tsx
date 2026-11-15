@@ -2,8 +2,9 @@
 
 import { ChevronDown, ChevronUp, Send, Sparkles } from "lucide-react";
 import { useState } from "react";
-import { fmtDate, fmtHa, fmtPct } from "@/lib/explorer/logic";
-import type { ChangeSummary, Explanation, Hotspot, ProgressionPoint } from "@/lib/explorer/types";
+import { cap, dataLabel, fmtDate, fmtHa, fmtPct, isIllustrative } from "@/lib/explorer/logic";
+import type { ChangeSummary, DatasetInfo, Explanation, Hotspot, ProgressionPoint } from "@/lib/explorer/types";
+import { DetailsPanel, type DetailsProps } from "./DetailsPanel";
 
 export interface ChatTurn {
   q: string;
@@ -23,9 +24,15 @@ interface Props {
   onAsk: (q: string) => void;
   collapsed: boolean;
   onToggle: () => void;
+  details: DetailsProps;
+  datasets: DatasetInfo[];
+  activeDatasetId: string | null;
+  onPickDataset: (id: string) => void;
+  onPickVariable: (key: string) => void;
+  busy: boolean;
 }
 
-function Spark({ data }: { data: ProgressionPoint[] }) {
+function Spark({ data, label }: { data: ProgressionPoint[]; label: string }) {
   if (data.length < 2) return <p className="text-[12px] text-[color:var(--nx-muted)]">Too few yearly composites to draw a progression.</p>;
   const w = 296;
   const h = 84;
@@ -40,7 +47,7 @@ function Spark({ data }: { data: ProgressionPoint[] }) {
   const path = data.map((d, i) => `${i ? "L" : "M"}${sx(d.year).toFixed(1)},${sy(d.water_ha).toFixed(1)}`).join(" ");
   return (
     <figure>
-      <svg viewBox={`0 0 ${w} ${h}`} className="w-full" role="img" aria-label={`Estimated water area by year, from ${fmtHa(data[0].water_ha, 0)} in ${x0} to ${fmtHa(data[data.length - 1].water_ha, 0)} in ${x1}`}>
+      <svg viewBox={`0 0 ${w} ${h}`} className="w-full" role="img" aria-label={`Estimated ${label} area by year, from ${fmtHa(data[0].water_ha, 0)} in ${x0} to ${fmtHa(data[data.length - 1].water_ha, 0)} in ${x1}`}>
         <path d={path} fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinejoin="round" />
         {data.map((d) => (
           <circle key={d.year} cx={sx(d.year)} cy={sy(d.water_ha)} r="2.2" fill="#38bdf8">
@@ -72,6 +79,7 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: "lo
 export function SummaryPanel(p: Props) {
   const s = p.summary;
   const [q, setQ] = useState("");
+  const [tab, setTab] = useState<"summary" | "details">("summary");
   const temporal = s.dataset?.temporal_resolution ?? "monthly";
   const a = s.areas;
   if (p.collapsed) {
@@ -82,6 +90,8 @@ export function SummaryPanel(p: Props) {
     );
   }
   const hasMeasure = s.outcome !== "insufficient_data";
+  const vlabel = s.variable?.label ?? "water";
+  const ds = s.dataset;
   return (
     <aside aria-label="Change summary" data-testid="summary-panel" className="nx-glass nx-rise flex max-h-[calc(100dvh-210px)] w-[392px] max-w-[94vw] flex-col overflow-hidden">
       <header className="flex items-start justify-between gap-2 border-b border-[color:var(--nx-line)] px-4 py-3">
@@ -97,17 +107,58 @@ export function SummaryPanel(p: Props) {
           <ChevronDown className="h-4 w-4" aria-hidden />
         </button>
       </header>
+      <div role="tablist" aria-label="Panel sections" className="flex gap-1 border-b border-[color:var(--nx-line)] px-3 py-1.5">
+        {(["summary", "details"] as const).map((t) => (
+          <button key={t} type="button" role="tab" aria-selected={tab === t} className="nx-ghost text-[12.5px]" onClick={() => setTab(t)} data-testid={`tab-${t}`}>
+            {t === "summary" ? "Summary" : "Details"}
+          </button>
+        ))}
+      </div>
       <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-4 py-3">
-        {s.is_synthetic ? (
-          <p className="rounded-md border border-amber-400/40 bg-amber-400/10 px-2 py-1 text-[11.5px] font-semibold text-amber-200">{s.simulated_label ?? "SIMULATED DEMONSTRATION DATA"}</p>
-        ) : null}
+        <div className="space-y-2" data-testid="data-source">
+          <p
+            data-testid="data-badge"
+            className={`inline-block rounded-md border px-2 py-1 text-[11.5px] font-semibold ${isIllustrative(ds) ? "border-amber-400/40 bg-amber-400/10 text-amber-200" : "border-emerald-400/40 bg-emerald-400/10 text-emerald-200"}`}
+          >
+            {dataLabel(ds)}
+          </p>
+          {isIllustrative(ds) ? <p className="text-[11.5px] text-amber-200/90">{s.simulated_label ?? "Illustrative Dataset: a generated demonstration layer, not satellite imagery."}</p> : null}
+          {p.datasets.length > 1 ? (
+            <label className="flex flex-col gap-1 text-[11.5px] text-[color:var(--nx-muted)]">
+              Data layer
+              <select className="nx-input py-1.5 text-[12.5px]" value={p.activeDatasetId ?? ""} onChange={(e) => p.onPickDataset(e.target.value)} disabled={p.busy} data-testid="dataset-select">
+                {p.datasets.map((d) => (
+                  <option key={d.id} value={d.id}>
+                    {d.name.replace(/ \((?:illustrative|simulated)[^)]*\)$/i, "")} · {dataLabel(d)} · {d.coverage.start.slice(0, 4)}–{d.coverage.end.slice(0, 4)}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ) : null}
+          {ds && ds.variables.length > 1 ? (
+            <label className="flex flex-col gap-1 text-[11.5px] text-[color:var(--nx-muted)]">
+              Measure
+              <select className="nx-input py-1.5 text-[12.5px]" value={s.variable?.key ?? ds.variables[0].key} onChange={(e) => p.onPickVariable(e.target.value)} disabled={p.busy} data-testid="variable-select">
+                {ds.variables.map((v) => (
+                  <option key={v.key} value={v.key}>
+                    {cap(v.label)}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ) : null}
+        </div>
+
+        {tab === "details" ? <DetailsPanel {...p.details} /> : null}
+        {tab === "summary" ? (
+          <>
 
         {hasMeasure ? (
           <dl className="grid grid-cols-2 gap-2" data-testid="summary-stats">
             <Stat label="Area analysed" value={fmtHa(a.analysed_ha)} />
             <Stat label="Net change" value={`${fmtHa(a.net_ha)} (${fmtPct(a.pct_net_change)})`} />
-            <Stat label="Water lost" value={fmtHa(a.lost_ha)} tone="loss" />
-            <Stat label="Water gained" value={fmtHa(a.gained_ha)} tone="gain" />
+            <Stat label={`${cap(vlabel)} lost`} value={fmtHa(a.lost_ha)} tone="loss" />
+            <Stat label={`${cap(vlabel)} gained`} value={fmtHa(a.gained_ha)} tone="gain" />
           </dl>
         ) : null}
 
@@ -162,8 +213,8 @@ export function SummaryPanel(p: Props) {
 
         {s.progression.length ? (
           <div>
-            <h3 className="mb-1 text-[12px] font-semibold uppercase tracking-wide text-[color:var(--nx-muted)]">Progression (same-season water area)</h3>
-            <Spark data={s.progression} />
+            <h3 className="mb-1 text-[12px] font-semibold uppercase tracking-wide text-[color:var(--nx-muted)]">Progression (same-season {vlabel} area)</h3>
+            <Spark data={s.progression} label={vlabel} />
             {s.trend ? (
               <p className="mt-1 text-[11.5px] text-[color:var(--nx-muted)]">
                 Trend: {s.trend.direction} ({s.trend.slope_ha_per_year > 0 ? "+" : ""}
@@ -236,6 +287,8 @@ export function SummaryPanel(p: Props) {
               ))}
             </ul>
           </div>
+        ) : null}
+          </>
         ) : null}
       </div>
     </aside>

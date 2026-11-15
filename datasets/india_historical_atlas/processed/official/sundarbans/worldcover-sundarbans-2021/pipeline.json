@@ -1,0 +1,32 @@
+{
+ "dataset": "worldcover-sundarbans-2021",
+ "generated_at": "2026-11-15T01:14:46+00:00",
+ "steps": [
+  {
+   "inspect": {
+    "crs": "EPSG:4326",
+    "res_deg": 8.333333333333333e-05,
+    "dtype": "uint8"
+   },
+   "clip": {
+    "window": [
+     19200,
+     23400,
+     6000,
+     6000
+    ]
+   },
+   "crs": "no reprojection needed (EPSG:4326)",
+   "align": "3x3 mode aggregation to 0.00025 degrees",
+   "classify": "see processing_operations",
+   "class_area_ha": {
+    "Other land / exposed terrain": 367.74,
+    "Water": 135580.76,
+    "Vegetation": 1041.98,
+    "Built-up": 4.72,
+    "Mangrove": 146454.89,
+    "Agriculture": 2797.3
+   }
+  }
+ ]
+}
