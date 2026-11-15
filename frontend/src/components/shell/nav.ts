@@ -1,4 +1,4 @@
-import { BarChart3, BookOpen, Globe2, UploadCloud, type LucideIcon } from "lucide-react";
+import { BarChart3, BookOpen, Globe2, History, UploadCloud, type LucideIcon } from "lucide-react";
 
 export interface NavItem {
   href: string;
@@ -11,6 +11,13 @@ export interface NavItem {
 export const NAV: NavItem[] = [
   {
     href: "/",
+    label: "Earth Time Machine",
+    title: "NASAX Earth Time Machine",
+    description: "Search a place on the 3D globe and see how it changed over time.",
+    icon: History,
+  },
+  {
+    href: "/story",
     label: "What happened?",
     title: "What happened here?",
     description: "Pick a place and a time, read the summary, see it on a 3D map, or ask in chat.",

@@ -201,6 +201,39 @@ All routes are under `/api`. Errors use the shape `{"error": {"code", "message",
 Limits: uploads over 25 MB are rejected with 413 (configurable); filenames are sanitised and server-generated IDs
 are used on disk; CORS allows only the local frontend origins by default.
 
+## NASAX Earth Time Machine (home page)
+
+The home page (`/`) is a full-screen CesiumJS 3D globe. Search a place, pick a start and end year, press **Explore**:
+the globe turns to the place, drops a marker, flies in, shows the **latest available observation** (never labelled live),
+then compares the two ends of your period and reports one of three outcomes:
+
+* **Change detected** - lost / gained water, hotspots with real polygon boundaries, auto-zoom to the biggest one.
+* **No clear change** - what was analysed and the measurements, with an option to explore anyway.
+* **Insufficient data** - what is missing, which dates exist, and a suggested supported period. This is never reported as "no change".
+
+Map modes: latest, historical (bottom timeline: only dates that exist, draggable, play/pause, speed, prev/next), before/after,
+swipe, difference, hotspots. Years outside a dataset's coverage are explained, and a partial overlap is analysed with an explicit notice.
+
+**Data.** `backend/data/explorer/<id>/` holds `dataset.json`, `observations/*.tif` (GeoTIFF/COG; GeoJSON and CSV with lon/lat also load) and,
+for demo data, `ground_truth.json`. The three bundled datasets are **simulated** and labelled so everywhere: Bellandur Lake (monthly 2000-2025,
+controlled encroachment, drying and a new pond, missing months, cloud), Hussain Sagar (yearly, stable) and a sparse Chilika patch (2014-2019).
+Regenerate with `python -m app.explorer.synthetic` (also runs on first start if the folder is empty). The loader is dataset-agnostic (own dates,
+resolution and CRS per dataset), ready for JRC Global Surface Water Monthly History (1984-03 to 2021-12), Landsat Collection 2 and Sentinel-2 SR
+(2017-03 onward) once files are converted to the same layout.
+
+**Method.** Same-season composites at both ends, water-frequency threshold, common-grid alignment, cloud/no-data excluded, feature clean-up,
+geodesic per-row pixel areas (hotspot polygons re-measured in UTM), Theil-Sen/Kendall progression, a year-to-year scatter test, configurable
+thresholds (`params` on `POST /api/explorer/analysis/detect-change`).
+
+**AI.** Set `GROQ_API_KEY` (env only) to have Groq explain results through backend tools (summary, hotspots, area series, quality). With no key, or on
+any failure, a deterministic report from the same numbers is used and the UI says which one you are reading. Neither claims causes.
+
+API: `/api/explorer/` - `locations/search`, `session`, `datasets`, `datasets/{id}/observations`, `.../observations/{date}/layer.png`,
+`analysis/detect-change`, `analysis/{id}/{change-summary,hotspots,change-layers,layers/{difference.png,before.png,after.png,difference.tif},explain}`, `ai/chat`.
+
+Run: `python scripts/dev.py`, or backend `uvicorn app.main:app --port 8000` plus `npm run dev` in `frontend/` (the `predev` script copies Cesium assets to `public/vendor/cesium`).
+The earlier story/trend/upload pages remain under `/story`, `/trend`, `/upload`.
+
 ## 3D story map
 
 The home page draws the selected region on a MapLibre 3D globe. **Colour** is the difference from the usual value for that

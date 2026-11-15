@@ -28,6 +28,9 @@ def settings(tmp_path) -> Settings:
         max_datasets=3,
         demo_csv_path=BACKEND / "data" / "earth_science_trend_demo.csv",
         datasets_dir=tmp_path / "no-package",  # packaged CSVs are opt-in per test (see package_client)
+        explorer_dir=tmp_path / "explorer",  # explorer datasets are opt-in per test (see tests/test_explorer.py)
+        explorer_generate_demo=False,
+        groq_api_key=None,
     )
 
 

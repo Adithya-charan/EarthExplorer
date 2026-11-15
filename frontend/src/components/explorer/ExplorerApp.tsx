@@ -1,0 +1,485 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { AlertTriangle, Globe2, Loader2, Menu } from "lucide-react";
+import { explorerApi } from "@/lib/explorer/api";
+import { bboxRadiusM, observationsInPeriod, planLayers, playDelayMs, stepIndex } from "@/lib/explorer/logic";
+import type { ChangeSummary, DatasetInfo, Explanation, HotspotCollection, MapMode, ObservationInfo, SessionResponse } from "@/lib/explorer/types";
+import { toApiError } from "@/lib/api";
+import type { GlobeFocus } from "./Globe";
+import { HotspotNav, Legend, LatestCard, ModeBar, OutcomeBanner, StatusPill, type Phase } from "./Overlays";
+import { SearchPanel } from "./SearchPanel";
+import { SummaryPanel, type ChatTurn } from "./SummaryPanel";
+import { Timeline } from "./Timeline";
+
+const Globe = dynamic(() => import("./Globe"), {
+  ssr: false,
+  loading: () => (
+    <div className="absolute inset-0 grid place-items-center text-[color:var(--nx-muted)]" role="status">
+      <span className="flex items-center gap-2">
+        <Loader2 className="nx-spin h-4 w-4" aria-hidden /> Loading the globe…
+      </span>
+    </div>
+  ),
+});
+
+const NAV_LINKS = [
+  { href: "/story", label: "What happened?" },
+  { href: "/trend", label: "Trend Analysis" },
+  { href: "/upload", label: "Upload Dataset" },
+  { href: "/methodology", label: "Methodology" },
+];
+
+function useReducedMotion(): boolean {
+  return useSyncExternalStore(
+    (cb) => {
+      const m = window.matchMedia("(prefers-reduced-motion: reduce)");
+      m.addEventListener("change", cb);
+      return () => m.removeEventListener("change", cb);
+    },
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false,
+  );
+}
+
+export function ExplorerApp() {
+  const reduced = useReducedMotion();
+  const [query, setQuery] = useState("");
+  const [startYear, setStartYear] = useState(2000);
+  const [endYear, setEndYear] = useState(2025);
+  const [datasets, setDatasets] = useState<DatasetInfo[] | null>(null);
+  const [datasetsError, setDatasetsError] = useState(false);
+
+  const [locating, setLocating] = useState(false);
+  const [session, setSession] = useState<SessionResponse | null>(null);
+  const [summary, setSummary] = useState<ChangeSummary | null>(null);
+  const [analysis, setAnalysis] = useState<"idle" | "running" | "done">("idle");
+  const [error, setError] = useState<string | null>(null);
+  const [observations, setObservations] = useState<ObservationInfo[]>([]);
+  const [hotspotFc, setHotspotFc] = useState<HotspotCollection | null>(null);
+  const [explanation, setExplanation] = useState<Explanation | null>(null);
+  const [explState, setExplState] = useState<"loading" | "ready" | "error" | "none">("none");
+  const [turns, setTurns] = useState<ChatTurn[]>([]);
+  const [asking, setAsking] = useState(false);
+
+  const [mode, setMode] = useState<MapMode>("latest");
+  const [cursor, setCursor] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const [speed, setSpeed] = useState(1);
+  const [baShowAfter, setBaShowAfter] = useState(false);
+  const [split, setSplit] = useState(0.5);
+  const [activeHotspot, setActiveHotspot] = useState(-1);
+  const [exploredAnyway, setExploredAnyway] = useState(false);
+  const [panelCollapsed, setPanelCollapsed] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  // Shown by default on tall screens; on short ones it is one click away so it never covers the map.
+  const [latestOpen, setLatestOpen] = useState(() => typeof window !== "undefined" && window.innerHeight >= 760);
+
+  const [focus, setFocus] = useState<GlobeFocus | null>(null);
+  const [flightDone, setFlightDone] = useState(0);
+  const [spin, setSpin] = useState(true);
+  const [globeError, setGlobeError] = useState<string | null>(null);
+  const [layerBusy, setLayerBusy] = useState(false);
+  const [layerError, setLayerError] = useState<string | null>(null);
+
+  const runRef = useRef(0);
+  const tokenRef = useRef(0);
+  const sessionToken = useRef(0);
+  const autoZoomed = useRef<string | null>(null);
+
+  // ------------------------------------------------------------------ dataset availability
+  useEffect(() => {
+    const c = new AbortController();
+    explorerApi
+      .datasets(c.signal)
+      .then(setDatasets)
+      .catch((e) => {
+        if (!c.signal.aborted) {
+          setDatasetsError(true);
+          void toApiError(e);
+        }
+      });
+    return () => c.abort();
+  }, []);
+
+  // ------------------------------------------------------------------------------- derived
+  const ds = session?.dataset ?? null;
+  const temporal = ds?.temporal_resolution ?? "monthly";
+  const eff = summary?.period?.effective ?? session?.period?.effective ?? null;
+  const periodObs = useMemo(() => {
+    if (!observations.length) return [];
+    const inP = eff ? observationsInPeriod(observations, eff.start_year, eff.end_year) : observations;
+    return inP.length ? inP : observations;
+  }, [observations, eff]);
+  const cursorIdx = Math.min(cursor, Math.max(0, periodObs.length - 1));
+  const flightComplete = !session || flightDone >= sessionToken.current || globeError !== null;
+  const revealed = session != null && flightComplete && analysis === "done";
+  const hasAnalysis = summary?.analysis_id != null && summary.outcome !== "insufficient_data";
+  const bbox = ds?.bbox ?? null;
+
+  const plan = useMemo(
+    () =>
+      planLayers({
+        mode,
+        summary,
+        datasetId: ds?.id ?? null,
+        bbox,
+        latestDate: session?.latest?.date ?? null,
+        cursorDate: periodObs[cursorIdx]?.date ?? null,
+        baShowAfter,
+        temporal,
+      }),
+    [mode, summary, ds, bbox, session, periodObs, cursorIdx, baShowAfter, temporal],
+  );
+  const prefetch = useMemo(() => {
+    if (mode !== "history" || !ds || !bbox) return [];
+    return [1, 2]
+      .map((k) => periodObs[cursorIdx + k]?.date)
+      .filter((d): d is string => Boolean(d))
+      .map((d) => planLayers({ mode: "history", summary, datasetId: ds.id, bbox, latestDate: null, cursorDate: d, baShowAfter: false, temporal }).primary!)
+      .filter(Boolean);
+  }, [mode, ds, bbox, periodObs, cursorIdx, summary, temporal]);
+
+  const phase: Phase = error ? "error" : locating ? "locating" : session && !flightComplete ? "flying" : analysis === "running" ? "analysing" : session ? "ready" : "idle";
+  const showResults = revealed || session?.status === "not_found";
+  const marker = session?.location && session.status !== "not_found" ? { lon: session.location.lon, lat: session.location.lat, label: session.location.name } : null;
+
+  // ---------------------------------------------------------------------------------- camera
+  const flyTo = useCallback((f: Omit<Extract<GlobeFocus, { kind: "place" }>, "token"> | Omit<Extract<GlobeFocus, { kind: "sphere" }>, "token">) => {
+    tokenRef.current += 1;
+    setFocus({ ...f, token: tokenRef.current } as GlobeFocus);
+    return tokenRef.current;
+  }, []);
+
+  const zoomHotspot = useCallback(
+    (i: number, s: ChangeSummary | null = summary) => {
+      const h = s?.hotspots[i];
+      if (!h) return;
+      setActiveHotspot(i);
+      setMode((m) => (m === "hotspots" || m === "difference" ? m : "hotspots"));
+      flyTo({ kind: "sphere", lon: h.centroid.lon, lat: h.centroid.lat, radius: bboxRadiusM(h.bbox) });
+    },
+    [summary, flyTo],
+  );
+
+  const overview = useCallback(() => {
+    setActiveHotspot(-1);
+    if (session?.location && ds) flyTo({ kind: "place", lon: session.location.lon, lat: session.location.lat, altitude: session.location.zoom_altitude_m, bbox: ds.bbox });
+  }, [session, ds, flyTo]);
+
+  // --------------------------------------------------------------------------------- explore
+  const explore = useCallback(
+    async (q: string, sy: number, ey: number) => {
+      const run = ++runRef.current;
+      const stale = () => run !== runRef.current;
+      setSpin(false);
+      setPlaying(false);
+      setError(null);
+      setLocating(true);
+      setSession(null);
+      setSummary(null);
+      setObservations([]);
+      setHotspotFc(null);
+      setExplanation(null);
+      setExplState("none");
+      setTurns([]);
+      setActiveHotspot(-1);
+      setExploredAnyway(false);
+      setLayerError(null);
+      setAnalysis("idle");
+      setMode("latest");
+      try {
+        const sess = await explorerApi.session({ query: q, start_year: sy, end_year: ey });
+        if (stale()) return;
+        setLocating(false);
+        setSession(sess);
+        if (sess.status === "not_found" || !sess.location) {
+          setSpin(true);
+          setAnalysis("done");
+          return;
+        }
+        const loc = sess.location;
+        sessionToken.current = flyTo({ kind: "place", lon: loc.lon, lat: loc.lat, altitude: loc.zoom_altitude_m, bbox: sess.dataset?.bbox ?? loc.bbox });
+        if (sess.status !== "ready" || !sess.dataset) {
+          setAnalysis("done");
+          return;
+        }
+        setAnalysis("running");
+        const [sum, obs] = await Promise.all([
+          explorerApi.detect({ dataset_id: sess.dataset.id, start_year: sy, end_year: ey }),
+          explorerApi.observations(sess.dataset.id),
+        ]);
+        if (stale()) return;
+        setObservations(obs);
+        setSummary(sum);
+        setMode(sum.outcome === "change_detected" ? "hotspots" : "latest");
+        const e = sum.period?.effective;
+        const inP = e ? observationsInPeriod(obs, e.start_year, e.end_year) : obs;
+        setCursor(Math.max(0, (inP.length || obs.length) - 1));
+        setAnalysis("done");
+        if (sum.analysis_id && sum.outcome !== "insufficient_data") {
+          explorerApi.hotspots(sum.analysis_id).then((fc) => !stale() && setHotspotFc(fc)).catch(() => undefined);
+          setExplState("loading");
+          explorerApi
+            .explain(sum.analysis_id)
+            .then((x) => {
+              if (stale()) return;
+              setExplanation(x);
+              setExplState("ready");
+            })
+            .catch(() => !stale() && setExplState("error"));
+        }
+      } catch (err) {
+        if (stale()) return;
+        setLocating(false);
+        setAnalysis("done");
+        setError(toApiError(err).message);
+        setSpin(true);
+      }
+    },
+    [flyTo],
+  );
+
+  const submit = () => void explore(query.trim(), startYear, endYear);
+  const pickExample = (e: string) => {
+    setQuery(e);
+    void explore(e, startYear, endYear);
+  };
+  const useSuggestion = (s: number, e: number) => {
+    setStartYear(s);
+    setEndYear(e);
+    void explore(query.trim() || session?.location?.name || "", s, e);
+  };
+
+  // After the flight and the analysis are both done and change was found, move in on the biggest hotspot.
+  useEffect(() => {
+    if (!revealed || !summary || summary.outcome !== "change_detected" || !summary.analysis_id) return;
+    if (autoZoomed.current === summary.analysis_id) return;
+    autoZoomed.current = summary.analysis_id;
+    const id = setTimeout(() => zoomHotspot(0, summary), reduced ? 0 : 1800);
+    return () => clearTimeout(id);
+  }, [revealed, summary, reduced, zoomHotspot]);
+
+  // ------------------------------------------------------------------------------- timeline
+  useEffect(() => {
+    if (!playing) return;
+    const id = setTimeout(() => {
+      setCursor((c) => {
+        const next = stepIndex(Math.min(c, periodObs.length - 1), periodObs.length, 1);
+        if (next === c || next >= periodObs.length - 1) setPlaying(false);
+        return next;
+      });
+    }, playDelayMs(speed));
+    return () => clearTimeout(id);
+  }, [playing, cursor, speed, periodObs.length]);
+
+  const scrub = (i: number) => {
+    setCursor(i);
+    if (mode !== "history") setMode("history");
+  };
+  const togglePlay = () => {
+    if (!playing) {
+      setMode("history");
+      if (cursorIdx >= periodObs.length - 1) setCursor(0);
+    }
+    setPlaying((p) => !p);
+  };
+  const exploreAnyway = () => {
+    setExploredAnyway(true);
+    if (hasAnalysis) setMode("difference");
+  };
+
+  const ask = async (question: string) => {
+    if (!summary?.analysis_id) return;
+    setAsking(true);
+    try {
+      const r = await explorerApi.chat({ question, analysis_id: summary.analysis_id, history: turns.slice(-4).flatMap((t) => [{ role: "user", content: t.q }, { role: "assistant", content: t.a }]) });
+      setTurns((t) => [...t, { q: question, a: r.answer, source: r.source, notice: r.notice }]);
+    } catch (err) {
+      setTurns((t) => [...t, { q: question, a: toApiError(err).message, source: "deterministic", notice: null }]);
+    } finally {
+      setAsking(false);
+    }
+  };
+
+  const panelOpen = Boolean(summary) && revealed && !panelCollapsed;
+  const simulated = Boolean(session?.is_synthetic);
+
+  return (
+    <div className="nx" data-testid="explorer" data-phase={phase}>
+      <Globe
+        focus={focus}
+        marker={marker}
+        primary={revealed || mode === "latest" ? plan.primary : null}
+        secondary={plan.secondary}
+        prefetch={prefetch}
+        splitPosition={split}
+        hotspots={hotspotFc}
+        showHotspots={plan.hotspots && Boolean(hotspotFc)}
+        activeHotspot={summary?.hotspots[activeHotspot]?.id ?? null}
+        spin={spin}
+        reducedMotion={reduced}
+        onReady={() => undefined}
+        onUnsupported={(m) => setGlobeError(m)}
+        onInteract={() => setSpin(false)}
+        onFlightEnd={(t) => setFlightDone(t)}
+        onLayerBusy={setLayerBusy}
+        onLayerError={setLayerError}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(3,8,22,0.55)_100%)]" aria-hidden />
+
+      {/* brand and navigation */}
+      <header className="absolute left-4 top-4 z-20 flex items-center gap-3">
+        <Globe2 className="h-6 w-6 text-[color:var(--nx-accent)]" aria-hidden />
+        <div className="leading-tight">
+          <h1 className="text-[17px] font-bold tracking-wide">NASAX</h1>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--nx-muted)]">Earth Time Machine</p>
+        </div>
+      </header>
+      <div className="absolute right-4 top-4 z-30">
+        <button type="button" className="nx-glass flex items-center gap-2 px-3 py-2 text-[13px]" aria-expanded={menuOpen} aria-haspopup="menu" onClick={() => setMenuOpen((o) => !o)}>
+          <Menu className="h-4 w-4" aria-hidden /> More tools
+        </button>
+        {menuOpen ? (
+          <nav className="nx-glass nx-rise mt-2 flex w-48 flex-col p-1.5" aria-label="Other pages">
+            {NAV_LINKS.map((l) => (
+              <Link key={l.href} href={l.href} className="nx-ghost !justify-start text-[13px]">
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+        ) : null}
+      </div>
+
+      {/* search + status + outcome */}
+      <div className={`pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-3 pt-12 sm:pt-0 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
+        <div className="pointer-events-auto">
+          <SearchPanel
+            query={query}
+            onQuery={setQuery}
+            startYear={startYear}
+            endYear={endYear}
+            onStart={setStartYear}
+            onEnd={setEndYear}
+            onSubmit={submit}
+            onExample={pickExample}
+            busy={locating || analysis === "running"}
+            compact={Boolean(session)}
+            datasets={datasets}
+            datasetsError={datasetsError}
+          />
+        </div>
+        <StatusPill phase={phase} name={session?.location?.name ?? null} />
+        {error ? (
+          <div role="alert" data-testid="error-banner" className="nx-glass nx-rise pointer-events-auto w-[560px] max-w-[92vw] border-rose-400/40 p-4">
+            <p className="flex items-center gap-2 font-semibold text-rose-200">
+              <AlertTriangle className="h-4 w-4" aria-hidden /> Something went wrong
+            </p>
+            <p className="mt-1 text-[13px] text-[color:var(--nx-soft)]">{error}</p>
+            <button type="button" className="nx-chip mt-3" onClick={submit}>
+              Try again
+            </button>
+          </div>
+        ) : null}
+        {showResults && !error ? (
+          <div className="pointer-events-auto">
+            <OutcomeBanner summary={summary} session={session} onUseSuggestion={useSuggestion} onExploreAnyway={exploreAnyway} onExample={pickExample} exploredAnyway={exploredAnyway} />
+          </div>
+        ) : null}
+        {globeError ? (
+          <p role="alert" data-testid="globe-error" className="nx-glass pointer-events-auto max-w-[560px] p-3 text-[12.5px] text-amber-200">
+            The 3D globe could not start ({globeError}). It needs WebGL. Search and analysis still work and show here as text.
+          </p>
+        ) : null}
+      </div>
+
+      {/* simulated-data tag, always visible while simulated data is on screen */}
+      {simulated ? (
+        <p data-testid="simulated-banner" className="absolute left-4 top-[68px] z-20 rounded-md border border-amber-400/50 bg-amber-400/15 px-2.5 py-1 text-[11px] font-bold tracking-wide text-amber-200 backdrop-blur">
+          SIMULATED DEMONSTRATION DATA
+        </p>
+      ) : null}
+
+      {/* left column: latest observation + legend */}
+      {revealed && session?.latest ? (
+        <div className="absolute bottom-[212px] left-4 z-10 hidden flex-col gap-3 md:flex">
+          <button type="button" className="nx-chip self-start" aria-expanded={latestOpen} onClick={() => setLatestOpen((o) => !o)}>
+            {latestOpen ? "Hide" : "Show"} latest observation
+          </button>
+          {latestOpen ? <LatestCard latest={session.latest} session={session} /> : null}
+          {plan.primary ? <Legend kind={plan.legend} simulated={simulated} /> : null}
+        </div>
+      ) : null}
+
+      {/* mode bar, hotspot navigation, caption */}
+      {revealed && ds ? (
+        <div className={`absolute inset-x-0 bottom-[196px] z-10 flex flex-col items-center gap-2 px-3 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
+          {plan.caption ? (
+            <p className="nx-glass pointer-events-none px-3 py-1 text-[12px] text-[color:var(--nx-soft)]" data-testid="map-caption">
+              {plan.caption}
+              {simulated ? " · SIMULATED" : ""}
+              {layerBusy ? " · loading…" : ""}
+            </p>
+          ) : null}
+          {layerError ? (
+            <p role="alert" className="nx-glass border-rose-400/40 px-3 py-1 text-[12px] text-rose-200" data-testid="layer-error">
+              {layerError}
+            </p>
+          ) : null}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <ModeBar mode={mode} onMode={(m) => { setMode(m); setPlaying(false); }} hasAnalysis={hasAnalysis} baShowAfter={baShowAfter} onToggleBA={() => setBaShowAfter((v) => !v)} />
+            {summary && summary.hotspots.length ? <HotspotNav hotspots={summary.hotspots} active={activeHotspot} onPick={(i) => zoomHotspot(i)} onOverview={overview} /> : null}
+            {mode === "swipe" ? (
+              <label className="nx-glass flex items-center gap-2 px-3 py-2 text-[12px]">
+                Swipe
+                <input type="range" min={0.02} max={0.98} step={0.01} value={split} onChange={(e) => setSplit(Number(e.target.value))} aria-label="Swipe position between the earliest and latest observation" />
+              </label>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
+      {mode === "swipe" && revealed && plan.split ? <div className="pointer-events-none absolute inset-y-0 z-[5] w-[2px] bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.8)]" style={{ left: `${split * 100}%` }} aria-hidden data-testid="swipe-line" /> : null}
+
+      {/* timeline */}
+      {revealed && ds && periodObs.length ? (
+        <div className={`absolute inset-x-0 bottom-6 z-10 flex justify-center px-3 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
+          <Timeline
+            observations={periodObs}
+            temporal={temporal}
+            index={cursorIdx}
+            active={mode === "history"}
+            onIndex={scrub}
+            playing={playing}
+            onPlay={togglePlay}
+            speed={speed}
+            onSpeed={setSpeed}
+            onPrev={() => scrub(stepIndex(cursorIdx, periodObs.length, -1))}
+            onNext={() => scrub(stepIndex(cursorIdx, periodObs.length, 1))}
+            simulated={simulated}
+          />
+        </div>
+      ) : null}
+
+      {/* summary panel */}
+      {summary && revealed ? (
+        <div className="absolute right-4 top-[84px] z-10">
+          <SummaryPanel
+            summary={summary}
+            explanation={explanation}
+            explanationState={summary.analysis_id ? explState : "none"}
+            activeHotspot={activeHotspot}
+            onHotspot={(i) => zoomHotspot(i)}
+            turns={turns}
+            asking={asking}
+            onAsk={ask}
+            collapsed={panelCollapsed}
+            onToggle={() => setPanelCollapsed((c) => !c)}
+          />
+        </div>
+      ) : null}
+
+    </div>
+  );
+}

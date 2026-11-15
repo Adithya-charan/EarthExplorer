@@ -56,7 +56,7 @@ interface RequestOptions {
   raw?: boolean;
 }
 
-async function request<T>(path: string, opts: RequestOptions = {}): Promise<T> {
+export async function request<T>(path: string, opts: RequestOptions = {}): Promise<T> {
   const controller = new AbortController();
   let timedOut = false;
   const timer = setTimeout(() => {

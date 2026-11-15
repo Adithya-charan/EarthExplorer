@@ -1,0 +1,2426 @@
+{
+ "schema_version": 1,
+ "id": "bellandur-synthetic",
+ "name": "Bellandur Lake, Bengaluru (simulated)",
+ "description": "Simulated monthly classification of a Bellandur-like lake with controlled encroachment, drying and a new pond.",
+ "kind": "raster_classification",
+ "is_synthetic": true,
+ "simulated_label": "SIMULATED DEMONSTRATION DATA \u2014 not satellite observations",
+ "source": "Reusable Python generator (app.explorer.synthetic). No satellite data.",
+ "product": "Simulated land-cover classification",
+ "format": "GeoTIFF (Cloud-Optimized when GDAL supports it)",
+ "crs": "EPSG:4326",
+ "resolution_deg": 0.0003,
+ "resolution_m": 32.5,
+ "temporal_resolution": "monthly",
+ "bbox": [
+  77.612,
+  12.885,
+  77.732,
+  12.985
+ ],
+ "location": {
+  "name": "Bellandur Lake, Bengaluru",
+  "aliases": [
+   "bellandur lake",
+   "bellandur",
+   "bellandur lake bengaluru",
+   "bellandur lake, bengaluru, india"
+  ],
+  "lat": 12.935,
+  "lon": 77.672,
+  "hint": "Bengaluru, Karnataka, India"
+ },
+ "classes": {
+  "1": "Land (bare / other)",
+  "2": "Water",
+  "3": "Vegetation",
+  "4": "Built-up",
+  "255": "Uncertain or no data"
+ },
+ "uncertain_value": 255,
+ "water_class": 2,
+ "coverage": {
+  "start": "2000-01-01",
+  "end": "2025-12-01"
+ },
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "file": "observations/2000-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 380.85,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-02-01",
+   "file": "observations/2000-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 396.09,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-03-01",
+   "file": "observations/2000-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 402.68,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-04-01",
+   "file": "observations/2000-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 396.41,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-05-01",
+   "file": "observations/2000-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 380.2,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-06-01",
+   "file": "observations/2000-06.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 360.11,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-07-01",
+   "file": "observations/2000-07.tif",
+   "valid_fraction": 0.457,
+   "quality": "poor",
+   "water_area_ha": 108.04,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-08-01",
+   "file": "observations/2000-08.tif",
+   "valid_fraction": 0.8719,
+   "quality": "fair",
+   "water_area_ha": 218.46,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-09-01",
+   "file": "observations/2000-09.tif",
+   "valid_fraction": 0.5249,
+   "quality": "poor",
+   "water_area_ha": 266.65,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-10-01",
+   "file": "observations/2000-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 327.37,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-11-01",
+   "file": "observations/2000-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 340.98,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2000-12-01",
+   "file": "observations/2000-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 360.54,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-01-01",
+   "file": "observations/2001-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 378.58,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-02-01",
+   "file": "observations/2001-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 394.03,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-03-01",
+   "file": "observations/2001-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 400.73,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-04-01",
+   "file": "observations/2001-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 394.25,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-05-01",
+   "file": "observations/2001-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 379.45,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-06-01",
+   "file": "observations/2001-06.tif",
+   "valid_fraction": 0.678,
+   "quality": "fair",
+   "water_area_ha": 358.59,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-07-01",
+   "file": "observations/2001-07.tif",
+   "valid_fraction": 0.8166,
+   "quality": "fair",
+   "water_area_ha": 337.31,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-08-01",
+   "file": "observations/2001-08.tif",
+   "valid_fraction": 0.9834,
+   "quality": "good",
+   "water_area_ha": 324.56,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-09-01",
+   "file": "observations/2001-09.tif",
+   "valid_fraction": 0.9741,
+   "quality": "good",
+   "water_area_ha": 321.43,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-10-01",
+   "file": "observations/2001-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 325.86,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-11-01",
+   "file": "observations/2001-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 339.58,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2001-12-01",
+   "file": "observations/2001-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 359.03,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-01-01",
+   "file": "observations/2002-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 380.2,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-02-01",
+   "file": "observations/2002-02.tif",
+   "valid_fraction": 0.9239,
+   "quality": "good",
+   "water_area_ha": 396.41,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-03-01",
+   "file": "observations/2002-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 402.35,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-04-01",
+   "file": "observations/2002-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 395.22,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-05-01",
+   "file": "observations/2002-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 379.99,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-06-01",
+   "file": "observations/2002-06.tif",
+   "valid_fraction": 0.5614,
+   "quality": "poor",
+   "water_area_ha": 172.76,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-07-01",
+   "file": "observations/2002-07.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 340.77,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-08-01",
+   "file": "observations/2002-08.tif",
+   "valid_fraction": 0.9077,
+   "quality": "good",
+   "water_area_ha": 327.05,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-10-01",
+   "file": "observations/2002-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 326.72,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-11-01",
+   "file": "observations/2002-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 341.42,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2002-12-01",
+   "file": "observations/2002-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 358.81,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2003-01-01",
+   "file": "observations/2003-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 402.03,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2003-02-01",
+   "file": "observations/2003-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 417.8,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2003-03-01",
+   "file": "observations/2003-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 426.23,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2003-09-01",
+   "file": "observations/2003-09.tif",
+   "valid_fraction": 0.8827,
+   "quality": "fair",
+   "water_area_ha": 176.44,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2003-10-01",
+   "file": "observations/2003-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 344.87,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2003-11-01",
+   "file": "observations/2003-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 359.35,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2003-12-01",
+   "file": "observations/2003-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 379.55,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-01-01",
+   "file": "observations/2004-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 391.66,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-02-01",
+   "file": "observations/2004-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 408.08,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-03-01",
+   "file": "observations/2004-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 413.8,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-04-01",
+   "file": "observations/2004-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 407.65,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-05-01",
+   "file": "observations/2004-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 391.44,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-06-01",
+   "file": "observations/2004-06.tif",
+   "valid_fraction": 0.9791,
+   "quality": "good",
+   "water_area_ha": 371.13,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-07-01",
+   "file": "observations/2004-07.tif",
+   "valid_fraction": 0.9879,
+   "quality": "good",
+   "water_area_ha": 352.22,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-08-01",
+   "file": "observations/2004-08.tif",
+   "valid_fraction": 0.368,
+   "quality": "poor",
+   "water_area_ha": 34.46,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-09-01",
+   "file": "observations/2004-09.tif",
+   "valid_fraction": 0.3354,
+   "quality": "poor",
+   "water_area_ha": 212.95,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-10-01",
+   "file": "observations/2004-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 337.85,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-11-01",
+   "file": "observations/2004-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 351.14,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2004-12-01",
+   "file": "observations/2004-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 370.26,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-01-01",
+   "file": "observations/2005-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 386.36,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-02-01",
+   "file": "observations/2005-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 402.46,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-03-01",
+   "file": "observations/2005-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 408.94,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-04-01",
+   "file": "observations/2005-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 403.22,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-05-01",
+   "file": "observations/2005-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 386.69,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-06-01",
+   "file": "observations/2005-06.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 365.73,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-07-01",
+   "file": "observations/2005-07.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 347.25,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-08-01",
+   "file": "observations/2005-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 333.42,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-09-01",
+   "file": "observations/2005-09.tif",
+   "valid_fraction": 0.6919,
+   "quality": "fair",
+   "water_area_ha": 327.48,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-10-01",
+   "file": "observations/2005-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 334.07,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-11-01",
+   "file": "observations/2005-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 347.14,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2005-12-01",
+   "file": "observations/2005-12.tif",
+   "valid_fraction": 0.8767,
+   "quality": "fair",
+   "water_area_ha": 202.26,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-01-01",
+   "file": "observations/2006-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 395.22,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-02-01",
+   "file": "observations/2006-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 411.97,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-03-01",
+   "file": "observations/2006-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 419.31,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-04-01",
+   "file": "observations/2006-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 412.4,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-05-01",
+   "file": "observations/2006-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 395.98,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-06-01",
+   "file": "observations/2006-06.tif",
+   "valid_fraction": 0.2883,
+   "quality": "poor",
+   "water_area_ha": 121.55,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-07-01",
+   "file": "observations/2006-07.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 355.25,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-08-01",
+   "file": "observations/2006-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 340.77,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-09-01",
+   "file": "observations/2006-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 335.91,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-10-01",
+   "file": "observations/2006-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 341.42,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-11-01",
+   "file": "observations/2006-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 354.81,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2006-12-01",
+   "file": "observations/2006-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 375.23,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-02-01",
+   "file": "observations/2007-02.tif",
+   "valid_fraction": 0.9063,
+   "quality": "good",
+   "water_area_ha": 387.01,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-03-01",
+   "file": "observations/2007-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 393.71,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-04-01",
+   "file": "observations/2007-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 388.09,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-05-01",
+   "file": "observations/2007-05.tif",
+   "valid_fraction": 0.8645,
+   "quality": "fair",
+   "water_area_ha": 373.72,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-06-01",
+   "file": "observations/2007-06.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 352.98,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-07-01",
+   "file": "observations/2007-07.tif",
+   "valid_fraction": 0.52,
+   "quality": "poor",
+   "water_area_ha": 335.58,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-08-01",
+   "file": "observations/2007-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 321.32,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-09-01",
+   "file": "observations/2007-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 316.24,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-11-01",
+   "file": "observations/2007-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 333.96,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2007-12-01",
+   "file": "observations/2007-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 353.84,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-01-01",
+   "file": "observations/2008-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 395.22,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-02-01",
+   "file": "observations/2008-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 411.1,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-03-01",
+   "file": "observations/2008-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 417.48,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-04-01",
+   "file": "observations/2008-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 410.89,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-05-01",
+   "file": "observations/2008-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 394.46,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-06-01",
+   "file": "observations/2008-06.tif",
+   "valid_fraction": 0.3335,
+   "quality": "poor",
+   "water_area_ha": 6.92,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-07-01",
+   "file": "observations/2008-07.tif",
+   "valid_fraction": 0.5825,
+   "quality": "poor",
+   "water_area_ha": 275.51,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-08-01",
+   "file": "observations/2008-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 340.34,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-09-01",
+   "file": "observations/2008-09.tif",
+   "valid_fraction": 0.4552,
+   "quality": "poor",
+   "water_area_ha": 94.0,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-10-01",
+   "file": "observations/2008-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 339.58,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-11-01",
+   "file": "observations/2008-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 353.41,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2008-12-01",
+   "file": "observations/2008-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 372.75,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-01-01",
+   "file": "observations/2009-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 408.29,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-02-01",
+   "file": "observations/2009-02.tif",
+   "valid_fraction": 0.9334,
+   "quality": "good",
+   "water_area_ha": 426.77,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-03-01",
+   "file": "observations/2009-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 433.36,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-04-01",
+   "file": "observations/2009-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 427.63,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-05-01",
+   "file": "observations/2009-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 408.08,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-06-01",
+   "file": "observations/2009-06.tif",
+   "valid_fraction": 0.6342,
+   "quality": "fair",
+   "water_area_ha": 55.75,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-07-01",
+   "file": "observations/2009-07.tif",
+   "valid_fraction": 0.3658,
+   "quality": "poor",
+   "water_area_ha": 0.0,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-08-01",
+   "file": "observations/2009-08.tif",
+   "valid_fraction": 0.9248,
+   "quality": "good",
+   "water_area_ha": 351.79,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-09-01",
+   "file": "observations/2009-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 346.71,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-10-01",
+   "file": "observations/2009-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 352.0,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-11-01",
+   "file": "observations/2009-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 365.73,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2009-12-01",
+   "file": "observations/2009-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 385.07,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-01-01",
+   "file": "observations/2010-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 379.12,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-02-01",
+   "file": "observations/2010-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 394.36,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-03-01",
+   "file": "observations/2010-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 401.16,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-04-01",
+   "file": "observations/2010-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 394.57,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-05-01",
+   "file": "observations/2010-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 377.5,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-07-01",
+   "file": "observations/2010-07.tif",
+   "valid_fraction": 0.8023,
+   "quality": "fair",
+   "water_area_ha": 338.07,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-08-01",
+   "file": "observations/2010-08.tif",
+   "valid_fraction": 0.8716,
+   "quality": "fair",
+   "water_area_ha": 324.67,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-09-01",
+   "file": "observations/2010-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 320.24,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-10-01",
+   "file": "observations/2010-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 324.24,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-11-01",
+   "file": "observations/2010-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 338.82,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2010-12-01",
+   "file": "observations/2010-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 357.08,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-01-01",
+   "file": "observations/2011-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 398.03,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-02-01",
+   "file": "observations/2011-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 412.29,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-03-01",
+   "file": "observations/2011-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 419.53,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-04-01",
+   "file": "observations/2011-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 411.64,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-05-01",
+   "file": "observations/2011-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 395.76,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-06-01",
+   "file": "observations/2011-06.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 372.86,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-07-01",
+   "file": "observations/2011-07.tif",
+   "valid_fraction": 0.7223,
+   "quality": "fair",
+   "water_area_ha": 219.43,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-08-01",
+   "file": "observations/2011-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 337.2,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-09-01",
+   "file": "observations/2011-09.tif",
+   "valid_fraction": 0.5257,
+   "quality": "poor",
+   "water_area_ha": 81.46,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-10-01",
+   "file": "observations/2011-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 337.53,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-11-01",
+   "file": "observations/2011-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 349.09,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2011-12-01",
+   "file": "observations/2011-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 368.21,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-01-01",
+   "file": "observations/2012-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 370.48,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-02-01",
+   "file": "observations/2012-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 385.28,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-03-01",
+   "file": "observations/2012-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 390.36,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-04-01",
+   "file": "observations/2012-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 383.44,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-05-01",
+   "file": "observations/2012-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 367.35,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-06-01",
+   "file": "observations/2012-06.tif",
+   "valid_fraction": 0.2463,
+   "quality": "poor",
+   "water_area_ha": 135.92,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-07-01",
+   "file": "observations/2012-07.tif",
+   "valid_fraction": 0.9712,
+   "quality": "good",
+   "water_area_ha": 326.72,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-08-01",
+   "file": "observations/2012-08.tif",
+   "valid_fraction": 0.6822,
+   "quality": "fair",
+   "water_area_ha": 278.0,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-09-01",
+   "file": "observations/2012-09.tif",
+   "valid_fraction": 0.9458,
+   "quality": "good",
+   "water_area_ha": 306.95,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-10-01",
+   "file": "observations/2012-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 309.43,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-11-01",
+   "file": "observations/2012-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 322.08,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2012-12-01",
+   "file": "observations/2012-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 339.79,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-01-01",
+   "file": "observations/2013-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 363.78,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-02-01",
+   "file": "observations/2013-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 377.93,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-03-01",
+   "file": "observations/2013-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 383.88,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-04-01",
+   "file": "observations/2013-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 376.31,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-05-01",
+   "file": "observations/2013-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 358.81,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-06-01",
+   "file": "observations/2013-06.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 336.99,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-07-01",
+   "file": "observations/2013-07.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 319.16,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-08-01",
+   "file": "observations/2013-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 305.65,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-09-01",
+   "file": "observations/2013-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 297.12,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-10-01",
+   "file": "observations/2013-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 302.95,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-11-01",
+   "file": "observations/2013-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 315.05,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2013-12-01",
+   "file": "observations/2013-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 333.31,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-01-01",
+   "file": "observations/2014-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 353.3,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-02-01",
+   "file": "observations/2014-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 369.4,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-03-01",
+   "file": "observations/2014-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 373.4,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-04-01",
+   "file": "observations/2014-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 367.56,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-05-01",
+   "file": "observations/2014-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 349.3,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-06-01",
+   "file": "observations/2014-06.tif",
+   "valid_fraction": 0.3316,
+   "quality": "poor",
+   "water_area_ha": 325.53,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-07-01",
+   "file": "observations/2014-07.tif",
+   "valid_fraction": 0.9102,
+   "quality": "good",
+   "water_area_ha": 307.92,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-08-01",
+   "file": "observations/2014-08.tif",
+   "valid_fraction": 0.2001,
+   "quality": "poor",
+   "water_area_ha": 125.76,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-09-01",
+   "file": "observations/2014-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 291.07,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-10-01",
+   "file": "observations/2014-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 295.71,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-11-01",
+   "file": "observations/2014-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 307.92,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2014-12-01",
+   "file": "observations/2014-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 325.21,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-01-01",
+   "file": "observations/2015-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 342.17,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-02-01",
+   "file": "observations/2015-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 357.19,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-03-01",
+   "file": "observations/2015-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 362.16,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-04-01",
+   "file": "observations/2015-04.tif",
+   "valid_fraction": 0.9251,
+   "quality": "good",
+   "water_area_ha": 355.78,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-05-01",
+   "file": "observations/2015-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 340.23,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-06-01",
+   "file": "observations/2015-06.tif",
+   "valid_fraction": 0.2353,
+   "quality": "poor",
+   "water_area_ha": 21.5,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-07-01",
+   "file": "observations/2015-07.tif",
+   "valid_fraction": 0.6777,
+   "quality": "fair",
+   "water_area_ha": 199.23,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-08-01",
+   "file": "observations/2015-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 288.8,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-09-01",
+   "file": "observations/2015-09.tif",
+   "valid_fraction": 0.5088,
+   "quality": "poor",
+   "water_area_ha": 16.53,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-10-01",
+   "file": "observations/2015-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 288.15,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2015-11-01",
+   "file": "observations/2015-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 300.9,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-01-01",
+   "file": "observations/2016-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 337.42,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-02-01",
+   "file": "observations/2016-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 353.41,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-03-01",
+   "file": "observations/2016-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 358.7,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-04-01",
+   "file": "observations/2016-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 352.33,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-05-01",
+   "file": "observations/2016-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 335.8,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-06-01",
+   "file": "observations/2016-06.tif",
+   "valid_fraction": 0.4153,
+   "quality": "poor",
+   "water_area_ha": 0.22,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-07-01",
+   "file": "observations/2016-07.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 307.17,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-08-01",
+   "file": "observations/2016-08.tif",
+   "valid_fraction": 0.4476,
+   "quality": "poor",
+   "water_area_ha": 137.75,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-09-01",
+   "file": "observations/2016-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 289.01,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-11-01",
+   "file": "observations/2016-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 306.09,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-12-01",
+   "file": "observations/2016-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 325.32,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-01-01",
+   "file": "observations/2017-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 335.58,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-02-01",
+   "file": "observations/2017-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 350.27,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-03-01",
+   "file": "observations/2017-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 355.03,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-04-01",
+   "file": "observations/2017-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 349.41,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-05-01",
+   "file": "observations/2017-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 334.72,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-07-01",
+   "file": "observations/2017-07.tif",
+   "valid_fraction": 0.92,
+   "quality": "good",
+   "water_area_ha": 297.87,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-08-01",
+   "file": "observations/2017-08.tif",
+   "valid_fraction": 0.9523,
+   "quality": "good",
+   "water_area_ha": 286.42,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-09-01",
+   "file": "observations/2017-09.tif",
+   "valid_fraction": 0.9748,
+   "quality": "good",
+   "water_area_ha": 281.02,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-11-01",
+   "file": "observations/2017-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 296.58,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2017-12-01",
+   "file": "observations/2017-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 314.4,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-01-01",
+   "file": "observations/2018-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 347.79,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-02-01",
+   "file": "observations/2018-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 363.24,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-03-01",
+   "file": "observations/2018-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 367.89,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-04-01",
+   "file": "observations/2018-04.tif",
+   "valid_fraction": 0.9757,
+   "quality": "good",
+   "water_area_ha": 362.7,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-05-01",
+   "file": "observations/2018-05.tif",
+   "valid_fraction": 0.8661,
+   "quality": "fair",
+   "water_area_ha": 347.47,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-07-01",
+   "file": "observations/2018-07.tif",
+   "valid_fraction": 0.5023,
+   "quality": "poor",
+   "water_area_ha": 201.07,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-08-01",
+   "file": "observations/2018-08.tif",
+   "valid_fraction": 0.8996,
+   "quality": "fair",
+   "water_area_ha": 297.55,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-09-01",
+   "file": "observations/2018-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 292.9,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-10-01",
+   "file": "observations/2018-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 297.87,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-11-01",
+   "file": "observations/2018-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 309.54,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2018-12-01",
+   "file": "observations/2018-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 327.05,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-01-01",
+   "file": "observations/2019-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 348.87,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-02-01",
+   "file": "observations/2019-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 364.0,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-03-01",
+   "file": "observations/2019-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 371.45,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-04-01",
+   "file": "observations/2019-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 363.13,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-05-01",
+   "file": "observations/2019-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 348.87,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-06-01",
+   "file": "observations/2019-06.tif",
+   "valid_fraction": 0.52,
+   "quality": "poor",
+   "water_area_ha": 241.05,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-07-01",
+   "file": "observations/2019-07.tif",
+   "valid_fraction": 0.9484,
+   "quality": "good",
+   "water_area_ha": 300.25,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-08-01",
+   "file": "observations/2019-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 299.93,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-09-01",
+   "file": "observations/2019-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 295.5,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-10-01",
+   "file": "observations/2019-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 299.17,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-11-01",
+   "file": "observations/2019-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 310.41,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-12-01",
+   "file": "observations/2019-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 328.77,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-01-01",
+   "file": "observations/2020-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 353.3,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-02-01",
+   "file": "observations/2020-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 368.97,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-03-01",
+   "file": "observations/2020-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 378.04,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-04-01",
+   "file": "observations/2020-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 369.4,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-05-01",
+   "file": "observations/2020-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 352.44,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-06-01",
+   "file": "observations/2020-06.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 333.1,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-07-01",
+   "file": "observations/2020-07.tif",
+   "valid_fraction": 0.8147,
+   "quality": "fair",
+   "water_area_ha": 315.59,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-08-01",
+   "file": "observations/2020-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 302.63,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-09-01",
+   "file": "observations/2020-09.tif",
+   "valid_fraction": 0.8322,
+   "quality": "fair",
+   "water_area_ha": 298.09,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-10-01",
+   "file": "observations/2020-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 303.06,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-11-01",
+   "file": "observations/2020-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 315.38,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2020-12-01",
+   "file": "observations/2020-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 333.31,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-01-01",
+   "file": "observations/2021-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 336.01,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-02-01",
+   "file": "observations/2021-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 350.38,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-03-01",
+   "file": "observations/2021-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 356.43,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-04-01",
+   "file": "observations/2021-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 349.84,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-05-01",
+   "file": "observations/2021-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 335.04,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-06-01",
+   "file": "observations/2021-06.tif",
+   "valid_fraction": 0.9915,
+   "quality": "good",
+   "water_area_ha": 317.65,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-07-01",
+   "file": "observations/2021-07.tif",
+   "valid_fraction": 0.3738,
+   "quality": "poor",
+   "water_area_ha": 291.61,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-08-01",
+   "file": "observations/2021-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 290.53,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-09-01",
+   "file": "observations/2021-09.tif",
+   "valid_fraction": 0.5647,
+   "quality": "poor",
+   "water_area_ha": 69.58,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-10-01",
+   "file": "observations/2021-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 290.31,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-11-01",
+   "file": "observations/2021-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 301.12,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2021-12-01",
+   "file": "observations/2021-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 318.29,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-01-01",
+   "file": "observations/2022-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 332.56,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-02-01",
+   "file": "observations/2022-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 347.36,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-03-01",
+   "file": "observations/2022-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 350.92,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-04-01",
+   "file": "observations/2022-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 346.71,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-05-01",
+   "file": "observations/2022-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 332.66,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-06-01",
+   "file": "observations/2022-06.tif",
+   "valid_fraction": 0.8,
+   "quality": "fair",
+   "water_area_ha": 314.19,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-07-01",
+   "file": "observations/2022-07.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 298.2,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-08-01",
+   "file": "observations/2022-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 286.1,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-09-01",
+   "file": "observations/2022-09.tif",
+   "valid_fraction": 0.3286,
+   "quality": "poor",
+   "water_area_ha": 80.17,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-10-01",
+   "file": "observations/2022-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 286.75,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-11-01",
+   "file": "observations/2022-11.tif",
+   "valid_fraction": 0.9421,
+   "quality": "good",
+   "water_area_ha": 298.2,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2022-12-01",
+   "file": "observations/2022-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 314.62,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-01-01",
+   "file": "observations/2023-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 330.94,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-02-01",
+   "file": "observations/2023-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 344.33,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-03-01",
+   "file": "observations/2023-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 350.6,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-05-01",
+   "file": "observations/2023-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 329.64,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-06-01",
+   "file": "observations/2023-06.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 312.89,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-07-01",
+   "file": "observations/2023-07.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 297.44,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-08-01",
+   "file": "observations/2023-08.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 283.18,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-09-01",
+   "file": "observations/2023-09.tif",
+   "valid_fraction": 0.7189,
+   "quality": "fair",
+   "water_area_ha": 262.22,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-10-01",
+   "file": "observations/2023-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 283.07,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-11-01",
+   "file": "observations/2023-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 298.09,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2023-12-01",
+   "file": "observations/2023-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 311.92,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-01-01",
+   "file": "observations/2024-01.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 343.36,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-02-01",
+   "file": "observations/2024-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 357.08,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-03-01",
+   "file": "observations/2024-03.tif",
+   "valid_fraction": 0.9791,
+   "quality": "good",
+   "water_area_ha": 363.02,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-04-01",
+   "file": "observations/2024-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 357.62,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-05-01",
+   "file": "observations/2024-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 342.82,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-06-01",
+   "file": "observations/2024-06.tif",
+   "valid_fraction": 0.6191,
+   "quality": "fair",
+   "water_area_ha": 238.88,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-07-01",
+   "file": "observations/2024-07.tif",
+   "valid_fraction": 0.924,
+   "quality": "good",
+   "water_area_ha": 308.68,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-08-01",
+   "file": "observations/2024-08.tif",
+   "valid_fraction": 0.7346,
+   "quality": "fair",
+   "water_area_ha": 292.9,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-09-01",
+   "file": "observations/2024-09.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 290.96,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-11-01",
+   "file": "observations/2024-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 307.71,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2024-12-01",
+   "file": "observations/2024-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 325.1,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-02-01",
+   "file": "observations/2025-02.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 359.78,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-03-01",
+   "file": "observations/2025-03.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 367.67,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-04-01",
+   "file": "observations/2025-04.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 360.97,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-05-01",
+   "file": "observations/2025-05.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 344.87,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-06-01",
+   "file": "observations/2025-06.tif",
+   "valid_fraction": 0.2555,
+   "quality": "poor",
+   "water_area_ha": 185.4,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-07-01",
+   "file": "observations/2025-07.tif",
+   "valid_fraction": 0.2798,
+   "quality": "poor",
+   "water_area_ha": 118.53,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-08-01",
+   "file": "observations/2025-08.tif",
+   "valid_fraction": 0.4579,
+   "quality": "poor",
+   "water_area_ha": 172.32,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-09-01",
+   "file": "observations/2025-09.tif",
+   "valid_fraction": 0.9043,
+   "quality": "good",
+   "water_area_ha": 293.55,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-10-01",
+   "file": "observations/2025-10.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 297.01,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-11-01",
+   "file": "observations/2025-11.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 309.0,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2025-12-01",
+   "file": "observations/2025-12.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 327.59,
+   "sensor": "SIMULATED"
+  }
+ ],
+ "real_dataset_targets": [
+  {
+   "name": "JRC Global Surface Water Monthly History",
+   "coverage": "1984-03 to 2021-12",
+   "resolution_m": 30
+  },
+  {
+   "name": "Landsat Collection 2",
+   "coverage": "1982 onward (depends on sensor and product)",
+   "resolution_m": 30
+  },
+  {
+   "name": "Sentinel-2 Harmonized Surface Reflectance",
+   "coverage": "2017-03 onward",
+   "resolution_m": 10
+  }
+ ]
+}

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { StoryView } from "@/views/StoryView";
+import { ExplorerView } from "@/views/ExplorerView";
 
 export const metadata: Metadata = {
-  title: "What happened here?",
-  description: "Pick a place and a time, read a data-backed summary, and see it on a 3D map.",
+  title: "NASAX Earth Time Machine",
+  description: "Search any place on a 3D globe, check what satellite-style observations exist, and see how it changed over time.",
 };
 
 export default function Page() {
-  return <StoryView />;
+  return <ExplorerView />;
 }

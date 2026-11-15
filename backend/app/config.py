@@ -5,6 +5,7 @@ from __future__ import annotations
 from functools import lru_cache
 from pathlib import Path
 
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parent.parent
@@ -52,6 +53,16 @@ class Settings(BaseSettings):
     # Elevation sampling uses the same Terrarium tiles the map displays.
     terrain_tile_url: str = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
     terrain_sample_zoom: int = 10
+
+    # --- Earth Time Machine (explorer) ---------------------------------------------------------
+    # One folder per dataset: dataset.json plus observations/*.tif. Synthetic demo datasets are generated into it.
+    explorer_dir: Path = BACKEND_DIR / "data" / "explorer"
+    explorer_generate_demo: bool = True  # create the synthetic demo datasets on first start when missing
+    # Groq (optional). Without a key the explanation is produced deterministically from the measurements.
+    groq_api_key: str | None = Field(default=None, validation_alias=AliasChoices("GROQ_API_KEY", "EARTHTREND_GROQ_API_KEY"))
+    groq_model: str = Field(default="llama-3.3-70b-versatile", validation_alias=AliasChoices("GROQ_MODEL", "EARTHTREND_GROQ_MODEL"))
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+    groq_timeout_s: float = 20.0
 
     @property
     def cors_origin_list(self) -> list[str]:

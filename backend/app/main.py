@@ -15,7 +15,8 @@ from fastapi.responses import JSONResponse
 from app.config import APP_NAME, APP_VERSION, Settings, get_settings
 from app.errors import AppError
 from app.geo.services import GeoServices
-from app.routers import analysis, datasets, geo, ingest, story
+from app.explorer.services import ExplorerServices
+from app.routers import analysis, datasets, explorer, geo, ingest, story
 from app.services.store import DatasetStore
 
 log = logging.getLogger("earthtrend")
@@ -34,7 +35,7 @@ Explanations are produced by deterministic rules from the computed statistics; n
 UPLOAD_PATHS = ("/api/upload", "/api/profile", "/api/upload-grid")
 
 
-def create_app(settings: Settings | None = None, *, geo_transport: httpx.BaseTransport | None = None) -> FastAPI:
+def create_app(settings: Settings | None = None, *, geo_transport: httpx.BaseTransport | None = None, ai_transport: httpx.BaseTransport | None = None) -> FastAPI:
     """Build the API. ``geo_transport`` lets tests replace the network used by the geocoder and terrain tiles."""
     settings = settings or get_settings()
 
@@ -51,6 +52,7 @@ def create_app(settings: Settings | None = None, *, geo_transport: httpx.BaseTra
     app.state.store = DatasetStore(settings)
     app.state.store.load_all()
     app.state.geo = GeoServices(settings, transport=geo_transport)
+    app.state.explorer = ExplorerServices(settings, app.state.geo, ai_transport=ai_transport)
 
     app.add_middleware(GZipMiddleware, minimum_size=2048)
     app.add_middleware(
@@ -106,6 +108,7 @@ def create_app(settings: Settings | None = None, *, geo_transport: httpx.BaseTra
     app.include_router(analysis.router)
     app.include_router(geo.router)
     app.include_router(story.router)
+    app.include_router(explorer.router)
     return app
 
 

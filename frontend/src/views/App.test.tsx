@@ -34,7 +34,7 @@ describe("story page and shell", () => {
     mockFetch(okRoutes);
     renderInShell(<StoryView />);
     expect(screen.getByRole("link", { name: "Skip to main content" })).toBeInTheDocument();
-    for (const name of ["What happened?", "Trend Analysis", "Upload Dataset", "Methodology / About"]) {
+    for (const name of ["Earth Time Machine", "What happened?", "Trend Analysis", "Upload Dataset", "Methodology / About"]) {
       expect(screen.getByRole("link", { name })).toBeInTheDocument();
     }
     for (const gone of ["Overview", "Regional Comparison", "Data Explorer", "Earth Explorer"]) {

@@ -51,7 +51,10 @@ def test_no_external_ai_is_required_or_imported(demo):
     reqs = (Path(__file__).resolve().parent.parent / "requirements.txt").read_text().lower()
     for name in ("openai", "groq", "anthropic", "google-generativeai", "cohere", "langchain"):
         assert name not in reqs
-    src = "".join(p.read_text(encoding="utf-8").lower() for p in (Path(__file__).resolve().parent.parent / "app").rglob("*.py"))
+    # The trend-analysis explanations never use an AI service. The only optional, env-configured AI client (Groq, for the
+    # Earth Time Machine) lives in app/explorer and app/config.py and has its own tests (test_explorer.py).
+    app_dir = Path(__file__).resolve().parent.parent / "app"
+    src = "".join(p.read_text(encoding="utf-8").lower() for p in app_dir.rglob("*.py") if "explorer" not in p.parts and p.name != "config.py")
     assert "api_key" not in src and "import requests" not in src and "urllib.request" not in src
     expl = analyze_series(demo, AnalyzeRequest(dataset_id=DEMO, variable="Synthetic Index A", region="Region Alpha")).explanation
     assert expl.uses_external_ai is False and expl.generator == "deterministic-rules-v1"

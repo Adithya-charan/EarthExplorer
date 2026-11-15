@@ -32,7 +32,8 @@ vi.mock("next/link", () => ({
   ),
 }));
 
-const nav = vi.hoisted(() => ({ pathname: "/" }));
+// Tests render pages inside the shell at the story route; "/" is the full-screen Earth Time Machine, which has no shell.
+const nav = vi.hoisted(() => ({ pathname: "/story" }));
 vi.mock("next/navigation", () => ({
   usePathname: () => nav.pathname,
   useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),

@@ -20,6 +20,9 @@ export function AppShell({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  // The Earth Time Machine is a full-screen scene with its own controls; every other page keeps the standard shell.
+  if (pathname === "/") return <>{children}</>;
+
   return (
     <div className="min-h-screen">
       <a

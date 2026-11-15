@@ -1,0 +1,90 @@
+{
+ "schema_version": 1,
+ "id": "chilika-synthetic",
+ "name": "Chilika Lake patch, Odisha (simulated, sparse)",
+ "description": "Simulated sparse series: three observations, the earliest mostly clouded. Exists to test insufficient-data handling.",
+ "kind": "raster_classification",
+ "is_synthetic": true,
+ "simulated_label": "SIMULATED DEMONSTRATION DATA \u2014 not satellite observations",
+ "source": "Reusable Python generator (app.explorer.synthetic). No satellite data.",
+ "product": "Simulated land-cover classification",
+ "format": "GeoTIFF (Cloud-Optimized when GDAL supports it)",
+ "crs": "EPSG:4326",
+ "resolution_deg": 0.0004,
+ "resolution_m": 41.9,
+ "temporal_resolution": "yearly",
+ "bbox": [
+  85.25,
+  19.67,
+  85.39,
+  19.77
+ ],
+ "location": {
+  "name": "Chilika Lake patch, Odisha",
+  "aliases": [
+   "chilika lake",
+   "chilika",
+   "chilika lake odisha",
+   "chilika lake, odisha, india"
+  ],
+  "lat": 19.72,
+  "lon": 85.32,
+  "hint": "Odisha, India"
+ },
+ "classes": {
+  "1": "Land (bare / other)",
+  "2": "Water",
+  "3": "Vegetation",
+  "4": "Built-up",
+  "255": "Uncertain or no data"
+ },
+ "uncertain_value": 255,
+ "water_class": 2,
+ "coverage": {
+  "start": "2014-02-01",
+  "end": "2019-02-01"
+ },
+ "observations": [
+  {
+   "date": "2014-02-01",
+   "file": "observations/2014.tif",
+   "valid_fraction": 0.38,
+   "quality": "poor",
+   "water_area_ha": 237.31,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2016-02-01",
+   "file": "observations/2016.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "water_area_ha": 3163.9,
+   "sensor": "SIMULATED"
+  },
+  {
+   "date": "2019-02-01",
+   "file": "observations/2019.tif",
+   "valid_fraction": 0.95,
+   "quality": "good",
+   "water_area_ha": 3116.93,
+   "sensor": "SIMULATED"
+  }
+ ],
+ "real_dataset_targets": [
+  {
+   "name": "JRC Global Surface Water Monthly History",
+   "coverage": "1984-03 to 2021-12",
+   "resolution_m": 30
+  },
+  {
+   "name": "Landsat Collection 2",
+   "coverage": "1982 onward (depends on sensor and product)",
+   "resolution_m": 30
+  },
+  {
+   "name": "Sentinel-2 Harmonized Surface Reflectance",
+   "coverage": "2017-03 onward",
+   "resolution_m": 10
+  }
+ ]
+}

@@ -111,3 +111,158 @@ body {
     animation: none;
   }
 }
+
+/* ---------------------------------------------------------------------------------------------
+   NASAX Earth Time Machine: a deep-space scene. Scoped to .nx so the rest of the app keeps its light theme. */
+.nx {
+  --nx-bg: #030816;
+  --nx-ink: #e8f1ff;
+  --nx-soft: #b6c6e3;
+  --nx-muted: #8da2c4;
+  --nx-line: rgba(148, 180, 255, 0.16);
+  --nx-accent: #38bdf8;
+  --nx-accent-strong: #0ea5e9;
+  --nx-loss: #ff4d5e;
+  --nx-gain: #35e08a;
+  --nx-warn: #fbbf24;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--nx-bg);
+  color: var(--nx-ink);
+  font-size: 14px;
+}
+.nx-glass {
+  background: rgba(7, 15, 34, 0.74);
+  -webkit-backdrop-filter: blur(14px) saturate(1.25);
+  backdrop-filter: blur(14px) saturate(1.25);
+  border: 1px solid var(--nx-line);
+  border-radius: 14px;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.4);
+}
+.nx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--nx-line);
+  background: rgba(56, 189, 248, 0.07);
+  color: var(--nx-soft);
+  border-radius: 999px;
+  padding: 4px 11px;
+  font-size: 12.5px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.nx-chip:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #fff;
+}
+.nx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-weight: 600;
+  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
+  color: #031225;
+  transition: filter 0.2s, transform 0.2s;
+}
+.nx-btn:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+.nx-btn:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}
+.nx-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 9px;
+  padding: 6px 10px;
+  color: var(--nx-soft);
+  border: 1px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.nx-ghost:hover:not(:disabled) {
+  background: rgba(148, 180, 255, 0.12);
+  color: #fff;
+}
+.nx-ghost[aria-pressed="true"],
+.nx-ghost[data-active="true"] {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #fff;
+}
+.nx-ghost:disabled {
+  opacity: 0.4;
+}
+.nx-input {
+  background: rgba(2, 8, 22, 0.6);
+  border: 1px solid var(--nx-line);
+  border-radius: 10px;
+  color: var(--nx-ink);
+  padding: 8px 12px;
+  outline: none;
+}
+.nx-input:focus {
+  border-color: var(--nx-accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+.nx select.nx-input option {
+  background: #0a1530;
+}
+.nx :focus-visible {
+  outline: 2px solid var(--nx-accent);
+  outline-offset: 2px;
+}
+.nx-rise {
+  animation: nx-rise 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes nx-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.nx-spin {
+  animation: nx-rotate 0.9s linear infinite;
+}
+@keyframes nx-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.nx .cesium-viewer-bottom {
+  left: 0;
+  right: auto;
+  bottom: 2px;
+  opacity: 0.55;
+  font-size: 10px;
+  z-index: 5;
+}
+.nx .cesium-widget-credits,
+.nx .cesium-credit-logoContainer {
+  display: inline-block;
+}
+.nx .cesium-viewer-toolbar,
+.nx .cesium-viewer-animationContainer,
+.nx .cesium-viewer-timelineContainer {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nx *,
+  .nx *::before,
+  .nx *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
