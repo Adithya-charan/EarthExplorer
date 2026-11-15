@@ -1,0 +1,37 @@
+{
+ "dataset": "jrc-water-gandhi-sagar",
+ "generated_at": "2026-11-15T07:13:18+00:00",
+ "steps": [
+  {
+   "inspect": {
+    "crs": "EPSG:4326",
+    "res_deg": 0.00025,
+    "dtype": "uint8"
+   },
+   "clip": {
+    "window": [
+     21600,
+     20600,
+     1400,
+     1200
+    ]
+   },
+   "crs": "no reprojection needed (EPSG:4326)",
+   "align": "native 1 arc-second grid kept",
+   "classify": "water first = classes 1,3,4,6,7,8; water last = classes 1,2,4,5,7,8",
+   "water_ha_first": 25650.81,
+   "water_ha_last": 28635.51,
+   "classes_present": {
+    "0": 1271020,
+    "1": 257906,
+    "2": 2590,
+    "4": 16915,
+    "5": 40053,
+    "6": 30,
+    "7": 90894,
+    "8": 403,
+    "10": 189
+   }
+  }
+ ]
+}

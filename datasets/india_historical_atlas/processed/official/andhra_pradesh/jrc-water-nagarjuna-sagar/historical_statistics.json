@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-nagarjuna-sagar",
+ "name": "Nagarjuna Sagar (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 185967.26,
+   "valid_ha": 185967.26,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 164717.68,
+    "Water (permanent or seasonal)": 21249.58
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 185967.26,
+   "valid_ha": 185967.26,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 161028.99,
+    "Water (permanent or seasonal)": 24938.27
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 21249.58,
+     "share_of_valid_pct": 11.427
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 24938.27,
+     "share_of_valid_pct": 13.41
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": 3688.69,
+   "net_change_pct": 17.36
+  }
+ },
+ "generated_at": "2026-11-15T07:20:28+00:00"
+}

@@ -1,0 +1,3 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+jrc-water-kolleru-lake,official_derived,1984-01-01,water,water,20920.11,14.763,whole footprint,0.0,fair
+jrc-water-kolleru-lake,official_derived,2021-01-01,water,water,66419.22,46.871,whole footprint,0.0,fair

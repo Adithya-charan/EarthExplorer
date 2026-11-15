@@ -189,11 +189,23 @@ def start_session(body: SessionRequest, svc: Svc) -> SessionResponse:
         datasets = sorted(datasets, key=lambda d: 0 if d.id == body.dataset_id else 1)
     if not datasets:
         nearby = [dataset_info(svc.datasets, d) for d in svc.datasets.intersecting(loc.bbox)]
+        closest = False
+        if not nearby:  # nothing inside the area: offer the closest places that do have satellite data, never invented values
+            import math
+
+            def _km(d):
+                la, lo = (d.bbox[1] + d.bbox[3]) / 2, (d.bbox[0] + d.bbox[2]) / 2
+                return math.hypot((la - loc.lat) * 111.0, (lo - loc.lon) * 111.0 * math.cos(math.radians(loc.lat)))
+
+            ranked = [d for d in sorted(svc.datasets.list(), key=_km)[:5] if _km(d) <= 1500]
+            nearby = [dataset_info(svc.datasets, d) for d in ranked]
+            closest = bool(ranked)
+            near_txt = ", ".join(f"{d.meta['location']['name'] if d.meta.get('location') else d.meta['name']} ({_km(d):.0f} km)" for d in ranked[:4])
         ins = Insufficient(
             code="no_dataset", reason=f"No loaded dataset covers {loc.name}. The globe can show the place, but there are no observations to compare over time.",
             missing=["a dataset whose footprint contains this location"],
         )
-        msg = (f"Found {loc.display_name}. Historical layers exist inside this area: " + ", ".join(d.name for d in nearby) + ".") if nearby else f"Found {loc.display_name}, but no dataset covers it, so there is no observation history to show here."
+        msg = (f"Found {loc.display_name}. Closest places with satellite observations: {near_txt}." if closest else f"Found {loc.display_name}. Historical layers exist inside this area: " + ", ".join(d.name for d in nearby) + ".") if nearby else f"Found {loc.display_name}. Satellite observations currently cover {len(svc.datasets.list())} places across India; none is near this place yet. Try one of the places listed below."
         return SessionResponse(status="no_dataset", location=loc, alternatives=alternatives, examples=examples, insufficient=ins, nearby_datasets=nearby, message=msg)
     infos = [dataset_info(svc.datasets, d) for d in datasets]
     ds = datasets[0]
@@ -266,6 +278,35 @@ def catalogue(svc: Svc) -> dict[str, Any]:
         rows.append({"id": d.id, "name": m["name"], "designation": m.get("designation", "illustrative" if d.is_synthetic else "official"), "public_label": m.get("public_label"), "bbox": d.bbox, "coverage": m["coverage"],
                      "observations": len(d.observations), "temporal_resolution": d.temporal, "resolution_m": m.get("resolution_m"), "variables": [v["key"] for v in d.variables], "source": m.get("source"), "format": m.get("format")})
     return {"datasets": rows, "count": len(rows)}
+
+
+INDIAN_STATES = {"Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"}
+
+
+@router.get("/rankings")
+def rankings(svc: Svc) -> dict[str, Any]:
+    """Measured change of every multi-date dataset (first to last observation) for the state map and the leaderboards."""
+    import re
+
+    rows = []
+    for d in svc.datasets.list():
+        st = svc.statistics(d)
+        prim = next(((k, v) for k, v in st["variables"].items() if v.get("primary")), next(iter(st["variables"].items()), None))
+        if not prim or len(prim[1]["series"]) < 2:
+            continue
+        key, v = prim
+        loc = d.meta.get("location") or {}
+        parts = [x.strip() for chunk in str(loc.get("hint", "")).split(",") for x in re.split(r" and ", chunk)]
+        series = v["series"]
+        first, last = series[0], series[-1]
+        years = max(0.1, (int(last["date"][:4]) - int(first["date"][:4])) or 1)
+        rows.append({
+            "id": d.id, "place": re.sub(r" \(.*\)$", "", str(d.meta["name"])).replace(" metropolitan area", ""), "kind": key, "variable": v["label"],
+            "states": [p for p in parts if p in INDIAN_STATES], "first_date": first["date"], "last_date": last["date"], "first_ha": first["area_ha"], "last_ha": last["area_ha"],
+            "net_ha": round(last["area_ha"] - first["area_ha"], 2), "pct": v.get("net_change_pct"), "ha_per_year": round((last["area_ha"] - first["area_ha"]) / years, 2),
+            "lat": loc.get("lat"), "lon": loc.get("lon"), "source": d.meta.get("source"),
+        })
+    return {"rows": rows, "count": len(rows)}
 
 
 @router.get("/source-registry")

@@ -10,11 +10,10 @@ import {
 import type { LocationOut } from "@/lib/explorer/types";
 import type { DeepTime } from "./useDeepTime";
 
-/** Earth Today / Historical Earth / Deep-Time Earth. The first two are the existing satellite modes. */
+/** Earth Today / Deep-Time Earth. (The year-by-year history is reached from the timeline of an open place.) */
 export function EraSwitch({ era, onEra }: { era: AppEra; onEra: (e: AppEra) => void }) {
   const items: { id: AppEra; hint: string }[] = [
     { id: "today", hint: "Latest satellite observation" },
-    { id: "historical", hint: "Satellite observations through the years" },
     { id: "deep", hint: "Geological reconstruction, millions of years" },
   ];
   return (

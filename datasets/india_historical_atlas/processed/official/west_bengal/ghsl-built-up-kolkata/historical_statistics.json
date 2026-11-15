@@ -1,0 +1,80 @@
+{
+ "dataset_id": "ghsl-built-up-kolkata",
+ "name": "Kolkata metropolitan area (GHSL built-up)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 182180.92,
+   "valid_ha": 182180.92,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 126902.2,
+    "Built-up (at least 15% of the cell)": 55278.72
+   }
+  },
+  {
+   "date": "2010-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 182180.92,
+   "valid_ha": 182180.92,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 119953.4,
+    "Built-up (at least 15% of the cell)": 62227.52
+   }
+  },
+  {
+   "date": "2020-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 182180.92,
+   "valid_ha": 182180.92,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 116016.72,
+    "Built-up (at least 15% of the cell)": 66164.2
+   }
+  }
+ ],
+ "variables": {
+  "built_up": {
+   "label": "built-up area",
+   "classes": 4,
+   "primary": true,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 55278.72,
+     "share_of_valid_pct": 30.343
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 62227.52,
+     "share_of_valid_pct": 34.157
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 66164.2,
+     "share_of_valid_pct": 36.318
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": 10885.48,
+   "net_change_pct": 19.69
+  }
+ },
+ "generated_at": "2026-11-15T07:20:32+00:00"
+}

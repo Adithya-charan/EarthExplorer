@@ -1,0 +1,185 @@
+{
+ "schema_version": 2,
+ "id": "ghsl-built-up-thiruvananthapuram",
+ "name": "Thiruvananthapuram metropolitan area (GHSL built-up)",
+ "description": "Built-up surface from the Global Human Settlement Layer at epochs 2000, 2010 and 2020, reclassified to built-up / not built-up.",
+ "kind": "raster_classification",
+ "is_synthetic": false,
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "simulated_label": null,
+ "source": "European Commission JRC, Global Human Settlement Layer (GHS-BUILT-S R2023A)",
+ "product": "GHS-BUILT-S R2023A built-up surface (reclassified)",
+ "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+ "crs": "EPSG:4326",
+ "resolution_deg": 0.0008333333300326821,
+ "resolution_m": 91.7,
+ "bbox": [
+  76.8,
+  8.35,
+  77.15,
+  8.65
+ ],
+ "location": {
+  "name": "Thiruvananthapuram metropolitan area (GHSL built-up)",
+  "aliases": [
+   "thiruvananthapuram",
+   "thiruvananthapuram metro",
+   "thiruvananthapuram metropolitan area",
+   "trivandrum"
+  ],
+  "lat": 8.5241,
+  "lon": 76.9366,
+  "hint": "Kerala, India"
+ },
+ "classes": {
+  "1": "Not built-up (below 15% of the cell)",
+  "4": "Built-up (at least 15% of the cell)",
+  "255": "No data"
+ },
+ "uncertain_value": 255,
+ "variables": [
+  {
+   "key": "built_up",
+   "label": "built-up area",
+   "class": 4,
+   "primary": true
+  }
+ ],
+ "license": "CC BY 4.0",
+ "min_feature_px": 1,
+ "temporal_resolution": "irregular",
+ "coverage": {
+  "start": "2000-01-01",
+  "end": "2020-01-01"
+ },
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "file": "observations/2000.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "sensor": "Landsat / Sentinel-2 derived (GHSL model)",
+   "class_area_ha": {
+    "Built-up (at least 15% of the cell)": 9607.29,
+    "Not built-up (below 15% of the cell)": 118255.43
+   },
+   "provenance": {
+    "designation": "official_derived",
+    "source_id": "ghsl_built_s_2000_R9_C26",
+    "provider": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+    "dataset_identifier": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0",
+    "official_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+    "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "original_file": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "original_local_path": "datasets/india_historical_atlas/official/south_west/originals/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "sha256": "c22793f584ca364f42d38e814fb23a7dd2cf0a77f078ae634e5961f5587070ab",
+    "license": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+    "temporal_coverage": "Epoch 2000 (modelled from Landsat and Sentinel-2)",
+    "date_semantics": "epoch year of a modelled product, not a single acquisition date",
+    "original_crs": "EPSG:4326",
+    "original_resolution_deg": 0.0008333333300326821,
+    "window_pixels": [
+     420,
+     360
+    ],
+    "processing_operations": [
+     "clip to analysis window",
+     "built-up fraction = built surface m2 / geodesic cell area",
+     "classify built-up where fraction >= 0.15",
+     "write COG"
+    ],
+    "nodata_value": 65535,
+    "nodata_fraction": 0.0,
+    "processed_at": "2026-11-15T07:12:31+00:00"
+   }
+  },
+  {
+   "date": "2010-01-01",
+   "file": "observations/2010.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "sensor": "Landsat / Sentinel-2 derived (GHSL model)",
+   "class_area_ha": {
+    "Built-up (at least 15% of the cell)": 14971.86,
+    "Not built-up (below 15% of the cell)": 112890.87
+   },
+   "provenance": {
+    "designation": "official_derived",
+    "source_id": "ghsl_built_s_2010_R9_C26",
+    "provider": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+    "dataset_identifier": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0",
+    "official_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+    "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "original_file": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "original_local_path": "datasets/india_historical_atlas/official/south_west/originals/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "sha256": "cd34b05b6318605ee4f156366f8b2dfb230cc5df0fea1c961c5d55ce7ad786a9",
+    "license": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+    "temporal_coverage": "Epoch 2010 (modelled from Landsat and Sentinel-2)",
+    "date_semantics": "epoch year of a modelled product, not a single acquisition date",
+    "original_crs": "EPSG:4326",
+    "original_resolution_deg": 0.0008333333300326821,
+    "window_pixels": [
+     420,
+     360
+    ],
+    "processing_operations": [
+     "clip to analysis window",
+     "built-up fraction = built surface m2 / geodesic cell area",
+     "classify built-up where fraction >= 0.15",
+     "write COG"
+    ],
+    "nodata_value": 65535,
+    "nodata_fraction": 0.0,
+    "processed_at": "2026-11-15T07:12:31+00:00"
+   }
+  },
+  {
+   "date": "2020-01-01",
+   "file": "observations/2020.tif",
+   "valid_fraction": 1.0,
+   "quality": "good",
+   "sensor": "Landsat / Sentinel-2 derived (GHSL model)",
+   "class_area_ha": {
+    "Built-up (at least 15% of the cell)": 18036.34,
+    "Not built-up (below 15% of the cell)": 109826.39
+   },
+   "provenance": {
+    "designation": "official_derived",
+    "source_id": "ghsl_built_s_2020_R9_C26",
+    "provider": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+    "dataset_identifier": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0",
+    "official_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+    "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "original_file": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "original_local_path": "datasets/india_historical_atlas/official/south_west/originals/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+    "sha256": "9bfacef198dac0c05c4705de192b0e0d365bf04d7e471bc65855e1cc977deeb1",
+    "license": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+    "temporal_coverage": "Epoch 2020 (modelled from Landsat and Sentinel-2)",
+    "date_semantics": "epoch year of a modelled product, not a single acquisition date",
+    "original_crs": "EPSG:4326",
+    "original_resolution_deg": 0.0008333333300326821,
+    "window_pixels": [
+     420,
+     360
+    ],
+    "processing_operations": [
+     "clip to analysis window",
+     "built-up fraction = built surface m2 / geodesic cell area",
+     "classify built-up where fraction >= 0.15",
+     "write COG"
+    ],
+    "nodata_value": 65535,
+    "nodata_fraction": 0.0,
+    "processed_at": "2026-11-15T07:12:32+00:00"
+   }
+  }
+ ],
+ "water_class": 4,
+ "real_dataset_targets": [],
+ "provenance": {
+  "designation": "official_derived",
+  "note": "GHSL is a modelled product built from Landsat and Sentinel-2 imagery. Epoch years are not acquisition dates.",
+  "pipeline": "pipeline.json"
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-krishnaraja-sagara",
+ "name": "Krishnaraja Sagara (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 48108.38,
+   "valid_ha": 48108.38,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 41348.41,
+    "Water (permanent or seasonal)": 6759.97
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 48108.38,
+   "valid_ha": 48108.38,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 39275.85,
+    "Water (permanent or seasonal)": 8832.53
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 6759.97,
+     "share_of_valid_pct": 14.052
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 8832.53,
+     "share_of_valid_pct": 18.36
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": 2072.56,
+   "net_change_pct": 30.66
+  }
+ },
+ "generated_at": "2026-11-15T07:20:29+00:00"
+}

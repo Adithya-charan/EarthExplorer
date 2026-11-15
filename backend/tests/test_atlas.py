@@ -29,12 +29,11 @@ def session(c: TestClient, q: str, sy: int = 2000, ey: int = 2020, **kw) -> dict
 
 def test_all_required_regions_are_loaded_and_labelled(client):
     ds = {d["id"]: d for d in client.get("/api/explorer/datasets").json()}
-    for needed in ("himalayas-dhauliganga", "sundarbans-west-bengal", "hyderabad-metro", "bellandur-lake"):
+    for needed in ("ghsl-built-up-chennai", "ghsl-built-up-kolkata", "ghsl-built-up-delhi-ncr", "ghsl-built-up-kochi", "jrc-water-chilika-lake", "jrc-water-vembanad-lake", "ghsl-built-up-hyderabad", "worldcover-sundarbans-2021"):
         assert needed in ds, needed
-        assert ds[needed]["public_label"] == "Illustrative Dataset"
-        assert ds[needed]["designation"] == "illustrative"
-    official = [d for d in ds.values() if d["designation"] != "illustrative"]
-    assert official and all(d["public_label"] == "Satellite Observations" for d in official)
+    assert len(ds) >= 40
+    # Every dataset is derived from an official satellite product; nothing generated is served.
+    assert all(d["designation"] == "official_derived" and not d["is_synthetic"] and d["public_label"] == "Satellite Observations" for d in ds.values())
 
 
 def test_suggestions_show_name_hierarchy_and_type(client):
@@ -60,15 +59,15 @@ def test_boundaries_are_real_or_honestly_approximate(client):
 
 
 def test_a_place_without_a_dataset_is_never_given_history(client):
-    s = session(client, "Chennai")
+    s = session(client, "Guwahati")
     assert s["status"] == "no_dataset" and s["dataset"] is None and s["latest"] is None
     assert s["insufficient"]["code"] == "no_dataset"
 
 
 def test_a_parent_area_points_to_the_datasets_inside_it(client):
-    s = session(client, "Uttarakhand")
+    s = session(client, "Tamil Nadu")
     assert s["status"] == "no_dataset"
-    assert any(d["id"] == "himalayas-dhauliganga" for d in s["nearby_datasets"])
+    assert any(d["id"] == "ghsl-built-up-chennai" for d in s["nearby_datasets"])
 
 
 def test_unknown_place_is_not_found(client):
@@ -78,19 +77,20 @@ def test_unknown_place_is_not_found(client):
 def test_official_data_is_preferred_where_it_covers_the_period(client):
     s = session(client, "Hyderabad", 2000, 2020)
     assert s["status"] == "ready"
-    assert s["dataset"]["designation"] != "illustrative"
-    s2 = session(client, "Bellandur Lake", 2002, 2022)
-    assert s2["status"] == "ready" and s2["dataset"]["public_label"] in {"Illustrative Dataset", "Satellite Observations"}
+    assert s["dataset"]["designation"] == "official_derived"
+    s2 = session(client, "Chennai", 2000, 2020)
+    assert s2["status"] == "ready" and s2["dataset"]["public_label"] == "Satellite Observations"
 
 
 def test_variables_are_analysed_separately_and_unknown_variables_are_rejected(client):
-    ds = next(d for d in client.get("/api/explorer/datasets").json() if d["id"] == "himalayas-dhauliganga")
+    ds = next(d for d in client.get("/api/explorer/datasets").json() if d["id"] == "worldcover-sundarbans-2021")
     keys = {v["key"] for v in ds["variables"]}
-    assert {"glacier", "snow"} <= keys or len(keys) >= 2
-    a = client.post("/api/explorer/analysis/detect-change", json={"dataset_id": ds["id"], "start_year": 2001, "end_year": 2020, "params": {"variable": sorted(keys)[0]}}).json()
-    b = client.post("/api/explorer/analysis/detect-change", json={"dataset_id": ds["id"], "start_year": 2001, "end_year": 2020, "params": {"variable": sorted(keys)[-1]}}).json()
-    assert a["variable"]["key"] != b["variable"]["key"]
-    bad = client.post("/api/explorer/analysis/detect-change", json={"dataset_id": ds["id"], "start_year": 2001, "end_year": 2020, "params": {"variable": "nonsense"}})
+    assert {"mangrove", "water"} <= keys
+    st = client.get(f"/api/explorer/datasets/{ds['id']}/statistics").json()
+    assert {"mangrove", "water"} <= set(st["variables"])
+    areas = {k: st["variables"][k]["series"][0]["area_ha"] for k in ("mangrove", "water")}
+    assert areas["mangrove"] != areas["water"]  # each variable is measured on its own class
+    bad = client.post("/api/explorer/analysis/detect-change", json={"dataset_id": "jrc-water-bellandur", "start_year": 1984, "end_year": 2021, "params": {"variable": "nonsense"}})
     assert bad.status_code == 422
 
 
@@ -101,14 +101,14 @@ def test_single_date_datasets_never_report_zero_change(client):
 
 
 def test_statistics_endpoint_serves_measured_series(client):
-    st = client.get("/api/explorer/datasets/bellandur-lake/statistics").json()
+    st = client.get("/api/explorer/datasets/jrc-water-bellandur/statistics").json()
     assert st["observations"] and st["variables"]
     water = st["variables"].get("water") or next(iter(st["variables"].values()))
     assert all(p["area_ha"] >= 0 for p in water["series"])
 
 
 def test_metadata_catalogue_and_registry_endpoints(client):
-    assert client.get("/api/explorer/datasets/bellandur-lake/metadata").status_code == 200
+    assert client.get("/api/explorer/datasets/jrc-water-bellandur/metadata").status_code == 200
     assert client.get("/api/explorer/catalogue").status_code == 200
     r = client.get("/api/explorer/source-registry")
     assert r.status_code in (200, 404)

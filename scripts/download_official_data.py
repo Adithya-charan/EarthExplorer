@@ -61,6 +61,35 @@ FILES = [
         )
         for y in (2000, 2010, 2020)
     ],
+    # Additional GHSL tiles (same product, same epochs) covering more of India.
+    *[
+        dict(
+            id=f"ghsl_built_s_{y}_{tile}", name=f"GHSL GHS-BUILT-S R2023A, epoch {y}, tile {tile} (3 arc-second, EPSG:4326)",
+            org="European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+            dataset_url="https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php", collection=f"GHS_BUILT_S_E{y}_GLOBE_R2023A_4326_3ss_V1_0",
+            region=region, used_by=[region],
+            url=f"https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E{y}_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E{y}_GLOBE_R2023A_4326_3ss_V1_0_{tile}.zip",
+            temporal=f"Epoch {y} (modelled from Landsat and Sentinel-2)", resolution="3 arc-seconds (about 90 m)", fmt="GeoTIFF in ZIP",
+            license="CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+            covers=cover, variable="built-up surface (m2 per cell)",
+        )
+        for tile, region, cover in (("R8_C27", "south_east", [80, 10, 90, 20]), ("R7_C26", "north_west", [70, 20, 80, 30]), ("R7_C27", "north_east", [80, 20, 90, 30]), ("R9_C26", "south_west", [70, 0, 80, 10]))
+        for y in (2000, 2010, 2020)
+    ],
+    # Additional JRC Global Surface Water tiles (occurrence + transitions).
+    *[
+        dict(
+            id=f"jrc_gsw_{kind}_{tile}", name=f"JRC Global Surface Water - {kind.title()} (v1.4, 2021 release), tile {tile}",
+            org="European Commission Joint Research Centre (JRC)", dataset_url="https://global-surface-water.appspot.com/download",
+            collection=f"JRC/GSW1_4/GlobalSurfaceWater ({kind} layer)", region=region, used_by=[region],
+            url=f"https://storage.googleapis.com/global-surface-water/downloads2021/{kind}/{kind}_{tile}v1_4_2021.tif",
+            temporal="1984-03 to 2021-12" if kind == "occurrence" else "First year (1984) versus last year (2021) water class transition", resolution="30 m (1 arc-second)", fmt="GeoTIFF",
+            license="Free and open; cite Pekel et al. (2016) Nature 540, 418-422.", covers=cover, variable="water occurrence (%)" if kind == "occurrence" else "water class transition",
+        )
+        for tile, region, cover in (("70E_30N", "north_west", [70, 20, 80, 30]), ("80E_20N", "south_east", [80, 10, 90, 20]), ("70E_10N", "south_west", [70, 0, 80, 10]), ("80E_30N", "north_east", [80, 20, 90, 30]))
+        for kind in ("occurrence", "transitions")
+        if not (tile == "80E_30N" and kind == "occurrence")  # already downloaded for the Sundarbans
+    ],
     dict(
         id="esa_worldcover_2021_N21E087", name="ESA WorldCover 10 m 2021 v200, tile N21E087", org="European Space Agency (ESA) WorldCover consortium",
         dataset_url="https://esa-worldcover.org/en", collection="ESA WorldCover 10 m 2021 v200", region="sundarbans", used_by=["sundarbans"], large=True,

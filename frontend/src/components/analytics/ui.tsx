@@ -2,35 +2,38 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AlertTriangle, BarChart3, Database, Globe2, History, Loader2, Mountain, type LucideIcon } from "lucide-react";
+import { AlertTriangle, BarChart3, Columns2, Trophy, Table2, Database, Globe2, History, Loader2, Mountain, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const NAV: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/", label: "Earth Time Machine", icon: History },
   { href: "/analytics", label: "Change Analytics", icon: BarChart3 },
+  { href: "/compare", label: "Compare Places", icon: Columns2 },
+  { href: "/rankings", label: "Rankings & Map", icon: Trophy },
   { href: "/deep-time", label: "Deep-Time Analytics", icon: Mountain },
+  { href: "/datasets", label: "Datasets", icon: Table2 },
   { href: "/data", label: "Data & Methods", icon: Database },
 ];
 
 /** Colours used by every chart so a dataset, a model or a change keeps one colour across the app. */
 export const C = {
-  ink: "#e8f1ff",
-  soft: "#b6c6e3",
-  muted: "#8da2c4",
-  grid: "rgba(148,180,255,0.13)",
-  accent: "#38bdf8",
-  loss: "#ff4d5e",
-  gain: "#35e08a",
-  warn: "#fbbf24",
-  earthbyte: "#fbbf24",
-  paleomap: "#38bdf8",
-  violet: "#a78bfa",
-  orange: "#fb923c",
-  series: ["#38bdf8", "#35e08a", "#fbbf24", "#a78bfa", "#fb923c", "#f472b6", "#22d3ee", "#94a3b8"],
+  ink: "#0f1b2d",
+  soft: "#33435a",
+  muted: "#5b6b80",
+  grid: "rgba(15,27,45,0.10)",
+  accent: "#0b5cad",
+  loss: "#c62839",
+  gain: "#168a52",
+  warn: "#b7791f",
+  earthbyte: "#b7791f",
+  paleomap: "#0b5cad",
+  violet: "#6d4fc2",
+  orange: "#d9661b",
+  series: ["#0b5cad", "#168a52", "#b7791f", "#6d4fc2", "#d9661b", "#c2417a", "#0e8aa0", "#64748b"],
 };
 
 export const tooltipStyle = {
-  contentStyle: { background: "rgba(7,15,34,0.96)", border: "1px solid rgba(148,180,255,0.25)", borderRadius: 10, color: C.ink, fontSize: 12 },
+  contentStyle: { background: "#ffffff", border: "1px solid #c3cfde", borderRadius: 10, color: C.ink, fontSize: 12 },
   labelStyle: { color: C.soft },
   itemStyle: { color: C.ink },
 };
@@ -41,10 +44,10 @@ export function Shell({ children }: { children: ReactNode }) {
   if (path === "/") return <>{children}</>;
   return (
     <div className="nxp" data-testid="nasax-shell">
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-sky-500 focus:px-3 focus:py-2 focus:text-white">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-[color:var(--nx-accent)] focus:px-3 focus:py-2 focus:text-white">
         Skip to main content
       </a>
-      <header className="sticky top-0 z-30 border-b border-[color:var(--nx-line)] bg-[rgba(3,8,22,0.85)] backdrop-blur">
+      <header className="sticky top-0 z-30 nxp-header">
         <div className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-x-6 gap-y-2 px-4 py-2.5 sm:px-6">
           <Link href="/" className="flex items-center gap-2.5" aria-label="NASAX Earth Time Machine home">
             <Globe2 className="h-6 w-6 text-[color:var(--nx-accent)]" aria-hidden />
@@ -58,7 +61,7 @@ export function Shell({ children }: { children: ReactNode }) {
               const active = n.href === "/" ? path === "/" : path.startsWith(n.href);
               const Icon = n.icon;
               return (
-                <Link key={n.href} href={n.href} aria-current={active ? "page" : undefined} className={`flex items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium transition-colors ${active ? "bg-white/12 text-white" : "text-[color:var(--nx-soft)] hover:bg-white/8"}`}>
+                <Link key={n.href} href={n.href} aria-current={active ? "page" : undefined} className={`flex items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium transition-colors ${active ? "nxp-nav-active" : "text-[color:var(--nx-soft)] hover:bg-slate-100"}`}>
                   <Icon className="h-4 w-4" aria-hidden /> {n.label}
                 </Link>
               );
@@ -70,7 +73,7 @@ export function Shell({ children }: { children: ReactNode }) {
         {children}
       </main>
       <footer className="border-t border-[color:var(--nx-line)] px-4 py-4 text-xs text-[color:var(--nx-muted)] sm:px-6">
-        <p className="mx-auto max-w-[1400px]">NASAX · Satellite Observations, Illustrative Datasets and Geological Reconstructions are kept apart and always labelled. Results describe the selected data only and do not establish causes.</p>
+        <p className="mx-auto max-w-[1400px]">NASAX · Satellite Observations and Geological Reconstructions are kept apart and always labelled. Results describe the selected data only and do not establish causes.</p>
       </footer>
     </div>
   );
@@ -103,7 +106,7 @@ export function Card({ title, subtitle, children, className = "", right, testid 
 }
 
 export function Kpi({ label, value, hint, tone }: { label: string; value: ReactNode; hint?: ReactNode; tone?: "loss" | "gain" | "warn" }) {
-  const color = tone === "loss" ? "text-[color:var(--nx-loss)]" : tone === "gain" ? "text-[color:var(--nx-gain)]" : tone === "warn" ? "text-[color:var(--nx-warn)]" : "text-white";
+  const color = tone === "loss" ? "text-[color:var(--nx-loss)]" : tone === "gain" ? "text-[color:var(--nx-gain)]" : tone === "warn" ? "text-[color:var(--nx-warn)]" : "text-[color:var(--nx-ink)]";
   return (
     <div className="nx-glass px-4 py-3" data-testid="kpi">
       <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--nx-muted)]">{label}</p>
@@ -115,11 +118,11 @@ export function Kpi({ label, value, hint, tone }: { label: string; value: ReactN
 
 export function Badge({ children, tone = "info" }: { children: ReactNode; tone?: "official" | "illustrative" | "model" | "info" | "warn" }) {
   const cls = {
-    official: "border-emerald-400/50 bg-emerald-400/15 text-emerald-200",
-    illustrative: "border-amber-400/50 bg-amber-400/15 text-amber-200",
-    model: "border-sky-300/50 bg-sky-400/12 text-sky-200",
-    info: "border-white/20 bg-white/8 text-[color:var(--nx-soft)]",
-    warn: "border-amber-400/50 bg-amber-400/12 text-amber-200",
+    official: "border-emerald-700/40 bg-emerald-50 text-emerald-800",
+    illustrative: "border-amber-700/40 bg-amber-50 text-amber-900",
+    model: "border-sky-700/40 bg-sky-50 text-sky-900",
+    info: "border-slate-300 bg-slate-100 text-[color:var(--nx-soft)]",
+    warn: "border-amber-700/40 bg-amber-50 text-amber-900",
   }[tone];
   return <span className={`inline-block rounded-md border px-2 py-0.5 text-[11px] font-bold tracking-wide ${cls}`}>{children}</span>;
 }
@@ -134,8 +137,8 @@ export function Loading({ what }: { what: string }) {
 
 export function ErrorBox({ message, onRetry }: { message: string; onRetry?: () => void }) {
   return (
-    <div role="alert" className="nx-glass border-rose-400/40 p-4">
-      <p className="flex items-center gap-2 font-semibold text-rose-200">
+    <div role="alert" className="nx-glass border-rose-300 p-4">
+      <p className="flex items-center gap-2 font-semibold text-rose-800">
         <AlertTriangle className="h-4 w-4" aria-hidden /> Something went wrong
       </p>
       <p className="mt-1 text-[13px] text-[color:var(--nx-soft)]">{message}</p>

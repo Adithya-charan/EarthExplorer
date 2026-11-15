@@ -1,0 +1,4 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-madurai,official_derived,2000-01-01,built_up,built-up area,7395.73,9.756,whole footprint,0.0,good
+ghsl-built-up-madurai,official_derived,2010-01-01,built_up,built-up area,9592.51,12.653,whole footprint,0.0,good
+ghsl-built-up-madurai,official_derived,2020-01-01,built_up,built-up area,11548.35,15.233,whole footprint,0.0,good

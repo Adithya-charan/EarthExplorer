@@ -42,6 +42,7 @@ from app.explorer.schemas import ChangeParams, ChangeSummary, DatasetInfo, Hotsp
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 S8 = np.ones((3, 3), dtype=bool)
+MAX_HOTSPOTS = 40
 
 
 @dataclass
@@ -387,21 +388,27 @@ class ChangeDetectionService:
         tr = _lonlat_transformer(ds)
         r0, c0 = np.nonzero(w0 & valid)
         cx, cy = _pix_lonlat(ds, r0, c0, tr) if len(r0) else (0.0, 0.0)
-        found: list[tuple[float, str, np.ndarray]] = []
+        # Areas of every connected change patch are measured in one vectorised pass; only the largest patches (at most
+        # MAX_HOTSPOTS) get a boolean mask and a polygon, so a large city window with thousands of small patches stays cheap.
+        found: list[tuple[float, str, np.ndarray, int]] = []
+        total = 0.0
         for kind, mask in (("loss", loss), ("gain", gain)):
             if not mask.any():
                 continue
             labels, n = ndi.label(mask, structure=S8)
-            for gid in range(1, n + 1):
-                pix = labels == gid
-                a = area_ha(pix, rows)
+            cell = np.broadcast_to(rows[:, None], labels.shape)
+            areas = np.asarray(ndi.sum(cell, labels, index=np.arange(1, n + 1))) / 10_000.0
+            for gid, a in enumerate(areas, 1):
                 if a >= min_ha:
-                    found.append((a, kind, pix))
+                    found.append((float(a), kind, labels, gid))
+                    total += float(a)
         found.sort(key=lambda t: -t[0])
-        total = sum(a for a, _, _ in found) or 1.0
+        found = found[:MAX_HOTSPOTS]
+        total = total or 1.0
         geo_crs = None
         feats, out = [], []
-        for rank, (a, kind, pix) in enumerate(found, 1):
+        for rank, (a, kind, labels, gid) in enumerate(found, 1):
+            pix = labels == gid
             polys = [shape(g) for g, v in shapes(pix.astype(np.uint8), mask=pix, transform=ds.transform) if v == 1]
             geom = unary_union(polys).simplify(abs(ds.transform.a) * 0.4)
             gs = gpd.GeoSeries([geom], crs=ds.crs)

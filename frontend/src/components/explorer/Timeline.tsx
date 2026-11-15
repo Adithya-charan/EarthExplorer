@@ -1,7 +1,7 @@
 "use client";
 
-import { Pause, Play, SkipBack, SkipForward } from "lucide-react";
-import { useMemo, useRef } from "react";
+import { ChevronDown, ChevronUp, Pause, Play, SkipBack, SkipForward } from "lucide-react";
+import { useMemo, useRef, useState } from "react";
 import { fmtDate, nearestIndex, PLAY_SPEEDS, timelinePositions } from "@/lib/explorer/logic";
 import type { ObservationInfo } from "@/lib/explorer/types";
 
@@ -28,6 +28,7 @@ const QUALITY_COLOR = { good: "#38bdf8", fair: "#fbbf24", poor: "#fb7185" } as c
  */
 export function Timeline(p: Props) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const [min, setMin] = useState(false);
   const dates = useMemo(() => p.observations.map((o) => o.date), [p.observations]);
   const pos = useMemo(() => timelinePositions(dates), [dates]);
   const n = p.observations.length;
@@ -56,7 +57,7 @@ export function Timeline(p: Props) {
 
   if (!n) return null;
   return (
-    <section aria-label="Observation timeline" data-testid="timeline" className="nx-glass nx-rise w-[min(1040px,96vw)] px-4 pb-3 pt-3">
+    <section aria-label="Observation timeline" data-testid="timeline" className="nx-glass nx-rise w-[min(860px,96vw)] px-3 pb-2 pt-2" title="Each mark is an observation that exists. Gaps are dates with no data; nothing is interpolated. Hollow marks are poor-quality observations.">
       <div className="flex flex-wrap items-center gap-2">
         <button type="button" className="nx-ghost" aria-label="Previous observation" onClick={p.onPrev} disabled={p.index <= 0}>
           <SkipBack className="h-4 w-4" aria-hidden />
@@ -74,6 +75,9 @@ export function Timeline(p: Props) {
             </button>
           ))}
         </div>
+        <button type="button" className="nx-ghost !p-1.5 sm:order-last" aria-label={min ? "Show timeline track" : "Hide timeline track"} aria-expanded={!min} onClick={() => setMin((m) => !m)}>
+          {min ? <ChevronUp className="h-4 w-4" aria-hidden /> : <ChevronDown className="h-4 w-4" aria-hidden />}
+        </button>
         <div className="ml-auto text-right" data-testid="timeline-readout">
           <span className="text-[15px] font-semibold">{fmtDate(cur.date, p.temporal)}</span>
           <span className="ml-2 text-[12px]" style={{ color: QUALITY_COLOR[cur.quality] }}>
@@ -86,6 +90,7 @@ export function Timeline(p: Props) {
         </div>
       </div>
 
+      <div hidden={min}>
       <div
         ref={trackRef}
         role="slider"
@@ -96,7 +101,7 @@ export function Timeline(p: Props) {
         aria-valuenow={p.index}
         aria-valuetext={`${fmtDate(cur.date, p.temporal)}, quality ${cur.quality}`}
         data-testid="timeline-track"
-        className={`relative mt-3 h-9 cursor-pointer touch-none select-none rounded-lg ${p.active ? "bg-sky-400/10" : "bg-white/5"}`}
+        className={`relative mt-2 h-7 cursor-pointer touch-none select-none rounded-lg ${p.active ? "bg-sky-400/10" : "bg-white/5"}`}
         onPointerDown={(e) => {
           (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
           pick(e.clientX);
@@ -118,7 +123,7 @@ export function Timeline(p: Props) {
             key={o.date}
             data-testid="tick"
             title={`${fmtDate(o.date, p.temporal)} · ${o.quality}`}
-            className="absolute top-2 h-5 w-[3px] -translate-x-1/2 rounded-full"
+            className="absolute top-1 h-5 w-[3px] -translate-x-1/2 rounded-full"
             style={{
               left: `${pos[i] * 100}%`,
               background: o.quality === "poor" ? "transparent" : QUALITY_COLOR[o.quality],
@@ -129,7 +134,7 @@ export function Timeline(p: Props) {
         ))}
         <span
           aria-hidden
-          className="absolute top-0.5 h-8 w-[3px] -translate-x-1/2 rounded-full bg-white shadow-[0_0_12px_2px_rgba(255,255,255,0.7)]"
+          className="absolute top-0 h-7 w-[3px] -translate-x-1/2 rounded-full bg-white shadow-[0_0_12px_2px_rgba(255,255,255,0.7)]"
           style={{ left: `${pos[Math.min(p.index, n - 1)] * 100}%` }}
           data-testid="cursor"
         />
@@ -141,7 +146,7 @@ export function Timeline(p: Props) {
           </span>
         ))}
       </div>
-      <p className="mt-1 text-[11px] text-[color:var(--nx-muted)]">Each mark is an observation that exists. Gaps are dates with no data; nothing is interpolated. Hollow marks are poor-quality observations.</p>
+      </div>
     </section>
   );
 }

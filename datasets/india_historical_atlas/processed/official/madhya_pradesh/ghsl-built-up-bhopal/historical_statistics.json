@@ -1,0 +1,80 @@
+{
+ "dataset_id": "ghsl-built-up-bhopal",
+ "name": "Bhopal metropolitan area (GHSL built-up)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 56665.29,
+   "valid_ha": 56665.29,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 47817.21,
+    "Built-up (at least 15% of the cell)": 8848.08
+   }
+  },
+  {
+   "date": "2010-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 56665.29,
+   "valid_ha": 56665.29,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 45018.26,
+    "Built-up (at least 15% of the cell)": 11647.03
+   }
+  },
+  {
+   "date": "2020-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 56665.29,
+   "valid_ha": 56665.29,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 42957.61,
+    "Built-up (at least 15% of the cell)": 13707.68
+   }
+  }
+ ],
+ "variables": {
+  "built_up": {
+   "label": "built-up area",
+   "classes": 4,
+   "primary": true,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 8848.08,
+     "share_of_valid_pct": 15.615
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 11647.03,
+     "share_of_valid_pct": 20.554
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 13707.68,
+     "share_of_valid_pct": 24.191
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": 4859.6,
+   "net_change_pct": 54.92
+  }
+ },
+ "generated_at": "2026-11-15T07:20:30+00:00"
+}

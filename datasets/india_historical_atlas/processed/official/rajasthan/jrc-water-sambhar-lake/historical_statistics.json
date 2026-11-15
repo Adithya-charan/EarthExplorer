@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-sambhar-lake",
+ "name": "Sambhar Lake (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 88020.54,
+   "valid_ha": 88020.54,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 83153.23,
+    "Water (permanent or seasonal)": 4867.31
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 88020.54,
+   "valid_ha": 88020.54,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 72676.08,
+    "Water (permanent or seasonal)": 15344.46
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 4867.31,
+     "share_of_valid_pct": 5.53
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 15344.46,
+     "share_of_valid_pct": 17.433
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": 10477.15,
+   "net_change_pct": 215.26
+  }
+ },
+ "generated_at": "2026-11-15T07:20:31+00:00"
+}

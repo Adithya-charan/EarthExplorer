@@ -1,185 +1,113 @@
 dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-vijayawada,official_derived,2000-01-01,built_up,built-up area,7196.86,8.123,whole footprint,0.0,good
+ghsl-built-up-vijayawada,official_derived,2010-01-01,built_up,built-up area,9227.5,10.415,whole footprint,0.0,good
+ghsl-built-up-vijayawada,official_derived,2020-01-01,built_up,built-up area,11359.79,12.821,whole footprint,0.0,good
+ghsl-built-up-visakhapatnam,official_derived,2000-01-01,built_up,built-up area,9532.59,5.156,whole footprint,0.0,good
+ghsl-built-up-visakhapatnam,official_derived,2010-01-01,built_up,built-up area,12846.24,6.948,whole footprint,0.0,good
+ghsl-built-up-visakhapatnam,official_derived,2020-01-01,built_up,built-up area,16843.74,9.11,whole footprint,0.0,good
+jrc-water-kolleru-lake,official_derived,1984-01-01,water,water,20920.11,14.763,whole footprint,0.0,fair
+jrc-water-kolleru-lake,official_derived,2021-01-01,water,water,66419.22,46.871,whole footprint,0.0,fair
+jrc-water-nagarjuna-sagar,official_derived,1984-01-01,water,water,21249.58,11.427,whole footprint,0.0,fair
+jrc-water-nagarjuna-sagar,official_derived,2021-01-01,water,water,24938.27,13.41,whole footprint,0.0,fair
+jrc-water-pulicat-lake,official_derived,1984-01-01,water,water,52044.38,40.253,whole footprint,0.0,fair
+jrc-water-pulicat-lake,official_derived,2021-01-01,water,water,53155.0,41.112,whole footprint,0.0,fair
 ghsl-built-up-bengaluru,official_derived,2000-01-01,built_up,built-up area,21179.34,35.287,whole footprint,0.0,good
 ghsl-built-up-bengaluru,official_derived,2010-01-01,built_up,built-up area,30278.31,50.447,whole footprint,0.0,good
 ghsl-built-up-bengaluru,official_derived,2020-01-01,built_up,built-up area,34789.93,57.964,whole footprint,0.0,good
 jrc-water-bellandur,official_derived,1984-01-01,water,water,196.95,1.823,whole footprint,0.0,fair
 jrc-water-bellandur,official_derived,2021-01-01,water,water,119.15,1.103,whole footprint,0.0,fair
+ghsl-built-up-patna,official_derived,2000-01-01,built_up,built-up area,12695.51,15.214,whole footprint,0.0,good
+ghsl-built-up-patna,official_derived,2010-01-01,built_up,built-up area,14751.76,17.678,whole footprint,0.0,good
+ghsl-built-up-patna,official_derived,2020-01-01,built_up,built-up area,16842.18,20.183,whole footprint,0.0,good
+ghsl-built-up-raipur,official_derived,2000-01-01,built_up,built-up area,8879.4,10.304,whole footprint,0.0,good
+ghsl-built-up-raipur,official_derived,2010-01-01,built_up,built-up area,11997.1,13.921,whole footprint,0.0,good
+ghsl-built-up-raipur,official_derived,2020-01-01,built_up,built-up area,14487.72,16.811,whole footprint,0.0,good
+ghsl-built-up-delhi-ncr,official_derived,2000-01-01,built_up,built-up area,100930.52,26.05,whole footprint,0.0,good
+ghsl-built-up-delhi-ncr,official_derived,2010-01-01,built_up,built-up area,118449.31,30.571,whole footprint,0.0,good
+ghsl-built-up-delhi-ncr,official_derived,2020-01-01,built_up,built-up area,136420.54,35.21,whole footprint,0.0,good
+ghsl-built-up-panaji,official_derived,2000-01-01,built_up,built-up area,1030.64,1.24,whole footprint,0.0,good
+ghsl-built-up-panaji,official_derived,2010-01-01,built_up,built-up area,1827.92,2.199,whole footprint,0.0,good
+ghsl-built-up-panaji,official_derived,2020-01-01,built_up,built-up area,2630.13,3.165,whole footprint,0.0,good
+ghsl-built-up-ahmedabad,official_derived,2000-01-01,built_up,built-up area,23911.41,17.557,whole footprint,0.0,good
+ghsl-built-up-ahmedabad,official_derived,2010-01-01,built_up,built-up area,31399.14,23.055,whole footprint,0.0,good
+ghsl-built-up-ahmedabad,official_derived,2020-01-01,built_up,built-up area,35869.52,26.337,whole footprint,0.0,good
+ghsl-built-up-surat,official_derived,2000-01-01,built_up,built-up area,9876.84,13.744,whole footprint,0.0,good
+ghsl-built-up-surat,official_derived,2010-01-01,built_up,built-up area,14520.62,20.206,whole footprint,0.0,good
+ghsl-built-up-surat,official_derived,2020-01-01,built_up,built-up area,16869.43,23.475,whole footprint,0.0,good
+jrc-water-nal-sarovar,official_derived,1984-01-01,water,water,7804.5,6.537,whole footprint,0.0,fair
+jrc-water-nal-sarovar,official_derived,2021-01-01,water,water,12129.58,10.16,whole footprint,0.0,fair
 ghsl-built-up-hyderabad,official_derived,2000-01-01,built_up,built-up area,37715.5,22.911,whole footprint,0.0,good
 ghsl-built-up-hyderabad,official_derived,2010-01-01,built_up,built-up area,50950.67,30.951,whole footprint,0.0,good
 ghsl-built-up-hyderabad,official_derived,2020-01-01,built_up,built-up area,61138.97,37.14,whole footprint,0.0,good
 jrc-water-hyderabad,official_derived,1984-01-01,water,water,3750.71,2.278,whole footprint,0.0,fair
 jrc-water-hyderabad,official_derived,2021-01-01,water,water,6570.59,3.991,whole footprint,0.0,fair
+ghsl-built-up-mangaluru,official_derived,2000-01-01,built_up,built-up area,7972.78,18.445,whole footprint,0.0,good
+ghsl-built-up-mangaluru,official_derived,2010-01-01,built_up,built-up area,8966.67,20.744,whole footprint,0.0,good
+ghsl-built-up-mangaluru,official_derived,2020-01-01,built_up,built-up area,9435.27,21.828,whole footprint,0.0,good
+ghsl-built-up-mysuru,official_derived,2000-01-01,built_up,built-up area,6629.94,13.774,whole footprint,0.0,good
+ghsl-built-up-mysuru,official_derived,2010-01-01,built_up,built-up area,8810.96,18.305,whole footprint,0.0,good
+ghsl-built-up-mysuru,official_derived,2020-01-01,built_up,built-up area,10272.52,21.341,whole footprint,0.0,good
+jrc-water-krishnaraja-sagara,official_derived,1984-01-01,water,water,6759.97,14.052,whole footprint,0.0,fair
+jrc-water-krishnaraja-sagara,official_derived,2021-01-01,water,water,8832.53,18.36,whole footprint,0.0,fair
+jrc-water-tungabhadra-reservoir,official_derived,1984-01-01,water,water,19086.73,17.841,whole footprint,0.0,fair
+jrc-water-tungabhadra-reservoir,official_derived,2021-01-01,water,water,21567.0,20.16,whole footprint,0.0,fair
+ghsl-built-up-kochi,official_derived,2000-01-01,built_up,built-up area,15504.52,17.046,whole footprint,0.0,good
+ghsl-built-up-kochi,official_derived,2010-01-01,built_up,built-up area,20066.3,22.061,whole footprint,0.0,good
+ghsl-built-up-kochi,official_derived,2020-01-01,built_up,built-up area,23025.54,25.314,whole footprint,0.0,good
+ghsl-built-up-kozhikode,official_derived,2000-01-01,built_up,built-up area,3719.3,7.698,whole footprint,0.0,good
+ghsl-built-up-kozhikode,official_derived,2010-01-01,built_up,built-up area,5573.07,11.535,whole footprint,0.0,good
+ghsl-built-up-kozhikode,official_derived,2020-01-01,built_up,built-up area,6728.93,13.927,whole footprint,0.0,good
+ghsl-built-up-thiruvananthapuram,official_derived,2000-01-01,built_up,built-up area,9607.29,7.514,whole footprint,0.0,good
+ghsl-built-up-thiruvananthapuram,official_derived,2010-01-01,built_up,built-up area,14971.86,11.709,whole footprint,0.0,good
+ghsl-built-up-thiruvananthapuram,official_derived,2020-01-01,built_up,built-up area,18036.34,14.106,whole footprint,0.0,good
+jrc-water-ashtamudi-lake,official_derived,1984-01-01,water,water,4878.72,23.878,whole footprint,0.0,fair
+jrc-water-ashtamudi-lake,official_derived,2021-01-01,water,water,4965.15,24.301,whole footprint,0.0,fair
+jrc-water-vembanad-lake,official_derived,1984-01-01,water,water,28300.71,20.724,whole footprint,0.0,fair
+jrc-water-vembanad-lake,official_derived,2021-01-01,water,water,40916.95,29.963,whole footprint,0.0,fair
+ghsl-built-up-bhopal,official_derived,2000-01-01,built_up,built-up area,8848.08,15.615,whole footprint,0.0,good
+ghsl-built-up-bhopal,official_derived,2010-01-01,built_up,built-up area,11647.03,20.554,whole footprint,0.0,good
+ghsl-built-up-bhopal,official_derived,2020-01-01,built_up,built-up area,13707.68,24.191,whole footprint,0.0,good
+jrc-water-gandhi-sagar,official_derived,1984-01-01,water,water,25650.81,21.794,whole footprint,0.0,fair
+jrc-water-gandhi-sagar,official_derived,2021-01-01,water,water,28635.51,24.33,whole footprint,0.0,fair
+jrc-water-upper-lake-bhopal,official_derived,1984-01-01,water,water,2436.18,10.856,whole footprint,0.0,fair
+jrc-water-upper-lake-bhopal,official_derived,2021-01-01,water,water,2976.33,13.263,whole footprint,0.0,fair
+ghsl-built-up-nagpur,official_derived,2000-01-01,built_up,built-up area,14416.03,20.893,whole footprint,0.0,good
+ghsl-built-up-nagpur,official_derived,2010-01-01,built_up,built-up area,18395.49,26.66,whole footprint,0.0,good
+ghsl-built-up-nagpur,official_derived,2020-01-01,built_up,built-up area,20598.17,29.853,whole footprint,0.0,good
+ghsl-built-up-pune,official_derived,2000-01-01,built_up,built-up area,18760.89,21.404,whole footprint,0.0,good
+ghsl-built-up-pune,official_derived,2010-01-01,built_up,built-up area,28366.65,32.363,whole footprint,0.0,good
+ghsl-built-up-pune,official_derived,2020-01-01,built_up,built-up area,33248.99,37.933,whole footprint,0.0,good
+jrc-water-ujani-reservoir,official_derived,1984-01-01,water,water,16288.78,13.242,whole footprint,0.0,fair
+jrc-water-ujani-reservoir,official_derived,2021-01-01,water,water,17295.76,14.061,whole footprint,0.0,fair
+ghsl-built-up-bhubaneswar,official_derived,2000-01-01,built_up,built-up area,5954.78,5.722,whole footprint,0.0,good
+ghsl-built-up-bhubaneswar,official_derived,2010-01-01,built_up,built-up area,9156.5,8.799,whole footprint,0.0,good
+ghsl-built-up-bhubaneswar,official_derived,2020-01-01,built_up,built-up area,11641.16,11.186,whole footprint,0.0,good
+jrc-water-chilika-lake,official_derived,1984-01-01,water,water,121323.8,48.62,whole footprint,0.0,fair
+jrc-water-chilika-lake,official_derived,2021-01-01,water,water,120046.64,48.108,whole footprint,0.0,fair
+jrc-water-hirakud-reservoir,official_derived,1984-01-01,water,water,60052.72,23.294,whole footprint,0.0,fair
+jrc-water-hirakud-reservoir,official_derived,2021-01-01,water,water,59209.88,22.968,whole footprint,0.0,fair
+ghsl-built-up-jaipur,official_derived,2000-01-01,built_up,built-up area,17005.24,17.166,whole footprint,0.0,good
+ghsl-built-up-jaipur,official_derived,2010-01-01,built_up,built-up area,26367.02,26.616,whole footprint,0.0,good
+ghsl-built-up-jaipur,official_derived,2020-01-01,built_up,built-up area,34344.44,34.668,whole footprint,0.0,good
+jrc-water-sambhar-lake,official_derived,1984-01-01,water,water,4867.31,5.53,whole footprint,0.0,fair
+jrc-water-sambhar-lake,official_derived,2021-01-01,water,water,15344.46,17.433,whole footprint,0.0,fair
 worldcover-sundarbans-2021,official_derived,2021-01-01,mangrove,mangrove,146454.89,51.164,whole footprint,0.0,good
 worldcover-sundarbans-2021,official_derived,2021-01-01,water,water,135580.76,47.365,whole footprint,0.0,good
-bellandur-lake,illustrative,2002-02-01,water,open water,383.93,3.552,whole footprint,0.0,good
-bellandur-lake,illustrative,2005-02-01,water,open water,384.34,3.556,whole footprint,0.0,good
-bellandur-lake,illustrative,2010-02-01,water,open water,370.34,3.426,whole footprint,0.0,good
-bellandur-lake,illustrative,2015-02-01,water,open water,358.24,3.417,whole footprint,3.0,good
-bellandur-lake,illustrative,2019-02-01,water,open water,316.86,2.931,whole footprint,0.0,good
-bellandur-lake,illustrative,2022-02-01,water,open water,304.57,2.818,whole footprint,0.0,good
-bellandur-lake,illustrative,2002-02-01,lake_extent,lake extent (open water and aquatic vegetation),392.68,3.633,whole footprint,0.0,good
-bellandur-lake,illustrative,2005-02-01,lake_extent,lake extent (open water and aquatic vegetation),399.57,3.697,whole footprint,0.0,good
-bellandur-lake,illustrative,2010-02-01,lake_extent,lake extent (open water and aquatic vegetation),400.41,3.704,whole footprint,0.0,good
-bellandur-lake,illustrative,2015-02-01,lake_extent,lake extent (open water and aquatic vegetation),407.27,3.884,whole footprint,3.0,good
-bellandur-lake,illustrative,2019-02-01,lake_extent,lake extent (open water and aquatic vegetation),378.56,3.502,whole footprint,0.0,good
-bellandur-lake,illustrative,2022-02-01,lake_extent,lake extent (open water and aquatic vegetation),387.47,3.585,whole footprint,0.0,good
-bellandur-lake,illustrative,2002-02-01,aquatic_vegetation,aquatic vegetation,8.75,0.081,whole footprint,0.0,good
-bellandur-lake,illustrative,2005-02-01,aquatic_vegetation,aquatic vegetation,15.23,0.141,whole footprint,0.0,good
-bellandur-lake,illustrative,2010-02-01,aquatic_vegetation,aquatic vegetation,30.06,0.278,whole footprint,0.0,good
-bellandur-lake,illustrative,2015-02-01,aquatic_vegetation,aquatic vegetation,49.03,0.468,whole footprint,3.0,good
-bellandur-lake,illustrative,2019-02-01,aquatic_vegetation,aquatic vegetation,61.69,0.571,whole footprint,0.0,good
-bellandur-lake,illustrative,2022-02-01,aquatic_vegetation,aquatic vegetation,82.9,0.767,whole footprint,0.0,good
-bellandur-lake,illustrative,2002-02-01,built_up,built-up area,4097.04,37.903,whole footprint,0.0,good
-bellandur-lake,illustrative,2005-02-01,built_up,built-up area,4364.25,40.375,whole footprint,0.0,good
-bellandur-lake,illustrative,2010-02-01,built_up,built-up area,4917.26,45.491,whole footprint,0.0,good
-bellandur-lake,illustrative,2015-02-01,built_up,built-up area,5341.51,50.944,whole footprint,3.0,good
-bellandur-lake,illustrative,2019-02-01,built_up,built-up area,6237.46,57.705,whole footprint,0.0,good
-bellandur-lake,illustrative,2022-02-01,built_up,built-up area,6685.77,61.852,whole footprint,0.0,good
-bellandur-lake,illustrative,2002-02-01,vegetation,vegetation,2749.12,25.433,whole footprint,0.0,good
-bellandur-lake,illustrative,2005-02-01,vegetation,vegetation,2616.39,24.205,whole footprint,0.0,good
-bellandur-lake,illustrative,2010-02-01,vegetation,vegetation,2350.85,21.748,whole footprint,0.0,good
-bellandur-lake,illustrative,2015-02-01,vegetation,vegetation,2006.87,19.14,whole footprint,3.0,good
-bellandur-lake,illustrative,2019-02-01,vegetation,vegetation,1692.42,15.657,whole footprint,0.0,good
-bellandur-lake,illustrative,2022-02-01,vegetation,vegetation,1481.28,13.704,whole footprint,0.0,good
-bellandur-lake,illustrative,2002-02-01,wetland,wetland fringe,102.86,0.952,whole footprint,0.0,good
-bellandur-lake,illustrative,2005-02-01,wetland,wetland fringe,96.16,0.89,whole footprint,0.0,good
-bellandur-lake,illustrative,2010-02-01,wetland,wetland fringe,88.78,0.821,whole footprint,0.0,good
-bellandur-lake,illustrative,2015-02-01,wetland,wetland fringe,73.33,0.699,whole footprint,3.0,good
-bellandur-lake,illustrative,2019-02-01,wetland,wetland fringe,88.7,0.821,whole footprint,0.0,good
-bellandur-lake,illustrative,2022-02-01,wetland,wetland fringe,79.87,0.739,whole footprint,0.0,good
-bellandur-lake,illustrative,2002-02-01,water,open water,383.93,69.408,inside lake basin,,
-bellandur-lake,illustrative,2005-02-01,water,open water,384.34,69.481,inside lake basin,,
-bellandur-lake,illustrative,2010-02-01,water,open water,370.34,66.951,inside lake basin,,
-bellandur-lake,illustrative,2015-02-01,water,open water,358.24,64.764,inside lake basin,,
-bellandur-lake,illustrative,2019-02-01,water,open water,316.86,57.283,inside lake basin,,
-bellandur-lake,illustrative,2022-02-01,water,open water,304.57,55.061,inside lake basin,,
-bellandur-lake,illustrative,2002-02-01,lake_extent,lake extent (open water and aquatic vegetation),392.68,70.99,inside lake basin,,
-bellandur-lake,illustrative,2005-02-01,lake_extent,lake extent (open water and aquatic vegetation),399.57,72.235,inside lake basin,,
-bellandur-lake,illustrative,2010-02-01,lake_extent,lake extent (open water and aquatic vegetation),400.41,72.386,inside lake basin,,
-bellandur-lake,illustrative,2015-02-01,lake_extent,lake extent (open water and aquatic vegetation),407.27,73.627,inside lake basin,,
-bellandur-lake,illustrative,2019-02-01,lake_extent,lake extent (open water and aquatic vegetation),378.56,68.436,inside lake basin,,
-bellandur-lake,illustrative,2022-02-01,lake_extent,lake extent (open water and aquatic vegetation),387.47,70.047,inside lake basin,,
-bellandur-lake,illustrative,2002-02-01,aquatic_vegetation,aquatic vegetation,8.75,1.582,inside lake basin,,
-bellandur-lake,illustrative,2005-02-01,aquatic_vegetation,aquatic vegetation,15.23,2.754,inside lake basin,,
-bellandur-lake,illustrative,2010-02-01,aquatic_vegetation,aquatic vegetation,30.06,5.435,inside lake basin,,
-bellandur-lake,illustrative,2015-02-01,aquatic_vegetation,aquatic vegetation,49.03,8.863,inside lake basin,,
-bellandur-lake,illustrative,2019-02-01,aquatic_vegetation,aquatic vegetation,61.69,11.153,inside lake basin,,
-bellandur-lake,illustrative,2022-02-01,aquatic_vegetation,aquatic vegetation,82.9,14.986,inside lake basin,,
-bellandur-lake,illustrative,2002-02-01,built_up,built-up area,0.05,0.01,inside lake basin,,
-bellandur-lake,illustrative,2005-02-01,built_up,built-up area,0.14,0.024,inside lake basin,,
-bellandur-lake,illustrative,2010-02-01,built_up,built-up area,4.65,0.84,inside lake basin,,
-bellandur-lake,illustrative,2015-02-01,built_up,built-up area,16.69,3.018,inside lake basin,,
-bellandur-lake,illustrative,2019-02-01,built_up,built-up area,21.8,3.941,inside lake basin,,
-bellandur-lake,illustrative,2022-02-01,built_up,built-up area,22.07,3.99,inside lake basin,,
-bellandur-lake,illustrative,2002-02-01,vegetation,vegetation,13.78,2.49,inside lake basin,,
-bellandur-lake,illustrative,2005-02-01,vegetation,vegetation,13.96,2.525,inside lake basin,,
-bellandur-lake,illustrative,2010-02-01,vegetation,vegetation,14.61,2.642,inside lake basin,,
-bellandur-lake,illustrative,2015-02-01,vegetation,vegetation,13.64,2.466,inside lake basin,,
-bellandur-lake,illustrative,2019-02-01,vegetation,vegetation,15.04,2.72,inside lake basin,,
-bellandur-lake,illustrative,2022-02-01,vegetation,vegetation,14.77,2.671,inside lake basin,,
-bellandur-lake,illustrative,2002-02-01,wetland,wetland fringe,102.86,18.595,inside lake basin,,
-bellandur-lake,illustrative,2005-02-01,wetland,wetland fringe,96.16,17.384,inside lake basin,,
-bellandur-lake,illustrative,2010-02-01,wetland,wetland fringe,88.78,16.051,inside lake basin,,
-bellandur-lake,illustrative,2015-02-01,wetland,wetland fringe,73.33,13.257,inside lake basin,,
-bellandur-lake,illustrative,2019-02-01,wetland,wetland fringe,88.7,16.036,inside lake basin,,
-bellandur-lake,illustrative,2022-02-01,wetland,wetland fringe,79.87,14.439,inside lake basin,,
-bellandur-lake,illustrative,2002-02-01,water,open water,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2005-02-01,water,open water,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2010-02-01,water,open water,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2015-02-01,water,open water,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2019-02-01,water,open water,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2022-02-01,water,open water,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2002-02-01,lake_extent,lake extent (open water and aquatic vegetation),0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2005-02-01,lake_extent,lake extent (open water and aquatic vegetation),0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2010-02-01,lake_extent,lake extent (open water and aquatic vegetation),0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2015-02-01,lake_extent,lake extent (open water and aquatic vegetation),0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2019-02-01,lake_extent,lake extent (open water and aquatic vegetation),0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2022-02-01,lake_extent,lake extent (open water and aquatic vegetation),0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2002-02-01,aquatic_vegetation,aquatic vegetation,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2005-02-01,aquatic_vegetation,aquatic vegetation,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2010-02-01,aquatic_vegetation,aquatic vegetation,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2015-02-01,aquatic_vegetation,aquatic vegetation,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2019-02-01,aquatic_vegetation,aquatic vegetation,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2022-02-01,aquatic_vegetation,aquatic vegetation,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2002-02-01,built_up,built-up area,4096.99,39.947,surroundings,,
-bellandur-lake,illustrative,2005-02-01,built_up,built-up area,4364.12,42.551,surroundings,,
-bellandur-lake,illustrative,2010-02-01,built_up,built-up area,4912.62,47.899,surroundings,,
-bellandur-lake,illustrative,2015-02-01,built_up,built-up area,5324.82,53.614,surroundings,,
-bellandur-lake,illustrative,2019-02-01,built_up,built-up area,6215.66,60.604,surroundings,,
-bellandur-lake,illustrative,2022-02-01,built_up,built-up area,6663.7,64.973,surroundings,,
-bellandur-lake,illustrative,2002-02-01,vegetation,vegetation,2735.34,26.67,surroundings,,
-bellandur-lake,illustrative,2005-02-01,vegetation,vegetation,2602.43,25.374,surroundings,,
-bellandur-lake,illustrative,2010-02-01,vegetation,vegetation,2336.24,22.779,surroundings,,
-bellandur-lake,illustrative,2015-02-01,vegetation,vegetation,1993.22,20.069,surroundings,,
-bellandur-lake,illustrative,2019-02-01,vegetation,vegetation,1677.37,16.355,surroundings,,
-bellandur-lake,illustrative,2022-02-01,vegetation,vegetation,1466.51,14.299,surroundings,,
-bellandur-lake,illustrative,2002-02-01,wetland,wetland fringe,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2005-02-01,wetland,wetland fringe,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2010-02-01,wetland,wetland fringe,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2015-02-01,wetland,wetland fringe,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2019-02-01,wetland,wetland fringe,0.0,0.0,surroundings,,
-bellandur-lake,illustrative,2022-02-01,wetland,wetland fringe,0.0,0.0,surroundings,,
-himalayas-dhauliganga,illustrative,2001-09-01,glacier,glacier ice,18083.85,9.459,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2005-09-01,glacier,glacier ice,16815.58,9.458,whole footprint,7.0,good
-himalayas-dhauliganga,illustrative,2010-09-01,glacier,glacier ice,16322.16,8.538,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2015-09-01,glacier,glacier ice,14205.78,7.66,whole footprint,3.0,good
-himalayas-dhauliganga,illustrative,2020-09-01,glacier,glacier ice,14539.24,7.605,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2001-09-01,snow,snow cover,20182.7,10.557,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2005-09-01,snow,snow cover,15054.96,8.467,whole footprint,7.0,good
-himalayas-dhauliganga,illustrative,2010-09-01,snow,snow cover,13357.25,6.987,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2015-09-01,snow,snow cover,19334.77,10.426,whole footprint,3.0,good
-himalayas-dhauliganga,illustrative,2020-09-01,snow,snow cover,16888.08,8.834,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2001-09-01,glacial_lake,glacial lake,0.0,0.0,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2005-09-01,glacial_lake,glacial lake,0.0,0.0,whole footprint,7.0,good
-himalayas-dhauliganga,illustrative,2010-09-01,glacial_lake,glacial lake,0.38,0.0,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2015-09-01,glacial_lake,glacial lake,8.78,0.005,whole footprint,3.0,good
-himalayas-dhauliganga,illustrative,2020-09-01,glacial_lake,glacial lake,32.46,0.017,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2001-09-01,exposed_terrain,exposed terrain,56412.2,29.508,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2005-09-01,exposed_terrain,exposed terrain,55451.11,31.188,whole footprint,7.0,good
-himalayas-dhauliganga,illustrative,2010-09-01,exposed_terrain,exposed terrain,64993.98,33.997,whole footprint,0.0,good
-himalayas-dhauliganga,illustrative,2015-09-01,exposed_terrain,exposed terrain,57822.43,31.181,whole footprint,3.0,good
-himalayas-dhauliganga,illustrative,2020-09-01,exposed_terrain,exposed terrain,63225.46,33.072,whole footprint,0.0,good
-hyderabad-metro,illustrative,2000-02-01,built_up,built-up area,37605.52,22.844,whole footprint,0.0,good
-hyderabad-metro,illustrative,2005-02-01,built_up,built-up area,42026.19,25.529,whole footprint,0.0,good
-hyderabad-metro,illustrative,2010-02-01,built_up,built-up area,47402.77,29.686,whole footprint,3.0,good
-hyderabad-metro,illustrative,2015-02-01,built_up,built-up area,54932.06,33.369,whole footprint,0.0,good
-hyderabad-metro,illustrative,2020-02-01,built_up,built-up area,62216.63,37.794,whole footprint,0.0,good
-hyderabad-metro,illustrative,2024-02-01,built_up,built-up area,68732.51,41.752,whole footprint,0.0,good
-hyderabad-metro,illustrative,2000-02-01,vegetation,vegetation,20689.21,12.568,whole footprint,0.0,good
-hyderabad-metro,illustrative,2005-02-01,vegetation,vegetation,19957.67,12.123,whole footprint,0.0,good
-hyderabad-metro,illustrative,2010-02-01,vegetation,vegetation,18214.91,11.407,whole footprint,3.0,good
-hyderabad-metro,illustrative,2015-02-01,vegetation,vegetation,17783.93,10.803,whole footprint,0.0,good
-hyderabad-metro,illustrative,2020-02-01,vegetation,vegetation,16360.11,9.938,whole footprint,0.0,good
-hyderabad-metro,illustrative,2024-02-01,vegetation,vegetation,15192.07,9.228,whole footprint,0.0,good
-hyderabad-metro,illustrative,2000-02-01,agriculture,agriculture,60136.47,36.53,whole footprint,0.0,good
-hyderabad-metro,illustrative,2005-02-01,agriculture,agriculture,57815.93,35.12,whole footprint,0.0,good
-hyderabad-metro,illustrative,2010-02-01,agriculture,agriculture,52642.26,32.967,whole footprint,3.0,good
-hyderabad-metro,illustrative,2015-02-01,agriculture,agriculture,50704.47,30.801,whole footprint,0.0,good
-hyderabad-metro,illustrative,2020-02-01,agriculture,agriculture,47079.95,28.599,whole footprint,0.0,good
-hyderabad-metro,illustrative,2024-02-01,agriculture,agriculture,44184.96,26.84,whole footprint,0.0,good
-hyderabad-metro,illustrative,2000-02-01,water,water,2528.74,1.536,whole footprint,0.0,good
-hyderabad-metro,illustrative,2005-02-01,water,water,2529.37,1.536,whole footprint,0.0,good
-hyderabad-metro,illustrative,2010-02-01,water,water,2380.8,1.491,whole footprint,3.0,good
-hyderabad-metro,illustrative,2015-02-01,water,water,2381.33,1.447,whole footprint,0.0,good
-hyderabad-metro,illustrative,2020-02-01,water,water,2380.69,1.446,whole footprint,0.0,good
-hyderabad-metro,illustrative,2024-02-01,water,water,2382.28,1.447,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2000-01-01,mangrove,mangrove,59248.27,20.698,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2005-01-01,mangrove,mangrove,57884.22,20.222,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2010-01-01,mangrove,mangrove,55461.51,20.183,whole footprint,4.0,good
-sundarbans-west-bengal,illustrative,2015-01-01,mangrove,mangrove,56785.12,19.838,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2020-01-01,mangrove,mangrove,56492.59,19.736,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2000-01-01,water,open water,174665.64,61.019,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2005-01-01,water,open water,177468.47,61.998,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2010-01-01,water,open water,172701.44,62.847,whole footprint,4.0,good
-sundarbans-west-bengal,illustrative,2015-01-01,water,open water,181570.58,63.431,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2020-01-01,water,open water,182802.68,63.862,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2000-01-01,mudflat,mudflat,12356.11,4.317,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2005-01-01,mudflat,mudflat,11492.45,4.015,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2010-01-01,mudflat,mudflat,10011.48,3.643,whole footprint,4.0,good
-sundarbans-west-bengal,illustrative,2015-01-01,mudflat,mudflat,9524.14,3.327,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2020-01-01,mudflat,mudflat,8829.94,3.085,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2000-01-01,land,land (including mangrove),99225.64,34.664,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2005-01-01,land,land (including mangrove),97286.47,33.987,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2010-01-01,land,land (including mangrove),92083.31,33.51,whole footprint,4.0,good
-sundarbans-west-bengal,illustrative,2015-01-01,land,land (including mangrove),95152.67,33.241,whole footprint,0.0,good
-sundarbans-west-bengal,illustrative,2020-01-01,land,land (including mangrove),94614.77,33.053,whole footprint,0.0,good
+ghsl-built-up-chennai,official_derived,2000-01-01,built_up,built-up area,31962.25,16.648,whole footprint,0.0,good
+ghsl-built-up-chennai,official_derived,2010-01-01,built_up,built-up area,45851.23,23.882,whole footprint,0.0,good
+ghsl-built-up-chennai,official_derived,2020-01-01,built_up,built-up area,52466.08,27.328,whole footprint,0.0,good
+ghsl-built-up-coimbatore,official_derived,2000-01-01,built_up,built-up area,16000.62,21.179,whole footprint,0.0,good
+ghsl-built-up-coimbatore,official_derived,2010-01-01,built_up,built-up area,22109.82,29.266,whole footprint,0.0,good
+ghsl-built-up-coimbatore,official_derived,2020-01-01,built_up,built-up area,25340.69,33.542,whole footprint,0.0,good
+ghsl-built-up-kanyakumari,official_derived,2000-01-01,built_up,built-up area,3992.12,4.368,whole footprint,0.0,good
+ghsl-built-up-kanyakumari,official_derived,2010-01-01,built_up,built-up area,4843.51,5.299,whole footprint,0.0,good
+ghsl-built-up-kanyakumari,official_derived,2020-01-01,built_up,built-up area,5590.79,6.117,whole footprint,0.0,good
+ghsl-built-up-madurai,official_derived,2000-01-01,built_up,built-up area,7395.73,9.756,whole footprint,0.0,good
+ghsl-built-up-madurai,official_derived,2010-01-01,built_up,built-up area,9592.51,12.653,whole footprint,0.0,good
+ghsl-built-up-madurai,official_derived,2020-01-01,built_up,built-up area,11548.35,15.233,whole footprint,0.0,good
+ghsl-built-up-lucknow,official_derived,2000-01-01,built_up,built-up area,15224.52,15.361,whole footprint,0.0,good
+ghsl-built-up-lucknow,official_derived,2010-01-01,built_up,built-up area,20976.6,21.165,whole footprint,0.0,good
+ghsl-built-up-lucknow,official_derived,2020-01-01,built_up,built-up area,28419.09,28.675,whole footprint,0.0,good
+ghsl-built-up-kolkata,official_derived,2000-01-01,built_up,built-up area,55278.72,30.343,whole footprint,0.0,good
+ghsl-built-up-kolkata,official_derived,2010-01-01,built_up,built-up area,62227.52,34.157,whole footprint,0.0,good
+ghsl-built-up-kolkata,official_derived,2020-01-01,built_up,built-up area,66164.2,36.318,whole footprint,0.0,good

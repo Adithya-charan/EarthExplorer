@@ -57,12 +57,12 @@ async function search(text: string) {
 }
 
 describe("Earth Time Machine", () => {
-  it("shows examples, instructions and which datasets exist before any search", async () => {
+  it("shows examples and instructions before any search, without a dataset list", async () => {
     mockFetch(routes(ready, changed));
     renderView(<ExplorerApp />);
     expect(screen.getByRole("button", { name: "Hyderabad" })).toBeInTheDocument();
     expect(screen.getByText(/drag to turn the globe/i)).toBeInTheDocument();
-    expect(await screen.findByTestId("availability")).toHaveTextContent("Bellandur Lake 2000–2025 (Illustrative Dataset)");
+    expect(screen.queryByText(/historical layers/i)).not.toBeInTheDocument();
   });
 
   it("outcome A: shows the change, the latest observation, hotspots, timeline and an honest explanation", async () => {

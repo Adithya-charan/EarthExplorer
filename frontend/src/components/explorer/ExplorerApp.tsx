@@ -32,6 +32,7 @@ const Globe = dynamic(() => import("./Globe"), {
 const NAV_LINKS = [
   { href: "/analytics", label: "Change Analytics" },
   { href: "/deep-time", label: "Deep-Time Analytics" },
+  { href: "/datasets", label: "Datasets" },
   { href: "/data", label: "Data & Methods" },
 ];
 
@@ -212,7 +213,7 @@ export function ExplorerApp() {
 
   const phase: Phase = error ? "error" : locating ? "locating" : session && !flightComplete ? "flying" : analysis === "running" ? "analysing" : session ? "ready" : "idle";
   const showResults = revealed || session?.status === "not_found";
-  const marker = session?.location && session.status !== "not_found" ? { lon: session.location.lon, lat: session.location.lat, label: session.location.name } : null;
+  const marker = session?.location && session.status !== "not_found" ? { lon: session.location.lon, lat: session.location.lat, label: `${session.location.name} · ${Math.abs(session.location.lat).toFixed(3)}°${session.location.lat >= 0 ? "N" : "S"}, ${Math.abs(session.location.lon).toFixed(3)}°${session.location.lon >= 0 ? "E" : "W"}` } : null;
 
   // ---------------------------------------------------------------------------------- camera
   const flyTo = useCallback((f: FocusInput) => {
@@ -231,16 +232,6 @@ export function ExplorerApp() {
       return;
     }
     if (deep.active) deep.leave();
-    if (e === "historical" && !ds) {
-      // Historical Earth needs a place with satellite observations. With none open, start from a bundled example
-      // instead of silently doing nothing.
-      setQuery("Bellandur Lake");
-      const run = runRef.current + 1;
-      void explore("Bellandur Lake", startYear, endYear).then(() => {
-        if (runRef.current === run) setMode("history");
-      });
-      return;
-    }
     setMode(e === "historical" && ds ? "history" : "latest");
   };
 
@@ -651,10 +642,12 @@ export function ExplorerApp() {
           <p className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--nx-muted)]">Earth Time Machine</p>
         </div>
       </header>
-      <div className="absolute right-4 top-4 z-30">
-        <button type="button" className="nx-glass flex items-center gap-2 px-3 py-2 text-[13px]" aria-expanded={menuOpen} aria-haspopup="menu" onClick={() => setMenuOpen((o) => !o)}>
-          <Menu className="h-4 w-4" aria-hidden /> More tools
-        </button>
+      <div className="absolute right-4 top-4 z-30 flex flex-col items-end gap-2">
+        <div className="flex items-start gap-2">
+          <button type="button" className="nx-glass flex items-center gap-2 px-3 py-2 text-[13px]" aria-expanded={menuOpen} aria-haspopup="menu" onClick={() => setMenuOpen((o) => !o)}>
+            <Menu className="h-4 w-4" aria-hidden /> <span className="hidden sm:inline">More tools</span><span className="sr-only sm:hidden">More tools</span>
+          </button>
+        </div>
         {menuOpen ? (
           <nav className="nx-glass nx-rise mt-2 flex w-48 flex-col p-1.5" aria-label="Other pages">
             {NAV_LINKS.map((l) => (
@@ -667,15 +660,15 @@ export function ExplorerApp() {
       </div>
 
       {/* search + status + outcome */}
-      <div className="absolute left-4 top-[68px] z-20" style={{ top: ds && !deep.active ? 100 : 68 }}>
+      <div className="absolute left-4 top-[68px] z-20 max-sm:mt-12" style={{ top: ds && !deep.active ? 100 : 68 }}>
         <EraSwitch era={era} onEra={changeEra} />
       </div>
       {deep.active ? (
-        <div className="pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-3 pt-12 sm:pt-0">
+        <div className="pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-3 pt-[112px] sm:pt-0">
           <div className="pointer-events-auto relative z-30"><DeepSearch dt={deep} /></div>
         </div>
       ) : null}
-      <div className={`pointer-events-none absolute inset-x-0 top-4 z-10 flex-col items-center gap-3 px-3 pt-12 sm:pt-0 ${deep.active ? "hidden" : "flex"} ${panelOpen ? "lg:pr-[420px]" : ""}`}>
+      <div className={`pointer-events-none absolute inset-x-0 top-4 z-10 flex-col items-center gap-3 px-3 pt-[112px] sm:pt-0 ${deep.active ? "hidden" : "flex"} ${panelOpen ? "lg:pr-[420px]" : ""}`}>
         <div className="pointer-events-auto relative z-30">
           <SearchPanel
             query={query}
@@ -717,7 +710,7 @@ export function ExplorerApp() {
         ) : null}
         {showResults && !error ? (
           <div className="pointer-events-auto">
-            <PlaceNotice session={session} onPickPlace={pickPlace} onOpenDataset={openNearby} />
+            <PlaceNotice session={session} onPickPlace={pickPlace} onOpenDataset={openNearby} onExample={pickExample} />
           </div>
         ) : null}
         {globeError ? (

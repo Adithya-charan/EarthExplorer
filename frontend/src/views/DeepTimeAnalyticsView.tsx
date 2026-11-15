@@ -101,7 +101,7 @@ export function DeepTimeAnalyticsView() {
                 <CartesianGrid stroke={C.grid} vertical={false} />
                 <XAxis dataKey="seg" {...axisProps} interval={0} angle={-35} textAnchor="end" height={54} />
                 <YAxis {...axisProps} width={44} />
-                <Tooltip {...tooltipStyle} formatter={(v, n) => [`${Number(v).toFixed(1)} cm/yr`, n === "earthbyte" ? "EarthByte" : "PALEOMAP"]} cursor={{ fill: "rgba(255,255,255,0.05)" }} />
+                <Tooltip {...tooltipStyle} formatter={(v, n) => [`${Number(v).toFixed(1)} cm/yr`, n === "earthbyte" ? "EarthByte" : "PALEOMAP"]} cursor={{ fill: "rgba(15,27,45,0.06)" }} />
                 <Legend formatter={(v) => (v === "earthbyte" ? "EarthByte" : "PALEOMAP")} wrapperStyle={{ fontSize: 11, color: C.soft }} />
                 <Bar dataKey="earthbyte" fill={C.earthbyte} isAnimationActive={false} />
                 <Bar dataKey="paleomap" fill={C.paleomap} isAnimationActive={false} />
@@ -117,7 +117,7 @@ export function DeepTimeAnalyticsView() {
                 <CartesianGrid stroke={C.grid} vertical={false} />
                 <XAxis dataKey="age_ma" {...axisProps} />
                 <YAxis {...axisProps} width={56} tickFormatter={(x) => fmtNum(x)} />
-                <Tooltip {...tooltipStyle} formatter={(v) => [`${fmtNum(Number(v))} km`, "Disagreement"]} labelFormatter={(l) => `${l} Ma`} cursor={{ fill: "rgba(255,255,255,0.05)" }} />
+                <Tooltip {...tooltipStyle} formatter={(v) => [`${fmtNum(Number(v))} km`, "Disagreement"]} labelFormatter={(l) => `${l} Ma`} cursor={{ fill: "rgba(15,27,45,0.06)" }} />
                 <Bar dataKey="models_disagree_km" fill={C.violet} isAnimationActive={false} />
               </BarChart>
             </ResponsiveContainer>
@@ -136,7 +136,7 @@ export function DeepTimeAnalyticsView() {
                 <CartesianGrid stroke={C.grid} vertical={false} />
                 <XAxis dataKey="bin" {...axisProps} interval={0} angle={-35} textAnchor="end" height={50} />
                 <YAxis {...axisProps} width={40} />
-                <Tooltip {...tooltipStyle} formatter={(v) => [v, "Records"]} labelFormatter={(l) => `${l} Ma`} cursor={{ fill: "rgba(255,255,255,0.05)" }} />
+                <Tooltip {...tooltipStyle} formatter={(v) => [v, "Records"]} labelFormatter={(l) => `${l} Ma`} cursor={{ fill: "rgba(15,27,45,0.06)" }} />
                 <Bar dataKey="records" fill={C.accent} isAnimationActive={false} />
               </BarChart>
             </ResponsiveContainer>
@@ -214,7 +214,7 @@ function HBar({ data, colour, unit }: { data: { name: string; v: number }[]; col
           <CartesianGrid stroke={C.grid} horizontal={false} />
           <XAxis type="number" {...axisProps} allowDecimals={false} />
           <YAxis type="category" dataKey="name" width={130} {...axisProps} interval={0} />
-          <Tooltip {...tooltipStyle} formatter={(v) => [v, unit]} cursor={{ fill: "rgba(255,255,255,0.05)" }} />
+          <Tooltip {...tooltipStyle} formatter={(v) => [v, unit]} cursor={{ fill: "rgba(15,27,45,0.06)" }} />
           <Bar dataKey="v" radius={[0, 4, 4, 0]} isAnimationActive={false}>
             {rows.map((r) => <Cell key={r.name} fill={colour} />)}
           </Bar>

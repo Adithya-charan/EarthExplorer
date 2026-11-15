@@ -115,7 +115,26 @@ export interface DeepSource {
   processing_method: string;
 }
 
+export interface RankingRow {
+  id: string;
+  place: string;
+  kind: string;
+  variable: string;
+  states: string[];
+  first_date: string;
+  last_date: string;
+  first_ha: number;
+  last_ha: number;
+  net_ha: number;
+  pct: number | null;
+  ha_per_year: number;
+  lat: number | null;
+  lon: number | null;
+  source: string | null;
+}
+
 export const analyticsApi = {
+  rankings: (signal?: AbortSignal) => request<{ rows: RankingRow[]; count: number }>(`${base}/rankings`, { signal, timeoutMs: 30_000 }),
   catalogue: (signal?: AbortSignal) => request<{ datasets: CatalogueRow[]; count: number }>(`${base}/catalogue`, { signal }),
   stats: (id: string, signal?: AbortSignal) => request<DatasetStats>(`${base}/datasets/${id}/statistics`, { signal }),
   registry: (signal?: AbortSignal) => request<{ entries: SourceEntry[] }>(`${base}/source-registry`, { signal }),

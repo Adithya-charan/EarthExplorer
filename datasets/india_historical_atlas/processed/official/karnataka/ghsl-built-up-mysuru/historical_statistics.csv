@@ -1,0 +1,4 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-mysuru,official_derived,2000-01-01,built_up,built-up area,6629.94,13.774,whole footprint,0.0,good
+ghsl-built-up-mysuru,official_derived,2010-01-01,built_up,built-up area,8810.96,18.305,whole footprint,0.0,good
+ghsl-built-up-mysuru,official_derived,2020-01-01,built_up,built-up area,10272.52,21.341,whole footprint,0.0,good

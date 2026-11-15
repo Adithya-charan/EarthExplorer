@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-upper-lake-bhopal",
+ "name": "Upper Lake Bhopal (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 22440.35,
+   "valid_ha": 22440.35,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 20004.17,
+    "Water (permanent or seasonal)": 2436.18
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 22440.35,
+   "valid_ha": 22440.35,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 19464.03,
+    "Water (permanent or seasonal)": 2976.33
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 2436.18,
+     "share_of_valid_pct": 10.856
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 2976.33,
+     "share_of_valid_pct": 13.263
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": 540.15,
+   "net_change_pct": 22.17
+  }
+ },
+ "generated_at": "2026-11-15T07:20:30+00:00"
+}

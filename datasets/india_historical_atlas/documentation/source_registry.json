@@ -581,7 +581,1062 @@
    "http_status": 200,
    "verification_status": "ACCESS_REQUIRES_AUTHENTICATION",
    "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
+  },
+  {
+   "id": "ghsl_built_s_2000_R8_C27",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2000 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    80,
+    10,
+    90,
+    20
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "used_by_regions": [
+    "south_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_east/originals/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "size_bytes": 5408861,
+   "sha256": "c1b8d465e6f70dd94b2cb3d8ce2c337c473c0a4b6d9c27540e9df6cb4db27758",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:04:25+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     79.992083,
+     9.099583,
+     89.992083,
+     19.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2010_R8_C27",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2010 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    80,
+    10,
+    90,
+    20
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "used_by_regions": [
+    "south_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_east/originals/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "size_bytes": 5890929,
+   "sha256": "570961029e58a28949ee9b4d631992983ddb916f0313eca596a1a229703ffd4a",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:04:31+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     79.992083,
+     9.099583,
+     89.992083,
+     19.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2020_R8_C27",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2020 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    80,
+    10,
+    90,
+    20
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "used_by_regions": [
+    "south_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_east/originals/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+   "size_bytes": 6422014,
+   "sha256": "fc76e7eb4da60f0cc7a011bc41d1621594a17d88e5b148bb0fde134adad51cde",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:04:38+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     79.992083,
+     9.099583,
+     89.992083,
+     19.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2000_R7_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2000 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    20,
+    80,
+    30
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "used_by_regions": [
+    "north_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_west/originals/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "size_bytes": 39158313,
+   "sha256": "c59efe1c733e35480ed58a3d94eb611ffd073ad7957938acd4dadbec00e39a19",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:05:03+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     19.099583,
+     79.992083,
+     29.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2010_R7_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2010 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    20,
+    80,
+    30
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "used_by_regions": [
+    "north_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_west/originals/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "size_bytes": 50375941,
+   "sha256": "8edfb0b375d2f0346c6625637dec2ce735c3cd4274475e2f9f528e8bfb5a0cd3",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:05:33+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     19.099583,
+     79.992083,
+     29.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2020_R7_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2020 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    20,
+    80,
+    30
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "used_by_regions": [
+    "north_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_west/originals/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.zip",
+   "size_bytes": 62866608,
+   "sha256": "052772a5f2a2c3b1eb9dc531f2006b0af1224b8ccba7c89bf8d4db029987d7b6",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:06:19+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     19.099583,
+     79.992083,
+     29.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2000_R7_C27",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2000 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    80,
+    20,
+    90,
+    30
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "used_by_regions": [
+    "north_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_east/originals/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "size_bytes": 46029999,
+   "sha256": "0a765d60a7fb3125a45ae0e2f1bcad9e45b967e57c8567fe7cc65a345ca42e92",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:06:54+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     79.992083,
+     19.099583,
+     89.992083,
+     29.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2010_R7_C27",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2010 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    80,
+    20,
+    90,
+    30
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "used_by_regions": [
+    "north_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_east/originals/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "size_bytes": 55952486,
+   "sha256": "9705b1518879ab66009c321f6c666f92814bbe2afd901523541510db7de30416",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:07:28+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     79.992083,
+     19.099583,
+     89.992083,
+     29.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2020_R7_C27",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2020 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    80,
+    20,
+    90,
+    30
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "used_by_regions": [
+    "north_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_east/originals/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+   "size_bytes": 66169566,
+   "sha256": "31471c8581017297248ec8bd261f59b3632065caf63e50f270ef64d04495c17e",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:20+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     79.992083,
+     19.099583,
+     89.992083,
+     29.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2000_R9_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2000 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    0,
+    80,
+    10
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "used_by_regions": [
+    "south_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_west/originals/GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "size_bytes": 3146489,
+   "sha256": "c22793f584ca364f42d38e814fb23a7dd2cf0a77f078ae634e5961f5587070ab",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:24+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     -0.900416,
+     79.992083,
+     9.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2000_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2010_R9_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2010 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    0,
+    80,
+    10
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "used_by_regions": [
+    "south_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_west/originals/GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "size_bytes": 3288508,
+   "sha256": "cd34b05b6318605ee4f156366f8b2dfb230cc5df0fea1c961c5d55ce7ad786a9",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:27+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     -0.900416,
+     79.992083,
+     9.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2010_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "ghsl_built_s_2020_R9_C26",
+   "variable": "built-up surface (m2 per cell)",
+   "providing_organization": "European Commission Joint Research Centre (JRC), Global Human Settlement Layer",
+   "official_dataset_url": "https://human-settlement.emergency.copernicus.eu/ghs_buE2023.php",
+   "dataset_identifier": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0",
+   "original_file_name": "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "acquisition_or_temporal_coverage": "Epoch 2020 (modelled from Landsat and Sentinel-2)",
+   "geographical_coverage_bbox": [
+    70,
+    0,
+    80,
+    10
+   ],
+   "spatial_resolution": "3 arc-seconds (about 90 m)",
+   "original_file_format": "GeoTIFF in ZIP",
+   "license_or_terms": "CC BY 4.0 (European Commission reuse policy); cite Pesaresi and Politis (2023), GHS-BUILT-S R2023A.",
+   "download_url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "used_by_regions": [
+    "south_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_west/originals/GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+   "size_bytes": 3407219,
+   "sha256": "9bfacef198dac0c05c4705de192b0e0d365bf04d7e471bc65855e1cc977deeb1",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:29+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 12000,
+    "height": 12000,
+    "bands": 1,
+    "dtype": "uint16",
+    "crs": "EPSG:4326",
+    "bounds": [
+     69.992083,
+     -0.900416,
+     79.992083,
+     9.099583
+    ],
+    "resolution": [
+     0.00083333,
+     0.00083333
+    ],
+    "nodata": null,
+    "overviews": [],
+    "zip_members": [
+     "GHS_BUILT_S_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.tif",
+     "GHSL_Data_Package_2023_light.pdf"
+    ]
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_occurrence_70E_30N",
+   "variable": "water occurrence (%)",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (occurrence layer)",
+   "original_file_name": "occurrence_70E_30Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "1984-03 to 2021-12",
+   "geographical_coverage_bbox": [
+    70,
+    20,
+    80,
+    30
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/occurrence/occurrence_70E_30Nv1_4_2021.tif",
+   "used_by_regions": [
+    "north_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_west/originals/occurrence_70E_30Nv1_4_2021.tif",
+   "size_bytes": 54322704,
+   "sha256": "dc7c16bab4742f17af222e4e837b22900ab3f27b3c7179fc84e5309bbffbe1a9",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:34+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     70.0,
+     20.0,
+     80.0,
+     30.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_transitions_70E_30N",
+   "variable": "water class transition",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (transitions layer)",
+   "original_file_name": "transitions_70E_30Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "First year (1984) versus last year (2021) water class transition",
+   "geographical_coverage_bbox": [
+    70,
+    20,
+    80,
+    30
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/transitions/transitions_70E_30Nv1_4_2021.tif",
+   "used_by_regions": [
+    "north_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_west/originals/transitions_70E_30Nv1_4_2021.tif",
+   "size_bytes": 27120890,
+   "sha256": "61629069af20470eb32c6e7792a33de9e9c538d04fb65bd76fe7398ad7304882",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:38+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     70.0,
+     20.0,
+     80.0,
+     30.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_occurrence_80E_20N",
+   "variable": "water occurrence (%)",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (occurrence layer)",
+   "original_file_name": "occurrence_80E_20Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "1984-03 to 2021-12",
+   "geographical_coverage_bbox": [
+    80,
+    10,
+    90,
+    20
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/occurrence/occurrence_80E_20Nv1_4_2021.tif",
+   "used_by_regions": [
+    "south_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_east/originals/occurrence_80E_20Nv1_4_2021.tif",
+   "size_bytes": 28168808,
+   "sha256": "a29874b9443d8da884e4edf1ad1e526340f64e058f67a3d1141547bcd8c12cf0",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:42+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     80.0,
+     10.0,
+     90.0,
+     20.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_transitions_80E_20N",
+   "variable": "water class transition",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (transitions layer)",
+   "original_file_name": "transitions_80E_20Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "First year (1984) versus last year (2021) water class transition",
+   "geographical_coverage_bbox": [
+    80,
+    10,
+    90,
+    20
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/transitions/transitions_80E_20Nv1_4_2021.tif",
+   "used_by_regions": [
+    "south_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_east/originals/transitions_80E_20Nv1_4_2021.tif",
+   "size_bytes": 17210290,
+   "sha256": "639abf9937bd25caa914907442ac3d41f4d9e2c2fee0853a20ca55fa687bb413",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:46+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     80.0,
+     10.0,
+     90.0,
+     20.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_occurrence_70E_10N",
+   "variable": "water occurrence (%)",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (occurrence layer)",
+   "original_file_name": "occurrence_70E_10Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "1984-03 to 2021-12",
+   "geographical_coverage_bbox": [
+    70,
+    0,
+    80,
+    10
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/occurrence/occurrence_70E_10Nv1_4_2021.tif",
+   "used_by_regions": [
+    "south_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_west/originals/occurrence_70E_10Nv1_4_2021.tif",
+   "size_bytes": 33529142,
+   "sha256": "26d1da1918ed0447c87ca6048ca321906326e8ca76b19ee8b07f76fa4bf9f380",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:50+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     70.0,
+     0.0,
+     80.0,
+     10.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_transitions_70E_10N",
+   "variable": "water class transition",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (transitions layer)",
+   "original_file_name": "transitions_70E_10Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "First year (1984) versus last year (2021) water class transition",
+   "geographical_coverage_bbox": [
+    70,
+    0,
+    80,
+    10
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/transitions/transitions_70E_10Nv1_4_2021.tif",
+   "used_by_regions": [
+    "south_west"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/south_west/originals/transitions_70E_10Nv1_4_2021.tif",
+   "size_bytes": 14144328,
+   "sha256": "4631b2544bc930a1cdaa621b3ce66091004d2d69fc0bc7414cb2dbd09556172b",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:53+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     70.0,
+     0.0,
+     80.0,
+     10.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
+  },
+  {
+   "id": "jrc_gsw_transitions_80E_30N",
+   "variable": "water class transition",
+   "providing_organization": "European Commission Joint Research Centre (JRC)",
+   "official_dataset_url": "https://global-surface-water.appspot.com/download",
+   "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (transitions layer)",
+   "original_file_name": "transitions_80E_30Nv1_4_2021.tif",
+   "acquisition_or_temporal_coverage": "First year (1984) versus last year (2021) water class transition",
+   "geographical_coverage_bbox": [
+    80,
+    20,
+    90,
+    30
+   ],
+   "spatial_resolution": "30 m (1 arc-second)",
+   "original_file_format": "GeoTIFF",
+   "license_or_terms": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+   "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/transitions/transitions_80E_30Nv1_4_2021.tif",
+   "used_by_regions": [
+    "north_east"
+   ],
+   "local_path": "datasets/india_historical_atlas/official/north_east/originals/transitions_80E_30Nv1_4_2021.tif",
+   "size_bytes": 43238118,
+   "sha256": "0d5b55d601741bfa96b6940f64c04017952811665bd876f8a1c31f04a2c6d65b",
+   "download_date": "2026-11-15",
+   "downloaded_at": "2026-11-15T07:08:57+00:00",
+   "crs": "EPSG:4326",
+   "inspection": {
+    "driver": "GTiff",
+    "width": 40000,
+    "height": 40000,
+    "bands": 1,
+    "dtype": "uint8",
+    "crs": "EPSG:4326",
+    "bounds": [
+     80.0,
+     20.0,
+     90.0,
+     30.0
+    ],
+    "resolution": [
+     0.00025,
+     0.00025
+    ],
+    "nodata": null,
+    "overviews": []
+   },
+   "processing_operations": [
+    "none (original preserved unmodified)"
+   ],
+   "verification_status": "VERIFIED_DOWNLOADED",
+   "verification_note": "File obtained over HTTPS, checksum computed, opened and inspected."
   }
  ],
- "generated_at": "2026-11-15T04:00:23+00:00"
+ "generated_at": "2026-11-15T07:08:57+00:00"
 }

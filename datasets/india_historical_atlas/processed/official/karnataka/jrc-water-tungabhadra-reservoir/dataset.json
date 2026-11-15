@@ -1,0 +1,140 @@
+{
+ "schema_version": 2,
+ "id": "jrc-water-tungabhadra-reservoir",
+ "name": "Tungabhadra Reservoir (JRC surface water)",
+ "description": "Water state at the first and last year of the JRC record, derived from the transition layer.",
+ "kind": "raster_classification",
+ "is_synthetic": false,
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "simulated_label": null,
+ "source": "European Commission JRC, Global Surface Water Explorer",
+ "product": "JRC Global Surface Water transitions (v1.4, 2021 release)",
+ "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+ "crs": "EPSG:4326",
+ "resolution_deg": 0.00025,
+ "resolution_m": 26.9,
+ "bbox": [
+  76.2,
+  15.1,
+  76.5,
+  15.4
+ ],
+ "location": {
+  "name": "Tungabhadra Reservoir (JRC surface water)",
+  "aliases": [
+   "tungabhadra",
+   "tungabhadra dam",
+   "tungabhadra reservoir"
+  ],
+  "lat": 15.2686,
+  "lon": 76.3366,
+  "hint": "Karnataka, India"
+ },
+ "classes": {
+  "1": "Not water",
+  "2": "Water (permanent or seasonal)",
+  "255": "No data"
+ },
+ "uncertain_value": 255,
+ "variables": [
+  {
+   "key": "water",
+   "label": "water",
+   "class": 2,
+   "primary": true
+  }
+ ],
+ "license": "Free and open; cite Pekel et al. (2016)",
+ "min_feature_px": 3,
+ "temporal_resolution": "irregular",
+ "coverage": {
+  "start": "1984-01-01",
+  "end": "2021-01-01"
+ },
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "file": "observations/1984.tif",
+   "valid_fraction": 1.0,
+   "quality": "fair",
+   "sensor": "Landsat-derived (JRC Global Surface Water)",
+   "class_area_ha": {
+    "Water": 19086.73
+   },
+   "provenance": {
+    "designation": "official_derived",
+    "source_id": "jrc_gsw_transitions_70E_20N",
+    "provider": "European Commission Joint Research Centre (JRC)",
+    "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (transition layer)",
+    "official_url": "https://global-surface-water.appspot.com/download",
+    "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/transitions/transitions_70E_20Nv1_4_2021.tif",
+    "original_file": "transitions_70E_20Nv1_4_2021.tif",
+    "original_local_path": "datasets/india_historical_atlas/official/bengaluru/originals/transitions_70E_20Nv1_4_2021.tif",
+    "sha256": "23efd8b1f3ecfcf9e3d77fe2d371c9fa0619e8140f75f41ebb97b638e52a01b1",
+    "license": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+    "temporal_coverage": "First year (1984) versus last year (2021) water class transition",
+    "date_semantics": "first year of the JRC record (1984), taken from the product's transition layer; not a single acquisition date",
+    "original_crs": "EPSG:4326",
+    "original_resolution_deg": 0.00025,
+    "window_pixels": [
+     1200,
+     1200
+    ],
+    "processing_operations": [
+     "clip to analysis window",
+     "water state at each end derived from the 11 transition classes",
+     "write COG"
+    ],
+    "nodata_fraction": 0.0,
+    "processed_at": "2026-11-15T07:13:14+00:00",
+    "limitation": "Early Landsat coverage over India is sparse, so the 1984 state is less certain than the 2021 state. Floating vegetation and froth can hide water from this method."
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "file": "observations/2021.tif",
+   "valid_fraction": 1.0,
+   "quality": "fair",
+   "sensor": "Landsat-derived (JRC Global Surface Water)",
+   "class_area_ha": {
+    "Water": 21567.0
+   },
+   "provenance": {
+    "designation": "official_derived",
+    "source_id": "jrc_gsw_transitions_70E_20N",
+    "provider": "European Commission Joint Research Centre (JRC)",
+    "dataset_identifier": "JRC/GSW1_4/GlobalSurfaceWater (transition layer)",
+    "official_url": "https://global-surface-water.appspot.com/download",
+    "download_url": "https://storage.googleapis.com/global-surface-water/downloads2021/transitions/transitions_70E_20Nv1_4_2021.tif",
+    "original_file": "transitions_70E_20Nv1_4_2021.tif",
+    "original_local_path": "datasets/india_historical_atlas/official/bengaluru/originals/transitions_70E_20Nv1_4_2021.tif",
+    "sha256": "23efd8b1f3ecfcf9e3d77fe2d371c9fa0619e8140f75f41ebb97b638e52a01b1",
+    "license": "Free and open; cite Pekel et al. (2016) Nature 540, 418-422.",
+    "temporal_coverage": "First year (1984) versus last year (2021) water class transition",
+    "date_semantics": "last year of the JRC record (2021), taken from the product's transition layer; not a single acquisition date",
+    "original_crs": "EPSG:4326",
+    "original_resolution_deg": 0.00025,
+    "window_pixels": [
+     1200,
+     1200
+    ],
+    "processing_operations": [
+     "clip to analysis window",
+     "water state at each end derived from the 11 transition classes",
+     "write COG"
+    ],
+    "nodata_fraction": 0.0,
+    "processed_at": "2026-11-15T07:13:15+00:00",
+    "limitation": "Early Landsat coverage over India is sparse, so the 1984 state is less certain than the 2021 state. Floating vegetation and froth can hide water from this method."
+   }
+  }
+ ],
+ "water_class": 2,
+ "real_dataset_targets": [],
+ "provenance": {
+  "designation": "official_derived",
+  "note": "Two-date comparison taken from JRC's own transition layer.",
+  "pipeline": "pipeline.json"
+ }
+}

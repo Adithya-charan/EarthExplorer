@@ -35,7 +35,7 @@ class LocationService:
 
     def examples(self) -> list[str]:
         if self.gazetteer:
-            return ["Bellandur Lake, Bengaluru", "Hyderabad", "Sundarbans", "Himalayas", "Uttarakhand"]
+            return ["Bellandur Lake, Bengaluru", "Hyderabad", "Chennai", "Delhi NCR", "Kolkata", "Chilika Lake"]
         return ["Bellandur Lake, Bengaluru", "Hussain Sagar, Hyderabad", "Chilika Lake, Odisha", "Amazon Rainforest", "Mumbai"]
 
     def _demo(self) -> list[tuple[LocationOut, list[str]]]:

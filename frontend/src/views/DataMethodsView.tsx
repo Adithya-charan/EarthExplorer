@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { analyticsApi, isOfficial, type CatalogueRow, type DeepSource, type SourceEntry } from "@/lib/explorer/analytics";
 import { deepApi } from "@/lib/explorer/deeptime";
 import { toApiError } from "@/lib/api";
-import { Badge, Card, ErrorBox, Loading, Note, PageTitle } from "@/components/analytics/ui";
+import { Badge, Card, ErrorBox, Loading, PageTitle } from "@/components/analytics/ui";
 
 interface Ref {
   [k: string]: unknown;
@@ -12,7 +12,7 @@ interface Ref {
 
 const Link = ({ href, children }: { href: string; children: React.ReactNode }) =>
   /^https?:\/\//.test(href) ? (
-    <a href={href} target="_blank" rel="noreferrer noopener" className="text-sky-300 underline-offset-2 hover:underline">
+    <a href={href} target="_blank" rel="noreferrer noopener" className="text-sky-800 underline-offset-2 hover:underline">
       {children}
     </a>
   ) : (
@@ -49,9 +49,8 @@ export function DataMethodsView() {
       </PageTitle>
 
       <Card title="How data is labelled" className="mb-6" testid="labels">
-        <div className="grid gap-3 md:grid-cols-3 text-[13px] leading-relaxed text-[color:var(--nx-soft)]">
+        <div className="grid gap-3 md:grid-cols-2 text-[13px] leading-relaxed text-[color:var(--nx-soft)]">
           <div><Badge tone="official">SATELLITE OBSERVATIONS</Badge><p className="mt-2">Derived from public satellite products (GHSL, JRC Global Surface Water, ESA WorldCover). Values come from the original rasters, clipped to the study area.</p></div>
-          <div><Badge tone="illustrative">ILLUSTRATIVE DATASET</Badge><p className="mt-2">Simulated to demonstrate the tool where no suitable observations are bundled. Never quote these as facts about a real place.</p></div>
           <div><Badge tone="model">GEOLOGICAL RECONSTRUCTION</Badge><p className="mt-2">Plate-motion model output (EarthByte, PALEOMAP) with stated uncertainty. Positions are interpretations, and the two models can disagree by thousands of kilometres.</p></div>
         </div>
       </Card>
@@ -142,7 +141,6 @@ export function DataMethodsView() {
           <li><b>Causes:</b> the app describes what changed and where. It does not establish why.</li>
           <li><b>Deep time:</b> two plate models are shown side by side so their disagreement stays visible. Fossil counts reflect what has been recorded and published, not how many animals lived.</li>
         </ul>
-        <Note>Illustrative Datasets are excluded from any statement about the real world.</Note>
       </Card>
     </>
   );

@@ -153,11 +153,12 @@ export function OutcomeBanner({ summary, session, onUseSuggestion, onExploreAnyw
 }
 
 /** Extra context under the outcome banner: other places with the same name, or data that exists inside a larger area. */
-export function PlaceNotice({ session, onPickPlace, onOpenDataset }: { session: SessionResponse | null; onPickPlace: (l: LocationOut) => void; onOpenDataset: (d: DatasetInfo) => void }) {
+export function PlaceNotice({ session, onPickPlace, onOpenDataset, onExample }: { session: SessionResponse | null; onPickPlace: (l: LocationOut) => void; onOpenDataset: (d: DatasetInfo) => void; onExample?: (q: string) => void }) {
   if (!session || session.status === "not_found" || !session.location) return null;
   const alts = session.status === "ambiguous" ? session.alternatives.filter((a) => a.name.toLowerCase() === session.location!.name.toLowerCase()) : [];
   const nearby = session.status === "no_dataset" ? session.nearby_datasets : [];
-  if (alts.length === 0 && nearby.length === 0) return null;
+  const suggest = session.status === "no_dataset" && nearby.length === 0 && onExample ? session.examples : [];
+  if (alts.length === 0 && nearby.length === 0 && suggest.length === 0) return null;
   return (
     <div className="nx-glass nx-rise w-[620px] max-w-[92vw] p-3" data-testid="place-notice">
       {alts.length ? (
@@ -172,9 +173,19 @@ export function PlaceNotice({ session, onPickPlace, onOpenDataset }: { session: 
           </div>
         </>
       ) : null}
+      {suggest.length ? (
+        <>
+          <p className="text-[12.5px] text-[color:var(--nx-soft)]">Places with satellite observations:</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {suggest.map((e) => (
+              <button key={e} type="button" className="nx-chip" onClick={() => onExample?.(e)}>{e}</button>
+            ))}
+          </div>
+        </>
+      ) : null}
       {nearby.length ? (
         <>
-          <p className="text-[12.5px] text-[color:var(--nx-soft)]">Historical layers exist inside this area. Open one:</p>
+          <p className="text-[12.5px] text-[color:var(--nx-soft)]">Places with satellite observations in or near this area. Open one:</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {nearby.map((d) => (
               <button key={d.id} type="button" className="nx-chip" onClick={() => onOpenDataset(d)} data-testid="nearby-dataset">

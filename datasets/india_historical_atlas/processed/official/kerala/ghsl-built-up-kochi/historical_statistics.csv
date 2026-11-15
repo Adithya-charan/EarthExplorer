@@ -1,0 +1,4 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-kochi,official_derived,2000-01-01,built_up,built-up area,15504.52,17.046,whole footprint,0.0,good
+ghsl-built-up-kochi,official_derived,2010-01-01,built_up,built-up area,20066.3,22.061,whole footprint,0.0,good
+ghsl-built-up-kochi,official_derived,2020-01-01,built_up,built-up area,23025.54,25.314,whole footprint,0.0,good

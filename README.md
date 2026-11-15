@@ -105,7 +105,7 @@ Defaults work without any configuration. Templates are provided if you want to c
 - `backend/.env.example` -> `backend/.env` (CORS origins, upload limits). All variables use the `EARTHTREND_` prefix.
 - `frontend/.env.example` -> `frontend/.env.local` (`NEXT_PUBLIC_API_URL=http://127.0.0.1:8000`).
 
-No API keys are needed. `NEXT_PUBLIC_` variables are visible in the browser, so never put secrets in them.
+The backend and the Earth Time Machine need no API keys.
 
 ## Run
 
@@ -215,9 +215,9 @@ Map modes: latest, historical (bottom timeline: only dates that exist, draggable
 swipe, difference, hotspots. Years outside a dataset's coverage are explained, and a partial overlap is analysed with an explicit notice.
 
 **Data.** The app reads the **India Historical Atlas** in `datasets/india_historical_atlas/processed/` (see the next section). Each dataset is a
-folder with `dataset.json` and `observations/*.tif` (Cloud Optimized GeoTIFF). Two kinds exist and are labelled everywhere in the interface:
-**Satellite Observations** (derived from official JRC / ESA files that were really downloaded) and **Illustrative Dataset** (generated demonstration
-layers, not satellite imagery). A place with no dataset is shown on the globe with **Data Unavailable**; no history is ever invented.
+folder with `dataset.json` and `observations/*.tif` (Cloud Optimized GeoTIFF). Every dataset is labelled **Satellite Observations**: it is
+derived from an official JRC (GHSL, Global Surface Water) or ESA (WorldCover) file that was really downloaded, with checksums in the source registry.
+A place with no dataset is shown on the globe with **Data Unavailable**; no history is ever invented.
 Search covers states, districts, cities, localities, landmarks and natural features with suggestions, voice commands and Back/Forward.
 
 **Method.** Same-season composites at both ends, water-frequency threshold, common-grid alignment, cloud/no-data excluded, feature clean-up,
@@ -239,25 +239,28 @@ The earlier story/trend/upload pages remain under `/story`, `/trend`, `/upload`.
 datasets/india_historical_atlas/
   manifest.json                 every dataset, file, size and SHA-256
   official/<region>/originals/  original official downloads (git-ignored; re-download with the script below)
-  synthetic/<region>/           clean-truth rasters and generator configs for the Illustrative Datasets
-  processed/{official,synthetic}/<region>/<dataset>/   analysis-ready COGs, dataset.json, statistics, change products
+  processed/official/<state>/<dataset>/   analysis-ready COGs, dataset.json, statistics, change products
   geographical_boundaries/      GeoJSON: countries, states, districts, cities, localities, geographical_features
   previews/                     PNG previews rendered from the rasters
   documentation/                source_registry.json, dataset_catalogue.{csv,pdf}, validation_report.json, data_provenance_report.pdf, ...
 NASAX_JUDGE_EVIDENCE/           evidence package with checksums (see its EVIDENCE_REPORT.md)
 ```
 
-| Region | Official-derived data | Illustrative Dataset |
+43 datasets cover 16 states and union territories. Every one is derived from a real download; none is generated.
+
+| Product | Dates | Places |
 | --- | --- | --- |
-| Himalayas (Dhauliganga) | none (glacier inventories need an account) | 2001-2020: glacier, snow, glacial lake, exposed terrain |
-| Sundarbans | ESA WorldCover 2021 (one date, so no change analysis) | 2000-2020: mangrove, water, mudflat, erosion / accretion |
-| Hyderabad | GHSL built-up 2000 / 2010 / 2020, JRC water 1984 / 2021 | 2000-2024: built-up, vegetation, agriculture, water |
-| Bellandur Lake | GHSL (east Bengaluru), JRC water 1984 / 2021 | 2002-2022: water, aquatic vegetation, wetland, built-up |
+| GHSL built-up surface (JRC, R2023A) | 2000 / 2010 / 2020 | Hyderabad, Bengaluru, Chennai, Coimbatore, Madurai, Kanyakumari, Visakhapatnam, Vijayawada, Kochi, Thiruvananthapuram, Kozhikode, Mangaluru, Mysuru, Panaji, Pune, Nagpur, Surat, Ahmedabad, Jaipur, Delhi NCR, Bhopal, Lucknow, Patna, Bhubaneswar, Kolkata, Raipur |
+| JRC Global Surface Water (transitions) | 1984 / 2021 | Bellandur, Hyderabad lakes, Chilika, Hirakud, Pulicat, Kolleru, Nagarjuna Sagar, Vembanad, Ashtamudi, Krishnaraja Sagara, Tungabhadra, Ujani, Sambhar, Nal Sarovar, Gandhi Sagar, Upper Lake Bhopal |
+| ESA WorldCover 2021 | 2021 (one date, so no change analysis) | Sundarbans |
+
+GHSL epochs are modelled years, not acquisition dates, and JRC water gives two dates only. Coastal lake windows are trimmed to keep open sea out of the
+water area, so a lake's figure covers the lake window and not the adjacent coast.
 
 Build and check (from the repository root, with the backend virtualenv active):
 
 ```bash
-python scripts/generate_india_atlas.py --all    # download, generate, process, boundaries, statistics, change detection, manifest, catalogue
+python scripts/generate_india_atlas.py --all    # download, process, regions, boundaries, statistics, change detection, manifest, catalogue
 python scripts/generate_previews.py             # PNG previews
 python scripts/validate_datasets.py             # writes documentation/validation_report.json
 python scripts/generate_evidence.py             # NASAX_JUDGE_EVIDENCE/
@@ -265,8 +268,8 @@ python scripts/generate_evidence.py             # NASAX_JUDGE_EVIDENCE/
 
 `generate_india_atlas.py` without flags only rebuilds the manifest and catalogue. Each step can run alone (`--steps official,process`). Official downloads
 are recorded as `VERIFIED_DOWNLOADED`, `VERIFIED_METADATA_ONLY`, `ACCESS_REQUIRES_AUTHENTICATION` or `NOT_ACCESSED`; nothing is marked downloaded without a checksum.
-To add a place: add a `Region` in `backend/app/explorer/atlas.py` (illustrative) or a recipe in `scripts/process_satellite_data.py` (official), then re-run.
-Honest limits: no Landsat, Sentinel-2 or Bhuvan scenes were downloaded; the Himalayas region is entirely illustrative; city, locality and landmark outlines are
+To add a place: add a row to `CITIES` or `WATER` in `scripts/process_regions.py` (adding a `FILES` entry in `scripts/download_official_data.py` first if its tile is not yet downloaded), then run `python scripts/generate_india_atlas.py --steps regions,statistics,changes`.
+Honest limits: no Landsat, Sentinel-2 or Bhuvan scenes were downloaded; glacier inventories need an account, so there is no Himalayan dataset; city, locality and landmark outlines are
 approximate areas marked as such; Cesium shows no real terrain relief.
 
 ## 3D story map
@@ -380,3 +383,5 @@ docs/
   `npm install --no-save @rolldown/binding-win32-x64-msvc@<rolldown version>`; or delete `node_modules` and
   `package-lock.json` and run `npm install` again.
 - **`Next.js ignored package-lock.json in <home folder>`** - harmless; `next.config.ts` pins the workspace root.
+
+

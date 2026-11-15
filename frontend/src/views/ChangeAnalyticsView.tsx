@@ -74,18 +74,18 @@ export function ChangeAnalyticsView() {
   return (
     <>
       <PageTitle title="Change Analytics">
-        How the places in the Earth Time Machine have changed. Every number is computed from the observation rasters of the dataset you pick. Datasets marked Illustrative are simulated for demonstration and are never mixed with Satellite Observations.
+        How the places in the Earth Time Machine have changed. Every number is computed from the observation rasters of the dataset you pick.
       </PageTitle>
 
       <Card title="Net change across all datasets" subtitle="Primary variable of each dataset, first to last observation. Datasets with one observation have no change to measure." testid="overview" className="mb-6">
         <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
-          <div className="h-[320px]" role="img" aria-label="Bar chart of net change in percent for each dataset">
+          <div style={{ height: Math.max(320, bars.length * 24 + 48) }} role="img" aria-label="Bar chart of net change in percent for each dataset">
             <ResponsiveContainer>
               <BarChart data={bars} layout="vertical" margin={{ left: 8, right: 24 }}>
                 <CartesianGrid stroke={C.grid} horizontal={false} />
                 <XAxis type="number" {...axisProps} unit="%" />
-                <YAxis type="category" dataKey="name" width={230} {...axisProps} />
-                <Tooltip {...tooltipStyle} formatter={(v) => [`${fmtSigned(Number(v), 1, "%")}`, "Net change"]} cursor={{ fill: "rgba(255,255,255,0.05)" }} />
+                <YAxis type="category" dataKey="name" width={230} interval={0} {...axisProps} />
+                <Tooltip {...tooltipStyle} formatter={(v) => [`${fmtSigned(Number(v), 1, "%")}`, "Net change"]} cursor={{ fill: "rgba(15,27,45,0.06)" }} />
                 <ReferenceLine x={0} stroke={C.muted} />
                 <Bar dataKey="pct" radius={[0, 4, 4, 0]} onClick={(d) => setSel((d as unknown as { id: string }).id)} cursor="pointer">
                   {bars.map((b) => (
@@ -94,7 +94,7 @@ export function ChangeAnalyticsView() {
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-            <p className="sr-only">Solid bars are Satellite Observations; faded bars are Illustrative Datasets.</p>
+            <p className="sr-only">Bars show the change in the selected variable for each dataset.</p>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-[12.5px]">
@@ -108,7 +108,7 @@ export function ChangeAnalyticsView() {
               </thead>
               <tbody>
                 {overview.map((o) => (
-                  <tr key={o.row.id} className={`cursor-pointer border-t border-[color:var(--nx-line)] hover:bg-white/5 ${o.row.id === sel ? "bg-white/8" : ""}`} onClick={() => setSel(o.row.id)}>
+                  <tr key={o.row.id} className={`cursor-pointer border-t border-[color:var(--nx-line)] hover:bg-slate-50 ${o.row.id === sel ? "bg-sky-50" : ""}`} onClick={() => setSel(o.row.id)}>
                     <td className="py-1.5 pr-2">
                       <button type="button" className="text-left font-medium hover:underline" onClick={() => setSel(o.row.id)}>
                         {o.row.name.replace(/\s*\(.*\)$/, "")}
@@ -134,11 +134,6 @@ export function ChangeAnalyticsView() {
           <select className="nx-input max-w-[min(520px,80vw)]" value={sel ?? ""} onChange={(e) => { setSel(e.target.value); setVariable(null); }} aria-label="Dataset">
             <optgroup label="Satellite Observations (official-derived)">
               {rows.filter(isOfficial).map((r) => (
-                <option key={r.id} value={r.id}>{r.name}</option>
-              ))}
-            </optgroup>
-            <optgroup label="Illustrative Datasets (simulated)">
-              {rows.filter((r) => !isOfficial(r)).map((r) => (
                 <option key={r.id} value={r.id}>{r.name}</option>
               ))}
             </optgroup>
@@ -186,12 +181,11 @@ function DatasetDetail({ stats, varKey, onVar, row }: { stats: DatasetStats; var
 
   return (
     <>
-      {stats.designation === "illustrative" ? <p className="mb-4 rounded-lg border border-amber-400/40 bg-amber-400/10 px-3 py-2 text-[12.5px] text-amber-200">Illustrative Dataset: simulated for demonstration. These numbers are not satellite observations and must not be quoted as findings about the real place.</p> : null}
 
       {Object.keys(stats.variables).length > 1 ? (
         <div className="mb-4 flex flex-wrap gap-2" role="tablist" aria-label="Variable">
           {Object.entries(stats.variables).map(([k, x]) => (
-            <button key={k} type="button" role="tab" aria-selected={k === varKey} onClick={() => onVar(k)} className={`nx-chip ${k === varKey ? "!bg-white/20 font-semibold" : ""}`}>
+            <button key={k} type="button" role="tab" aria-selected={k === varKey} onClick={() => onVar(k)} className={`nx-chip ${k === varKey ? "!bg-sky-100 font-semibold" : ""}`}>
               {x.label}
             </button>
           ))}
@@ -253,7 +247,7 @@ function DatasetDetail({ stats, varKey, onVar, row }: { stats: DatasetStats; var
                 <CartesianGrid stroke={C.grid} vertical={false} />
                 <XAxis dataKey="year" {...axisProps} />
                 <YAxis {...axisProps} width={64} tickFormatter={(x) => fmtNum(x)} />
-                <Tooltip {...tooltipStyle} formatter={(val, name) => [`${fmtNum(Number(val), 1)} ha`, String(name)]} cursor={{ fill: "rgba(255,255,255,0.05)" }} />
+                <Tooltip {...tooltipStyle} formatter={(val, name) => [`${fmtNum(Number(val), 1)} ha`, String(name)]} cursor={{ fill: "rgba(15,27,45,0.06)" }} />
                 <Legend wrapperStyle={{ fontSize: 11, color: C.soft }} />
                 {comp.keys.map((k, i) => (
                   <Bar key={k} dataKey={k} stackId="a" fill={C.series[i % C.series.length]} isAnimationActive={false} />
@@ -308,7 +302,7 @@ function QualityChart({ data }: { data: { year: string; valid: number; nodata: n
           <CartesianGrid stroke={C.grid} vertical={false} />
           <XAxis dataKey="year" {...axisProps} />
           <YAxis {...axisProps} width={44} unit="%" domain={[0, 100]} />
-          <Tooltip {...tooltipStyle} formatter={(val, name) => [`${val}%`, name === "valid" ? "Valid pixels" : "No data / cloud"]} cursor={{ fill: "rgba(255,255,255,0.05)" }} />
+          <Tooltip {...tooltipStyle} formatter={(val, name) => [`${val}%`, name === "valid" ? "Valid pixels" : "No data / cloud"]} cursor={{ fill: "rgba(15,27,45,0.06)" }} />
           <Bar dataKey="valid" stackId="q" fill={C.gain} isAnimationActive={false} />
           <Bar dataKey="nodata" stackId="q" fill={C.loss} isAnimationActive={false} />
         </BarChart>
@@ -361,7 +355,7 @@ function DetectionPanel({ row, stats, varKey }: { row: CatalogueRow; stats: Data
     }
   };
   const a = res?.areas ?? {};
-  const tone = res?.outcome === "change_detected" ? "text-emerald-200" : "text-[color:var(--nx-soft)]";
+  const tone = res?.outcome === "change_detected" ? "text-emerald-800" : "text-[color:var(--nx-soft)]";
 
   return (
     <Card title="Change detection between two years" subtitle="Compares the first and last observation in the chosen period and finds where the change happened" className="mt-6" testid="detection">
@@ -381,7 +375,7 @@ function DetectionPanel({ row, stats, varKey }: { row: CatalogueRow; stats: Data
         <button type="button" className="nx-btn" onClick={run} disabled={busy || start >= end} data-testid="run-detect">
           {busy ? <Loader2 className="nx-spin h-4 w-4" aria-hidden /> : null} Analyse change
         </button>
-        {start >= end ? <span className="text-[12px] text-amber-200">Pick a start year before the end year.</span> : null}
+        {start >= end ? <span className="text-[12px] text-amber-900">Pick a start year before the end year.</span> : null}
       </div>
       {err ? <div className="mt-4"><ErrorBox message={err} /></div> : null}
       {res ? (
@@ -410,7 +404,7 @@ function DetectionPanel({ row, stats, varKey }: { row: CatalogueRow; stats: Data
                           <CartesianGrid stroke={C.grid} horizontal={false} />
                           <XAxis type="number" {...axisProps} />
                           <YAxis type="category" dataKey="name" width={130} {...axisProps} />
-                          <Tooltip {...tooltipStyle} formatter={(val, _n, p) => [`${fmtNum(Number(val), 1)} ha (${p.payload.share}% of all change)`, p.payload.kind === "loss" ? "Loss" : "Gain"]} cursor={{ fill: "rgba(255,255,255,0.05)" }} />
+                          <Tooltip {...tooltipStyle} formatter={(val, _n, p) => [`${fmtNum(Number(val), 1)} ha (${p.payload.share}% of all change)`, p.payload.kind === "loss" ? "Loss" : "Gain"]} cursor={{ fill: "rgba(15,27,45,0.06)" }} />
                           <Bar dataKey="ha" radius={[0, 4, 4, 0]} isAnimationActive={false}>
                             {res.hotspots.map((h) => <Cell key={h.id} fill={h.kind === "loss" ? C.loss : C.gain} />)}
                           </Bar>

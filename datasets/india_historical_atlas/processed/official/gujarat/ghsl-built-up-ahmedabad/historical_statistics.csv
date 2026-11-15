@@ -1,0 +1,4 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-ahmedabad,official_derived,2000-01-01,built_up,built-up area,23911.41,17.557,whole footprint,0.0,good
+ghsl-built-up-ahmedabad,official_derived,2010-01-01,built_up,built-up area,31399.14,23.055,whole footprint,0.0,good
+ghsl-built-up-ahmedabad,official_derived,2020-01-01,built_up,built-up area,35869.52,26.337,whole footprint,0.0,good
