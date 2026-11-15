@@ -55,6 +55,7 @@
   }
  ],
  "license": "CC BY 4.0",
+ "min_feature_px": 1,
  "temporal_resolution": "irregular",
  "coverage": {
   "start": "2021-01-01",
@@ -101,7 +102,7 @@
      "write COG"
     ],
     "nodata_fraction": 0.0,
-    "processed_at": "2026-11-15T01:14:46+00:00"
+    "processed_at": "2026-11-15T04:00:50+00:00"
    }
   }
  ],
@@ -111,6 +112,5 @@
   "designation": "official_derived",
   "note": "Single-date product.",
   "pipeline": "pipeline.json"
- },
- "min_feature_px": 1
+ }
 }

@@ -50,6 +50,7 @@
  },
  "uncertain_value": 255,
  "water_class": 2,
+ "min_feature_px": 1,
  "variables": [
   {
    "key": "built_up",
@@ -225,6 +226,5 @@
    "resolution_m": 10,
    "status": "VERIFIED_METADATA_ONLY"
   }
- ],
- "min_feature_px": 1
+ ]
 }

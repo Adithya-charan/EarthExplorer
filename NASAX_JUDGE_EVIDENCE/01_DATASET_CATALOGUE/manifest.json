@@ -1,7 +1,7 @@
 {
  "schema": "nasax-atlas-manifest-1",
  "name": "NASAX India Historical Atlas",
- "generated_at": "2026-11-15T02:09:34+00:00",
+ "generated_at": "2026-11-15T04:07:34+00:00",
  "layout": {
   "synthetic": "generated clean-truth rasters and generator configs (internal origin, shown publicly as 'Illustrative Dataset')",
   "official": "original official files downloaded by scripts/download_official_data.py (not committed; re-download)",

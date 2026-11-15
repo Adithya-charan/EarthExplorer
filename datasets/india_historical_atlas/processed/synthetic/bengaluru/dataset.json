@@ -50,6 +50,7 @@
  },
  "uncertain_value": 255,
  "water_class": 2,
+ "min_feature_px": 1,
  "variables": [
   {
    "key": "water",
@@ -253,6 +254,5 @@
    "1": "inside lake basin",
    "0": "surroundings"
   }
- },
- "min_feature_px": 1
+ }
 }

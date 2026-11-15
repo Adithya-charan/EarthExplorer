@@ -27,7 +27,7 @@
    "size_bytes": 49143172,
    "sha256": "0510b9110b7596e7bdbd02fa2f6c1a259545e372c2432c86beb758665b5fdd14",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:01:26+00:00",
+   "downloaded_at": "2026-11-15T04:00:03+00:00",
    "crs": "EPSG:4326",
    "inspection": {
     "driver": "GTiff",
@@ -81,7 +81,7 @@
    "size_bytes": 23248532,
    "sha256": "23efd8b1f3ecfcf9e3d77fe2d371c9fa0619e8140f75f41ebb97b638e52a01b1",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:01:30+00:00",
+   "downloaded_at": "2026-11-15T04:00:03+00:00",
    "crs": "EPSG:4326",
    "inspection": {
     "driver": "GTiff",
@@ -134,7 +134,7 @@
    "size_bytes": 83431512,
    "sha256": "3b357ed4ac4ea15555b17b77bff862f34d929f6af90a68f9ece4aa8269db1081",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:01:45+00:00",
+   "downloaded_at": "2026-11-15T04:00:03+00:00",
    "crs": "EPSG:4326",
    "inspection": {
     "driver": "GTiff",
@@ -188,7 +188,7 @@
    "size_bytes": 28015951,
    "sha256": "55643aba2753980c01cdb9bab7cb7011f8a00b952a2860555a00cb85009c5140",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:01:50+00:00",
+   "downloaded_at": "2026-11-15T04:00:03+00:00",
    "crs": "EPSG:4326",
    "inspection": {
     "driver": "GTiff",
@@ -246,7 +246,7 @@
    "size_bytes": 34574511,
    "sha256": "12d2c30731d6b1c61efd501a4dbba9ba93256c6a1b3558af3a1963dbdd01efb4",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:01:55+00:00",
+   "downloaded_at": "2026-11-15T04:00:03+00:00",
    "crs": "EPSG:4326",
    "inspection": {
     "driver": "GTiff",
@@ -304,7 +304,7 @@
    "size_bytes": 41175075,
    "sha256": "cb95a4337c7e3f4e08f2c740d16ac340c9e508856631fa8abd1bf100f26eab3c",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:02:02+00:00",
+   "downloaded_at": "2026-11-15T04:00:04+00:00",
    "crs": "EPSG:4326",
    "inspection": {
     "driver": "GTiff",
@@ -361,7 +361,7 @@
    "size_bytes": 81771213,
    "sha256": "a652fbd8e327ceb600d309f1934223a8d95d7ab0902dbc524c830aba9587b160",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:02:14+00:00",
+   "downloaded_at": "2026-11-15T04:00:04+00:00",
    "crs": "EPSG:4326",
    "inspection": {
     "driver": "GTiff",
@@ -421,7 +421,7 @@
    "size_bytes": 5103747,
    "sha256": "4c63fe43294a391e8f2de4e9f86f3edb60f8688275b9fee90c61fb2aa0c26061",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:02:17+00:00",
+   "downloaded_at": "2026-11-15T04:00:04+00:00",
    "crs": null,
    "inspection": {
     "type": "FeatureCollection",
@@ -458,7 +458,7 @@
    "size_bytes": 7979916,
    "sha256": "d68db39cd3e2d0892af268e2b0454166368ce3b5b8a78fcda63069ec92a641db",
    "download_date": "2026-11-15",
-   "downloaded_at": "2026-11-15T01:02:19+00:00",
+   "downloaded_at": "2026-11-15T04:00:04+00:00",
    "crs": null,
    "inspection": {
     "type": "FeatureCollection",
@@ -583,5 +583,5 @@
    "verification_note": "Page reachable (HTTP 200). No data file was obtained from this entry."
   }
  ],
- "generated_at": "2026-11-15T01:02:52+00:00"
+ "generated_at": "2026-11-15T04:00:23+00:00"
 }
