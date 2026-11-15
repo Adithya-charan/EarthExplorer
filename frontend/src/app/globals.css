@@ -114,7 +114,8 @@ body {
 
 /* ---------------------------------------------------------------------------------------------
    NASAX Earth Time Machine: a deep-space scene. Scoped to .nx so the rest of the app keeps its light theme. */
-.nx {
+.nx,
+.nxp {
   --nx-bg: #030816;
   --nx-ink: #e8f1ff;
   --nx-soft: #b6c6e3;
@@ -125,12 +126,19 @@ body {
   --nx-loss: #ff4d5e;
   --nx-gain: #35e08a;
   --nx-warn: #fbbf24;
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
   background: var(--nx-bg);
   color: var(--nx-ink);
   font-size: 14px;
+}
+.nx {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+/* Scrollable analytics pages share the Earth Time Machine look. */
+.nxp {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% -10%, #0b1d3f 0%, var(--nx-bg) 60%);
 }
 .nx-glass {
   background: rgba(7, 15, 34, 0.74);
@@ -212,10 +220,12 @@ body {
   border-color: var(--nx-accent);
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
-.nx select.nx-input option {
+.nx select.nx-input option,
+.nxp select.nx-input option {
   background: #0a1530;
 }
-.nx :focus-visible {
+.nx :focus-visible,
+.nxp :focus-visible {
   outline: 2px solid var(--nx-accent);
   outline-offset: 2px;
 }

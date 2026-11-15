@@ -14,6 +14,9 @@ import { HotspotNav, Legend, LatestCard, ModeBar, OutcomeBanner, PlaceNotice, St
 import { SearchPanel, type VoiceUi } from "./SearchPanel";
 import { SummaryPanel, type ChatTurn } from "./SummaryPanel";
 import { Timeline } from "./Timeline";
+import { DeepSearch, DeepTimeBar, DeepTimePanel, EraSwitch } from "./DeepTime";
+import { useDeepTime } from "./useDeepTime";
+import type { AppEra } from "@/lib/explorer/deeptime";
 
 const Globe = dynamic(() => import("./Globe"), {
   ssr: false,
@@ -27,10 +30,9 @@ const Globe = dynamic(() => import("./Globe"), {
 });
 
 const NAV_LINKS = [
-  { href: "/story", label: "What happened?" },
-  { href: "/trend", label: "Trend Analysis" },
-  { href: "/upload", label: "Upload Dataset" },
-  { href: "/methodology", label: "Methodology" },
+  { href: "/analytics", label: "Change Analytics" },
+  { href: "/deep-time", label: "Deep-Time Analytics" },
+  { href: "/data", label: "Data & Methods" },
 ];
 
 function useReducedMotion(): boolean {
@@ -218,6 +220,29 @@ export function ExplorerApp() {
     setFocus({ ...f, token: tokenRef.current } as GlobeFocus);
     return tokenRef.current;
   }, []);
+
+  const deep = useDeepTime({ onFocus: (lat, lon, height) => flyTo({ kind: "camera", lon, lat, height, heading: 0, pitch: -1.5707963267948966, roll: 0 }) });
+  const era: AppEra = deep.active ? "deep" : mode === "history" ? "historical" : "today";
+  const changeEra = (e: AppEra) => {
+    if (e === "deep") {
+      setPlaying(false);
+      setSpin(false);
+      deep.enter();
+      return;
+    }
+    if (deep.active) deep.leave();
+    if (e === "historical" && !ds) {
+      // Historical Earth needs a place with satellite observations. With none open, start from a bundled example
+      // instead of silently doing nothing.
+      setQuery("Bellandur Lake");
+      const run = runRef.current + 1;
+      void explore("Bellandur Lake", startYear, endYear).then(() => {
+        if (runRef.current === run) setMode("history");
+      });
+      return;
+    }
+    setMode(e === "historical" && ds ? "history" : "latest");
+  };
 
   const zoomHotspot = useCallback(
     (i: number, s: ChangeSummary | null = summary) => {
@@ -592,10 +617,12 @@ export function ExplorerApp() {
   return (
     <div className="nx" data-testid="explorer" data-phase={phase}>
       <Globe
+        deep={deep.globe}
+        onDeepPick={deep.setPicked}
         focus={focus}
         marker={marker}
-        primary={revealed || mode === "latest" ? plan.primary : null}
-        secondary={plan.secondary}
+        primary={deep.active ? deep.raster : revealed || mode === "latest" ? plan.primary : null}
+        secondary={deep.active ? null : plan.secondary}
         prefetch={prefetch}
         splitPosition={split}
         hotspots={hotspotFc}
@@ -640,7 +667,15 @@ export function ExplorerApp() {
       </div>
 
       {/* search + status + outcome */}
-      <div className={`pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-3 pt-12 sm:pt-0 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
+      <div className="absolute left-4 top-[68px] z-20" style={{ top: ds && !deep.active ? 100 : 68 }}>
+        <EraSwitch era={era} onEra={changeEra} />
+      </div>
+      {deep.active ? (
+        <div className="pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-3 pt-12 sm:pt-0">
+          <div className="pointer-events-auto relative z-30"><DeepSearch dt={deep} /></div>
+        </div>
+      ) : null}
+      <div className={`pointer-events-none absolute inset-x-0 top-4 z-10 flex-col items-center gap-3 px-3 pt-12 sm:pt-0 ${deep.active ? "hidden" : "flex"} ${panelOpen ? "lg:pr-[420px]" : ""}`}>
         <div className="pointer-events-auto relative z-30">
           <SearchPanel
             query={query}
@@ -693,7 +728,7 @@ export function ExplorerApp() {
       </div>
 
       {/* data-source badge, always visible while a dataset is on screen */}
-      {ds ? (
+      {ds && !deep.active ? (
         <p
           data-testid="data-badge"
           className={`absolute left-4 top-[68px] z-20 rounded-md border px-2.5 py-1 text-[11px] font-bold tracking-wide backdrop-blur ${simulated ? "border-amber-400/50 bg-amber-400/15 text-amber-200" : "border-emerald-400/50 bg-emerald-400/15 text-emerald-200"}`}
@@ -703,7 +738,7 @@ export function ExplorerApp() {
       ) : null}
 
       {/* left column: latest observation + legend */}
-      {revealed && session?.latest ? (
+      {revealed && session?.latest && !deep.active ? (
         <div className="absolute bottom-[212px] left-4 z-10 hidden flex-col gap-3 md:flex">
           <button type="button" className="nx-chip self-start" aria-expanded={latestOpen} onClick={() => setLatestOpen((o) => !o)}>
             {latestOpen ? "Hide" : "Show"} latest observation
@@ -714,7 +749,7 @@ export function ExplorerApp() {
       ) : null}
 
       {/* mode bar, hotspot navigation, caption */}
-      {revealed && ds ? (
+      {revealed && ds && !deep.active ? (
         <div className={`absolute inset-x-0 bottom-[196px] z-10 flex flex-col items-center gap-2 px-3 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
           {plan.caption ? (
             <p className="nx-glass pointer-events-none px-3 py-1 text-[12px] text-[color:var(--nx-soft)]" data-testid="map-caption">
@@ -743,7 +778,7 @@ export function ExplorerApp() {
       {mode === "swipe" && revealed && plan.split ? <div className="pointer-events-none absolute inset-y-0 z-[5] w-[2px] bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.8)]" style={{ left: `${split * 100}%` }} aria-hidden data-testid="swipe-line" /> : null}
 
       {/* timeline */}
-      {revealed && ds && periodObs.length ? (
+      {revealed && ds && periodObs.length && !deep.active ? (
         <div className={`absolute inset-x-0 bottom-6 z-10 flex justify-center px-3 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
           <Timeline
             observations={periodObs}
@@ -762,8 +797,16 @@ export function ExplorerApp() {
         </div>
       ) : null}
 
+      {/* Deep-Time Earth: time bar and details */}
+      {deep.active ? (
+        <>
+          <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center px-3 lg:pr-[420px]"><DeepTimeBar dt={deep} /></div>
+          <div className="absolute right-4 top-[84px] z-10 hidden lg:block"><DeepTimePanel dt={deep} /></div>
+        </>
+      ) : null}
+
       {/* summary panel */}
-      {summary && panelVisible ? (
+      {summary && panelVisible && !deep.active ? (
         <div className="absolute right-4 top-[84px] z-10">
           <SummaryPanel
             summary={summary}

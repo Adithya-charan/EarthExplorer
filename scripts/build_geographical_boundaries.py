@@ -148,6 +148,8 @@ FEATURES_POINTS = [
     ("Gangotri Glacier", "glacier", 30.9333, 79.0833, ["gangotri"], "Uttarakhand", [79.0, 30.85, 79.2, 31.0]), ("Himalayas", "mountain", 30.75, 79.825, ["the himalayas", "himalaya", "himalayan range"], "Uttarakhand", [72.5, 26.5, 97.5, 37.0]),
     ("Dhauliganga catchment", "river", 30.75, 79.825, ["dhauliganga", "dhauliganga valley", "dhauli ganga"], "Uttarakhand", [79.60, 30.55, 80.05, 30.95]),
     ("Bay of Bengal coast, Sundarbans", "coast", 21.75, 88.90, ["sundarbans coast"], "West Bengal", [88.6, 21.55, 89.1, 22.05]),
+    ("Western Ghats", "mountain", 15.0, 74.3, ["sahyadri", "sahyadri range", "western ghat"], "Karnataka", [72.7, 8.0, 77.6, 21.5]),
+    ("Deccan Plateau", "plateau", 17.0, 77.5, ["deccan", "deccan traps", "the deccan"], "Telangana", [73.0, 12.0, 81.5, 21.5]),
 ]
 
 

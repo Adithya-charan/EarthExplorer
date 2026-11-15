@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse, Response
 from app.errors import AppError, not_found, unprocessable
 from app.explorer.change import ChangeDetectionService, check_period, dataset_info
 from app.explorer.datasets import inspect_file
+from app.explorer.deeptime import ma_text
 from app.explorer.rendering import difference_geotiff
 from app.explorer.schemas import (
     BoundaryOut, ChangeSummary, ChatAnswer, ChatRequest, DatasetInfo, DetectRequest, Explanation, Insufficient, LocationOut, ObservationInfo, SessionRequest, SessionResponse,
@@ -30,6 +31,105 @@ Svc = Annotated[ExplorerServices, Depends(get_services)]
 def _need_order(a: int, b: int) -> None:
     if a >= b:
         raise unprocessable("invalid_period", "The start year must be earlier than the end year.")
+
+
+# ----------------------------------------------------------------------------------- deep time
+def _dt(svc: ExplorerServices):
+    if not svc.deeptime.available:
+        raise AppError(503, "deeptime_unavailable", "The Deep-Time datasets have not been built (run scripts/build_deeptime_data.py).")
+    return svc.deeptime
+
+
+def _model(m: str) -> str:
+    if m not in ("earthbyte", "paleomap"):
+        raise unprocessable("invalid_model", "model must be earthbyte or paleomap")
+    return m
+
+
+@router.get("/deeptime/manifest")
+def deeptime_manifest(svc: Svc) -> dict:
+    d = _dt(svc)
+    return {"mode_label": "Geological Reconstruction", "models": d.manifest["models"], "requested_ages": d.manifest["requested_ages"], "added_ages": d.manifest["added_ages"],
+            "ages": [{"age_ma": f["age_ma"], "key": f["key"], "label": ma_text(f["age_ma"]), "era": f["era"], "period": f["period"], "epoch": f["epoch"], "boundary": f["boundary"], "has_paleogeography": f["has_cao"], "paleomap_age_ma": f["models"]["paleomap"].get("map_age_ma"), "paleomap_exact": f["models"]["paleomap"].get("map_exact"), "interpolation": f["interpolation"]} for f in d.manifest["frames"]],
+            "timescale": d._j("timescale.json")}
+
+
+@router.get("/deeptime/frames/{age}")
+def deeptime_frame(svc: Svc, age: str, model: str = "earthbyte") -> dict:
+    d = _dt(svc)
+    try:
+        a = float(age.replace("p", "."))
+    except ValueError as exc:
+        raise unprocessable("invalid_age", "age must be a number of Ma") from exc
+    return d.frame(a, _model(model))
+
+
+@router.get("/deeptime/frames/{age}/layers/{name}")
+def deeptime_layer(svc: Svc, age: str, name: str) -> Response:
+    d = _dt(svc)
+    p = d.layer_path(float(age.replace("p", ".")), name)
+    if p is None:
+        raise not_found("layer", f"{name} at {age} Ma")
+    return Response(p.read_bytes(), media_type="application/geo+json", headers=PNG_HEADERS)
+
+
+@router.get("/deeptime/frames/{age}/paleomap")
+def deeptime_paleomap(svc: Svc, age: str) -> Response:
+    d = _dt(svc)
+    p = d.paleomap_path(float(age.replace("p", ".")))
+    if p is None or not p.exists():
+        raise not_found("paleomap", f"{age} Ma")
+    return Response(p.read_bytes(), media_type="image/jpeg", headers=PNG_HEADERS)
+
+
+@router.get("/deeptime/frames/{age}/fossils")
+def deeptime_fossils(svc: Svc, age: str, model: str = "earthbyte", window: Annotated[float, Query(ge=0, le=20)] = 0.0) -> dict:
+    d = _dt(svc)
+    return d.fossil_geojson(float(age.replace("p", ".")), window, _model(model))
+
+
+@router.get("/deeptime/frames/{age}/formations")
+def deeptime_formations(svc: Svc, age: str, model: str = "earthbyte", window: Annotated[float, Query(ge=0, le=20)] = 0.0) -> dict:
+    return _dt(svc).formation_geojson(float(age.replace("p", ".")), window, _model(model))
+
+
+@router.get("/deeptime/places/{location_id:path}")
+def deeptime_place(svc: Svc, location_id: str, age: float = 0.0) -> dict:
+    d = _dt(svc)
+    p = d.place(location_id, age)
+    if p is None:
+        raise not_found("place", location_id)
+    return p
+
+
+@router.get("/deeptime/himalaya")
+def deeptime_himalaya(svc: Svc) -> dict:
+    return _dt(svc).himalaya()
+
+
+@router.get("/deeptime/dinosaur-era")
+def deeptime_dinosaurs(svc: Svc) -> dict:
+    return _dt(svc).dinosaur_era()
+
+
+@router.get("/deeptime/events")
+def deeptime_events(svc: Svc, age: float | None = None) -> list[dict]:
+    return _dt(svc).events(age, span=0.0 if age is None else max(0.05, 0.02 * age))
+
+
+@router.get("/deeptime/analytics")
+def deeptime_analytics(svc: Svc) -> dict:
+    return _dt(svc).analytics()
+
+
+@router.get("/deeptime/sources")
+def deeptime_sources(svc: Svc) -> list[dict]:
+    return _dt(svc).sources()
+
+
+@router.get("/deeptime/references")
+def deeptime_references(svc: Svc) -> list[dict]:
+    return _dt(svc).references()
 
 
 # ----------------------------------------------------------------------------------- locations
@@ -261,5 +361,7 @@ def explain(analysis_id: str, svc: Svc) -> Explanation:
 
 @router.post("/ai/chat", response_model=ChatAnswer)
 def ai_chat(body: ChatRequest, svc: Svc) -> ChatAnswer:
+    if body.deep_time:
+        return svc.deeptime_ai.chat(body.question, body.deep_time_age, body.deep_time_location, body.history)
     rec = svc.changes.get(body.analysis_id) if body.analysis_id else None
     return svc.ai.chat(body.question, rec, body.history)

@@ -50,6 +50,9 @@ class ChatRequest(BaseModel):
     question: str = Field(min_length=1, max_length=600)
     analysis_id: str | None = None
     history: list[dict[str, str]] = Field(default_factory=list, max_length=12)
+    deep_time: bool = False
+    deep_time_age: float | None = Field(default=None, ge=0, le=1000)
+    deep_time_location: str | None = None
 
 
 class ObservationInfo(BaseModel):

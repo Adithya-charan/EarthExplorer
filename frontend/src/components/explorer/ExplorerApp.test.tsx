@@ -154,7 +154,7 @@ describe("Earth Time Machine", () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new TypeError("Failed to fetch")));
     renderView(<ExplorerApp />);
     await search("Bellandur");
-    expect(await screen.findByTestId("error-banner")).toHaveTextContent(/Cannot reach the EarthTrend API/);
+    expect(await screen.findByTestId("error-banner")).toHaveTextContent(/Cannot reach the NASAX API/);
     expect(screen.getByRole("button", { name: "Try again" })).toBeInTheDocument();
   });
   it("Back and Forward return to earlier places without a page reload", async () => {
