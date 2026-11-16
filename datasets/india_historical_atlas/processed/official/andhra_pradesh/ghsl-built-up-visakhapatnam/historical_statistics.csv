@@ -1,0 +1,4 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-visakhapatnam,official_derived,2000-01-01,built_up,built-up area,9532.59,5.156,whole footprint,0.0,good
+ghsl-built-up-visakhapatnam,official_derived,2010-01-01,built_up,built-up area,12846.24,6.948,whole footprint,0.0,good
+ghsl-built-up-visakhapatnam,official_derived,2020-01-01,built_up,built-up area,16843.74,9.11,whole footprint,0.0,good

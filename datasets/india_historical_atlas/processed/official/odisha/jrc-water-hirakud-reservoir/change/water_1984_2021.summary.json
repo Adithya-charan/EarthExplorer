@@ -1,0 +1,3196 @@
+{
+ "outcome": "no_clear_change",
+ "headline": "No clear change in water extent between 1984 and 2021 (net -158.3 ha, -0.3%).",
+ "analysis_id": "6cc8f33bec7b",
+ "dataset": {
+  "id": "jrc-water-hirakud-reservoir",
+  "name": "Hirakud Reservoir (JRC surface water)",
+  "description": "Water state at the first and last year of the JRC record, derived from the transition layer.",
+  "is_synthetic": false,
+  "simulated_label": null,
+  "source": "European Commission JRC, Global Surface Water Explorer",
+  "product": "JRC Global Surface Water transitions (v1.4, 2021 release)",
+  "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+  "crs": "EPSG:4326",
+  "resolution_m": 25.9,
+  "temporal_resolution": "irregular",
+  "bbox": [
+   83.6,
+   21.45,
+   84.05,
+   21.95
+  ],
+  "coverage": {
+   "start": "1984-01-01",
+   "end": "2021-01-01"
+  },
+  "observation_count": 2,
+  "usable_count": 2,
+  "classes": {
+   "1": "Not water",
+   "2": "Water (permanent or seasonal)",
+   "255": "No data"
+  },
+  "real_dataset_targets": [],
+  "issues": [],
+  "variables": [
+   {
+    "key": "water",
+    "label": "water",
+    "class": 2,
+    "primary": true
+   }
+  ],
+  "designation": "official_derived",
+  "public_label": "Satellite Observations",
+  "provenance": {
+   "designation": "official_derived",
+   "note": "Two-date comparison taken from JRC's own transition layer.",
+   "pipeline": "pipeline.json"
+  }
+ },
+ "location_name": "Hirakud Reservoir (JRC surface water)",
+ "period": {
+  "requested": {
+   "start_year": 1984,
+   "end_year": 2021
+  },
+  "supported": {
+   "start": "1984-01-01",
+   "end": "2021-01-01"
+  },
+  "effective": {
+   "start_year": 1984,
+   "end_year": 2021
+  },
+  "status": "ok",
+  "messages": []
+ },
+ "first_observation": {
+  "date": "1984-01-01",
+  "quality": "fair",
+  "valid_fraction": 1.0,
+  "layer_url": "/api/explorer/datasets/jrc-water-hirakud-reservoir/observations/1984-01-01/layer.png"
+ },
+ "last_observation": {
+  "date": "2021-01-01",
+  "quality": "fair",
+  "valid_fraction": 1.0,
+  "layer_url": "/api/explorer/datasets/jrc-water-hirakud-reservoir/observations/2021-01-01/layer.png"
+ },
+ "observations_used": {
+  "start_window": "1984",
+  "end_window": "2021",
+  "start_count": 1,
+  "end_count": 1,
+  "matched_months": "Jan",
+  "matched_month_numbers": [
+   1
+  ],
+  "excluded": []
+ },
+ "areas": {
+  "footprint_ha": 257797.95,
+  "analysed_ha": 257797.95,
+  "uncertain_ha": 0.0,
+  "water_start_ha": 60052.72,
+  "water_end_ha": 59209.88,
+  "gained_ha": 1111.42,
+  "lost_ha": 1269.74,
+  "net_ha": -158.32,
+  "unchanged_water_ha": 57601.54,
+  "unchanged_land_ha": 196136.89,
+  "noise_filtered_ha": 1678.36,
+  "pct_net_change": -0.26,
+  "pct_gross_change": 3.97,
+  "seasonal_amplitude_pct": null,
+  "year_to_year_scatter_ha": null
+ },
+ "most_affected": {
+  "region": "north-eastern",
+  "kind": "gain",
+  "area_ha": 497.54,
+  "description": "north-eastern area: 497.5 ha of water gained",
+  "hotspot_id": "6cc8f33bec7b-g2",
+  "centroid": {
+   "lon": 84.020266,
+   "lat": 21.765253
+  }
+ },
+ "hotspots": [
+  {
+   "id": "6cc8f33bec7b-l1",
+   "rank": 1,
+   "kind": "loss",
+   "area_ha": 125.8,
+   "geometry_area_ha": 125.99,
+   "share_of_change_pct": 6.6,
+   "centroid": {
+    "lon": 83.942411,
+    "lat": 21.473998
+   },
+   "bbox": [
+    83.9285,
+    21.465,
+    83.954,
+    21.48825
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 125.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g2",
+   "rank": 2,
+   "kind": "gain",
+   "area_ha": 99.92,
+   "geometry_area_ha": 100.09,
+   "share_of_change_pct": 5.3,
+   "centroid": {
+    "lon": 84.020266,
+    "lat": 21.765253
+   },
+   "bbox": [
+    84.01475,
+    21.75775,
+    84.02575,
+    21.7735
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 99.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g3",
+   "rank": 3,
+   "kind": "gain",
+   "area_ha": 89.9,
+   "geometry_area_ha": 90.04,
+   "share_of_change_pct": 4.7,
+   "centroid": {
+    "lon": 83.922281,
+    "lat": 21.64682
+   },
+   "bbox": [
+    83.91425,
+    21.64175,
+    83.9315,
+    21.651
+   ],
+   "region": "eastern",
+   "description": "eastern area: 89.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l4",
+   "rank": 4,
+   "kind": "loss",
+   "area_ha": 76.02,
+   "geometry_area_ha": 76.13,
+   "share_of_change_pct": 4.0,
+   "centroid": {
+    "lon": 83.944575,
+    "lat": 21.479463
+   },
+   "bbox": [
+    83.92725,
+    21.472,
+    83.957,
+    21.49275
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 76.0 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l5",
+   "rank": 5,
+   "kind": "loss",
+   "area_ha": 75.84,
+   "geometry_area_ha": 75.95,
+   "share_of_change_pct": 4.0,
+   "centroid": {
+    "lon": 83.89814,
+    "lat": 21.690263
+   },
+   "bbox": [
+    83.892,
+    21.68525,
+    83.90575,
+    21.69675
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 75.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l6",
+   "rank": 6,
+   "kind": "loss",
+   "area_ha": 66.6,
+   "geometry_area_ha": 66.7,
+   "share_of_change_pct": 3.5,
+   "centroid": {
+    "lon": 83.885757,
+    "lat": 21.529119
+   },
+   "bbox": [
+    83.8775,
+    21.52375,
+    83.894,
+    21.53475
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 66.6 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l7",
+   "rank": 7,
+   "kind": "loss",
+   "area_ha": 58.8,
+   "geometry_area_ha": 58.88,
+   "share_of_change_pct": 3.1,
+   "centroid": {
+    "lon": 83.913884,
+    "lat": 21.504539
+   },
+   "bbox": [
+    83.9065,
+    21.49275,
+    83.9265,
+    21.51475
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 58.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g8",
+   "rank": 8,
+   "kind": "gain",
+   "area_ha": 51.34,
+   "geometry_area_ha": 51.42,
+   "share_of_change_pct": 2.7,
+   "centroid": {
+    "lon": 83.985701,
+    "lat": 21.909607
+   },
+   "bbox": [
+    83.978,
+    21.90375,
+    83.99425,
+    21.91475
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 51.3 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g9",
+   "rank": 9,
+   "kind": "gain",
+   "area_ha": 43.62,
+   "geometry_area_ha": 43.68,
+   "share_of_change_pct": 2.3,
+   "centroid": {
+    "lon": 83.90519,
+    "lat": 21.686064
+   },
+   "bbox": [
+    83.89825,
+    21.683,
+    83.91125,
+    21.68925
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 43.6 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l10",
+   "rank": 10,
+   "kind": "loss",
+   "area_ha": 41.17,
+   "geometry_area_ha": 41.24,
+   "share_of_change_pct": 2.2,
+   "centroid": {
+    "lon": 83.966586,
+    "lat": 21.453163
+   },
+   "bbox": [
+    83.962,
+    21.45,
+    83.971,
+    21.457
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 41.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g11",
+   "rank": 11,
+   "kind": "gain",
+   "area_ha": 40.58,
+   "geometry_area_ha": 40.63,
+   "share_of_change_pct": 2.1,
+   "centroid": {
+    "lon": 83.887897,
+    "lat": 21.802161
+   },
+   "bbox": [
+    83.8835,
+    21.79725,
+    83.895,
+    21.805
+   ],
+   "region": "northern",
+   "description": "northern area: 40.6 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g12",
+   "rank": 12,
+   "kind": "gain",
+   "area_ha": 36.16,
+   "geometry_area_ha": 36.21,
+   "share_of_change_pct": 1.9,
+   "centroid": {
+    "lon": 83.984888,
+    "lat": 21.733678
+   },
+   "bbox": [
+    83.98175,
+    21.73025,
+    83.98825,
+    21.7375
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 36.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g13",
+   "rank": 13,
+   "kind": "gain",
+   "area_ha": 35.52,
+   "geometry_area_ha": 35.58,
+   "share_of_change_pct": 1.9,
+   "centroid": {
+    "lon": 84.033038,
+    "lat": 21.69636
+   },
+   "bbox": [
+    84.02825,
+    21.68975,
+    84.03675,
+    21.7
+   ],
+   "region": "eastern",
+   "description": "eastern area: 35.5 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g14",
+   "rank": 14,
+   "kind": "gain",
+   "area_ha": 34.85,
+   "geometry_area_ha": 34.9,
+   "share_of_change_pct": 1.8,
+   "centroid": {
+    "lon": 83.996853,
+    "lat": 21.819112
+   },
+   "bbox": [
+    83.99275,
+    21.81525,
+    84.0005,
+    21.82275
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 34.8 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l15",
+   "rank": 15,
+   "kind": "loss",
+   "area_ha": 34.81,
+   "geometry_area_ha": 34.86,
+   "share_of_change_pct": 1.8,
+   "centroid": {
+    "lon": 83.90885,
+    "lat": 21.680002
+   },
+   "bbox": [
+    83.904,
+    21.6765,
+    83.91325,
+    21.6835
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 34.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g16",
+   "rank": 16,
+   "kind": "gain",
+   "area_ha": 28.2,
+   "geometry_area_ha": 28.24,
+   "share_of_change_pct": 1.5,
+   "centroid": {
+    "lon": 83.824918,
+    "lat": 21.769457
+   },
+   "bbox": [
+    83.82175,
+    21.7645,
+    83.8295,
+    21.773
+   ],
+   "region": "northern",
+   "description": "northern area: 28.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g17",
+   "rank": 17,
+   "kind": "gain",
+   "area_ha": 26.84,
+   "geometry_area_ha": 26.88,
+   "share_of_change_pct": 1.4,
+   "centroid": {
+    "lon": 83.844651,
+    "lat": 21.758247
+   },
+   "bbox": [
+    83.8415,
+    21.751,
+    83.84975,
+    21.764
+   ],
+   "region": "northern",
+   "description": "northern area: 26.8 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g18",
+   "rank": 18,
+   "kind": "gain",
+   "area_ha": 20.47,
+   "geometry_area_ha": 20.51,
+   "share_of_change_pct": 1.1,
+   "centroid": {
+    "lon": 83.978126,
+    "lat": 21.7482
+   },
+   "bbox": [
+    83.97575,
+    21.7455,
+    83.982,
+    21.75175
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 20.5 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g19",
+   "rank": 19,
+   "kind": "gain",
+   "area_ha": 20.27,
+   "geometry_area_ha": 20.3,
+   "share_of_change_pct": 1.1,
+   "centroid": {
+    "lon": 84.040228,
+    "lat": 21.68061
+   },
+   "bbox": [
+    84.03675,
+    21.67625,
+    84.04375,
+    21.68325
+   ],
+   "region": "eastern",
+   "description": "eastern area: 20.3 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g20",
+   "rank": 20,
+   "kind": "gain",
+   "area_ha": 19.45,
+   "geometry_area_ha": 19.48,
+   "share_of_change_pct": 1.0,
+   "centroid": {
+    "lon": 83.971508,
+    "lat": 21.902937
+   },
+   "bbox": [
+    83.96825,
+    21.9,
+    83.9745,
+    21.90625
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 19.5 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g21",
+   "rank": 21,
+   "kind": "gain",
+   "area_ha": 19.45,
+   "geometry_area_ha": 19.47,
+   "share_of_change_pct": 1.0,
+   "centroid": {
+    "lon": 83.91812,
+    "lat": 21.94885
+   },
+   "bbox": [
+    83.91275,
+    21.9465,
+    83.922,
+    21.95
+   ],
+   "region": "northern",
+   "description": "northern area: 19.4 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g22",
+   "rank": 22,
+   "kind": "gain",
+   "area_ha": 18.73,
+   "geometry_area_ha": 18.76,
+   "share_of_change_pct": 1.0,
+   "centroid": {
+    "lon": 84.004773,
+    "lat": 21.924194
+   },
+   "bbox": [
+    84.0,
+    21.92,
+    84.007,
+    21.92825
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 18.7 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g23",
+   "rank": 23,
+   "kind": "gain",
+   "area_ha": 16.03,
+   "geometry_area_ha": 16.05,
+   "share_of_change_pct": 0.8,
+   "centroid": {
+    "lon": 83.835733,
+    "lat": 21.780259
+   },
+   "bbox": [
+    83.833,
+    21.77625,
+    83.8385,
+    21.783
+   ],
+   "region": "northern",
+   "description": "northern area: 16.0 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g24",
+   "rank": 24,
+   "kind": "gain",
+   "area_ha": 15.45,
+   "geometry_area_ha": 15.47,
+   "share_of_change_pct": 0.8,
+   "centroid": {
+    "lon": 83.948019,
+    "lat": 21.875008
+   },
+   "bbox": [
+    83.94575,
+    21.869,
+    83.951,
+    21.88
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 15.4 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l25",
+   "rank": 25,
+   "kind": "loss",
+   "area_ha": 14.09,
+   "geometry_area_ha": 14.11,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 83.98164,
+    "lat": 21.910424
+   },
+   "bbox": [
+    83.977,
+    21.90675,
+    83.985,
+    21.91375
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 14.1 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l26",
+   "rank": 26,
+   "kind": "loss",
+   "area_ha": 11.74,
+   "geometry_area_ha": 11.76,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 83.770727,
+    "lat": 21.71618
+   },
+   "bbox": [
+    83.76675,
+    21.71425,
+    83.77375,
+    21.71775
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 11.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g27",
+   "rank": 27,
+   "kind": "gain",
+   "area_ha": 11.74,
+   "geometry_area_ha": 11.75,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 83.891095,
+    "lat": 21.798427
+   },
+   "bbox": [
+    83.88775,
+    21.7965,
+    83.89425,
+    21.8005
+   ],
+   "region": "northern",
+   "description": "northern area: 11.7 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l28",
+   "rank": 28,
+   "kind": "loss",
+   "area_ha": 11.45,
+   "geometry_area_ha": 11.47,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 83.928873,
+    "lat": 21.788439
+   },
+   "bbox": [
+    83.92525,
+    21.787,
+    83.9325,
+    21.78975
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 11.5 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l29",
+   "rank": 29,
+   "kind": "loss",
+   "area_ha": 10.75,
+   "geometry_area_ha": 10.77,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 83.897312,
+    "lat": 21.516207
+   },
+   "bbox": [
+    83.89375,
+    21.51425,
+    83.9015,
+    21.51775
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 10.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g30",
+   "rank": 30,
+   "kind": "gain",
+   "area_ha": 10.59,
+   "geometry_area_ha": 10.61,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 83.887559,
+    "lat": 21.793919
+   },
+   "bbox": [
+    83.88575,
+    21.79025,
+    83.88925,
+    21.796
+   ],
+   "region": "northern",
+   "description": "northern area: 10.6 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l31",
+   "rank": 31,
+   "kind": "loss",
+   "area_ha": 10.52,
+   "geometry_area_ha": 10.54,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 83.922246,
+    "lat": 21.782336
+   },
+   "bbox": [
+    83.91975,
+    21.77925,
+    83.925,
+    21.78525
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 10.5 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g32",
+   "rank": 32,
+   "kind": "gain",
+   "area_ha": 10.33,
+   "geometry_area_ha": 10.34,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.603189,
+    "lat": 21.503906
+   },
+   "bbox": [
+    83.60125,
+    21.50225,
+    83.6065,
+    21.5065
+   ],
+   "region": "south-western",
+   "description": "south-western area: 10.3 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l33",
+   "rank": 33,
+   "kind": "loss",
+   "area_ha": 10.1,
+   "geometry_area_ha": 10.11,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.968198,
+    "lat": 21.704207
+   },
+   "bbox": [
+    83.9665,
+    21.7005,
+    83.96975,
+    21.70775
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 10.1 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g34",
+   "rank": 34,
+   "kind": "gain",
+   "area_ha": 9.66,
+   "geometry_area_ha": 9.68,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.820947,
+    "lat": 21.760629
+   },
+   "bbox": [
+    83.8195,
+    21.758,
+    83.82225,
+    21.763
+   ],
+   "region": "northern",
+   "description": "northern area: 9.7 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g35",
+   "rank": 35,
+   "kind": "gain",
+   "area_ha": 9.52,
+   "geometry_area_ha": 9.53,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.988792,
+    "lat": 21.794888
+   },
+   "bbox": [
+    83.987,
+    21.793,
+    83.99125,
+    21.79625
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 9.5 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g36",
+   "rank": 36,
+   "kind": "gain",
+   "area_ha": 9.16,
+   "geometry_area_ha": 9.17,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.948043,
+    "lat": 21.855225
+   },
+   "bbox": [
+    83.946,
+    21.852,
+    83.9495,
+    21.858
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 9.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g37",
+   "rank": 37,
+   "kind": "gain",
+   "area_ha": 9.15,
+   "geometry_area_ha": 9.17,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.983186,
+    "lat": 21.900719
+   },
+   "bbox": [
+    83.98125,
+    21.8985,
+    83.986,
+    21.903
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 9.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g38",
+   "rank": 38,
+   "kind": "gain",
+   "area_ha": 9.09,
+   "geometry_area_ha": 9.1,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.967928,
+    "lat": 21.821123
+   },
+   "bbox": [
+    83.966,
+    21.81925,
+    83.96975,
+    21.82275
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 9.1 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l39",
+   "rank": 39,
+   "kind": "loss",
+   "area_ha": 9.01,
+   "geometry_area_ha": 9.03,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.945345,
+    "lat": 21.884843
+   },
+   "bbox": [
+    83.944,
+    21.8815,
+    83.947,
+    21.88675
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 9.0 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g40",
+   "rank": 40,
+   "kind": "gain",
+   "area_ha": 8.86,
+   "geometry_area_ha": 8.88,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.914333,
+    "lat": 21.946806
+   },
+   "bbox": [
+    83.912,
+    21.9455,
+    83.91625,
+    21.94825
+   ],
+   "region": "northern",
+   "description": "northern area: 8.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g41",
+   "rank": 41,
+   "kind": "gain",
+   "area_ha": 8.8,
+   "geometry_area_ha": 8.81,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 83.948784,
+    "lat": 21.848434
+   },
+   "bbox": [
+    83.947,
+    21.84625,
+    83.9505,
+    21.8505
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 8.8 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l42",
+   "rank": 42,
+   "kind": "loss",
+   "area_ha": 8.31,
+   "geometry_area_ha": 8.32,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.754366,
+    "lat": 21.71895
+   },
+   "bbox": [
+    83.75175,
+    21.71675,
+    83.75675,
+    21.72075
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 8.3 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g43",
+   "rank": 43,
+   "kind": "gain",
+   "area_ha": 8.23,
+   "geometry_area_ha": 8.25,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 84.041527,
+    "lat": 21.713618
+   },
+   "bbox": [
+    84.0395,
+    21.71125,
+    84.043,
+    21.7155
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 8.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g44",
+   "rank": 44,
+   "kind": "gain",
+   "area_ha": 8.23,
+   "geometry_area_ha": 8.24,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 84.024438,
+    "lat": 21.78124
+   },
+   "bbox": [
+    84.023,
+    21.77925,
+    84.026,
+    21.7835
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 8.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g45",
+   "rank": 45,
+   "kind": "gain",
+   "area_ha": 8.09,
+   "geometry_area_ha": 8.1,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 84.038722,
+    "lat": 21.823059
+   },
+   "bbox": [
+    84.037,
+    21.82125,
+    84.0405,
+    21.82475
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 8.1 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l46",
+   "rank": 46,
+   "kind": "loss",
+   "area_ha": 7.89,
+   "geometry_area_ha": 7.9,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.910527,
+    "lat": 21.499848
+   },
+   "bbox": [
+    83.90825,
+    21.497,
+    83.91325,
+    21.50375
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 7.9 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l47",
+   "rank": 47,
+   "kind": "loss",
+   "area_ha": 7.79,
+   "geometry_area_ha": 7.81,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.970944,
+    "lat": 21.898932
+   },
+   "bbox": [
+    83.969,
+    21.89725,
+    83.9735,
+    21.9005
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 7.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l48",
+   "rank": 48,
+   "kind": "loss",
+   "area_ha": 7.45,
+   "geometry_area_ha": 7.46,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.916308,
+    "lat": 21.683769
+   },
+   "bbox": [
+    83.9135,
+    21.68175,
+    83.91875,
+    21.68525
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 7.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g49",
+   "rank": 49,
+   "kind": "gain",
+   "area_ha": 7.44,
+   "geometry_area_ha": 7.45,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.949305,
+    "lat": 21.889002
+   },
+   "bbox": [
+    83.9475,
+    21.8865,
+    83.952,
+    21.89125
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 7.4 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g50",
+   "rank": 50,
+   "kind": "gain",
+   "area_ha": 7.23,
+   "geometry_area_ha": 7.24,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.819543,
+    "lat": 21.743994
+   },
+   "bbox": [
+    83.818,
+    21.742,
+    83.821,
+    21.74625
+   ],
+   "region": "northern",
+   "description": "northern area: 7.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g51",
+   "rank": 51,
+   "kind": "gain",
+   "area_ha": 6.94,
+   "geometry_area_ha": 6.95,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.885202,
+    "lat": 21.789754
+   },
+   "bbox": [
+    83.884,
+    21.788,
+    83.88725,
+    21.79125
+   ],
+   "region": "northern",
+   "description": "northern area: 6.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g52",
+   "rank": 52,
+   "kind": "gain",
+   "area_ha": 6.87,
+   "geometry_area_ha": 6.88,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.840552,
+    "lat": 21.740049
+   },
+   "bbox": [
+    83.839,
+    21.7385,
+    83.842,
+    21.7415
+   ],
+   "region": "northern",
+   "description": "northern area: 6.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l53",
+   "rank": 53,
+   "kind": "loss",
+   "area_ha": 6.86,
+   "geometry_area_ha": 6.87,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 84.018039,
+    "lat": 21.943833
+   },
+   "bbox": [
+    84.0165,
+    21.9415,
+    84.0195,
+    21.94675
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 6.9 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l54",
+   "rank": 54,
+   "kind": "loss",
+   "area_ha": 6.81,
+   "geometry_area_ha": 6.82,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 83.961346,
+    "lat": 21.45993
+   },
+   "bbox": [
+    83.95975,
+    21.458,
+    83.96325,
+    21.4615
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 6.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g55",
+   "rank": 55,
+   "kind": "gain",
+   "area_ha": 6.51,
+   "geometry_area_ha": 6.52,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.949367,
+    "lat": 21.892268
+   },
+   "bbox": [
+    83.9475,
+    21.89,
+    83.95125,
+    21.8945
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 6.5 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l56",
+   "rank": 56,
+   "kind": "loss",
+   "area_ha": 6.46,
+   "geometry_area_ha": 6.47,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.957164,
+    "lat": 21.462786
+   },
+   "bbox": [
+    83.95475,
+    21.46125,
+    83.9595,
+    21.46425
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 6.5 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g57",
+   "rank": 57,
+   "kind": "gain",
+   "area_ha": 6.37,
+   "geometry_area_ha": 6.38,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.873603,
+    "lat": 21.806322
+   },
+   "bbox": [
+    83.872,
+    21.8045,
+    83.875,
+    21.8085
+   ],
+   "region": "northern",
+   "description": "northern area: 6.4 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l58",
+   "rank": 58,
+   "kind": "loss",
+   "area_ha": 6.23,
+   "geometry_area_ha": 6.24,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.767547,
+    "lat": 21.666981
+   },
+   "bbox": [
+    83.7665,
+    21.66375,
+    83.7685,
+    21.67
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 6.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l59",
+   "rank": 59,
+   "kind": "loss",
+   "area_ha": 6.23,
+   "geometry_area_ha": 6.24,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.853501,
+    "lat": 21.687961
+   },
+   "bbox": [
+    83.85225,
+    21.68625,
+    83.8545,
+    21.68975
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 6.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l60",
+   "rank": 60,
+   "kind": "loss",
+   "area_ha": 6.17,
+   "geometry_area_ha": 6.17,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.893811,
+    "lat": 21.523951
+   },
+   "bbox": [
+    83.89175,
+    21.522,
+    83.895,
+    21.526
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 6.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g61",
+   "rank": 61,
+   "kind": "gain",
+   "area_ha": 6.16,
+   "geometry_area_ha": 6.16,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.834735,
+    "lat": 21.773828
+   },
+   "bbox": [
+    83.83325,
+    21.77175,
+    83.83625,
+    21.77575
+   ],
+   "region": "northern",
+   "description": "northern area: 6.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l62",
+   "rank": 62,
+   "kind": "loss",
+   "area_ha": 6.02,
+   "geometry_area_ha": 6.03,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.924089,
+    "lat": 21.488289
+   },
+   "bbox": [
+    83.92225,
+    21.48625,
+    83.92575,
+    21.4895
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 6.0 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l63",
+   "rank": 63,
+   "kind": "loss",
+   "area_ha": 5.66,
+   "geometry_area_ha": 5.66,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.753581,
+    "lat": 21.711416
+   },
+   "bbox": [
+    83.752,
+    21.70975,
+    83.7555,
+    21.7135
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 5.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g64",
+   "rank": 64,
+   "kind": "gain",
+   "area_ha": 5.65,
+   "geometry_area_ha": 5.66,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.84634,
+    "lat": 21.782587
+   },
+   "bbox": [
+    83.8445,
+    21.78125,
+    83.84775,
+    21.78375
+   ],
+   "region": "northern",
+   "description": "northern area: 5.7 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g65",
+   "rank": 65,
+   "kind": "gain",
+   "area_ha": 5.58,
+   "geometry_area_ha": 5.58,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.805356,
+    "lat": 21.937221
+   },
+   "bbox": [
+    83.8035,
+    21.9355,
+    83.807,
+    21.939
+   ],
+   "region": "northern",
+   "description": "northern area: 5.6 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l66",
+   "rank": 66,
+   "kind": "loss",
+   "area_ha": 5.52,
+   "geometry_area_ha": 5.53,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.914791,
+    "lat": 21.495349
+   },
+   "bbox": [
+    83.91275,
+    21.4935,
+    83.917,
+    21.497
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 5.5 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l67",
+   "rank": 67,
+   "kind": "loss",
+   "area_ha": 5.52,
+   "geometry_area_ha": 5.53,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.952937,
+    "lat": 21.560232
+   },
+   "bbox": [
+    83.95125,
+    21.559,
+    83.95475,
+    21.56125
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 5.5 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l68",
+   "rank": 68,
+   "kind": "loss",
+   "area_ha": 5.51,
+   "geometry_area_ha": 5.52,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.958898,
+    "lat": 21.710609
+   },
+   "bbox": [
+    83.9565,
+    21.70975,
+    83.96125,
+    21.7115
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 5.5 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l69",
+   "rank": 69,
+   "kind": "loss",
+   "area_ha": 5.44,
+   "geometry_area_ha": 5.45,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.905885,
+    "lat": 21.654049
+   },
+   "bbox": [
+    83.9045,
+    21.653,
+    83.908,
+    21.6555
+   ],
+   "region": "eastern",
+   "description": "eastern shore: 5.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l70",
+   "rank": 70,
+   "kind": "loss",
+   "area_ha": 5.37,
+   "geometry_area_ha": 5.38,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 84.030698,
+    "lat": 21.604775
+   },
+   "bbox": [
+    84.02925,
+    21.60375,
+    84.03225,
+    21.606
+   ],
+   "region": "eastern",
+   "description": "eastern shore: 5.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l71",
+   "rank": 71,
+   "kind": "loss",
+   "area_ha": 5.37,
+   "geometry_area_ha": 5.38,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.933978,
+    "lat": 21.744915
+   },
+   "bbox": [
+    83.93275,
+    21.74275,
+    83.93525,
+    21.74675
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 5.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l72",
+   "rank": 72,
+   "kind": "loss",
+   "area_ha": 5.16,
+   "geometry_area_ha": 5.16,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.96484,
+    "lat": 21.708938
+   },
+   "bbox": [
+    83.96325,
+    21.7065,
+    83.9665,
+    21.71075
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 5.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g73",
+   "rank": 73,
+   "kind": "gain",
+   "area_ha": 5.15,
+   "geometry_area_ha": 5.16,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 84.015278,
+    "lat": 21.939115
+   },
+   "bbox": [
+    84.01375,
+    21.93775,
+    84.0165,
+    21.94075
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 5.1 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g74",
+   "rank": 74,
+   "kind": "gain",
+   "area_ha": 5.15,
+   "geometry_area_ha": 5.15,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.910524,
+    "lat": 21.946583
+   },
+   "bbox": [
+    83.90925,
+    21.9455,
+    83.91175,
+    21.94775
+   ],
+   "region": "northern",
+   "description": "northern area: 5.1 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g75",
+   "rank": 75,
+   "kind": "gain",
+   "area_ha": 5.01,
+   "geometry_area_ha": 5.02,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.991464,
+    "lat": 21.792832
+   },
+   "bbox": [
+    83.9895,
+    21.79175,
+    83.9935,
+    21.79425
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 5.0 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g76",
+   "rank": 76,
+   "kind": "gain",
+   "area_ha": 4.93,
+   "geometry_area_ha": 4.94,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.947502,
+    "lat": 21.883516
+   },
+   "bbox": [
+    83.94675,
+    21.88125,
+    83.94825,
+    21.886
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g77",
+   "rank": 77,
+   "kind": "gain",
+   "area_ha": 4.93,
+   "geometry_area_ha": 4.94,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.964864,
+    "lat": 21.901201
+   },
+   "bbox": [
+    83.962,
+    21.8995,
+    83.968,
+    21.90275
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g78",
+   "rank": 78,
+   "kind": "gain",
+   "area_ha": 4.88,
+   "geometry_area_ha": 4.88,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 83.926338,
+    "lat": 21.459478
+   },
+   "bbox": [
+    83.925,
+    21.4585,
+    83.928,
+    21.461
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 4.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l79",
+   "rank": 79,
+   "kind": "loss",
+   "area_ha": 4.73,
+   "geometry_area_ha": 4.74,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.90036,
+    "lat": 21.617394
+   },
+   "bbox": [
+    83.89875,
+    21.61525,
+    83.9015,
+    21.61875
+   ],
+   "region": "eastern",
+   "description": "eastern shore: 4.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g80",
+   "rank": 80,
+   "kind": "gain",
+   "area_ha": 4.65,
+   "geometry_area_ha": 4.66,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.022048,
+    "lat": 21.735817
+   },
+   "bbox": [
+    84.02075,
+    21.73475,
+    84.0235,
+    21.73725
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.7 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l81",
+   "rank": 81,
+   "kind": "loss",
+   "area_ha": 4.65,
+   "geometry_area_ha": 4.66,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.945471,
+    "lat": 21.829152
+   },
+   "bbox": [
+    83.94475,
+    21.827,
+    83.94625,
+    21.831
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 4.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g82",
+   "rank": 82,
+   "kind": "gain",
+   "area_ha": 4.58,
+   "geometry_area_ha": 4.59,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.024477,
+    "lat": 21.716066
+   },
+   "bbox": [
+    84.023,
+    21.714,
+    84.02575,
+    21.7175
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.6 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g83",
+   "rank": 83,
+   "kind": "gain",
+   "area_ha": 4.58,
+   "geometry_area_ha": 4.59,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.946473,
+    "lat": 21.836395
+   },
+   "bbox": [
+    83.94575,
+    21.83425,
+    83.94725,
+    21.8385
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.6 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g84",
+   "rank": 84,
+   "kind": "gain",
+   "area_ha": 4.51,
+   "geometry_area_ha": 4.52,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.048308,
+    "lat": 21.806085
+   },
+   "bbox": [
+    84.04625,
+    21.8045,
+    84.05,
+    21.8075
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.5 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l85",
+   "rank": 85,
+   "kind": "loss",
+   "area_ha": 4.44,
+   "geometry_area_ha": 4.45,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.905907,
+    "lat": 21.659758
+   },
+   "bbox": [
+    83.9045,
+    21.65875,
+    83.90825,
+    21.661
+   ],
+   "region": "eastern",
+   "description": "eastern shore: 4.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l86",
+   "rank": 86,
+   "kind": "loss",
+   "area_ha": 4.44,
+   "geometry_area_ha": 4.45,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.854165,
+    "lat": 21.684016
+   },
+   "bbox": [
+    83.853,
+    21.68175,
+    83.85575,
+    21.686
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 4.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l87",
+   "rank": 87,
+   "kind": "loss",
+   "area_ha": 4.37,
+   "geometry_area_ha": 4.38,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.921908,
+    "lat": 21.491527
+   },
+   "bbox": [
+    83.92025,
+    21.49,
+    83.92325,
+    21.493
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 4.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g88",
+   "rank": 88,
+   "kind": "gain",
+   "area_ha": 4.36,
+   "geometry_area_ha": 4.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.027662,
+    "lat": 21.859457
+   },
+   "bbox": [
+    84.02625,
+    21.85825,
+    84.029,
+    21.86125
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.4 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l89",
+   "rank": 89,
+   "kind": "loss",
+   "area_ha": 4.3,
+   "geometry_area_ha": 4.31,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.958546,
+    "lat": 21.4603
+   },
+   "bbox": [
+    83.957,
+    21.459,
+    83.96,
+    21.46175
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 4.3 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l90",
+   "rank": 90,
+   "kind": "loss",
+   "area_ha": 4.29,
+   "geometry_area_ha": 4.3,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.9279,
+    "lat": 21.771675
+   },
+   "bbox": [
+    83.92675,
+    21.7695,
+    83.9295,
+    21.77375
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 4.3 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l91",
+   "rank": 91,
+   "kind": "loss",
+   "area_ha": 4.23,
+   "geometry_area_ha": 4.24,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.949244,
+    "lat": 21.522078
+   },
+   "bbox": [
+    83.94775,
+    21.521,
+    83.951,
+    21.523
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 4.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g92",
+   "rank": 92,
+   "kind": "gain",
+   "area_ha": 4.22,
+   "geometry_area_ha": 4.23,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.954002,
+    "lat": 21.89404
+   },
+   "bbox": [
+    83.95225,
+    21.89325,
+    83.956,
+    21.895
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l93",
+   "rank": 93,
+   "kind": "loss",
+   "area_ha": 4.15,
+   "geometry_area_ha": 4.16,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.903375,
+    "lat": 21.664724
+   },
+   "bbox": [
+    83.90175,
+    21.6635,
+    83.9045,
+    21.666
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 4.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l94",
+   "rank": 94,
+   "kind": "loss",
+   "area_ha": 4.15,
+   "geometry_area_ha": 4.16,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.682168,
+    "lat": 21.748634
+   },
+   "bbox": [
+    83.6805,
+    21.74775,
+    83.68375,
+    21.74975
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 4.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l95",
+   "rank": 95,
+   "kind": "loss",
+   "area_ha": 4.15,
+   "geometry_area_ha": 4.16,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.929724,
+    "lat": 21.799569
+   },
+   "bbox": [
+    83.92875,
+    21.798,
+    83.9305,
+    21.80125
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 4.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g96",
+   "rank": 96,
+   "kind": "gain",
+   "area_ha": 4.15,
+   "geometry_area_ha": 4.15,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.007944,
+    "lat": 21.929918
+   },
+   "bbox": [
+    84.00675,
+    21.92825,
+    84.009,
+    21.93125
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.1 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g97",
+   "rank": 97,
+   "kind": "gain",
+   "area_ha": 4.08,
+   "geometry_area_ha": 4.09,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.043862,
+    "lat": 21.671143
+   },
+   "bbox": [
+    84.04325,
+    21.6695,
+    84.0445,
+    21.673
+   ],
+   "region": "eastern",
+   "description": "eastern area: 4.1 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l98",
+   "rank": 98,
+   "kind": "loss",
+   "area_ha": 4.02,
+   "geometry_area_ha": 4.02,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.930982,
+    "lat": 21.48296
+   },
+   "bbox": [
+    83.93,
+    21.4815,
+    83.932,
+    21.48475
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 4.0 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l99",
+   "rank": 99,
+   "kind": "loss",
+   "area_ha": 4.01,
+   "geometry_area_ha": 4.02,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.885103,
+    "lat": 21.712357
+   },
+   "bbox": [
+    83.8835,
+    21.7115,
+    83.887,
+    21.71325
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 4.0 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l100",
+   "rank": 100,
+   "kind": "loss",
+   "area_ha": 3.87,
+   "geometry_area_ha": 3.88,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.903458,
+    "lat": 21.484921
+   },
+   "bbox": [
+    83.9025,
+    21.48375,
+    83.9045,
+    21.486
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern shore: 3.9 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g101",
+   "rank": 101,
+   "kind": "gain",
+   "area_ha": 3.87,
+   "geometry_area_ha": 3.87,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.92475,
+    "lat": 21.669954
+   },
+   "bbox": [
+    83.92325,
+    21.669,
+    83.92625,
+    21.67125
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 3.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g102",
+   "rank": 102,
+   "kind": "gain",
+   "area_ha": 3.8,
+   "geometry_area_ha": 3.8,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.919054,
+    "lat": 21.654875
+   },
+   "bbox": [
+    83.91825,
+    21.6535,
+    83.91975,
+    21.656
+   ],
+   "region": "eastern",
+   "description": "eastern area: 3.8 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l103",
+   "rank": 103,
+   "kind": "loss",
+   "area_ha": 3.79,
+   "geometry_area_ha": 3.8,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.015568,
+    "lat": 21.94254
+   },
+   "bbox": [
+    84.01375,
+    21.941,
+    84.01675,
+    21.94475
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l104",
+   "rank": 104,
+   "kind": "loss",
+   "area_ha": 3.73,
+   "geometry_area_ha": 3.73,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.813322,
+    "lat": 21.650803
+   },
+   "bbox": [
+    83.8125,
+    21.6495,
+    83.81425,
+    21.65225
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 3.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l105",
+   "rank": 105,
+   "kind": "loss",
+   "area_ha": 3.72,
+   "geometry_area_ha": 3.73,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.851442,
+    "lat": 21.680462
+   },
+   "bbox": [
+    83.85075,
+    21.67775,
+    83.85275,
+    21.68275
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l106",
+   "rank": 106,
+   "kind": "loss",
+   "area_ha": 3.72,
+   "geometry_area_ha": 3.73,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.922072,
+    "lat": 21.730274
+   },
+   "bbox": [
+    83.9205,
+    21.729,
+    83.92325,
+    21.73125
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l107",
+   "rank": 107,
+   "kind": "loss",
+   "area_ha": 3.65,
+   "geometry_area_ha": 3.66,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.864032,
+    "lat": 21.665645
+   },
+   "bbox": [
+    83.863,
+    21.6645,
+    83.865,
+    21.66675
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g108",
+   "rank": 108,
+   "kind": "gain",
+   "area_ha": 3.65,
+   "geometry_area_ha": 3.66,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.026983,
+    "lat": 21.782988
+   },
+   "bbox": [
+    84.02575,
+    21.78175,
+    84.0285,
+    21.784
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 3.7 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l109",
+   "rank": 109,
+   "kind": "loss",
+   "area_ha": 3.58,
+   "geometry_area_ha": 3.59,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.00244,
+    "lat": 21.59211
+   },
+   "bbox": [
+    84.0005,
+    21.59025,
+    84.004,
+    21.5935
+   ],
+   "region": "eastern",
+   "description": "eastern shore: 3.6 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g110",
+   "rank": 110,
+   "kind": "gain",
+   "area_ha": 3.58,
+   "geometry_area_ha": 3.58,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.89736,
+    "lat": 21.82079
+   },
+   "bbox": [
+    83.89675,
+    21.8185,
+    83.89825,
+    21.8225
+   ],
+   "region": "northern",
+   "description": "northern area: 3.6 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g111",
+   "rank": 111,
+   "kind": "gain",
+   "area_ha": 3.51,
+   "geometry_area_ha": 3.51,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.860824,
+    "lat": 21.751528
+   },
+   "bbox": [
+    83.85975,
+    21.75,
+    83.86175,
+    21.75325
+   ],
+   "region": "northern",
+   "description": "northern area: 3.5 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l112",
+   "rank": 112,
+   "kind": "loss",
+   "area_ha": 3.5,
+   "geometry_area_ha": 3.51,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.964829,
+    "lat": 21.899033
+   },
+   "bbox": [
+    83.9635,
+    21.898,
+    83.96625,
+    21.9
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.5 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l113",
+   "rank": 113,
+   "kind": "loss",
+   "area_ha": 3.37,
+   "geometry_area_ha": 3.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.773497,
+    "lat": 21.647269
+   },
+   "bbox": [
+    83.77275,
+    21.645,
+    83.77425,
+    21.64975
+   ],
+   "region": "western",
+   "description": "western shore: 3.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g114",
+   "rank": 114,
+   "kind": "gain",
+   "area_ha": 3.37,
+   "geometry_area_ha": 3.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.947949,
+    "lat": 21.672359
+   },
+   "bbox": [
+    83.94625,
+    21.6715,
+    83.949,
+    21.6735
+   ],
+   "region": "eastern",
+   "description": "eastern area: 3.4 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l115",
+   "rank": 115,
+   "kind": "loss",
+   "area_ha": 3.37,
+   "geometry_area_ha": 3.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.779598,
+    "lat": 21.717471
+   },
+   "bbox": [
+    83.77775,
+    21.71625,
+    83.78175,
+    21.71825
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 3.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l116",
+   "rank": 116,
+   "kind": "loss",
+   "area_ha": 3.36,
+   "geometry_area_ha": 3.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.688407,
+    "lat": 21.745205
+   },
+   "bbox": [
+    83.687,
+    21.744,
+    83.69,
+    21.74625
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 3.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g117",
+   "rank": 117,
+   "kind": "gain",
+   "area_ha": 3.36,
+   "geometry_area_ha": 3.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.818646,
+    "lat": 21.748678
+   },
+   "bbox": [
+    83.81775,
+    21.74725,
+    83.8195,
+    21.74975
+   ],
+   "region": "northern",
+   "description": "northern area: 3.4 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l118",
+   "rank": 118,
+   "kind": "loss",
+   "area_ha": 3.36,
+   "geometry_area_ha": 3.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.928949,
+    "lat": 21.751045
+   },
+   "bbox": [
+    83.928,
+    21.74975,
+    83.93,
+    21.7525
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l119",
+   "rank": 119,
+   "kind": "loss",
+   "area_ha": 3.36,
+   "geometry_area_ha": 3.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.942859,
+    "lat": 21.881088
+   },
+   "bbox": [
+    83.942,
+    21.87975,
+    83.944,
+    21.882
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.4 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l120",
+   "rank": 120,
+   "kind": "loss",
+   "area_ha": 3.3,
+   "geometry_area_ha": 3.3,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.009332,
+    "lat": 21.625543
+   },
+   "bbox": [
+    84.00825,
+    21.62425,
+    84.01075,
+    21.62675
+   ],
+   "region": "eastern",
+   "description": "eastern shore: 3.3 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g121",
+   "rank": 121,
+   "kind": "gain",
+   "area_ha": 3.29,
+   "geometry_area_ha": 3.3,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.82169,
+    "lat": 21.741223
+   },
+   "bbox": [
+    83.82025,
+    21.74025,
+    83.82275,
+    21.742
+   ],
+   "region": "northern",
+   "description": "northern area: 3.3 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l122",
+   "rank": 122,
+   "kind": "loss",
+   "area_ha": 3.29,
+   "geometry_area_ha": 3.29,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.024929,
+    "lat": 21.949136
+   },
+   "bbox": [
+    84.02375,
+    21.94775,
+    84.02625,
+    21.95
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.3 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l123",
+   "rank": 123,
+   "kind": "loss",
+   "area_ha": 3.23,
+   "geometry_area_ha": 3.23,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.846575,
+    "lat": 21.455236
+   },
+   "bbox": [
+    83.84575,
+    21.45425,
+    83.8475,
+    21.4565
+   ],
+   "region": "southern",
+   "description": "southern shore: 3.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g124",
+   "rank": 124,
+   "kind": "gain",
+   "area_ha": 3.22,
+   "geometry_area_ha": 3.23,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.045369,
+    "lat": 21.674025
+   },
+   "bbox": [
+    84.0445,
+    21.67275,
+    84.0465,
+    21.67575
+   ],
+   "region": "eastern",
+   "description": "eastern area: 3.2 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l125",
+   "rank": 125,
+   "kind": "loss",
+   "area_ha": 3.22,
+   "geometry_area_ha": 3.23,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.772919,
+    "lat": 21.711625
+   },
+   "bbox": [
+    83.772,
+    21.71025,
+    83.774,
+    21.71275
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 3.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l126",
+   "rank": 126,
+   "kind": "loss",
+   "area_ha": 3.15,
+   "geometry_area_ha": 3.16,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.765631,
+    "lat": 21.554477
+   },
+   "bbox": [
+    83.76475,
+    21.5525,
+    83.7665,
+    21.556
+   ],
+   "region": "south-western",
+   "description": "south-western shore: 3.2 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l127",
+   "rank": 127,
+   "kind": "loss",
+   "area_ha": 3.15,
+   "geometry_area_ha": 3.15,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.936443,
+    "lat": 21.74342
+   },
+   "bbox": [
+    83.93575,
+    21.74125,
+    83.937,
+    21.7455
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.1 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l128",
+   "rank": 128,
+   "kind": "loss",
+   "area_ha": 3.15,
+   "geometry_area_ha": 3.15,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.6115,
+    "lat": 21.766455
+   },
+   "bbox": [
+    83.61075,
+    21.765,
+    83.61225,
+    21.768
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 3.1 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g129",
+   "rank": 129,
+   "kind": "gain",
+   "area_ha": 3.08,
+   "geometry_area_ha": 3.08,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.038119,
+    "lat": 21.714102
+   },
+   "bbox": [
+    84.03725,
+    21.713,
+    84.039,
+    21.715
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 3.1 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l130",
+   "rank": 130,
+   "kind": "loss",
+   "area_ha": 3.08,
+   "geometry_area_ha": 3.08,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.916858,
+    "lat": 21.777503
+   },
+   "bbox": [
+    83.9155,
+    21.7765,
+    83.918,
+    21.77875
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.1 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l131",
+   "rank": 131,
+   "kind": "loss",
+   "area_ha": 3.01,
+   "geometry_area_ha": 3.02,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.012435,
+    "lat": 21.573113
+   },
+   "bbox": [
+    84.01075,
+    21.57225,
+    84.01425,
+    21.57375
+   ],
+   "region": "eastern",
+   "description": "eastern shore: 3.0 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l132",
+   "rank": 132,
+   "kind": "loss",
+   "area_ha": 3.01,
+   "geometry_area_ha": 3.01,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.815381,
+    "lat": 21.644518
+   },
+   "bbox": [
+    83.81425,
+    21.6435,
+    83.81725,
+    21.646
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 3.0 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l133",
+   "rank": 133,
+   "kind": "loss",
+   "area_ha": 3.01,
+   "geometry_area_ha": 3.01,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.852214,
+    "lat": 21.678417
+   },
+   "bbox": [
+    83.8515,
+    21.67725,
+    83.85325,
+    21.6795
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 3.0 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g134",
+   "rank": 134,
+   "kind": "gain",
+   "area_ha": 3.01,
+   "geometry_area_ha": 3.01,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.998881,
+    "lat": 21.754685
+   },
+   "bbox": [
+    83.998,
+    21.7535,
+    83.99975,
+    21.75575
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 3.0 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g135",
+   "rank": 135,
+   "kind": "gain",
+   "area_ha": 3.01,
+   "geometry_area_ha": 3.01,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.899726,
+    "lat": 21.81578
+   },
+   "bbox": [
+    83.8985,
+    21.81525,
+    83.901,
+    21.8165
+   ],
+   "region": "northern",
+   "description": "northern area: 3.0 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g136",
+   "rank": 136,
+   "kind": "gain",
+   "area_ha": 3.0,
+   "geometry_area_ha": 3.01,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.000369,
+    "lat": 21.922583
+   },
+   "bbox": [
+    83.999,
+    21.92175,
+    84.0015,
+    21.9235
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 3.0 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l137",
+   "rank": 137,
+   "kind": "loss",
+   "area_ha": 2.94,
+   "geometry_area_ha": 2.94,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.814125,
+    "lat": 21.647216
+   },
+   "bbox": [
+    83.813,
+    21.64625,
+    83.815,
+    21.6485
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 2.9 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g138",
+   "rank": 138,
+   "kind": "gain",
+   "area_ha": 2.94,
+   "geometry_area_ha": 2.94,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.821131,
+    "lat": 21.737107
+   },
+   "bbox": [
+    83.82075,
+    21.73525,
+    83.82175,
+    21.73925
+   ],
+   "region": "northern",
+   "description": "northern area: 2.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-g139",
+   "rank": 139,
+   "kind": "gain",
+   "area_ha": 2.93,
+   "geometry_area_ha": 2.94,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.890119,
+    "lat": 21.794381
+   },
+   "bbox": [
+    83.8895,
+    21.79275,
+    83.89125,
+    21.796
+   ],
+   "region": "northern",
+   "description": "northern area: 2.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l140",
+   "rank": 140,
+   "kind": "loss",
+   "area_ha": 2.86,
+   "geometry_area_ha": 2.87,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.857106,
+    "lat": 21.685594
+   },
+   "bbox": [
+    83.856,
+    21.6845,
+    83.85825,
+    21.68625
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 2.9 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l141",
+   "rank": 141,
+   "kind": "loss",
+   "area_ha": 2.86,
+   "geometry_area_ha": 2.87,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.94265,
+    "lat": 21.75595
+   },
+   "bbox": [
+    83.942,
+    21.75425,
+    83.9435,
+    21.7575
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 2.9 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g142",
+   "rank": 142,
+   "kind": "gain",
+   "area_ha": 2.86,
+   "geometry_area_ha": 2.86,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.933637,
+    "lat": 21.892012
+   },
+   "bbox": [
+    83.93225,
+    21.8915,
+    83.93525,
+    21.8925
+   ],
+   "region": "northern",
+   "description": "northern area: 2.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l143",
+   "rank": 143,
+   "kind": "loss",
+   "area_ha": 2.86,
+   "geometry_area_ha": 2.86,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 83.958563,
+    "lat": 21.8982
+   },
+   "bbox": [
+    83.957,
+    21.8975,
+    83.96,
+    21.89875
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 2.9 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g144",
+   "rank": 144,
+   "kind": "gain",
+   "area_ha": 2.86,
+   "geometry_area_ha": 2.86,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 84.011731,
+    "lat": 21.930081
+   },
+   "bbox": [
+    84.011,
+    21.92825,
+    84.0125,
+    21.93175
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 2.9 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l145",
+   "rank": 145,
+   "kind": "loss",
+   "area_ha": 2.79,
+   "geometry_area_ha": 2.8,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 83.907067,
+    "lat": 21.611324
+   },
+   "bbox": [
+    83.90575,
+    21.6095,
+    83.908,
+    21.6125
+   ],
+   "region": "eastern",
+   "description": "eastern shore: 2.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l146",
+   "rank": 146,
+   "kind": "loss",
+   "area_ha": 2.79,
+   "geometry_area_ha": 2.8,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 83.932349,
+    "lat": 21.710747
+   },
+   "bbox": [
+    83.931,
+    21.71,
+    83.93375,
+    21.7115
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern shore: 2.8 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-g147",
+   "rank": 147,
+   "kind": "gain",
+   "area_ha": 2.79,
+   "geometry_area_ha": 2.8,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 84.035272,
+    "lat": 21.714561
+   },
+   "bbox": [
+    84.03425,
+    21.7135,
+    84.03625,
+    21.7155
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 2.8 ha of water gained"
+  },
+  {
+   "id": "6cc8f33bec7b-l148",
+   "rank": 148,
+   "kind": "loss",
+   "area_ha": 2.72,
+   "geometry_area_ha": 2.73,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 83.802493,
+    "lat": 21.680559
+   },
+   "bbox": [
+    83.80075,
+    21.6795,
+    83.804,
+    21.6815
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 2.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l149",
+   "rank": 149,
+   "kind": "loss",
+   "area_ha": 2.72,
+   "geometry_area_ha": 2.72,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 83.751914,
+    "lat": 21.726947
+   },
+   "bbox": [
+    83.751,
+    21.72575,
+    83.75275,
+    21.728
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 2.7 ha of water lost"
+  },
+  {
+   "id": "6cc8f33bec7b-l150",
+   "rank": 150,
+   "kind": "loss",
+   "area_ha": 2.72,
+   "geometry_area_ha": 2.72,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 83.625526,
+    "lat": 21.770375
+   },
+   "bbox": [
+    83.62475,
+    21.76875,
+    83.62625,
+    21.77175
+   ],
+   "region": "north-western",
+   "description": "north-western shore: 2.7 ha of water lost"
+  }
+ ],
+ "progression": [
+  {
+   "year": 1984,
+   "water_ha": 60052.72,
+   "cumulative_loss_ha": 0.0,
+   "cumulative_gain_ha": 0.0,
+   "observations": 1
+  },
+  {
+   "year": 2021,
+   "water_ha": 59209.88,
+   "cumulative_loss_ha": 1269.74,
+   "cumulative_gain_ha": 1111.42,
+   "observations": 1
+  }
+ ],
+ "trend": null,
+ "quality": {
+  "mean_valid_fraction": 1.0,
+  "uncertain_share": 0.0,
+  "observations_in_period": 2,
+  "usable_in_period": 2
+ },
+ "confidence": "medium",
+ "confidence_reasons": [
+  "1 usable observation(s) in 1984",
+  "1 usable observation(s) in 2021",
+  "mean valid-pixel share of the observations used: 100%",
+  "0% of the footprint is uncertain (cloud or gaps) and excluded"
+ ],
+ "limitations": [
+  "Spatial resolution is about 26 m per pixel; boundary shifts smaller than ~2 pixels are treated as positional noise.",
+  "Only Jan were compared so that seasons match; other months were not used for the start/end maps.",
+  "Fewer than five yearly composites exist, so the year-to-year scatter test could not be applied.",
+  "The data describe where and how much water extent changed. They cannot, by themselves, establish why."
+ ],
+ "what_was_analysed": "Same-season composites of 1984 (1 observations) and 2021 (1 observations), using only Jan so seasons match. A pixel counts as water if it is water in at least 50% of its valid observations; 0 ha (0%) were uncertain and excluded.",
+ "insufficient": null,
+ "thresholds": {
+  "window_years": 1,
+  "min_valid_obs_monthly": 6,
+  "min_valid_obs_yearly": 1,
+  "min_obs_valid_fraction": 0.5,
+  "min_pixel_obs_fraction": 0.34,
+  "water_frequency": 0.5,
+  "min_change_pct": 5.0,
+  "min_hotspot_ha": 2.0,
+  "min_feature_px": null,
+  "noise_factor": 2.0,
+  "variable": "water"
+ },
+ "bbox": [
+  83.6,
+  21.45,
+  84.05,
+  21.95
+ ],
+ "layers": {
+  "difference_png": "/api/explorer/analysis/6cc8f33bec7b/layers/difference.png",
+  "before_png": "/api/explorer/analysis/6cc8f33bec7b/layers/before.png",
+  "after_png": "/api/explorer/analysis/6cc8f33bec7b/layers/after.png",
+  "difference_tif": "/api/explorer/analysis/6cc8f33bec7b/layers/difference.tif",
+  "hotspots_geojson": "/api/explorer/analysis/6cc8f33bec7b/hotspots"
+ },
+ "variable": {
+  "key": "water",
+  "label": "water",
+  "class": 2,
+  "primary": true
+ },
+ "is_synthetic": false,
+ "simulated_label": null,
+ "designation": "official_derived",
+ "data_designation_note": "official-derived"
+}

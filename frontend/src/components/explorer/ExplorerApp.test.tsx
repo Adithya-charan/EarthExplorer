@@ -57,12 +57,12 @@ async function search(text: string) {
 }
 
 describe("Earth Time Machine", () => {
-  it("shows examples, instructions and which datasets exist before any search", async () => {
+  it("shows examples and instructions before any search, without a dataset list", async () => {
     mockFetch(routes(ready, changed));
     renderView(<ExplorerApp />);
     expect(screen.getByRole("button", { name: "Hyderabad" })).toBeInTheDocument();
     expect(screen.getByText(/drag to turn the globe/i)).toBeInTheDocument();
-    expect(await screen.findByTestId("availability")).toHaveTextContent("Bellandur Lake 2000–2025 (Illustrative Dataset)");
+    expect(screen.queryByText(/historical layers/i)).not.toBeInTheDocument();
   });
 
   it("outcome A: shows the change, the latest observation, hotspots, timeline and an honest explanation", async () => {
@@ -154,7 +154,7 @@ describe("Earth Time Machine", () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new TypeError("Failed to fetch")));
     renderView(<ExplorerApp />);
     await search("Bellandur");
-    expect(await screen.findByTestId("error-banner")).toHaveTextContent(/Cannot reach the EarthTrend API/);
+    expect(await screen.findByTestId("error-banner")).toHaveTextContent(/Cannot reach the NASAX API/);
     expect(screen.getByRole("button", { name: "Try again" })).toBeInTheDocument();
   });
   it("Back and Forward return to earlier places without a page reload", async () => {

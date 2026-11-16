@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-kolleru-lake",
+ "name": "Kolleru Lake (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 141707.39,
+   "valid_ha": 141707.39,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 120787.28,
+    "Water (permanent or seasonal)": 20920.11
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 141707.39,
+   "valid_ha": 141707.39,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 75288.17,
+    "Water (permanent or seasonal)": 66419.22
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 20920.11,
+     "share_of_valid_pct": 14.763
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 66419.22,
+     "share_of_valid_pct": 46.871
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": 45499.11,
+   "net_change_pct": 217.49
+  }
+ },
+ "generated_at": "2026-11-15T07:20:27+00:00"
+}

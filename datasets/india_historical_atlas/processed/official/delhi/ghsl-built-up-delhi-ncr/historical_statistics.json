@@ -1,0 +1,80 @@
+{
+ "dataset_id": "ghsl-built-up-delhi-ncr",
+ "name": "Delhi NCR metropolitan area (GHSL built-up)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 387450.56,
+   "valid_ha": 387450.56,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 286520.04,
+    "Built-up (at least 15% of the cell)": 100930.52
+   }
+  },
+  {
+   "date": "2010-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 387450.56,
+   "valid_ha": 387450.56,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 269001.25,
+    "Built-up (at least 15% of the cell)": 118449.31
+   }
+  },
+  {
+   "date": "2020-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 387450.56,
+   "valid_ha": 387450.56,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 251030.02,
+    "Built-up (at least 15% of the cell)": 136420.54
+   }
+  }
+ ],
+ "variables": {
+  "built_up": {
+   "label": "built-up area",
+   "classes": 4,
+   "primary": true,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 100930.52,
+     "share_of_valid_pct": 26.05
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 118449.31,
+     "share_of_valid_pct": 30.571
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 136420.54,
+     "share_of_valid_pct": 35.21
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": 35490.02,
+   "net_change_pct": 35.16
+  }
+ },
+ "generated_at": "2026-11-15T07:20:28+00:00"
+}

@@ -1,0 +1,80 @@
+{
+ "dataset_id": "ghsl-built-up-vijayawada",
+ "name": "Vijayawada metropolitan area (GHSL built-up)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 88600.6,
+   "valid_ha": 88600.6,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 81403.74,
+    "Built-up (at least 15% of the cell)": 7196.86
+   }
+  },
+  {
+   "date": "2010-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 88600.6,
+   "valid_ha": 88600.6,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 79373.1,
+    "Built-up (at least 15% of the cell)": 9227.5
+   }
+  },
+  {
+   "date": "2020-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 88600.6,
+   "valid_ha": 88600.6,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 77240.8,
+    "Built-up (at least 15% of the cell)": 11359.79
+   }
+  }
+ ],
+ "variables": {
+  "built_up": {
+   "label": "built-up area",
+   "classes": 4,
+   "primary": true,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 7196.86,
+     "share_of_valid_pct": 8.123
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 9227.5,
+     "share_of_valid_pct": 10.415
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 11359.79,
+     "share_of_valid_pct": 12.821
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": 4162.93,
+   "net_change_pct": 57.84
+  }
+ },
+ "generated_at": "2026-11-15T07:20:27+00:00"
+}

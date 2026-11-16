@@ -11,7 +11,9 @@
 import { useEffect, useRef } from "react";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import type { LayerSpec } from "@/lib/explorer/logic";
+import type { PointCollection } from "@/lib/explorer/deeptime";
 import type { BBox, HotspotCollection } from "@/lib/explorer/types";
+import { DeepScene, type DeepVectorSpec, type PickedDeep } from "./deepGlobe";
 
 type Cesium = typeof import("cesium");
 
@@ -36,7 +38,17 @@ export interface BoundaryShape {
   approximate: boolean;
 }
 
+export interface DeepGlobeState {
+  active: boolean;
+  vectors: DeepVectorSpec[];
+  points: PointCollection<Record<string, unknown>> | null;
+  pointKind: PickedDeep["kind"];
+  place: { name: string; reconstructed: [number, number] | null; modern: [number, number] } | null;
+}
+
 export interface GlobeProps {
+  deep?: DeepGlobeState;
+  onDeepPick?: (p: PickedDeep) => void;
   focus: GlobeFocus | null;
   marker: { lon: number; lat: number; label: string } | null;
   primary: LayerSpec | null;
@@ -81,6 +93,7 @@ export default function Globe(props: GlobeProps) {
   const lastFocus = useRef(0);
   const readyRef = useRef(false);
   const syncRef = useRef<() => void>(() => undefined);
+  const deepRef = useRef<DeepScene | null>(null);
 
   useEffect(() => {
     propsRef.current = props;
@@ -135,6 +148,7 @@ export default function Globe(props: GlobeProps) {
           e.retry = false;
         });
         viewer.imageryLayers.addImageryProvider(esri);
+        deepRef.current = new DeepScene(C, viewer, (b) => propsRef.current.onLayerBusy(b));
 
         viewer.scene.preRender.addEventListener(() => {
           if (propsRef.current.spin && !propsRef.current.reducedMotion) viewer!.camera.rotate(C.Cartesian3.UNIT_Z, -0.0005);
@@ -146,6 +160,10 @@ export default function Globe(props: GlobeProps) {
           propsRef.current.onCamera?.({ lon: C.Math.toDegrees(c.longitude), lat: C.Math.toDegrees(c.latitude), height: c.height, heading: v.camera.heading, pitch: v.camera.pitch, roll: v.camera.roll });
         });
         const handler = new C.ScreenSpaceEventHandler(viewer.canvas);
+        handler.setInputAction((m: { position: import("cesium").Cartesian2 }) => {
+          const picked = viewer!.scene.pick(m.position) as { id?: PickedDeep } | undefined;
+          if (picked?.id && (picked.id.kind === "fossil" || picked.id.kind === "formation")) propsRef.current.onDeepPick?.(picked.id);
+        }, C.ScreenSpaceEventType.LEFT_CLICK);
         for (const t of [C.ScreenSpaceEventType.LEFT_DOWN, C.ScreenSpaceEventType.WHEEL, C.ScreenSpaceEventType.PINCH_START, C.ScreenSpaceEventType.RIGHT_DOWN]) {
           handler.setInputAction(() => propsRef.current.onInteract(), t);
         }
@@ -167,6 +185,7 @@ export default function Globe(props: GlobeProps) {
       }
       viewerRef.current = null;
       slotsRef.current = { primary: null, secondary: null };
+      deepRef.current = null;
     };
      
   }, []);
@@ -412,7 +431,20 @@ export default function Globe(props: GlobeProps) {
     });
   };
 
+  const applyDeep = () => {
+    const d = propsRef.current.deep;
+    const sc = deepRef.current;
+    if (!sc) return;
+    sc.setActive(Boolean(d?.active));
+    if (d?.active) {
+      void sc.sync(d.vectors);
+      sc.setPoints(d.points, d.pointKind);
+      sc.setPlace(d.place);
+    }
+  };
+
   const syncAll = () => {
+    applyDeep();
     const p = propsRef.current;
     applySlot("primary", p.primary);
     applySlot("secondary", p.secondary);
@@ -448,6 +480,19 @@ export default function Globe(props: GlobeProps) {
   useEffect(() => {
     if (readyRef.current) applyBoundary();
   }, [props.boundary?.id, props.boundary?.approximate]);
+  useEffect(() => {
+    if (!readyRef.current || !deepRef.current) return;
+    deepRef.current.setActive(Boolean(props.deep?.active));
+    if (props.deep?.active) void deepRef.current.sync(props.deep.vectors);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.deep?.active, props.deep?.vectors.map((v) => v.key).join("|")]);
+  useEffect(() => {
+    if (readyRef.current && deepRef.current && props.deep?.active) deepRef.current.setPoints(props.deep.points, props.deep.pointKind);
+  }, [props.deep?.active, props.deep?.points, props.deep?.pointKind]);
+  useEffect(() => {
+    if (readyRef.current && deepRef.current && props.deep?.active) deepRef.current.setPlace(props.deep.place);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.deep?.active, props.deep?.place?.name, props.deep?.place?.reconstructed?.join(",")]);
   useEffect(() => {
     const v = viewerRef.current;
     if (readyRef.current && v && !v.isDestroyed()) v.scene.splitPosition = props.splitPosition;

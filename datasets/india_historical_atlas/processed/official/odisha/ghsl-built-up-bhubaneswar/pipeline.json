@@ -1,0 +1,69 @@
+{
+ "dataset": "ghsl-built-up-bhubaneswar",
+ "generated_at": "2026-11-15T07:12:57+00:00",
+ "steps": [
+  {
+   "epoch": 2000,
+   "inspect": {
+    "crs": "EPSG:4326",
+    "res_deg": 0.0008333333300326821,
+    "dtype": "uint16"
+   },
+   "clip": {
+    "window": [
+     6789,
+     10379,
+     360,
+     360
+    ]
+   },
+   "crs": "no reprojection needed (EPSG:4326)",
+   "align": "native 3 arc-second grid kept",
+   "classify": "built-up if m2 / cell area >= 0.15",
+   "output": "observations/2000.tif",
+   "built_up_ha": 5954.78
+  },
+  {
+   "epoch": 2010,
+   "inspect": {
+    "crs": "EPSG:4326",
+    "res_deg": 0.0008333333300326821,
+    "dtype": "uint16"
+   },
+   "clip": {
+    "window": [
+     6789,
+     10379,
+     360,
+     360
+    ]
+   },
+   "crs": "no reprojection needed (EPSG:4326)",
+   "align": "native 3 arc-second grid kept",
+   "classify": "built-up if m2 / cell area >= 0.15",
+   "output": "observations/2010.tif",
+   "built_up_ha": 9156.5
+  },
+  {
+   "epoch": 2020,
+   "inspect": {
+    "crs": "EPSG:4326",
+    "res_deg": 0.0008333333300326821,
+    "dtype": "uint16"
+   },
+   "clip": {
+    "window": [
+     6789,
+     10379,
+     360,
+     360
+    ]
+   },
+   "crs": "no reprojection needed (EPSG:4326)",
+   "align": "native 3 arc-second grid kept",
+   "classify": "built-up if m2 / cell area >= 0.15",
+   "output": "observations/2020.tif",
+   "built_up_ha": 11641.16
+  }
+ ]
+}

@@ -46,6 +46,7 @@
   }
  ],
  "license": "Free and open; cite Pekel et al. (2016)",
+ "min_feature_px": 3,
  "temporal_resolution": "irregular",
  "coverage": {
   "start": "1984-01-01",
@@ -86,7 +87,7 @@
      "write COG"
     ],
     "nodata_fraction": 0.0,
-    "processed_at": "2026-11-15T01:14:45+00:00",
+    "processed_at": "2026-11-15T04:00:48+00:00",
     "limitation": "Early Landsat coverage over India is sparse, so the 1984 state is less certain than the 2021 state. Floating vegetation and froth can hide water from this method."
    }
   },
@@ -124,7 +125,7 @@
      "write COG"
     ],
     "nodata_fraction": 0.0,
-    "processed_at": "2026-11-15T01:14:45+00:00",
+    "processed_at": "2026-11-15T04:00:49+00:00",
     "limitation": "Early Landsat coverage over India is sparse, so the 1984 state is less certain than the 2021 state. Floating vegetation and froth can hide water from this method."
    }
   }
@@ -135,6 +136,5 @@
   "designation": "official_derived",
   "note": "Two-date comparison taken from JRC's own transition layer.",
   "pipeline": "pipeline.json"
- },
- "min_feature_px": 3
+ }
 }

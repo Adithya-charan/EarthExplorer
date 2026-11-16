@@ -1,0 +1,4 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-kanyakumari,official_derived,2000-01-01,built_up,built-up area,3992.12,4.368,whole footprint,0.0,good
+ghsl-built-up-kanyakumari,official_derived,2010-01-01,built_up,built-up area,4843.51,5.299,whole footprint,0.0,good
+ghsl-built-up-kanyakumari,official_derived,2020-01-01,built_up,built-up area,5590.79,6.117,whole footprint,0.0,good

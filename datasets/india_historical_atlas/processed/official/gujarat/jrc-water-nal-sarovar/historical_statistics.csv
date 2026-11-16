@@ -1,0 +1,3 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+jrc-water-nal-sarovar,official_derived,1984-01-01,water,water,7804.5,6.537,whole footprint,0.0,fair
+jrc-water-nal-sarovar,official_derived,2021-01-01,water,water,12129.58,10.16,whole footprint,0.0,fair

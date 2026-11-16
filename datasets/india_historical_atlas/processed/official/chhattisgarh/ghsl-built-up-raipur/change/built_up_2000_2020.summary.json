@@ -1,0 +1,3203 @@
+{
+ "outcome": "change_detected",
+ "headline": "Change detected: 0.0 ha of built-up area lost and 5608.3 ha gained between 2000 and 2020 (net +5608.3 ha, +63.2%).",
+ "analysis_id": "bc1569351be2",
+ "dataset": {
+  "id": "ghsl-built-up-raipur",
+  "name": "Raipur metropolitan area (GHSL built-up)",
+  "description": "Built-up surface from the Global Human Settlement Layer at epochs 2000, 2010 and 2020, reclassified to built-up / not built-up.",
+  "is_synthetic": false,
+  "simulated_label": null,
+  "source": "European Commission JRC, Global Human Settlement Layer (GHS-BUILT-S R2023A)",
+  "product": "GHS-BUILT-S R2023A built-up surface (reclassified)",
+  "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+  "crs": "EPSG:4326",
+  "resolution_m": 86.4,
+  "temporal_resolution": "irregular",
+  "bbox": [
+   81.5,
+   21.15,
+   81.8,
+   21.4
+  ],
+  "coverage": {
+   "start": "2000-01-01",
+   "end": "2020-01-01"
+  },
+  "observation_count": 3,
+  "usable_count": 3,
+  "classes": {
+   "1": "Not built-up (below 15% of the cell)",
+   "4": "Built-up (at least 15% of the cell)",
+   "255": "No data"
+  },
+  "real_dataset_targets": [],
+  "issues": [],
+  "variables": [
+   {
+    "key": "built_up",
+    "label": "built-up area",
+    "class": 4,
+    "primary": true
+   }
+  ],
+  "designation": "official_derived",
+  "public_label": "Satellite Observations",
+  "provenance": {
+   "designation": "official_derived",
+   "note": "GHSL is a modelled product built from Landsat and Sentinel-2 imagery. Epoch years are not acquisition dates.",
+   "pipeline": "pipeline.json"
+  }
+ },
+ "location_name": "Raipur metropolitan area (GHSL built-up)",
+ "period": {
+  "requested": {
+   "start_year": 2000,
+   "end_year": 2020
+  },
+  "supported": {
+   "start": "2000-01-01",
+   "end": "2020-01-01"
+  },
+  "effective": {
+   "start_year": 2000,
+   "end_year": 2020
+  },
+  "status": "ok",
+  "messages": []
+ },
+ "first_observation": {
+  "date": "2000-01-01",
+  "quality": "good",
+  "valid_fraction": 1.0,
+  "layer_url": "/api/explorer/datasets/ghsl-built-up-raipur/observations/2000-01-01/layer.png"
+ },
+ "last_observation": {
+  "date": "2020-01-01",
+  "quality": "good",
+  "valid_fraction": 1.0,
+  "layer_url": "/api/explorer/datasets/ghsl-built-up-raipur/observations/2020-01-01/layer.png"
+ },
+ "observations_used": {
+  "start_window": "2000",
+  "end_window": "2020",
+  "start_count": 1,
+  "end_count": 1,
+  "matched_months": "Jan",
+  "matched_month_numbers": [
+   1
+  ],
+  "excluded": []
+ },
+ "areas": {
+  "footprint_ha": 86178.07,
+  "analysed_ha": 86178.07,
+  "uncertain_ha": 0.0,
+  "water_start_ha": 8879.4,
+  "water_end_ha": 14487.72,
+  "gained_ha": 5608.32,
+  "lost_ha": 0.0,
+  "net_ha": 5608.32,
+  "unchanged_water_ha": 8879.4,
+  "unchanged_land_ha": 71690.35,
+  "noise_filtered_ha": 0.0,
+  "pct_net_change": 63.16,
+  "pct_gross_change": 63.16,
+  "seasonal_amplitude_pct": null,
+  "year_to_year_scatter_ha": null
+ },
+ "most_affected": {
+  "region": "south-eastern",
+  "kind": "gain",
+  "area_ha": 850.16,
+  "description": "south-eastern area: 850.2 ha of built-up area gained",
+  "hotspot_id": "bc1569351be2-g1",
+  "centroid": {
+   "lon": 81.671744,
+   "lat": 21.22277
+  }
+ },
+ "hotspots": [
+  {
+   "id": "bc1569351be2-g1",
+   "rank": 1,
+   "kind": "gain",
+   "area_ha": 428.65,
+   "geometry_area_ha": 428.36,
+   "share_of_change_pct": 8.7,
+   "centroid": {
+    "lon": 81.671744,
+    "lat": 21.22277
+   },
+   "bbox": [
+    81.649583,
+    21.20625,
+    81.69125,
+    21.245417
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 428.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g2",
+   "rank": 2,
+   "kind": "gain",
+   "area_ha": 237.1,
+   "geometry_area_ha": 236.94,
+   "share_of_change_pct": 4.8,
+   "centroid": {
+    "lon": 81.634413,
+    "lat": 21.203039
+   },
+   "bbox": [
+    81.61875,
+    21.18625,
+    81.649583,
+    21.215417
+   ],
+   "region": "southern",
+   "description": "southern area: 237.1 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g3",
+   "rank": 3,
+   "kind": "gain",
+   "area_ha": 144.33,
+   "geometry_area_ha": 144.23,
+   "share_of_change_pct": 2.9,
+   "centroid": {
+    "lon": 81.653052,
+    "lat": 21.379112
+   },
+   "bbox": [
+    81.63875,
+    21.372083,
+    81.662916,
+    21.389583
+   ],
+   "region": "northern",
+   "description": "northern area: 144.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g4",
+   "rank": 4,
+   "kind": "gain",
+   "area_ha": 119.7,
+   "geometry_area_ha": 119.61,
+   "share_of_change_pct": 2.4,
+   "centroid": {
+    "lon": 81.595439,
+    "lat": 21.267783
+   },
+   "bbox": [
+    81.58625,
+    21.257917,
+    81.60625,
+    21.277917
+   ],
+   "region": "western",
+   "description": "western area: 119.7 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g5",
+   "rank": 5,
+   "kind": "gain",
+   "area_ha": 118.09,
+   "geometry_area_ha": 118.01,
+   "share_of_change_pct": 2.4,
+   "centroid": {
+    "lon": 81.6888,
+    "lat": 21.283671
+   },
+   "bbox": [
+    81.679583,
+    21.277917,
+    81.699583,
+    21.290417
+   ],
+   "region": "eastern",
+   "description": "eastern area: 118.1 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g6",
+   "rank": 6,
+   "kind": "gain",
+   "area_ha": 94.95,
+   "geometry_area_ha": 94.89,
+   "share_of_change_pct": 1.9,
+   "centroid": {
+    "lon": 81.61904,
+    "lat": 21.280287
+   },
+   "bbox": [
+    81.609583,
+    21.272083,
+    81.627083,
+    21.29125
+   ],
+   "region": "north-western",
+   "description": "north-western area: 95.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g7",
+   "rank": 7,
+   "kind": "gain",
+   "area_ha": 92.56,
+   "geometry_area_ha": 92.5,
+   "share_of_change_pct": 1.9,
+   "centroid": {
+    "lon": 81.673477,
+    "lat": 21.277177
+   },
+   "bbox": [
+    81.667916,
+    21.26625,
+    81.67875,
+    21.28875
+   ],
+   "region": "eastern",
+   "description": "eastern area: 92.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g8",
+   "rank": 8,
+   "kind": "gain",
+   "area_ha": 87.79,
+   "geometry_area_ha": 87.73,
+   "share_of_change_pct": 1.8,
+   "centroid": {
+    "lon": 81.675333,
+    "lat": 21.249955
+   },
+   "bbox": [
+    81.669583,
+    21.240417,
+    81.679583,
+    21.25875
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 87.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g9",
+   "rank": 9,
+   "kind": "gain",
+   "area_ha": 81.42,
+   "geometry_area_ha": 81.36,
+   "share_of_change_pct": 1.7,
+   "centroid": {
+    "lon": 81.614297,
+    "lat": 21.222051
+   },
+   "bbox": [
+    81.597083,
+    21.215417,
+    81.62625,
+    21.22875
+   ],
+   "region": "south-western",
+   "description": "south-western area: 81.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g10",
+   "rank": 10,
+   "kind": "gain",
+   "area_ha": 80.57,
+   "geometry_area_ha": 80.52,
+   "share_of_change_pct": 1.6,
+   "centroid": {
+    "lon": 81.647871,
+    "lat": 21.308177
+   },
+   "bbox": [
+    81.64375,
+    21.299583,
+    81.655416,
+    21.31625
+   ],
+   "region": "northern",
+   "description": "northern area: 80.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g11",
+   "rank": 11,
+   "kind": "gain",
+   "area_ha": 79.8,
+   "geometry_area_ha": 79.75,
+   "share_of_change_pct": 1.6,
+   "centroid": {
+    "lon": 81.673658,
+    "lat": 21.262567
+   },
+   "bbox": [
+    81.665416,
+    21.25875,
+    81.68375,
+    21.26625
+   ],
+   "region": "eastern",
+   "description": "eastern area: 79.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g12",
+   "rank": 12,
+   "kind": "gain",
+   "area_ha": 71.77,
+   "geometry_area_ha": 71.72,
+   "share_of_change_pct": 1.5,
+   "centroid": {
+    "lon": 81.656435,
+    "lat": 21.365583
+   },
+   "bbox": [
+    81.652083,
+    21.357083,
+    81.66125,
+    21.37375
+   ],
+   "region": "northern",
+   "description": "northern area: 71.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g13",
+   "rank": 13,
+   "kind": "gain",
+   "area_ha": 66.24,
+   "geometry_area_ha": 66.19,
+   "share_of_change_pct": 1.3,
+   "centroid": {
+    "lon": 81.694096,
+    "lat": 21.25993
+   },
+   "bbox": [
+    81.68875,
+    21.252083,
+    81.69875,
+    21.272083
+   ],
+   "region": "eastern",
+   "description": "eastern area: 66.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g14",
+   "rank": 14,
+   "kind": "gain",
+   "area_ha": 57.41,
+   "geometry_area_ha": 57.37,
+   "share_of_change_pct": 1.2,
+   "centroid": {
+    "lon": 81.646608,
+    "lat": 21.38978
+   },
+   "bbox": [
+    81.642083,
+    21.385417,
+    81.652083,
+    21.394583
+   ],
+   "region": "northern",
+   "description": "northern area: 57.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g15",
+   "rank": 15,
+   "kind": "gain",
+   "area_ha": 55.06,
+   "geometry_area_ha": 55.02,
+   "share_of_change_pct": 1.1,
+   "centroid": {
+    "lon": 81.665108,
+    "lat": 21.27442
+   },
+   "bbox": [
+    81.66125,
+    21.267083,
+    81.669583,
+    21.279583
+   ],
+   "region": "eastern",
+   "description": "eastern area: 55.1 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g16",
+   "rank": 16,
+   "kind": "gain",
+   "area_ha": 55.03,
+   "geometry_area_ha": 54.99,
+   "share_of_change_pct": 1.1,
+   "centroid": {
+    "lon": 81.676763,
+    "lat": 21.357222
+   },
+   "bbox": [
+    81.672083,
+    21.352917,
+    81.68125,
+    21.36125
+   ],
+   "region": "northern",
+   "description": "northern area: 55.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g17",
+   "rank": 17,
+   "kind": "gain",
+   "area_ha": 47.88,
+   "geometry_area_ha": 47.84,
+   "share_of_change_pct": 1.0,
+   "centroid": {
+    "lon": 81.579958,
+    "lat": 21.279472
+   },
+   "bbox": [
+    81.57375,
+    21.272917,
+    81.58625,
+    21.282917
+   ],
+   "region": "western",
+   "description": "western area: 47.9 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g18",
+   "rank": 18,
+   "kind": "gain",
+   "area_ha": 39.13,
+   "geometry_area_ha": 39.1,
+   "share_of_change_pct": 0.8,
+   "centroid": {
+    "lon": 81.65937,
+    "lat": 21.154575
+   },
+   "bbox": [
+    81.650416,
+    21.150417,
+    81.667916,
+    21.160417
+   ],
+   "region": "southern",
+   "description": "southern area: 39.1 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g19",
+   "rank": 19,
+   "kind": "gain",
+   "area_ha": 37.5,
+   "geometry_area_ha": 37.48,
+   "share_of_change_pct": 0.8,
+   "centroid": {
+    "lon": 81.62867,
+    "lat": 21.276968
+   },
+   "bbox": [
+    81.624583,
+    21.269583,
+    81.632916,
+    21.282917
+   ],
+   "region": "north-western",
+   "description": "north-western area: 37.5 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g20",
+   "rank": 20,
+   "kind": "gain",
+   "area_ha": 36.68,
+   "geometry_area_ha": 36.66,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 81.68029,
+    "lat": 21.377319
+   },
+   "bbox": [
+    81.677083,
+    21.372917,
+    81.68375,
+    21.38125
+   ],
+   "region": "northern",
+   "description": "northern area: 36.7 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g21",
+   "rank": 21,
+   "kind": "gain",
+   "area_ha": 35.93,
+   "geometry_area_ha": 35.9,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 81.716555,
+    "lat": 21.193482
+   },
+   "bbox": [
+    81.71125,
+    21.18875,
+    81.722916,
+    21.19875
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 35.9 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g22",
+   "rank": 22,
+   "kind": "gain",
+   "area_ha": 34.31,
+   "geometry_area_ha": 34.28,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 81.605542,
+    "lat": 21.303295
+   },
+   "bbox": [
+    81.602916,
+    21.299583,
+    81.60875,
+    21.307917
+   ],
+   "region": "north-western",
+   "description": "north-western area: 34.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g23",
+   "rank": 23,
+   "kind": "gain",
+   "area_ha": 32.74,
+   "geometry_area_ha": 32.72,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 81.791768,
+    "lat": 21.167012
+   },
+   "bbox": [
+    81.787916,
+    21.16375,
+    81.79625,
+    21.170417
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 32.7 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g24",
+   "rank": 24,
+   "kind": "gain",
+   "area_ha": 31.13,
+   "geometry_area_ha": 31.11,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 81.58703,
+    "lat": 21.213077
+   },
+   "bbox": [
+    81.582083,
+    21.209583,
+    81.59125,
+    21.21625
+   ],
+   "region": "south-western",
+   "description": "south-western area: 31.1 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g25",
+   "rank": 25,
+   "kind": "gain",
+   "area_ha": 31.1,
+   "geometry_area_ha": 31.08,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 81.636004,
+    "lat": 21.370727
+   },
+   "bbox": [
+    81.630416,
+    21.367917,
+    81.639583,
+    21.37375
+   ],
+   "region": "northern",
+   "description": "northern area: 31.1 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g26",
+   "rank": 26,
+   "kind": "gain",
+   "area_ha": 30.33,
+   "geometry_area_ha": 30.31,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 81.617193,
+    "lat": 21.217785
+   },
+   "bbox": [
+    81.610416,
+    21.215417,
+    81.624583,
+    21.220417
+   ],
+   "region": "south-western",
+   "description": "south-western area: 30.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g27",
+   "rank": 27,
+   "kind": "gain",
+   "area_ha": 27.94,
+   "geometry_area_ha": 27.92,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 81.697143,
+    "lat": 21.196
+   },
+   "bbox": [
+    81.692916,
+    21.192083,
+    81.700416,
+    21.199583
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 27.9 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g28",
+   "rank": 28,
+   "kind": "gain",
+   "area_ha": 27.93,
+   "geometry_area_ha": 27.91,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 81.700452,
+    "lat": 21.275905
+   },
+   "bbox": [
+    81.697083,
+    21.272083,
+    81.70375,
+    21.28125
+   ],
+   "region": "eastern",
+   "description": "eastern area: 27.9 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g29",
+   "rank": 29,
+   "kind": "gain",
+   "area_ha": 27.15,
+   "geometry_area_ha": 27.13,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 81.796519,
+    "lat": 21.156985
+   },
+   "bbox": [
+    81.792916,
+    21.152917,
+    81.799583,
+    21.16125
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 27.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g30",
+   "rank": 30,
+   "kind": "gain",
+   "area_ha": 27.12,
+   "geometry_area_ha": 27.1,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 81.616764,
+    "lat": 21.321446
+   },
+   "bbox": [
+    81.612916,
+    21.31875,
+    81.622083,
+    21.325417
+   ],
+   "region": "northern",
+   "description": "northern area: 27.1 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g31",
+   "rank": 31,
+   "kind": "gain",
+   "area_ha": 26.34,
+   "geometry_area_ha": 26.33,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.685,
+    "lat": 21.208131
+   },
+   "bbox": [
+    81.68125,
+    21.20375,
+    81.68875,
+    21.212083
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 26.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g32",
+   "rank": 32,
+   "kind": "gain",
+   "area_ha": 26.34,
+   "geometry_area_ha": 26.32,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.597575,
+    "lat": 21.222803
+   },
+   "bbox": [
+    81.59375,
+    21.219583,
+    81.600416,
+    21.22625
+   ],
+   "region": "south-western",
+   "description": "south-western area: 26.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g33",
+   "rank": 33,
+   "kind": "gain",
+   "area_ha": 25.54,
+   "geometry_area_ha": 25.53,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.589349,
+    "lat": 21.220026
+   },
+   "bbox": [
+    81.58625,
+    21.21625,
+    81.592083,
+    21.22375
+   ],
+   "region": "south-western",
+   "description": "south-western area: 25.5 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g34",
+   "rank": 34,
+   "kind": "gain",
+   "area_ha": 25.52,
+   "geometry_area_ha": 25.51,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.671562,
+    "lat": 21.343412
+   },
+   "bbox": [
+    81.669583,
+    21.339583,
+    81.67375,
+    21.347917
+   ],
+   "region": "northern",
+   "description": "northern area: 25.5 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g35",
+   "rank": 35,
+   "kind": "gain",
+   "area_ha": 24.74,
+   "geometry_area_ha": 24.72,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.608575,
+    "lat": 21.262957
+   },
+   "bbox": [
+    81.605416,
+    21.25875,
+    81.612916,
+    21.265417
+   ],
+   "region": "western",
+   "description": "western area: 24.7 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g36",
+   "rank": 36,
+   "kind": "gain",
+   "area_ha": 24.73,
+   "geometry_area_ha": 24.71,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.695887,
+    "lat": 21.33707
+   },
+   "bbox": [
+    81.692916,
+    21.334583,
+    81.699583,
+    21.339583
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 24.7 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g37",
+   "rank": 37,
+   "kind": "gain",
+   "area_ha": 23.94,
+   "geometry_area_ha": 23.92,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.711055,
+    "lat": 21.277167
+   },
+   "bbox": [
+    81.707083,
+    21.27375,
+    81.71375,
+    21.28125
+   ],
+   "region": "eastern",
+   "description": "eastern area: 23.9 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g38",
+   "rank": 38,
+   "kind": "gain",
+   "area_ha": 23.15,
+   "geometry_area_ha": 23.13,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.647097,
+    "lat": 21.210575
+   },
+   "bbox": [
+    81.644583,
+    21.20625,
+    81.649583,
+    21.214583
+   ],
+   "region": "southern",
+   "description": "southern area: 23.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g39",
+   "rank": 39,
+   "kind": "gain",
+   "area_ha": 23.14,
+   "geometry_area_ha": 23.13,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.690632,
+    "lat": 21.249512
+   },
+   "bbox": [
+    81.687083,
+    21.24625,
+    81.694583,
+    21.252083
+   ],
+   "region": "eastern",
+   "description": "eastern area: 23.1 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g40",
+   "rank": 40,
+   "kind": "gain",
+   "area_ha": 22.35,
+   "geometry_area_ha": 22.33,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.578393,
+    "lat": 21.256012
+   },
+   "bbox": [
+    81.574583,
+    21.25375,
+    81.58125,
+    21.25875
+   ],
+   "region": "western",
+   "description": "western area: 22.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g41",
+   "rank": 41,
+   "kind": "gain",
+   "area_ha": 22.35,
+   "geometry_area_ha": 22.33,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.557768,
+    "lat": 21.25756
+   },
+   "bbox": [
+    81.552916,
+    21.254583,
+    81.562083,
+    21.260417
+   ],
+   "region": "western",
+   "description": "western area: 22.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g42",
+   "rank": 42,
+   "kind": "gain",
+   "area_ha": 22.34,
+   "geometry_area_ha": 22.33,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.698303,
+    "lat": 21.28872
+   },
+   "bbox": [
+    81.69375,
+    21.28625,
+    81.702083,
+    21.29125
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 22.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g43",
+   "rank": 43,
+   "kind": "gain",
+   "area_ha": 22.33,
+   "geometry_area_ha": 22.31,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 81.642768,
+    "lat": 21.370149
+   },
+   "bbox": [
+    81.640416,
+    21.367083,
+    81.644583,
+    21.372917
+   ],
+   "region": "northern",
+   "description": "northern area: 22.3 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g44",
+   "rank": 44,
+   "kind": "gain",
+   "area_ha": 21.54,
+   "geometry_area_ha": 21.53,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 81.713673,
+    "lat": 21.288426
+   },
+   "bbox": [
+    81.710416,
+    21.284583,
+    81.717083,
+    21.29125
+   ],
+   "region": "eastern",
+   "description": "eastern area: 21.5 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g45",
+   "rank": 45,
+   "kind": "gain",
+   "area_ha": 20.76,
+   "geometry_area_ha": 20.75,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 81.701602,
+    "lat": 21.179648
+   },
+   "bbox": [
+    81.699583,
+    21.17625,
+    81.70375,
+    21.182083
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 20.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g46",
+   "rank": 46,
+   "kind": "gain",
+   "area_ha": 20.75,
+   "geometry_area_ha": 20.73,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 81.73032,
+    "lat": 21.284744
+   },
+   "bbox": [
+    81.727083,
+    21.282083,
+    81.732916,
+    21.287917
+   ],
+   "region": "eastern",
+   "description": "eastern area: 20.7 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g47",
+   "rank": 47,
+   "kind": "gain",
+   "area_ha": 19.95,
+   "geometry_area_ha": 19.93,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 81.5846,
+    "lat": 21.299333
+   },
+   "bbox": [
+    81.582083,
+    21.297083,
+    81.587916,
+    21.30125
+   ],
+   "region": "north-western",
+   "description": "north-western area: 19.9 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g48",
+   "rank": 48,
+   "kind": "gain",
+   "area_ha": 19.15,
+   "geometry_area_ha": 19.14,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 81.652743,
+    "lat": 21.271771
+   },
+   "bbox": [
+    81.650416,
+    21.267083,
+    81.654583,
+    21.279583
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 19.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g49",
+   "rank": 49,
+   "kind": "gain",
+   "area_ha": 18.36,
+   "geometry_area_ha": 18.35,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 81.577971,
+    "lat": 21.230254
+   },
+   "bbox": [
+    81.575416,
+    21.227083,
+    81.580416,
+    21.23375
+   ],
+   "region": "south-western",
+   "description": "south-western area: 18.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g50",
+   "rank": 50,
+   "kind": "gain",
+   "area_ha": 16.76,
+   "geometry_area_ha": 16.75,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.61115,
+    "lat": 21.253373
+   },
+   "bbox": [
+    81.609583,
+    21.249583,
+    81.61375,
+    21.25625
+   ],
+   "region": "south-western",
+   "description": "south-western area: 16.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g51",
+   "rank": 51,
+   "kind": "gain",
+   "area_ha": 15.97,
+   "geometry_area_ha": 15.96,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.65925,
+    "lat": 21.1835
+   },
+   "bbox": [
+    81.65625,
+    21.18125,
+    81.66125,
+    21.18625
+   ],
+   "region": "southern",
+   "description": "southern area: 16.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g52",
+   "rank": 52,
+   "kind": "gain",
+   "area_ha": 15.96,
+   "geometry_area_ha": 15.95,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.571458,
+    "lat": 21.246417
+   },
+   "bbox": [
+    81.56875,
+    21.24375,
+    81.574583,
+    21.24875
+   ],
+   "region": "western",
+   "description": "western area: 16.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g53",
+   "rank": 53,
+   "kind": "gain",
+   "area_ha": 15.96,
+   "geometry_area_ha": 15.95,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.606458,
+    "lat": 21.25525
+   },
+   "bbox": [
+    81.60375,
+    21.25125,
+    81.60875,
+    21.257917
+   ],
+   "region": "western",
+   "description": "western area: 16.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g54",
+   "rank": 54,
+   "kind": "gain",
+   "area_ha": 15.96,
+   "geometry_area_ha": 15.95,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.644166,
+    "lat": 21.277792
+   },
+   "bbox": [
+    81.642083,
+    21.274583,
+    81.64625,
+    21.280417
+   ],
+   "region": "northern",
+   "description": "northern area: 16.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g55",
+   "rank": 55,
+   "kind": "gain",
+   "area_ha": 15.95,
+   "geometry_area_ha": 15.94,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.646916,
+    "lat": 21.364125
+   },
+   "bbox": [
+    81.644583,
+    21.36125,
+    81.649583,
+    21.367083
+   ],
+   "region": "northern",
+   "description": "northern area: 15.9 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g56",
+   "rank": 56,
+   "kind": "gain",
+   "area_ha": 15.17,
+   "geometry_area_ha": 15.16,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.708815,
+    "lat": 21.194342
+   },
+   "bbox": [
+    81.707083,
+    21.192083,
+    81.71125,
+    21.197917
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 15.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g57",
+   "rank": 57,
+   "kind": "gain",
+   "area_ha": 15.16,
+   "geometry_area_ha": 15.15,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.559649,
+    "lat": 21.317018
+   },
+   "bbox": [
+    81.557916,
+    21.314583,
+    81.56125,
+    21.319583
+   ],
+   "region": "north-western",
+   "description": "north-western area: 15.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g58",
+   "rank": 58,
+   "kind": "gain",
+   "area_ha": 15.16,
+   "geometry_area_ha": 15.15,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.758465,
+    "lat": 21.325088
+   },
+   "bbox": [
+    81.75625,
+    21.322917,
+    81.76125,
+    21.32875
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 15.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g59",
+   "rank": 59,
+   "kind": "gain",
+   "area_ha": 15.15,
+   "geometry_area_ha": 15.14,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.665219,
+    "lat": 21.347325
+   },
+   "bbox": [
+    81.662916,
+    21.344583,
+    81.667083,
+    21.350417
+   ],
+   "region": "northern",
+   "description": "northern area: 15.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g60",
+   "rank": 60,
+   "kind": "gain",
+   "area_ha": 14.37,
+   "geometry_area_ha": 14.36,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.582222,
+    "lat": 21.200556
+   },
+   "bbox": [
+    81.57875,
+    21.197917,
+    81.58625,
+    21.202917
+   ],
+   "region": "south-western",
+   "description": "south-western area: 14.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g61",
+   "rank": 61,
+   "kind": "gain",
+   "area_ha": 14.37,
+   "geometry_area_ha": 14.36,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.615,
+    "lat": 21.213195
+   },
+   "bbox": [
+    81.612916,
+    21.21125,
+    81.617083,
+    21.215417
+   ],
+   "region": "south-western",
+   "description": "south-western area: 14.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g62",
+   "rank": 62,
+   "kind": "gain",
+   "area_ha": 14.36,
+   "geometry_area_ha": 14.35,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.755092,
+    "lat": 21.300093
+   },
+   "bbox": [
+    81.75125,
+    21.29875,
+    81.759583,
+    21.302083
+   ],
+   "region": "eastern",
+   "description": "eastern area: 14.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g63",
+   "rank": 63,
+   "kind": "gain",
+   "area_ha": 14.36,
+   "geometry_area_ha": 14.35,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.626944,
+    "lat": 21.314213
+   },
+   "bbox": [
+    81.62375,
+    21.310417,
+    81.62875,
+    21.31875
+   ],
+   "region": "northern",
+   "description": "northern area: 14.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g64",
+   "rank": 64,
+   "kind": "gain",
+   "area_ha": 14.36,
+   "geometry_area_ha": 14.35,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.67912,
+    "lat": 21.323426
+   },
+   "bbox": [
+    81.67625,
+    21.320417,
+    81.68125,
+    21.32625
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 14.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g65",
+   "rank": 65,
+   "kind": "gain",
+   "area_ha": 14.36,
+   "geometry_area_ha": 14.35,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.653889,
+    "lat": 21.348519
+   },
+   "bbox": [
+    81.65125,
+    21.34625,
+    81.657083,
+    21.35125
+   ],
+   "region": "northern",
+   "description": "northern area: 14.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g66",
+   "rank": 66,
+   "kind": "gain",
+   "area_ha": 14.35,
+   "geometry_area_ha": 14.34,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.627453,
+    "lat": 21.374861
+   },
+   "bbox": [
+    81.625416,
+    21.372083,
+    81.629583,
+    21.377083
+   ],
+   "region": "northern",
+   "description": "northern area: 14.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g67",
+   "rank": 67,
+   "kind": "gain",
+   "area_ha": 13.57,
+   "geometry_area_ha": 13.56,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.568823,
+    "lat": 21.199951
+   },
+   "bbox": [
+    81.565416,
+    21.197917,
+    81.57375,
+    21.20125
+   ],
+   "region": "south-western",
+   "description": "south-western area: 13.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g68",
+   "rank": 68,
+   "kind": "gain",
+   "area_ha": 13.57,
+   "geometry_area_ha": 13.56,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.720931,
+    "lat": 21.234412
+   },
+   "bbox": [
+    81.71625,
+    21.232083,
+    81.725416,
+    21.235417
+   ],
+   "region": "eastern",
+   "description": "eastern area: 13.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g69",
+   "rank": 69,
+   "kind": "gain",
+   "area_ha": 13.56,
+   "geometry_area_ha": 13.55,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.76647,
+    "lat": 21.340784
+   },
+   "bbox": [
+    81.76375,
+    21.337083,
+    81.76875,
+    21.345417
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 13.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g70",
+   "rank": 70,
+   "kind": "gain",
+   "area_ha": 12.77,
+   "geometry_area_ha": 12.76,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.67151,
+    "lat": 21.203958
+   },
+   "bbox": [
+    81.66875,
+    21.20125,
+    81.67375,
+    21.20625
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 12.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g71",
+   "rank": 71,
+   "kind": "gain",
+   "area_ha": 12.77,
+   "geometry_area_ha": 12.76,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.570104,
+    "lat": 21.299427
+   },
+   "bbox": [
+    81.56875,
+    21.29625,
+    81.572083,
+    21.302083
+   ],
+   "region": "north-western",
+   "description": "north-western area: 12.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g72",
+   "rank": 72,
+   "kind": "gain",
+   "area_ha": 12.76,
+   "geometry_area_ha": 12.76,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.654323,
+    "lat": 21.308125
+   },
+   "bbox": [
+    81.652083,
+    21.305417,
+    81.65625,
+    21.310417
+   ],
+   "region": "northern",
+   "description": "northern area: 12.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g73",
+   "rank": 73,
+   "kind": "gain",
+   "area_ha": 12.76,
+   "geometry_area_ha": 12.75,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.592968,
+    "lat": 21.31625
+   },
+   "bbox": [
+    81.589583,
+    21.31375,
+    81.595416,
+    21.31875
+   ],
+   "region": "north-western",
+   "description": "north-western area: 12.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g74",
+   "rank": 74,
+   "kind": "gain",
+   "area_ha": 12.76,
+   "geometry_area_ha": 12.75,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.577656,
+    "lat": 21.3175
+   },
+   "bbox": [
+    81.575416,
+    21.314583,
+    81.580416,
+    21.320417
+   ],
+   "region": "north-western",
+   "description": "north-western area: 12.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g75",
+   "rank": 75,
+   "kind": "gain",
+   "area_ha": 12.76,
+   "geometry_area_ha": 12.75,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 81.63151,
+    "lat": 21.332761
+   },
+   "bbox": [
+    81.62875,
+    21.329583,
+    81.63375,
+    21.335417
+   ],
+   "region": "northern",
+   "description": "northern area: 12.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g76",
+   "rank": 76,
+   "kind": "gain",
+   "area_ha": 11.97,
+   "geometry_area_ha": 11.96,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.565889,
+    "lat": 21.248778
+   },
+   "bbox": [
+    81.56375,
+    21.245417,
+    81.567916,
+    21.25125
+   ],
+   "region": "western",
+   "description": "western area: 12.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g77",
+   "rank": 77,
+   "kind": "gain",
+   "area_ha": 11.97,
+   "geometry_area_ha": 11.96,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.6185,
+    "lat": 21.254778
+   },
+   "bbox": [
+    81.61625,
+    21.252917,
+    81.620416,
+    21.257917
+   ],
+   "region": "south-western",
+   "description": "south-western area: 12.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g78",
+   "rank": 78,
+   "kind": "gain",
+   "area_ha": 11.96,
+   "geometry_area_ha": 11.95,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.529444,
+    "lat": 21.365722
+   },
+   "bbox": [
+    81.527083,
+    21.36375,
+    81.53125,
+    21.367917
+   ],
+   "region": "north-western",
+   "description": "north-western area: 12.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g79",
+   "rank": 79,
+   "kind": "gain",
+   "area_ha": 11.17,
+   "geometry_area_ha": 11.17,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.708809,
+    "lat": 21.241548
+   },
+   "bbox": [
+    81.707083,
+    21.239583,
+    81.710416,
+    21.244583
+   ],
+   "region": "eastern",
+   "description": "eastern area: 11.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g80",
+   "rank": 80,
+   "kind": "gain",
+   "area_ha": 11.17,
+   "geometry_area_ha": 11.17,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.699166,
+    "lat": 21.244107
+   },
+   "bbox": [
+    81.69625,
+    21.242083,
+    81.702083,
+    21.245417
+   ],
+   "region": "eastern",
+   "description": "eastern area: 11.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g81",
+   "rank": 81,
+   "kind": "gain",
+   "area_ha": 11.17,
+   "geometry_area_ha": 11.16,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.645059,
+    "lat": 21.330833
+   },
+   "bbox": [
+    81.642916,
+    21.327917,
+    81.647916,
+    21.332917
+   ],
+   "region": "northern",
+   "description": "northern area: 11.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g82",
+   "rank": 82,
+   "kind": "gain",
+   "area_ha": 10.38,
+   "geometry_area_ha": 10.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.72673,
+    "lat": 21.189167
+   },
+   "bbox": [
+    81.72375,
+    21.187917,
+    81.730416,
+    21.19125
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 10.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g83",
+   "rank": 83,
+   "kind": "gain",
+   "area_ha": 10.38,
+   "geometry_area_ha": 10.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.613333,
+    "lat": 21.199744
+   },
+   "bbox": [
+    81.61125,
+    21.197083,
+    81.615416,
+    21.202083
+   ],
+   "region": "southern",
+   "description": "southern area: 10.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g84",
+   "rank": 84,
+   "kind": "gain",
+   "area_ha": 10.38,
+   "geometry_area_ha": 10.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.682051,
+    "lat": 21.227564
+   },
+   "bbox": [
+    81.680416,
+    21.22625,
+    81.684583,
+    21.229583
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 10.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g85",
+   "rank": 85,
+   "kind": "gain",
+   "area_ha": 10.38,
+   "geometry_area_ha": 10.37,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.58673,
+    "lat": 21.249616
+   },
+   "bbox": [
+    81.585416,
+    21.247083,
+    81.589583,
+    21.252917
+   ],
+   "region": "western",
+   "description": "western area: 10.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g86",
+   "rank": 86,
+   "kind": "gain",
+   "area_ha": 10.37,
+   "geometry_area_ha": 10.36,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.749679,
+    "lat": 21.321987
+   },
+   "bbox": [
+    81.747916,
+    21.31875,
+    81.75125,
+    21.325417
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 10.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g87",
+   "rank": 87,
+   "kind": "gain",
+   "area_ha": 10.37,
+   "geometry_area_ha": 10.36,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.779487,
+    "lat": 21.343141
+   },
+   "bbox": [
+    81.777916,
+    21.340417,
+    81.78125,
+    21.345417
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 10.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g88",
+   "rank": 88,
+   "kind": "gain",
+   "area_ha": 10.37,
+   "geometry_area_ha": 10.36,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.669423,
+    "lat": 21.371474
+   },
+   "bbox": [
+    81.667083,
+    21.369583,
+    81.67125,
+    21.372917
+   ],
+   "region": "northern",
+   "description": "northern area: 10.4 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g89",
+   "rank": 89,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.58,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.769791,
+    "lat": 21.163681
+   },
+   "bbox": [
+    81.767916,
+    21.16125,
+    81.772083,
+    21.165417
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g90",
+   "rank": 90,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.639861,
+    "lat": 21.177222
+   },
+   "bbox": [
+    81.637083,
+    21.17625,
+    81.642916,
+    21.17875
+   ],
+   "region": "southern",
+   "description": "southern area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g91",
+   "rank": 91,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.65618,
+    "lat": 21.18875
+   },
+   "bbox": [
+    81.65375,
+    21.187083,
+    81.65875,
+    21.190417
+   ],
+   "region": "southern",
+   "description": "southern area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g92",
+   "rank": 92,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.703125,
+    "lat": 21.192222
+   },
+   "bbox": [
+    81.700416,
+    21.190417,
+    81.704583,
+    21.195417
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g93",
+   "rank": 93,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.599583,
+    "lat": 21.213195
+   },
+   "bbox": [
+    81.597083,
+    21.212083,
+    81.602083,
+    21.214583
+   ],
+   "region": "south-western",
+   "description": "south-western area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g94",
+   "rank": 94,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.682291,
+    "lat": 21.215139
+   },
+   "bbox": [
+    81.680416,
+    21.212917,
+    81.68375,
+    21.217083
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g95",
+   "rank": 95,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.534791,
+    "lat": 21.224861
+   },
+   "bbox": [
+    81.532083,
+    21.22375,
+    81.537916,
+    21.22625
+   ],
+   "region": "western",
+   "description": "western area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g96",
+   "rank": 96,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.52375,
+    "lat": 21.245208
+   },
+   "bbox": [
+    81.52125,
+    21.242917,
+    81.527083,
+    21.247083
+   ],
+   "region": "western",
+   "description": "western area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g97",
+   "rank": 97,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.725764,
+    "lat": 21.248611
+   },
+   "bbox": [
+    81.72375,
+    21.247083,
+    81.727916,
+    21.250417
+   ],
+   "region": "eastern",
+   "description": "eastern area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g98",
+   "rank": 98,
+   "kind": "gain",
+   "area_ha": 9.58,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.733333,
+    "lat": 21.280278
+   },
+   "bbox": [
+    81.730416,
+    21.277917,
+    81.735416,
+    21.282083
+   ],
+   "region": "eastern",
+   "description": "eastern area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g99",
+   "rank": 99,
+   "kind": "gain",
+   "area_ha": 9.57,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.714236,
+    "lat": 21.282361
+   },
+   "bbox": [
+    81.71125,
+    21.28125,
+    81.717083,
+    21.28375
+   ],
+   "region": "eastern",
+   "description": "eastern area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g100",
+   "rank": 100,
+   "kind": "gain",
+   "area_ha": 9.57,
+   "geometry_area_ha": 9.57,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.572222,
+    "lat": 21.291736
+   },
+   "bbox": [
+    81.56875,
+    21.289583,
+    81.575416,
+    21.29375
+   ],
+   "region": "north-western",
+   "description": "north-western area: 9.6 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g101",
+   "rank": 101,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.78,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.695227,
+    "lat": 21.180303
+   },
+   "bbox": [
+    81.692916,
+    21.17875,
+    81.697083,
+    21.182083
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g102",
+   "rank": 102,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.78,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.724242,
+    "lat": 21.196667
+   },
+   "bbox": [
+    81.720416,
+    21.195417,
+    81.727083,
+    21.197917
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g103",
+   "rank": 103,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.78,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.614469,
+    "lat": 21.205985
+   },
+   "bbox": [
+    81.612916,
+    21.202917,
+    81.61625,
+    21.20875
+   ],
+   "region": "southern",
+   "description": "southern area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g104",
+   "rank": 104,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.579621,
+    "lat": 21.214849
+   },
+   "bbox": [
+    81.577916,
+    21.212917,
+    81.58125,
+    21.21625
+   ],
+   "region": "south-western",
+   "description": "south-western area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g105",
+   "rank": 105,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.591288,
+    "lat": 21.229773
+   },
+   "bbox": [
+    81.58875,
+    21.227917,
+    81.59375,
+    21.232083
+   ],
+   "region": "south-western",
+   "description": "south-western area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g106",
+   "rank": 106,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.713863,
+    "lat": 21.239546
+   },
+   "bbox": [
+    81.712083,
+    21.237917,
+    81.71625,
+    21.242083
+   ],
+   "region": "eastern",
+   "description": "eastern area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g107",
+   "rank": 107,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.557651,
+    "lat": 21.239849
+   },
+   "bbox": [
+    81.555416,
+    21.23875,
+    81.559583,
+    21.24125
+   ],
+   "region": "western",
+   "description": "western area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g108",
+   "rank": 108,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.50356,
+    "lat": 21.2425
+   },
+   "bbox": [
+    81.50125,
+    21.24125,
+    81.505416,
+    21.24375
+   ],
+   "region": "western",
+   "description": "western area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g109",
+   "rank": 109,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.693939,
+    "lat": 21.245303
+   },
+   "bbox": [
+    81.692083,
+    21.242917,
+    81.695416,
+    21.247083
+   ],
+   "region": "eastern",
+   "description": "eastern area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g110",
+   "rank": 110,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.596742,
+    "lat": 21.259924
+   },
+   "bbox": [
+    81.595416,
+    21.257917,
+    81.59875,
+    21.26125
+   ],
+   "region": "western",
+   "description": "western area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g111",
+   "rank": 111,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.601894,
+    "lat": 21.2625
+   },
+   "bbox": [
+    81.599583,
+    21.26125,
+    81.60375,
+    21.26375
+   ],
+   "region": "western",
+   "description": "western area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g112",
+   "rank": 112,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.58606,
+    "lat": 21.272576
+   },
+   "bbox": [
+    81.584583,
+    21.270417,
+    81.587916,
+    21.274583
+   ],
+   "region": "western",
+   "description": "western area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g113",
+   "rank": 113,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.77,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.602272,
+    "lat": 21.296364
+   },
+   "bbox": [
+    81.600416,
+    21.294583,
+    81.60375,
+    21.297917
+   ],
+   "region": "north-western",
+   "description": "north-western area: 8.8 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g114",
+   "rank": 114,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.98,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.552916,
+    "lat": 21.1985
+   },
+   "bbox": [
+    81.55125,
+    21.197083,
+    81.554583,
+    21.199583
+   ],
+   "region": "south-western",
+   "description": "south-western area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g115",
+   "rank": 115,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.98,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.689916,
+    "lat": 21.201
+   },
+   "bbox": [
+    81.687083,
+    21.199583,
+    81.692083,
+    21.202083
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g116",
+   "rank": 116,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.98,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.683333,
+    "lat": 21.20275
+   },
+   "bbox": [
+    81.68125,
+    21.20125,
+    81.685416,
+    21.204583
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g117",
+   "rank": 117,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.98,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.685916,
+    "lat": 21.230667
+   },
+   "bbox": [
+    81.68375,
+    21.22875,
+    81.687916,
+    21.232083
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g118",
+   "rank": 118,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.98,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.739916,
+    "lat": 21.232417
+   },
+   "bbox": [
+    81.737083,
+    21.230417,
+    81.742916,
+    21.234583
+   ],
+   "region": "eastern",
+   "description": "eastern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g119",
+   "rank": 119,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.98,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.690916,
+    "lat": 21.238083
+   },
+   "bbox": [
+    81.68875,
+    21.237083,
+    81.69375,
+    21.239583
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g120",
+   "rank": 120,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.98,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.742583,
+    "lat": 21.2485
+   },
+   "bbox": [
+    81.740416,
+    21.247083,
+    81.744583,
+    21.249583
+   ],
+   "region": "eastern",
+   "description": "eastern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g121",
+   "rank": 121,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.98,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.616416,
+    "lat": 21.250417
+   },
+   "bbox": [
+    81.614583,
+    21.24875,
+    81.61875,
+    21.252083
+   ],
+   "region": "south-western",
+   "description": "south-western area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g122",
+   "rank": 122,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.97,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.55625,
+    "lat": 21.267583
+   },
+   "bbox": [
+    81.554583,
+    21.26625,
+    81.557916,
+    21.26875
+   ],
+   "region": "western",
+   "description": "western area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g123",
+   "rank": 123,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.97,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.574083,
+    "lat": 21.281833
+   },
+   "bbox": [
+    81.572083,
+    21.27875,
+    81.575416,
+    21.28375
+   ],
+   "region": "western",
+   "description": "western area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g124",
+   "rank": 124,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.97,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.58,
+    "lat": 21.294833
+   },
+   "bbox": [
+    81.577916,
+    21.292917,
+    81.58125,
+    21.297083
+   ],
+   "region": "north-western",
+   "description": "north-western area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g125",
+   "rank": 125,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.97,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.674583,
+    "lat": 21.306833
+   },
+   "bbox": [
+    81.672916,
+    21.305417,
+    81.67625,
+    21.307917
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g126",
+   "rank": 126,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.97,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.581666,
+    "lat": 21.318333
+   },
+   "bbox": [
+    81.580416,
+    21.315417,
+    81.582916,
+    21.320417
+   ],
+   "region": "north-western",
+   "description": "north-western area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g127",
+   "rank": 127,
+   "kind": "gain",
+   "area_ha": 7.98,
+   "geometry_area_ha": 7.97,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.6135,
+    "lat": 21.336667
+   },
+   "bbox": [
+    81.612083,
+    21.335417,
+    81.615416,
+    21.337917
+   ],
+   "region": "northern",
+   "description": "northern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g128",
+   "rank": 128,
+   "kind": "gain",
+   "area_ha": 7.97,
+   "geometry_area_ha": 7.97,
+   "share_of_change_pct": 0.2,
+   "centroid": {
+    "lon": 81.68925,
+    "lat": 21.3835
+   },
+   "bbox": [
+    81.687916,
+    21.382083,
+    81.690416,
+    21.385417
+   ],
+   "region": "northern",
+   "description": "northern area: 8.0 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g129",
+   "rank": 129,
+   "kind": "gain",
+   "area_ha": 7.19,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.696481,
+    "lat": 21.175463
+   },
+   "bbox": [
+    81.694583,
+    21.17375,
+    81.69875,
+    21.177083
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g130",
+   "rank": 130,
+   "kind": "gain",
+   "area_ha": 7.19,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.647037,
+    "lat": 21.178889
+   },
+   "bbox": [
+    81.644583,
+    21.177083,
+    81.64875,
+    21.180417
+   ],
+   "region": "southern",
+   "description": "southern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g131",
+   "rank": 131,
+   "kind": "gain",
+   "area_ha": 7.19,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.722222,
+    "lat": 21.184815
+   },
+   "bbox": [
+    81.720416,
+    21.18375,
+    81.72375,
+    21.18625
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g132",
+   "rank": 132,
+   "kind": "gain",
+   "area_ha": 7.19,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.693518,
+    "lat": 21.185833
+   },
+   "bbox": [
+    81.69125,
+    21.18375,
+    81.695416,
+    21.187917
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g133",
+   "rank": 133,
+   "kind": "gain",
+   "area_ha": 7.19,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.705926,
+    "lat": 21.200741
+   },
+   "bbox": [
+    81.704583,
+    21.19875,
+    81.707916,
+    21.202917
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g134",
+   "rank": 134,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.729537,
+    "lat": 21.216852
+   },
+   "bbox": [
+    81.727916,
+    21.214583,
+    81.73125,
+    21.21875
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g135",
+   "rank": 135,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.603518,
+    "lat": 21.222593
+   },
+   "bbox": [
+    81.602083,
+    21.220417,
+    81.604583,
+    21.224583
+   ],
+   "region": "south-western",
+   "description": "south-western area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g136",
+   "rank": 136,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.593981,
+    "lat": 21.233426
+   },
+   "bbox": [
+    81.592083,
+    21.232083,
+    81.59625,
+    21.235417
+   ],
+   "region": "south-western",
+   "description": "south-western area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g137",
+   "rank": 137,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.736111,
+    "lat": 21.250926
+   },
+   "bbox": [
+    81.734583,
+    21.249583,
+    81.737916,
+    21.252083
+   ],
+   "region": "eastern",
+   "description": "eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g138",
+   "rank": 138,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.641944,
+    "lat": 21.253889
+   },
+   "bbox": [
+    81.639583,
+    21.252917,
+    81.64375,
+    21.255417
+   ],
+   "region": "southern",
+   "description": "southern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g139",
+   "rank": 139,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.607222,
+    "lat": 21.2675
+   },
+   "bbox": [
+    81.605416,
+    21.26625,
+    81.60875,
+    21.26875
+   ],
+   "region": "western",
+   "description": "western area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g140",
+   "rank": 140,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.712685,
+    "lat": 21.267685
+   },
+   "bbox": [
+    81.71125,
+    21.26625,
+    81.714583,
+    21.26875
+   ],
+   "region": "eastern",
+   "description": "eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g141",
+   "rank": 141,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.70574,
+    "lat": 21.282315
+   },
+   "bbox": [
+    81.704583,
+    21.279583,
+    81.707083,
+    21.284583
+   ],
+   "region": "eastern",
+   "description": "eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g142",
+   "rank": 142,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.18,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.682685,
+    "lat": 21.291945
+   },
+   "bbox": [
+    81.680416,
+    21.290417,
+    81.684583,
+    21.29375
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g143",
+   "rank": 143,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.17,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.74037,
+    "lat": 21.314537
+   },
+   "bbox": [
+    81.73875,
+    21.312917,
+    81.742083,
+    21.31625
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g144",
+   "rank": 144,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.17,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.690277,
+    "lat": 21.31537
+   },
+   "bbox": [
+    81.687916,
+    21.31375,
+    81.692083,
+    21.317083
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g145",
+   "rank": 145,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.17,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.603055,
+    "lat": 21.316482
+   },
+   "bbox": [
+    81.60125,
+    21.314583,
+    81.605416,
+    21.31875
+   ],
+   "region": "north-western",
+   "description": "north-western area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g146",
+   "rank": 146,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.17,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.648426,
+    "lat": 21.322408
+   },
+   "bbox": [
+    81.647083,
+    21.32125,
+    81.650416,
+    21.32375
+   ],
+   "region": "northern",
+   "description": "northern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g147",
+   "rank": 147,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.17,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.646203,
+    "lat": 21.326111
+   },
+   "bbox": [
+    81.64375,
+    21.325417,
+    81.64875,
+    21.327083
+   ],
+   "region": "northern",
+   "description": "northern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g148",
+   "rank": 148,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.17,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.762222,
+    "lat": 21.331204
+   },
+   "bbox": [
+    81.75875,
+    21.330417,
+    81.764583,
+    21.332917
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g149",
+   "rank": 149,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.17,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.774074,
+    "lat": 21.332037
+   },
+   "bbox": [
+    81.772083,
+    21.330417,
+    81.775416,
+    21.33375
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 7.2 ha of built-up area gained"
+  },
+  {
+   "id": "bc1569351be2-g150",
+   "rank": 150,
+   "kind": "gain",
+   "area_ha": 7.18,
+   "geometry_area_ha": 7.17,
+   "share_of_change_pct": 0.1,
+   "centroid": {
+    "lon": 81.677963,
+    "lat": 21.349445
+   },
+   "bbox": [
+    81.675416,
+    21.347083,
+    81.679583,
+    21.35125
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 7.2 ha of built-up area gained"
+  }
+ ],
+ "progression": [
+  {
+   "year": 2000,
+   "water_ha": 8879.4,
+   "cumulative_loss_ha": 0.0,
+   "cumulative_gain_ha": 0.0,
+   "observations": 1
+  },
+  {
+   "year": 2010,
+   "water_ha": 11997.1,
+   "cumulative_loss_ha": 0.0,
+   "cumulative_gain_ha": 3117.71,
+   "observations": 1
+  },
+  {
+   "year": 2020,
+   "water_ha": 14487.72,
+   "cumulative_loss_ha": 0.0,
+   "cumulative_gain_ha": 5608.32,
+   "observations": 1
+  }
+ ],
+ "trend": null,
+ "quality": {
+  "mean_valid_fraction": 1.0,
+  "uncertain_share": 0.0,
+  "observations_in_period": 3,
+  "usable_in_period": 3
+ },
+ "confidence": "medium",
+ "confidence_reasons": [
+  "1 usable observation(s) in 2000",
+  "1 usable observation(s) in 2020",
+  "mean valid-pixel share of the observations used: 100%",
+  "0% of the footprint is uncertain (cloud or gaps) and excluded"
+ ],
+ "limitations": [
+  "Spatial resolution is about 86 m per pixel; no positional-noise filter is applied to this classification product, so single-pixel changes are kept.",
+  "Only Jan were compared so that seasons match; other months were not used for the start/end maps.",
+  "Fewer than five yearly composites exist, so the year-to-year scatter test could not be applied.",
+  "The data describe where and how much built-up area extent changed. They cannot, by themselves, establish why."
+ ],
+ "what_was_analysed": "Same-season composites of 2000 (1 observations) and 2020 (1 observations), using only Jan so seasons match. A pixel counts as built-up area if it is built-up area in at least 50% of its valid observations; 0 ha (0%) were uncertain and excluded.",
+ "insufficient": null,
+ "thresholds": {
+  "window_years": 1,
+  "min_valid_obs_monthly": 6,
+  "min_valid_obs_yearly": 1,
+  "min_obs_valid_fraction": 0.5,
+  "min_pixel_obs_fraction": 0.34,
+  "water_frequency": 0.5,
+  "min_change_pct": 5.0,
+  "min_hotspot_ha": 2.0,
+  "min_feature_px": null,
+  "noise_factor": 2.0,
+  "variable": "built_up"
+ },
+ "bbox": [
+  81.5,
+  21.15,
+  81.8,
+  21.4
+ ],
+ "layers": {
+  "difference_png": "/api/explorer/analysis/bc1569351be2/layers/difference.png",
+  "before_png": "/api/explorer/analysis/bc1569351be2/layers/before.png",
+  "after_png": "/api/explorer/analysis/bc1569351be2/layers/after.png",
+  "difference_tif": "/api/explorer/analysis/bc1569351be2/layers/difference.tif",
+  "hotspots_geojson": "/api/explorer/analysis/bc1569351be2/hotspots"
+ },
+ "variable": {
+  "key": "built_up",
+  "label": "built-up area",
+  "class": 4,
+  "primary": true
+ },
+ "is_synthetic": false,
+ "simulated_label": null,
+ "designation": "official_derived",
+ "data_designation_note": "official-derived"
+}

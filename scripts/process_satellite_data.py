@@ -95,7 +95,7 @@ def base_meta(ds_id: str, name: str, region_hint: str, bbox, res_deg: float, lat
     }
 
 
-def build_ghsl(region: str, ds_id: str, name: str, hint: str, bbox, aliases: list[str], loc: tuple[float, float], reg: dict) -> None:
+def build_ghsl(region: str, ds_id: str, name: str, hint: str, bbox, aliases: list[str], loc: tuple[float, float], reg: dict, tile: str = "R8_C26") -> None:
     root = PROC / region / ds_id
     root.mkdir(parents=True, exist_ok=True)
     steps: list[dict] = []
@@ -104,7 +104,7 @@ def build_ghsl(region: str, ds_id: str, name: str, hint: str, bbox, aliases: lis
     classes = {"1": "Not built-up (below 15% of the cell)", "4": "Built-up (at least 15% of the cell)", "255": "No data"}
     transform0 = None
     for epoch in (2000, 2010, 2020):
-        rid = f"ghsl_built_s_{epoch}_R8_C26"
+        rid = f"ghsl_built_s_{epoch}_{tile}"
         e = reg[rid]
         orig = ATLAS.parent.parent / e["local_path"]
         path = zip_tif(orig)
@@ -145,8 +145,8 @@ def build_ghsl(region: str, ds_id: str, name: str, hint: str, bbox, aliases: lis
     print("wrote", root)
 
 
-def build_jrc_transitions(region: str, ds_id: str, name: str, hint: str, bbox, aliases: list[str], loc: tuple[float, float], reg: dict) -> None:
-    rid = "jrc_gsw_transitions_70E_20N"
+def build_jrc_transitions(region: str, ds_id: str, name: str, hint: str, bbox, aliases: list[str], loc: tuple[float, float], reg: dict, tile: str = "70E_20N") -> None:
+    rid = f"jrc_gsw_transitions_{tile}"
     e = reg[rid]
     orig = ATLAS.parent.parent / e["local_path"]
     root = PROC / region / ds_id
@@ -232,6 +232,10 @@ def build_occurrence(region: str, tile_id: str, bbox, name: str) -> None:
 
 
 def main() -> None:
+    if "--new-regions" in sys.argv:
+        from process_regions import build_all  # noqa: E402
+        build_all(registry())
+        return
     reg = registry()
     missing = [k for k in ("ghsl_built_s_2000_R8_C26", "jrc_gsw_transitions_70E_20N", "esa_worldcover_2021_N21E087") if reg.get(k, {}).get("verification_status") != "VERIFIED_DOWNLOADED"]
     if missing:

@@ -1,0 +1,3 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+jrc-water-chilika-lake,official_derived,1984-01-01,water,water,121323.8,48.62,whole footprint,0.0,fair
+jrc-water-chilika-lake,official_derived,2021-01-01,water,water,120046.64,48.108,whole footprint,0.0,fair

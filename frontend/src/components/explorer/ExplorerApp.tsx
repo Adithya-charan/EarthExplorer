@@ -14,6 +14,9 @@ import { HotspotNav, Legend, LatestCard, ModeBar, OutcomeBanner, PlaceNotice, St
 import { SearchPanel, type VoiceUi } from "./SearchPanel";
 import { SummaryPanel, type ChatTurn } from "./SummaryPanel";
 import { Timeline } from "./Timeline";
+import { DeepSearch, DeepTimeBar, DeepTimePanel, EraSwitch } from "./DeepTime";
+import { useDeepTime } from "./useDeepTime";
+import type { AppEra } from "@/lib/explorer/deeptime";
 
 const Globe = dynamic(() => import("./Globe"), {
   ssr: false,
@@ -27,10 +30,10 @@ const Globe = dynamic(() => import("./Globe"), {
 });
 
 const NAV_LINKS = [
-  { href: "/story", label: "What happened?" },
-  { href: "/trend", label: "Trend Analysis" },
-  { href: "/upload", label: "Upload Dataset" },
-  { href: "/methodology", label: "Methodology" },
+  { href: "/analytics", label: "Change Analytics" },
+  { href: "/deep-time", label: "Deep-Time Analytics" },
+  { href: "/datasets", label: "Datasets" },
+  { href: "/data", label: "Data & Methods" },
 ];
 
 function useReducedMotion(): boolean {
@@ -210,7 +213,7 @@ export function ExplorerApp() {
 
   const phase: Phase = error ? "error" : locating ? "locating" : session && !flightComplete ? "flying" : analysis === "running" ? "analysing" : session ? "ready" : "idle";
   const showResults = revealed || session?.status === "not_found";
-  const marker = session?.location && session.status !== "not_found" ? { lon: session.location.lon, lat: session.location.lat, label: session.location.name } : null;
+  const marker = session?.location && session.status !== "not_found" ? { lon: session.location.lon, lat: session.location.lat, label: `${session.location.name} · ${Math.abs(session.location.lat).toFixed(3)}°${session.location.lat >= 0 ? "N" : "S"}, ${Math.abs(session.location.lon).toFixed(3)}°${session.location.lon >= 0 ? "E" : "W"}` } : null;
 
   // ---------------------------------------------------------------------------------- camera
   const flyTo = useCallback((f: FocusInput) => {
@@ -218,6 +221,19 @@ export function ExplorerApp() {
     setFocus({ ...f, token: tokenRef.current } as GlobeFocus);
     return tokenRef.current;
   }, []);
+
+  const deep = useDeepTime({ onFocus: (lat, lon, height) => flyTo({ kind: "camera", lon, lat, height, heading: 0, pitch: -1.5707963267948966, roll: 0 }) });
+  const era: AppEra = deep.active ? "deep" : mode === "history" ? "historical" : "today";
+  const changeEra = (e: AppEra) => {
+    if (e === "deep") {
+      setPlaying(false);
+      setSpin(false);
+      deep.enter();
+      return;
+    }
+    if (deep.active) deep.leave();
+    setMode(e === "historical" && ds ? "history" : "latest");
+  };
 
   const zoomHotspot = useCallback(
     (i: number, s: ChangeSummary | null = summary) => {
@@ -592,10 +608,12 @@ export function ExplorerApp() {
   return (
     <div className="nx" data-testid="explorer" data-phase={phase}>
       <Globe
+        deep={deep.globe}
+        onDeepPick={deep.setPicked}
         focus={focus}
         marker={marker}
-        primary={revealed || mode === "latest" ? plan.primary : null}
-        secondary={plan.secondary}
+        primary={deep.active ? deep.raster : revealed || mode === "latest" ? plan.primary : null}
+        secondary={deep.active ? null : plan.secondary}
         prefetch={prefetch}
         splitPosition={split}
         hotspots={hotspotFc}
@@ -624,10 +642,12 @@ export function ExplorerApp() {
           <p className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--nx-muted)]">Earth Time Machine</p>
         </div>
       </header>
-      <div className="absolute right-4 top-4 z-30">
-        <button type="button" className="nx-glass flex items-center gap-2 px-3 py-2 text-[13px]" aria-expanded={menuOpen} aria-haspopup="menu" onClick={() => setMenuOpen((o) => !o)}>
-          <Menu className="h-4 w-4" aria-hidden /> More tools
-        </button>
+      <div className="absolute right-4 top-4 z-30 flex flex-col items-end gap-2">
+        <div className="flex items-start gap-2">
+          <button type="button" className="nx-glass flex items-center gap-2 px-3 py-2 text-[13px]" aria-expanded={menuOpen} aria-haspopup="menu" onClick={() => setMenuOpen((o) => !o)}>
+            <Menu className="h-4 w-4" aria-hidden /> <span className="hidden sm:inline">More tools</span><span className="sr-only sm:hidden">More tools</span>
+          </button>
+        </div>
         {menuOpen ? (
           <nav className="nx-glass nx-rise mt-2 flex w-48 flex-col p-1.5" aria-label="Other pages">
             {NAV_LINKS.map((l) => (
@@ -640,7 +660,15 @@ export function ExplorerApp() {
       </div>
 
       {/* search + status + outcome */}
-      <div className={`pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-3 pt-12 sm:pt-0 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
+      <div className="absolute left-4 top-[68px] z-20 max-sm:mt-12" style={{ top: ds && !deep.active ? 100 : 68 }}>
+        <EraSwitch era={era} onEra={changeEra} />
+      </div>
+      {deep.active ? (
+        <div className="pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-3 pt-[112px] sm:pt-0">
+          <div className="pointer-events-auto relative z-30"><DeepSearch dt={deep} /></div>
+        </div>
+      ) : null}
+      <div className={`pointer-events-none absolute inset-x-0 top-4 z-10 flex-col items-center gap-3 px-3 pt-[112px] sm:pt-0 ${deep.active ? "hidden" : "flex"} ${panelOpen ? "lg:pr-[420px]" : ""}`}>
         <div className="pointer-events-auto relative z-30">
           <SearchPanel
             query={query}
@@ -682,7 +710,7 @@ export function ExplorerApp() {
         ) : null}
         {showResults && !error ? (
           <div className="pointer-events-auto">
-            <PlaceNotice session={session} onPickPlace={pickPlace} onOpenDataset={openNearby} />
+            <PlaceNotice session={session} onPickPlace={pickPlace} onOpenDataset={openNearby} onExample={pickExample} />
           </div>
         ) : null}
         {globeError ? (
@@ -693,7 +721,7 @@ export function ExplorerApp() {
       </div>
 
       {/* data-source badge, always visible while a dataset is on screen */}
-      {ds ? (
+      {ds && !deep.active ? (
         <p
           data-testid="data-badge"
           className={`absolute left-4 top-[68px] z-20 rounded-md border px-2.5 py-1 text-[11px] font-bold tracking-wide backdrop-blur ${simulated ? "border-amber-400/50 bg-amber-400/15 text-amber-200" : "border-emerald-400/50 bg-emerald-400/15 text-emerald-200"}`}
@@ -703,7 +731,7 @@ export function ExplorerApp() {
       ) : null}
 
       {/* left column: latest observation + legend */}
-      {revealed && session?.latest ? (
+      {revealed && session?.latest && !deep.active ? (
         <div className="absolute bottom-[212px] left-4 z-10 hidden flex-col gap-3 md:flex">
           <button type="button" className="nx-chip self-start" aria-expanded={latestOpen} onClick={() => setLatestOpen((o) => !o)}>
             {latestOpen ? "Hide" : "Show"} latest observation
@@ -714,7 +742,7 @@ export function ExplorerApp() {
       ) : null}
 
       {/* mode bar, hotspot navigation, caption */}
-      {revealed && ds ? (
+      {revealed && ds && !deep.active ? (
         <div className={`absolute inset-x-0 bottom-[196px] z-10 flex flex-col items-center gap-2 px-3 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
           {plan.caption ? (
             <p className="nx-glass pointer-events-none px-3 py-1 text-[12px] text-[color:var(--nx-soft)]" data-testid="map-caption">
@@ -743,7 +771,7 @@ export function ExplorerApp() {
       {mode === "swipe" && revealed && plan.split ? <div className="pointer-events-none absolute inset-y-0 z-[5] w-[2px] bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.8)]" style={{ left: `${split * 100}%` }} aria-hidden data-testid="swipe-line" /> : null}
 
       {/* timeline */}
-      {revealed && ds && periodObs.length ? (
+      {revealed && ds && periodObs.length && !deep.active ? (
         <div className={`absolute inset-x-0 bottom-6 z-10 flex justify-center px-3 ${panelOpen ? "lg:pr-[420px]" : ""}`}>
           <Timeline
             observations={periodObs}
@@ -762,8 +790,16 @@ export function ExplorerApp() {
         </div>
       ) : null}
 
+      {/* Deep-Time Earth: time bar and details */}
+      {deep.active ? (
+        <>
+          <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center px-3 lg:pr-[420px]"><DeepTimeBar dt={deep} /></div>
+          <div className="absolute right-4 top-[84px] z-10 hidden lg:block"><DeepTimePanel dt={deep} /></div>
+        </>
+      ) : null}
+
       {/* summary panel */}
-      {summary && panelVisible ? (
+      {summary && panelVisible && !deep.active ? (
         <div className="absolute right-4 top-[84px] z-10">
           <SummaryPanel
             summary={summary}

@@ -1,15 +1,275 @@
 {
  "schema": "nasax-atlas-manifest-1",
  "name": "NASAX India Historical Atlas",
- "generated_at": "2026-11-15T02:09:34+00:00",
+ "generated_at": "2026-11-15T07:28:11+00:00",
  "layout": {
-  "synthetic": "generated clean-truth rasters and generator configs (internal origin, shown publicly as 'Illustrative Dataset')",
   "official": "original official files downloaded by scripts/download_official_data.py (not committed; re-download)",
   "processed": "analysis-ready Cloud Optimized GeoTIFF datasets with dataset.json provenance",
   "geographical_boundaries": "GeoJSON boundaries by level",
   "documentation": "registry, catalogue, validation and provenance reports"
  },
  "datasets": [
+  {
+   "id": "ghsl-built-up-vijayawada",
+   "path": "processed/official/andhra_pradesh/ghsl-built-up-vijayawada",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    80.5,
+    16.4,
+    80.8,
+    16.65
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/observations/2000.tif",
+     "bytes": 8191,
+     "sha256": "5fcc66f77db9d6d52d3be8baf6c4876c02d3e6b2c02c56e07c843ffd48b669ca",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/observations/2010.tif",
+     "bytes": 9195,
+     "sha256": "6ed90814f0811dd907a8bc6cbf2cb2c2e1ca39fa47df0bfc18fd61ac6dcd01a3",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/observations/2020.tif",
+     "bytes": 10715,
+     "sha256": "bbf30c752e1344aa2f8dbe23ecfb21e390b61662112f47546a3f804fe04fe341",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/pipeline.json",
+    "historical_statistics.json": "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/change/built_up_2000_2020.difference.tif",
+    "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/andhra_pradesh/ghsl-built-up-vijayawada/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-visakhapatnam",
+   "path": "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    83.05,
+    17.55,
+    83.5,
+    17.9
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/observations/2000.tif",
+     "bytes": 12501,
+     "sha256": "28ded8df85101792c5efbeffcd75e523f3f0f5a61a5f1690b240ec97da4bc0fe",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/observations/2010.tif",
+     "bytes": 14794,
+     "sha256": "cb59aa8edbf885f3a540032744a93b8ac5243d3be7ff95610236b74a54943b4c",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/observations/2020.tif",
+     "bytes": 16750,
+     "sha256": "d76d0dba53250eb97ee6e27e2ea268b465f17c9109ec172880c5972499ae9fd4",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/pipeline.json",
+    "historical_statistics.json": "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/change/built_up_2000_2020.difference.tif",
+    "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/andhra_pradesh/ghsl-built-up-visakhapatnam/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-kolleru-lake",
+   "path": "processed/official/andhra_pradesh/jrc-water-kolleru-lake",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    81.0,
+    16.45,
+    81.4,
+    16.75
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/andhra_pradesh/jrc-water-kolleru-lake/observations/1984.tif",
+     "bytes": 160176,
+     "sha256": "f7650b91b19b4436578ae26ee61e86c37830037762820553020f8664d3d43625",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/andhra_pradesh/jrc-water-kolleru-lake/observations/2021.tif",
+     "bytes": 225753,
+     "sha256": "f0dec2b27d7a62a2750a83d3131f7f07a5e9d81167d1eb847cb4b843e370e47b",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/andhra_pradesh/jrc-water-kolleru-lake/pipeline.json",
+    "historical_statistics.json": "processed/official/andhra_pradesh/jrc-water-kolleru-lake/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/andhra_pradesh/jrc-water-kolleru-lake/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/andhra_pradesh/jrc-water-kolleru-lake/change/water_1984_2021.difference.tif",
+    "processed/official/andhra_pradesh/jrc-water-kolleru-lake/change/water_1984_2021.hotspots.geojson",
+    "processed/official/andhra_pradesh/jrc-water-kolleru-lake/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-nagarjuna-sagar",
+   "path": "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    79.05,
+    16.45,
+    79.5,
+    16.8
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar/observations/1984.tif",
+     "bytes": 36392,
+     "sha256": "3d55475936d989ae77fe6ff7a608e24067265b59611199b279f19b6e081b7d72",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar/observations/2021.tif",
+     "bytes": 42444,
+     "sha256": "1e4c2395fe372c80c6d0fb9154571e6ff6d55a1a80fdb0ae30c5a812649aa29c",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar/pipeline.json",
+    "historical_statistics.json": "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar/change/water_1984_2021.difference.tif",
+    "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar/change/water_1984_2021.hotspots.geojson",
+    "processed/official/andhra_pradesh/jrc-water-nagarjuna-sagar/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-pulicat-lake",
+   "path": "processed/official/andhra_pradesh/jrc-water-pulicat-lake",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    80.0,
+    13.4,
+    80.24,
+    13.85
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/andhra_pradesh/jrc-water-pulicat-lake/observations/1984.tif",
+     "bytes": 69035,
+     "sha256": "c6c1bff484c49e1d2d0808aa4a795649eb3b604f9db598a9645875048d0d1b13",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/andhra_pradesh/jrc-water-pulicat-lake/observations/2021.tif",
+     "bytes": 71859,
+     "sha256": "969d3bb1592fe9bc34b07b2bf3516835bdf81a6dabd95c736a598ee2da87faba",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/andhra_pradesh/jrc-water-pulicat-lake/pipeline.json",
+    "historical_statistics.json": "processed/official/andhra_pradesh/jrc-water-pulicat-lake/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/andhra_pradesh/jrc-water-pulicat-lake/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/andhra_pradesh/jrc-water-pulicat-lake/change/water_1984_2021.difference.tif",
+    "processed/official/andhra_pradesh/jrc-water-pulicat-lake/change/water_1984_2021.hotspots.geojson",
+    "processed/official/andhra_pradesh/jrc-water-pulicat-lake/change/water_1984_2021.summary.json"
+   ]
+  },
   {
    "id": "ghsl-built-up-bengaluru",
    "path": "processed/official/bengaluru/ghsl-built-up-bengaluru",
@@ -114,6 +374,397 @@
     "processed/official/bengaluru/jrc-water-bellandur/change/water_1984_2021.difference.tif",
     "processed/official/bengaluru/jrc-water-bellandur/change/water_1984_2021.hotspots.geojson",
     "processed/official/bengaluru/jrc-water-bellandur/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-patna",
+   "path": "processed/official/bihar/ghsl-built-up-patna",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    85.0,
+    25.5,
+    85.3,
+    25.75
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/bihar/ghsl-built-up-patna/observations/2000.tif",
+     "bytes": 11621,
+     "sha256": "da84768da120a3a73d689afc9c7983693dcaed861a542118f6e90fd06c22a017",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/bihar/ghsl-built-up-patna/observations/2010.tif",
+     "bytes": 11845,
+     "sha256": "feac494bdbf1189b40a6af5416cdc2f995949cea3873724115b1e8242254c76a",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/bihar/ghsl-built-up-patna/observations/2020.tif",
+     "bytes": 13103,
+     "sha256": "7973dcac61ea40312906f084ef5f6e7aa3d24b3c5fa561c3f3578be20550f704",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/bihar/ghsl-built-up-patna/pipeline.json",
+    "historical_statistics.json": "processed/official/bihar/ghsl-built-up-patna/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/bihar/ghsl-built-up-patna/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/bihar/ghsl-built-up-patna/change/built_up_2000_2020.difference.tif",
+    "processed/official/bihar/ghsl-built-up-patna/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/bihar/ghsl-built-up-patna/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-raipur",
+   "path": "processed/official/chhattisgarh/ghsl-built-up-raipur",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    81.5,
+    21.15,
+    81.8,
+    21.4
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/chhattisgarh/ghsl-built-up-raipur/observations/2000.tif",
+     "bytes": 9573,
+     "sha256": "53d1d17359621339e32c58044d7108def9d78ca96a2ac46237b0f59501a3a0af",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/chhattisgarh/ghsl-built-up-raipur/observations/2010.tif",
+     "bytes": 11402,
+     "sha256": "42694f4b7166531b0809d65a918c7dc1cd1402958821e79b07d3986573cc1b32",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/chhattisgarh/ghsl-built-up-raipur/observations/2020.tif",
+     "bytes": 13102,
+     "sha256": "80e858b3ab684b1dd05e25a094fbe886eda7a4c9069a801e7b674810be6cb3b8",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/chhattisgarh/ghsl-built-up-raipur/pipeline.json",
+    "historical_statistics.json": "processed/official/chhattisgarh/ghsl-built-up-raipur/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/chhattisgarh/ghsl-built-up-raipur/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/chhattisgarh/ghsl-built-up-raipur/change/built_up_2000_2020.difference.tif",
+    "processed/official/chhattisgarh/ghsl-built-up-raipur/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/chhattisgarh/ghsl-built-up-raipur/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-delhi-ncr",
+   "path": "processed/official/delhi/ghsl-built-up-delhi-ncr",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.85,
+    28.35,
+    77.5,
+    28.9
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/delhi/ghsl-built-up-delhi-ncr/observations/2000.tif",
+     "bytes": 53772,
+     "sha256": "01dfa6972f2693dde7061642f00e624f2949b045a9d8bd303da9d7f1e7afca8d",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/delhi/ghsl-built-up-delhi-ncr/observations/2010.tif",
+     "bytes": 60089,
+     "sha256": "871d52ee342ca4f99044ea8620cb47180939eabc2585097628f545c6dc5274cd",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/delhi/ghsl-built-up-delhi-ncr/observations/2020.tif",
+     "bytes": 66244,
+     "sha256": "89f0b5722952e7f2c328163acf687188a9f7003ba33326c3753b614b729c0980",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/delhi/ghsl-built-up-delhi-ncr/pipeline.json",
+    "historical_statistics.json": "processed/official/delhi/ghsl-built-up-delhi-ncr/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/delhi/ghsl-built-up-delhi-ncr/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/delhi/ghsl-built-up-delhi-ncr/change/built_up_2000_2020.difference.tif",
+    "processed/official/delhi/ghsl-built-up-delhi-ncr/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/delhi/ghsl-built-up-delhi-ncr/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-panaji",
+   "path": "processed/official/goa/ghsl-built-up-panaji",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    73.7,
+    15.4,
+    74.05,
+    15.6
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/goa/ghsl-built-up-panaji/observations/2000.tif",
+     "bytes": 4403,
+     "sha256": "446818f667328659aca9130610bd1042630dbd777715731e1681772c8dacc89b",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/goa/ghsl-built-up-panaji/observations/2010.tif",
+     "bytes": 5520,
+     "sha256": "c59336ff49303e6f28dd464c6b119c0d60f4028a4a002fb6e8a0f0798433864a",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/goa/ghsl-built-up-panaji/observations/2020.tif",
+     "bytes": 6673,
+     "sha256": "cc08132fda2e68ccdd94cc64d3d3d431ecec35de73ba2620e64ba3ce9b0ce407",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/goa/ghsl-built-up-panaji/pipeline.json",
+    "historical_statistics.json": "processed/official/goa/ghsl-built-up-panaji/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/goa/ghsl-built-up-panaji/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/goa/ghsl-built-up-panaji/change/built_up_2000_2020.difference.tif",
+    "processed/official/goa/ghsl-built-up-panaji/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/goa/ghsl-built-up-panaji/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-ahmedabad",
+   "path": "processed/official/gujarat/ghsl-built-up-ahmedabad",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    72.4,
+    22.9,
+    72.8,
+    23.2
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/gujarat/ghsl-built-up-ahmedabad/observations/2000.tif",
+     "bytes": 14481,
+     "sha256": "45e5c6cac3dacaf41b764a561045d273481cd8802ea5529066aac85758f7e5cb",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/gujarat/ghsl-built-up-ahmedabad/observations/2010.tif",
+     "bytes": 17491,
+     "sha256": "ba580e523be03d8ec67bc907e999c14dd290eab422c54a72539473e0fd4d2461",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/gujarat/ghsl-built-up-ahmedabad/observations/2020.tif",
+     "bytes": 19507,
+     "sha256": "7b99e4fc5e31bdf3d7564d61a125dd326f78abd5cd0d7e7036c4069afe59e700",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/gujarat/ghsl-built-up-ahmedabad/pipeline.json",
+    "historical_statistics.json": "processed/official/gujarat/ghsl-built-up-ahmedabad/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/gujarat/ghsl-built-up-ahmedabad/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/gujarat/ghsl-built-up-ahmedabad/change/built_up_2000_2020.difference.tif",
+    "processed/official/gujarat/ghsl-built-up-ahmedabad/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/gujarat/ghsl-built-up-ahmedabad/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-surat",
+   "path": "processed/official/gujarat/ghsl-built-up-surat",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    72.7,
+    21.05,
+    72.95,
+    21.3
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/gujarat/ghsl-built-up-surat/observations/2000.tif",
+     "bytes": 8295,
+     "sha256": "56ac43392d206f1f099fef24e5588e5c72b9e652dfc642833082bf3d6e85dab1",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/gujarat/ghsl-built-up-surat/observations/2010.tif",
+     "bytes": 10408,
+     "sha256": "3eeb81d0d147366e8b8ccba4bf3c43b2b5060a627b14169ad4f82ef6785f4a2e",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/gujarat/ghsl-built-up-surat/observations/2020.tif",
+     "bytes": 11267,
+     "sha256": "875d496a9a4c92c3af8d4bfd4b2affe2e648c10ad17e2fb6e7d7d85a6d10c5b7",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/gujarat/ghsl-built-up-surat/pipeline.json",
+    "historical_statistics.json": "processed/official/gujarat/ghsl-built-up-surat/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/gujarat/ghsl-built-up-surat/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/gujarat/ghsl-built-up-surat/change/built_up_2000_2020.difference.tif",
+    "processed/official/gujarat/ghsl-built-up-surat/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/gujarat/ghsl-built-up-surat/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-nal-sarovar",
+   "path": "processed/official/gujarat/jrc-water-nal-sarovar",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    71.85,
+    22.65,
+    72.2,
+    22.95
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/gujarat/jrc-water-nal-sarovar/observations/1984.tif",
+     "bytes": 49905,
+     "sha256": "e838b3305f64558c4a21039d5364f11a61077e2a38ab6b94d512ea9d92a72d0b",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/gujarat/jrc-water-nal-sarovar/observations/2021.tif",
+     "bytes": 59492,
+     "sha256": "b10140f086ff25f7732c342d48491267fe4e800d501d9ee02ef30eb6e0f8f456",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/gujarat/jrc-water-nal-sarovar/pipeline.json",
+    "historical_statistics.json": "processed/official/gujarat/jrc-water-nal-sarovar/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/gujarat/jrc-water-nal-sarovar/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/gujarat/jrc-water-nal-sarovar/change/water_1984_2021.difference.tif",
+    "processed/official/gujarat/jrc-water-nal-sarovar/change/water_1984_2021.hotspots.geojson",
+    "processed/official/gujarat/jrc-water-nal-sarovar/change/water_1984_2021.summary.json"
    ]
   },
   {
@@ -223,6 +874,1066 @@
    ]
   },
   {
+   "id": "ghsl-built-up-mangaluru",
+   "path": "processed/official/karnataka/ghsl-built-up-mangaluru",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    74.75,
+    12.8,
+    74.95,
+    12.98
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/karnataka/ghsl-built-up-mangaluru/observations/2000.tif",
+     "bytes": 4843,
+     "sha256": "40444a7be5bd0c532b6d2dcb498c770a6d0cf504cfc513cba58682560a490100",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/karnataka/ghsl-built-up-mangaluru/observations/2010.tif",
+     "bytes": 4855,
+     "sha256": "dab54a72ab85d7ad854cbbb317880727e8e8df927da54f7123e9564b26919022",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/karnataka/ghsl-built-up-mangaluru/observations/2020.tif",
+     "bytes": 4887,
+     "sha256": "8c22d57e4832d5985bd865b572874574e669f46b32e1adaf2bfd23b4e2eb09a6",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/karnataka/ghsl-built-up-mangaluru/pipeline.json",
+    "historical_statistics.json": "processed/official/karnataka/ghsl-built-up-mangaluru/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/karnataka/ghsl-built-up-mangaluru/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/karnataka/ghsl-built-up-mangaluru/change/built_up_2000_2020.difference.tif",
+    "processed/official/karnataka/ghsl-built-up-mangaluru/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/karnataka/ghsl-built-up-mangaluru/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-mysuru",
+   "path": "processed/official/karnataka/ghsl-built-up-mysuru",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.55,
+    12.2,
+    76.75,
+    12.4
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/karnataka/ghsl-built-up-mysuru/observations/2000.tif",
+     "bytes": 4265,
+     "sha256": "520be4fdb788ba2dcfe58fc5ae0640612f67d0763c98187267b1579423303905",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/karnataka/ghsl-built-up-mysuru/observations/2010.tif",
+     "bytes": 4850,
+     "sha256": "f4847735be0be276c7d50975f5154b4d5ac5199d6d4e0217cf90a577a688321b",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/karnataka/ghsl-built-up-mysuru/observations/2020.tif",
+     "bytes": 5279,
+     "sha256": "e7f5bf92bb1b50a33f27f61405b53a4e21d8b9aa1bb8125ad21050e031a11e24",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/karnataka/ghsl-built-up-mysuru/pipeline.json",
+    "historical_statistics.json": "processed/official/karnataka/ghsl-built-up-mysuru/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/karnataka/ghsl-built-up-mysuru/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/karnataka/ghsl-built-up-mysuru/change/built_up_2000_2020.difference.tif",
+    "processed/official/karnataka/ghsl-built-up-mysuru/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/karnataka/ghsl-built-up-mysuru/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-krishnaraja-sagara",
+   "path": "processed/official/karnataka/jrc-water-krishnaraja-sagara",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.45,
+    12.35,
+    76.65,
+    12.55
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/karnataka/jrc-water-krishnaraja-sagara/observations/1984.tif",
+     "bytes": 16893,
+     "sha256": "3cd90fba1cca3851fbf5f79e17ebded1489fec90f15a495c0f0cb20cb53550ef",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/karnataka/jrc-water-krishnaraja-sagara/observations/2021.tif",
+     "bytes": 17434,
+     "sha256": "f463e64b95c360c3b9a12d0b36dc7f7de86a97a41fce151a3e082140b457a597",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/karnataka/jrc-water-krishnaraja-sagara/pipeline.json",
+    "historical_statistics.json": "processed/official/karnataka/jrc-water-krishnaraja-sagara/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/karnataka/jrc-water-krishnaraja-sagara/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/karnataka/jrc-water-krishnaraja-sagara/change/water_1984_2021.difference.tif",
+    "processed/official/karnataka/jrc-water-krishnaraja-sagara/change/water_1984_2021.hotspots.geojson",
+    "processed/official/karnataka/jrc-water-krishnaraja-sagara/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-tungabhadra-reservoir",
+   "path": "processed/official/karnataka/jrc-water-tungabhadra-reservoir",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.2,
+    15.1,
+    76.5,
+    15.4
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/karnataka/jrc-water-tungabhadra-reservoir/observations/1984.tif",
+     "bytes": 30054,
+     "sha256": "bee18369bab9c46dd74d58ac64a36abdb33369505bdde2220eceb28c49a6a649",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/karnataka/jrc-water-tungabhadra-reservoir/observations/2021.tif",
+     "bytes": 28878,
+     "sha256": "facedf9434161fd5f6aa51f5bca1987d3abe13d8f214b977e6c9477ea1a6b5c7",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/karnataka/jrc-water-tungabhadra-reservoir/pipeline.json",
+    "historical_statistics.json": "processed/official/karnataka/jrc-water-tungabhadra-reservoir/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/karnataka/jrc-water-tungabhadra-reservoir/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/karnataka/jrc-water-tungabhadra-reservoir/change/water_1984_2021.difference.tif",
+    "processed/official/karnataka/jrc-water-tungabhadra-reservoir/change/water_1984_2021.hotspots.geojson",
+    "processed/official/karnataka/jrc-water-tungabhadra-reservoir/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-kochi",
+   "path": "processed/official/kerala/ghsl-built-up-kochi",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.15,
+    9.85,
+    76.45,
+    10.1
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-kochi/observations/2000.tif",
+     "bytes": 12881,
+     "sha256": "4000d5b73c1cac01a8ee0d18a51d64fb24f7f4c6ec8af2a364627e970d1e36a5",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-kochi/observations/2010.tif",
+     "bytes": 14533,
+     "sha256": "4915ff6834e6bbcbccd65afe9302b4f4cef4f6e6de132fc72b03077b684e906e",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-kochi/observations/2020.tif",
+     "bytes": 15432,
+     "sha256": "f45374b6feae514ae97810fa2fd747e6af737087ce0b892beddb1334828e526d",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/kerala/ghsl-built-up-kochi/pipeline.json",
+    "historical_statistics.json": "processed/official/kerala/ghsl-built-up-kochi/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/kerala/ghsl-built-up-kochi/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/kerala/ghsl-built-up-kochi/change/built_up_2000_2020.difference.tif",
+    "processed/official/kerala/ghsl-built-up-kochi/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/kerala/ghsl-built-up-kochi/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-kozhikode",
+   "path": "processed/official/kerala/ghsl-built-up-kozhikode",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    75.7,
+    11.15,
+    75.9,
+    11.35
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-kozhikode/observations/2000.tif",
+     "bytes": 3789,
+     "sha256": "ed5b76287c44adbad05ecd5ebf7c1b74dbd5a8b7cefbcf5e7328380758ad36a3",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-kozhikode/observations/2010.tif",
+     "bytes": 4348,
+     "sha256": "a8f60d573e0aca939f3948caa24c4685f838876ef7b91213b1f1991bf154d9d4",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-kozhikode/observations/2020.tif",
+     "bytes": 4659,
+     "sha256": "aaeb2fd268c9cab1dda93915da0f944694c230d0d0883e0f090385fe3475e80e",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/kerala/ghsl-built-up-kozhikode/pipeline.json",
+    "historical_statistics.json": "processed/official/kerala/ghsl-built-up-kozhikode/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/kerala/ghsl-built-up-kozhikode/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/kerala/ghsl-built-up-kozhikode/change/built_up_2000_2020.difference.tif",
+    "processed/official/kerala/ghsl-built-up-kozhikode/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/kerala/ghsl-built-up-kozhikode/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-thiruvananthapuram",
+   "path": "processed/official/kerala/ghsl-built-up-thiruvananthapuram",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.8,
+    8.35,
+    77.15,
+    8.65
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-thiruvananthapuram/observations/2000.tif",
+     "bytes": 12623,
+     "sha256": "e85489f39f90075a40175f18a4a324d2386fdb46460368e69e40783a63c2beaa",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-thiruvananthapuram/observations/2010.tif",
+     "bytes": 14597,
+     "sha256": "ac24ded91dd792c1e0af542cc6ef1345f7c746408150612b2c0008fc2574de6f",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/kerala/ghsl-built-up-thiruvananthapuram/observations/2020.tif",
+     "bytes": 15612,
+     "sha256": "5168184dc12f60af7a6390707b53c4fd2ffcdc234b2d31e7e2f8b0c7ba3e2eba",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/kerala/ghsl-built-up-thiruvananthapuram/pipeline.json",
+    "historical_statistics.json": "processed/official/kerala/ghsl-built-up-thiruvananthapuram/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/kerala/ghsl-built-up-thiruvananthapuram/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/kerala/ghsl-built-up-thiruvananthapuram/change/built_up_2000_2020.difference.tif",
+    "processed/official/kerala/ghsl-built-up-thiruvananthapuram/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/kerala/ghsl-built-up-thiruvananthapuram/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-ashtamudi-lake",
+   "path": "processed/official/kerala/jrc-water-ashtamudi-lake",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.54,
+    8.92,
+    76.66,
+    9.06
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/kerala/jrc-water-ashtamudi-lake/observations/1984.tif",
+     "bytes": 13920,
+     "sha256": "4f7cb7c1c647139f17ef614eb4a00497c5e5a19d9aa823cfab39aa324c34f97c",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/kerala/jrc-water-ashtamudi-lake/observations/2021.tif",
+     "bytes": 14208,
+     "sha256": "18a0c863a00f6ea8bb3053f1a2de5b3427329b050f39df1a215b6935253fba2d",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/kerala/jrc-water-ashtamudi-lake/pipeline.json",
+    "historical_statistics.json": "processed/official/kerala/jrc-water-ashtamudi-lake/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/kerala/jrc-water-ashtamudi-lake/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/kerala/jrc-water-ashtamudi-lake/change/water_1984_2021.difference.tif",
+    "processed/official/kerala/jrc-water-ashtamudi-lake/change/water_1984_2021.hotspots.geojson",
+    "processed/official/kerala/jrc-water-ashtamudi-lake/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-vembanad-lake",
+   "path": "processed/official/kerala/jrc-water-vembanad-lake",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.3,
+    9.45,
+    76.55,
+    9.9
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/kerala/jrc-water-vembanad-lake/observations/1984.tif",
+     "bytes": 84800,
+     "sha256": "e7ffb66385298d71b745e5a8aebf94fd024aabe4f1df3cd22910be92823fefc7",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/kerala/jrc-water-vembanad-lake/observations/2021.tif",
+     "bytes": 88079,
+     "sha256": "41aff29d768e6e44feae968dd23a80796836c9fd70cfa10717819ad640697825",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/kerala/jrc-water-vembanad-lake/pipeline.json",
+    "historical_statistics.json": "processed/official/kerala/jrc-water-vembanad-lake/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/kerala/jrc-water-vembanad-lake/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/kerala/jrc-water-vembanad-lake/change/water_1984_2021.difference.tif",
+    "processed/official/kerala/jrc-water-vembanad-lake/change/water_1984_2021.hotspots.geojson",
+    "processed/official/kerala/jrc-water-vembanad-lake/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-bhopal",
+   "path": "processed/official/madhya_pradesh/ghsl-built-up-bhopal",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    77.3,
+    23.15,
+    77.55,
+    23.35
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/madhya_pradesh/ghsl-built-up-bhopal/observations/2000.tif",
+     "bytes": 7637,
+     "sha256": "86df216a63e8092756d7b5fa9482b3286dc53c9dbf4fd33d4114714f1df24a0c",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/madhya_pradesh/ghsl-built-up-bhopal/observations/2010.tif",
+     "bytes": 9099,
+     "sha256": "57389afe83ea63e31bd11f556b9904e9821d1f963205d5600602290d742fd190",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/madhya_pradesh/ghsl-built-up-bhopal/observations/2020.tif",
+     "bytes": 10240,
+     "sha256": "bbbb24b36c499c6bcef8c8aa10e07b22351f60ac25210da042b44eb5885f04d0",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/madhya_pradesh/ghsl-built-up-bhopal/pipeline.json",
+    "historical_statistics.json": "processed/official/madhya_pradesh/ghsl-built-up-bhopal/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/madhya_pradesh/ghsl-built-up-bhopal/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/madhya_pradesh/ghsl-built-up-bhopal/change/built_up_2000_2020.difference.tif",
+    "processed/official/madhya_pradesh/ghsl-built-up-bhopal/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/madhya_pradesh/ghsl-built-up-bhopal/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-gandhi-sagar",
+   "path": "processed/official/madhya_pradesh/jrc-water-gandhi-sagar",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    75.4,
+    24.55,
+    75.75,
+    24.85
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/madhya_pradesh/jrc-water-gandhi-sagar/observations/1984.tif",
+     "bytes": 24338,
+     "sha256": "5748c4eeebdf994fbf982764ecf14877a813ff50de96ba8220efc9a0a744876f",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/madhya_pradesh/jrc-water-gandhi-sagar/observations/2021.tif",
+     "bytes": 24857,
+     "sha256": "c0dadcb2017657069870ffdd356d632886b2004b8320926f33711929e58f0851",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/madhya_pradesh/jrc-water-gandhi-sagar/pipeline.json",
+    "historical_statistics.json": "processed/official/madhya_pradesh/jrc-water-gandhi-sagar/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/madhya_pradesh/jrc-water-gandhi-sagar/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/madhya_pradesh/jrc-water-gandhi-sagar/change/water_1984_2021.difference.tif",
+    "processed/official/madhya_pradesh/jrc-water-gandhi-sagar/change/water_1984_2021.hotspots.geojson",
+    "processed/official/madhya_pradesh/jrc-water-gandhi-sagar/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-upper-lake-bhopal",
+   "path": "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    77.3,
+    23.19,
+    77.48,
+    23.3
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal/observations/1984.tif",
+     "bytes": 8014,
+     "sha256": "76bc96bb2753a2481601fa049c07c75a3a5e60f8a1a040b8e614e44b701268e2",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal/observations/2021.tif",
+     "bytes": 8812,
+     "sha256": "88d59d64b8682a4dfba59cea3eb392cf947164f33729c3627b3c7f737aeb50b2",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal/pipeline.json",
+    "historical_statistics.json": "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal/change/water_1984_2021.difference.tif",
+    "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal/change/water_1984_2021.hotspots.geojson",
+    "processed/official/madhya_pradesh/jrc-water-upper-lake-bhopal/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-nagpur",
+   "path": "processed/official/maharashtra/ghsl-built-up-nagpur",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    78.95,
+    21.05,
+    79.25,
+    21.25
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/maharashtra/ghsl-built-up-nagpur/observations/2000.tif",
+     "bytes": 9457,
+     "sha256": "82e8ce4ecc87cddb5981abb010a17656bf19f62c16d0f02be03700819109f366",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/maharashtra/ghsl-built-up-nagpur/observations/2010.tif",
+     "bytes": 10392,
+     "sha256": "b31673d5822ce519e0c07358669b041d5804b1a7e71fd12d5449238af269f4e0",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/maharashtra/ghsl-built-up-nagpur/observations/2020.tif",
+     "bytes": 11266,
+     "sha256": "10c4a0aa839f14f2476fd0fce1953e147380fc740b9db242405c42d25f59766a",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/maharashtra/ghsl-built-up-nagpur/pipeline.json",
+    "historical_statistics.json": "processed/official/maharashtra/ghsl-built-up-nagpur/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/maharashtra/ghsl-built-up-nagpur/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/maharashtra/ghsl-built-up-nagpur/change/built_up_2000_2020.difference.tif",
+    "processed/official/maharashtra/ghsl-built-up-nagpur/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/maharashtra/ghsl-built-up-nagpur/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-pune",
+   "path": "processed/official/maharashtra/ghsl-built-up-pune",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    73.7,
+    18.4,
+    74.0,
+    18.65
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/maharashtra/ghsl-built-up-pune/observations/2000.tif",
+     "bytes": 14453,
+     "sha256": "dbd08287c898fb736f7dcd027e2a681ae20071de83e6fee2bca00957608aa437",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/maharashtra/ghsl-built-up-pune/observations/2010.tif",
+     "bytes": 16614,
+     "sha256": "29b69aadf22e798be334eb8cedeb1503cee8fbc77f34c7d346262ebfffc1ac20",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/maharashtra/ghsl-built-up-pune/observations/2020.tif",
+     "bytes": 17888,
+     "sha256": "acb4dd6979136176ab05ce1fd70e8edd5796049cc26e7cf40ecbcc57a2553376",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/maharashtra/ghsl-built-up-pune/pipeline.json",
+    "historical_statistics.json": "processed/official/maharashtra/ghsl-built-up-pune/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/maharashtra/ghsl-built-up-pune/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/maharashtra/ghsl-built-up-pune/change/built_up_2000_2020.difference.tif",
+    "processed/official/maharashtra/ghsl-built-up-pune/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/maharashtra/ghsl-built-up-pune/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-ujani-reservoir",
+   "path": "processed/official/maharashtra/jrc-water-ujani-reservoir",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    74.95,
+    17.95,
+    75.3,
+    18.25
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/maharashtra/jrc-water-ujani-reservoir/observations/1984.tif",
+     "bytes": 28705,
+     "sha256": "e051a7027512277293e747f58ff051b19bf51046e4526e8d522f04cf43e9f595",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/maharashtra/jrc-water-ujani-reservoir/observations/2021.tif",
+     "bytes": 30926,
+     "sha256": "2b3bf156157799a6f9f181ebbe7ec6169706cbeb2c4a81be6d5e5ad7b52a4200",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/maharashtra/jrc-water-ujani-reservoir/pipeline.json",
+    "historical_statistics.json": "processed/official/maharashtra/jrc-water-ujani-reservoir/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/maharashtra/jrc-water-ujani-reservoir/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/maharashtra/jrc-water-ujani-reservoir/change/water_1984_2021.difference.tif",
+    "processed/official/maharashtra/jrc-water-ujani-reservoir/change/water_1984_2021.hotspots.geojson",
+    "processed/official/maharashtra/jrc-water-ujani-reservoir/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-bhubaneswar",
+   "path": "processed/official/odisha/ghsl-built-up-bhubaneswar",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    85.65,
+    20.15,
+    85.95,
+    20.45
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/odisha/ghsl-built-up-bhubaneswar/observations/2000.tif",
+     "bytes": 8446,
+     "sha256": "986c52af0b81466b0c4cc6f59b2e5f3b2267f54dad9ae5f288f7871db354f337",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/odisha/ghsl-built-up-bhubaneswar/observations/2010.tif",
+     "bytes": 10576,
+     "sha256": "3cc0df565f01a0f051d83b539fa963a8c642840e07a8b23e65a8f8851db292c7",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/odisha/ghsl-built-up-bhubaneswar/observations/2020.tif",
+     "bytes": 12154,
+     "sha256": "94a6a1057b5b71910328afccc058e157efdcc3340714ecbc188985e335ca74a9",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/odisha/ghsl-built-up-bhubaneswar/pipeline.json",
+    "historical_statistics.json": "processed/official/odisha/ghsl-built-up-bhubaneswar/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/odisha/ghsl-built-up-bhubaneswar/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/odisha/ghsl-built-up-bhubaneswar/change/built_up_2000_2020.difference.tif",
+    "processed/official/odisha/ghsl-built-up-bhubaneswar/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/odisha/ghsl-built-up-bhubaneswar/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-chilika-lake",
+   "path": "processed/official/odisha/jrc-water-chilika-lake",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    85.05,
+    19.45,
+    85.48,
+    19.95
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/odisha/jrc-water-chilika-lake/observations/1984.tif",
+     "bytes": 102460,
+     "sha256": "3afe1552ed203491bfb7ed13f3824f756adef836cfeb78bc125435e1d805538c",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/odisha/jrc-water-chilika-lake/observations/2021.tif",
+     "bytes": 76715,
+     "sha256": "30c5d764e53ac697de0b93e4b72809062bab72a233f2e0c9e9fa6c7b5efd41bd",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/odisha/jrc-water-chilika-lake/pipeline.json",
+    "historical_statistics.json": "processed/official/odisha/jrc-water-chilika-lake/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/odisha/jrc-water-chilika-lake/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/odisha/jrc-water-chilika-lake/change/water_1984_2021.difference.tif",
+    "processed/official/odisha/jrc-water-chilika-lake/change/water_1984_2021.hotspots.geojson",
+    "processed/official/odisha/jrc-water-chilika-lake/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-hirakud-reservoir",
+   "path": "processed/official/odisha/jrc-water-hirakud-reservoir",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    83.6,
+    21.45,
+    84.05,
+    21.95
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/odisha/jrc-water-hirakud-reservoir/observations/1984.tif",
+     "bytes": 74310,
+     "sha256": "d7fce1571c159bbb7fc6522ca5b05d3323ae84071200866c87c7792c82a936c8",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/odisha/jrc-water-hirakud-reservoir/observations/2021.tif",
+     "bytes": 84486,
+     "sha256": "23e43b6e129ba5edf15e1ce6a3a17dcf800ea2fa09045d67bc7a5de51814e6e8",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/odisha/jrc-water-hirakud-reservoir/pipeline.json",
+    "historical_statistics.json": "processed/official/odisha/jrc-water-hirakud-reservoir/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/odisha/jrc-water-hirakud-reservoir/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/odisha/jrc-water-hirakud-reservoir/change/water_1984_2021.difference.tif",
+    "processed/official/odisha/jrc-water-hirakud-reservoir/change/water_1984_2021.hotspots.geojson",
+    "processed/official/odisha/jrc-water-hirakud-reservoir/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-jaipur",
+   "path": "processed/official/rajasthan/ghsl-built-up-jaipur",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    75.65,
+    26.75,
+    75.95,
+    27.05
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/rajasthan/ghsl-built-up-jaipur/observations/2000.tif",
+     "bytes": 11567,
+     "sha256": "61c8f4fae22c3d500e2225b60fea038ada47feb5c9888f9b9f621520bfe674c0",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/rajasthan/ghsl-built-up-jaipur/observations/2010.tif",
+     "bytes": 14993,
+     "sha256": "1159bfb41403e8e769eb83273986d9c08793a66f823ac144c86afb3419b7fae0",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/rajasthan/ghsl-built-up-jaipur/observations/2020.tif",
+     "bytes": 18995,
+     "sha256": "55a127f4b55cf523b04a22061bc3c759d57f70b97c08637815e6c2b52f81fd24",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/rajasthan/ghsl-built-up-jaipur/pipeline.json",
+    "historical_statistics.json": "processed/official/rajasthan/ghsl-built-up-jaipur/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/rajasthan/ghsl-built-up-jaipur/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/rajasthan/ghsl-built-up-jaipur/change/built_up_2000_2020.difference.tif",
+    "processed/official/rajasthan/ghsl-built-up-jaipur/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/rajasthan/ghsl-built-up-jaipur/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "jrc-water-sambhar-lake",
+   "path": "processed/official/rajasthan/jrc-water-sambhar-lake",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    74.85,
+    26.85,
+    75.25,
+    27.05
+   ],
+   "observation_files": [
+    {
+     "date": "1984-01-01",
+     "file": "processed/official/rajasthan/jrc-water-sambhar-lake/observations/1984.tif",
+     "bytes": 26393,
+     "sha256": "ef229834c4b174c678374a10758458691c40ecd0a5d250fb4cf19f5e68b1d522",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2021-01-01",
+     "file": "processed/official/rajasthan/jrc-water-sambhar-lake/observations/2021.tif",
+     "bytes": 38708,
+     "sha256": "8203f4540beafdcbe73d879407df8a8f05df0076e96279d6e107d0e32c5b9fb3",
+     "quality": "fair",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "water",
+     "label": "water",
+     "class": 2,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/rajasthan/jrc-water-sambhar-lake/pipeline.json",
+    "historical_statistics.json": "processed/official/rajasthan/jrc-water-sambhar-lake/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/rajasthan/jrc-water-sambhar-lake/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/rajasthan/jrc-water-sambhar-lake/change/water_1984_2021.difference.tif",
+    "processed/official/rajasthan/jrc-water-sambhar-lake/change/water_1984_2021.hotspots.geojson",
+    "processed/official/rajasthan/jrc-water-sambhar-lake/change/water_1984_2021.summary.json"
+   ]
+  },
+  {
    "id": "worldcover-sundarbans-2021",
    "path": "processed/official/sundarbans/worldcover-sundarbans-2021",
    "designation": "official_derived",
@@ -268,448 +1979,350 @@
    ]
   },
   {
-   "id": "bellandur-lake",
-   "path": "processed/synthetic/bengaluru",
-   "designation": "illustrative",
-   "public_label": "Illustrative Dataset",
-   "internal_origin": "generated (illustrative)",
+   "id": "ghsl-built-up-chennai",
+   "path": "processed/official/tamil_nadu/ghsl-built-up-chennai",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
    "bbox": [
-    77.62,
-    12.9,
-    77.72,
-    12.99
-   ],
-   "observation_files": [
-    {
-     "date": "2002-02-01",
-     "file": "processed/synthetic/bengaluru/observations/2002.tif",
-     "bytes": 22091,
-     "sha256": "7dec2d6f2ed90c25a9e23a37cf05f7908388eaa4bf21b8f5915f4d5e9275c538",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2005-02-01",
-     "file": "processed/synthetic/bengaluru/observations/2005.tif",
-     "bytes": 22034,
-     "sha256": "a135f3b0013b29225114b87d86e2764e3b086ec858aed640c41f73eae7ad66b9",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2010-02-01",
-     "file": "processed/synthetic/bengaluru/observations/2010.tif",
-     "bytes": 22009,
-     "sha256": "7d87274647f96d02f7a058d8c7ee21b56c2abf6a7409ada6608b62921d3c31ca",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2015-02-01",
-     "file": "processed/synthetic/bengaluru/observations/2015.tif",
-     "bytes": 22852,
-     "sha256": "867ce0b881725e84fa4d87f548ff709bc7b8630275bb5dcd7453a2bdbaffa5cd",
-     "quality": "good",
-     "valid_fraction": 0.97
-    },
-    {
-     "date": "2019-02-01",
-     "file": "processed/synthetic/bengaluru/observations/2019.tif",
-     "bytes": 20879,
-     "sha256": "99ab77cf12ce29413004f87e04634080f0b11386b05e70ac191dcdf5fd789be7",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2022-02-01",
-     "file": "processed/synthetic/bengaluru/observations/2022.tif",
-     "bytes": 20082,
-     "sha256": "29fe4b3fd5cdeca0c77accafed0c503b9e663fec42c419f6c1d6711c83143f11",
-     "quality": "good",
-     "valid_fraction": 1.0
-    }
-   ],
-   "variables": [
-    {
-     "key": "water",
-     "label": "open water",
-     "class": 2,
-     "primary": true
-    },
-    {
-     "key": "lake_extent",
-     "label": "lake extent (open water and aquatic vegetation)",
-     "class": [
-      2,
-      10
-     ],
-     "primary": false
-    },
-    {
-     "key": "aquatic_vegetation",
-     "label": "aquatic vegetation",
-     "class": 10,
-     "primary": false
-    },
-    {
-     "key": "built_up",
-     "label": "built-up area",
-     "class": 4,
-     "primary": false
-    },
-    {
-     "key": "vegetation",
-     "label": "vegetation",
-     "class": 3,
-     "primary": false
-    },
-    {
-     "key": "wetland",
-     "label": "wetland fringe",
-     "class": 11,
-     "primary": false
-    }
-   ],
-   "documents": {
-    "historical_statistics.json": "processed/synthetic/bengaluru/historical_statistics.json",
-    "historical_statistics.csv": "processed/synthetic/bengaluru/historical_statistics.csv",
-    "ground_truth.json": "processed/synthetic/bengaluru/ground_truth.json"
-   },
-   "change_products": [
-    "processed/synthetic/bengaluru/change/aquatic_vegetation_2002_2022.difference.tif",
-    "processed/synthetic/bengaluru/change/aquatic_vegetation_2002_2022.hotspots.geojson",
-    "processed/synthetic/bengaluru/change/aquatic_vegetation_2002_2022.summary.json",
-    "processed/synthetic/bengaluru/change/built_up_2002_2022.difference.tif",
-    "processed/synthetic/bengaluru/change/built_up_2002_2022.hotspots.geojson",
-    "processed/synthetic/bengaluru/change/built_up_2002_2022.summary.json",
-    "processed/synthetic/bengaluru/change/lake_extent_2002_2022.difference.tif",
-    "processed/synthetic/bengaluru/change/lake_extent_2002_2022.hotspots.geojson",
-    "processed/synthetic/bengaluru/change/lake_extent_2002_2022.summary.json",
-    "processed/synthetic/bengaluru/change/vegetation_2002_2022.difference.tif",
-    "processed/synthetic/bengaluru/change/vegetation_2002_2022.hotspots.geojson",
-    "processed/synthetic/bengaluru/change/vegetation_2002_2022.summary.json",
-    "processed/synthetic/bengaluru/change/water_2002_2022.difference.tif",
-    "processed/synthetic/bengaluru/change/water_2002_2022.hotspots.geojson",
-    "processed/synthetic/bengaluru/change/water_2002_2022.summary.json",
-    "processed/synthetic/bengaluru/change/wetland_2002_2022.difference.tif",
-    "processed/synthetic/bengaluru/change/wetland_2002_2022.hotspots.geojson",
-    "processed/synthetic/bengaluru/change/wetland_2002_2022.summary.json"
-   ]
-  },
-  {
-   "id": "himalayas-dhauliganga",
-   "path": "processed/synthetic/himalayas",
-   "designation": "illustrative",
-   "public_label": "Illustrative Dataset",
-   "internal_origin": "generated (illustrative)",
-   "bbox": [
-    79.6,
-    30.55,
     80.05,
-    30.95
-   ],
-   "observation_files": [
-    {
-     "date": "2001-09-01",
-     "file": "processed/synthetic/himalayas/observations/2001.tif",
-     "bytes": 26555,
-     "sha256": "98ba2fb7b55bb5fa7aed8d393746bafc8d991d8d515b8754385c209a9d9d8a73",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2005-09-01",
-     "file": "processed/synthetic/himalayas/observations/2005.tif",
-     "bytes": 28730,
-     "sha256": "7623defc1fb8fba9b516af4baff33e7e463f0a22b54f64eb28a9115b8221de15",
-     "quality": "good",
-     "valid_fraction": 0.93
-    },
-    {
-     "date": "2010-09-01",
-     "file": "processed/synthetic/himalayas/observations/2010.tif",
-     "bytes": 26665,
-     "sha256": "461a621769884f9b252581f80559172cfeaec5eb8cb4d1d08b5f997cb9a12b2e",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2015-09-01",
-     "file": "processed/synthetic/himalayas/observations/2015.tif",
-     "bytes": 27317,
-     "sha256": "e27a9727760cda54902a79bf2e55643901287bdf2136092f7278392a64c6a664",
-     "quality": "good",
-     "valid_fraction": 0.97
-    },
-    {
-     "date": "2020-09-01",
-     "file": "processed/synthetic/himalayas/observations/2020.tif",
-     "bytes": 25909,
-     "sha256": "f203961b4129476bbe28a99bef9b8d914be38503279b595d2c993edfa740c559",
-     "quality": "good",
-     "valid_fraction": 1.0
-    }
-   ],
-   "variables": [
-    {
-     "key": "glacier",
-     "label": "glacier ice",
-     "class": 6,
-     "primary": true
-    },
-    {
-     "key": "snow",
-     "label": "snow cover",
-     "class": 5,
-     "primary": false
-    },
-    {
-     "key": "glacial_lake",
-     "label": "glacial lake",
-     "class": 2,
-     "primary": false
-    },
-    {
-     "key": "exposed_terrain",
-     "label": "exposed terrain",
-     "class": 1,
-     "primary": false
-    }
-   ],
-   "documents": {
-    "historical_statistics.json": "processed/synthetic/himalayas/historical_statistics.json",
-    "historical_statistics.csv": "processed/synthetic/himalayas/historical_statistics.csv",
-    "ground_truth.json": "processed/synthetic/himalayas/ground_truth.json"
-   },
-   "change_products": [
-    "processed/synthetic/himalayas/change/exposed_terrain_2001_2020.difference.tif",
-    "processed/synthetic/himalayas/change/exposed_terrain_2001_2020.hotspots.geojson",
-    "processed/synthetic/himalayas/change/exposed_terrain_2001_2020.summary.json",
-    "processed/synthetic/himalayas/change/glacial_lake_2001_2020.difference.tif",
-    "processed/synthetic/himalayas/change/glacial_lake_2001_2020.hotspots.geojson",
-    "processed/synthetic/himalayas/change/glacial_lake_2001_2020.summary.json",
-    "processed/synthetic/himalayas/change/glacier_2001_2020.difference.tif",
-    "processed/synthetic/himalayas/change/glacier_2001_2020.hotspots.geojson",
-    "processed/synthetic/himalayas/change/glacier_2001_2020.summary.json",
-    "processed/synthetic/himalayas/change/snow_2001_2020.difference.tif",
-    "processed/synthetic/himalayas/change/snow_2001_2020.hotspots.geojson",
-    "processed/synthetic/himalayas/change/snow_2001_2020.summary.json"
-   ]
-  },
-  {
-   "id": "hyderabad-metro",
-   "path": "processed/synthetic/hyderabad",
-   "designation": "illustrative",
-   "public_label": "Illustrative Dataset",
-   "internal_origin": "generated (illustrative)",
-   "bbox": [
-    78.25,
-    17.25,
-    78.65,
-    17.6
-   ],
-   "observation_files": [
-    {
-     "date": "2000-02-01",
-     "file": "processed/synthetic/hyderabad/observations/2000.tif",
-     "bytes": 98892,
-     "sha256": "4199e5bcc68c2ad58270f7c6529cd9a2405df346e9fe7539af48d0a0fa92288b",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2005-02-01",
-     "file": "processed/synthetic/hyderabad/observations/2005.tif",
-     "bytes": 98393,
-     "sha256": "abc112661e7249cb6aa82358065aad54fbfbb23f0bc200745e119cefbe211084",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2010-02-01",
-     "file": "processed/synthetic/hyderabad/observations/2010.tif",
-     "bytes": 99804,
-     "sha256": "fa794b0d3474bb614999f53f854a347f5783216e1ee3d14cad1d733eb0bbcf26",
-     "quality": "good",
-     "valid_fraction": 0.97
-    },
-    {
-     "date": "2015-02-01",
-     "file": "processed/synthetic/hyderabad/observations/2015.tif",
-     "bytes": 94376,
-     "sha256": "6e733deaf1a076d719c5fb71d4e821af9eeec8805a34e313187cbb0f05749090",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2020-02-01",
-     "file": "processed/synthetic/hyderabad/observations/2020.tif",
-     "bytes": 91962,
-     "sha256": "3fb66a9a08fdbf2bbf81ece8f6ef7212ec1d14aaed6ea3fd9f3571c6c922e33e",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2024-02-01",
-     "file": "processed/synthetic/hyderabad/observations/2024.tif",
-     "bytes": 90027,
-     "sha256": "93cb1025e599b887e796a78fe33f5a80b0e12cfc1b95f8c98a318944453a4bbc",
-     "quality": "good",
-     "valid_fraction": 1.0
-    }
-   ],
-   "variables": [
-    {
-     "key": "built_up",
-     "label": "built-up area",
-     "class": 4,
-     "primary": true
-    },
-    {
-     "key": "vegetation",
-     "label": "vegetation",
-     "class": 3,
-     "primary": false
-    },
-    {
-     "key": "agriculture",
-     "label": "agriculture",
-     "class": 9,
-     "primary": false
-    },
-    {
-     "key": "water",
-     "label": "water",
-     "class": 2,
-     "primary": false
-    }
-   ],
-   "documents": {
-    "historical_statistics.json": "processed/synthetic/hyderabad/historical_statistics.json",
-    "historical_statistics.csv": "processed/synthetic/hyderabad/historical_statistics.csv",
-    "ground_truth.json": "processed/synthetic/hyderabad/ground_truth.json"
-   },
-   "change_products": [
-    "processed/synthetic/hyderabad/change/agriculture_2000_2024.difference.tif",
-    "processed/synthetic/hyderabad/change/agriculture_2000_2024.hotspots.geojson",
-    "processed/synthetic/hyderabad/change/agriculture_2000_2024.summary.json",
-    "processed/synthetic/hyderabad/change/built_up_2000_2024.difference.tif",
-    "processed/synthetic/hyderabad/change/built_up_2000_2024.hotspots.geojson",
-    "processed/synthetic/hyderabad/change/built_up_2000_2024.summary.json",
-    "processed/synthetic/hyderabad/change/vegetation_2000_2024.difference.tif",
-    "processed/synthetic/hyderabad/change/vegetation_2000_2024.hotspots.geojson",
-    "processed/synthetic/hyderabad/change/vegetation_2000_2024.summary.json",
-    "processed/synthetic/hyderabad/change/water_2000_2024.difference.tif",
-    "processed/synthetic/hyderabad/change/water_2000_2024.hotspots.geojson",
-    "processed/synthetic/hyderabad/change/water_2000_2024.summary.json"
-   ]
-  },
-  {
-   "id": "sundarbans-west-bengal",
-   "path": "processed/synthetic/sundarbans",
-   "designation": "illustrative",
-   "public_label": "Illustrative Dataset",
-   "internal_origin": "generated (illustrative)",
-   "bbox": [
-    88.6,
-    21.55,
-    89.1,
-    22.05
+    12.85,
+    80.45,
+    13.25
    ],
    "observation_files": [
     {
      "date": "2000-01-01",
-     "file": "processed/synthetic/sundarbans/observations/2000.tif",
-     "bytes": 158757,
-     "sha256": "88e23e68333cbd4be55f0ecdd3702daad2287d8cf6522d77d5524a643e7eeb21",
-     "quality": "good",
-     "valid_fraction": 1.0
-    },
-    {
-     "date": "2005-01-01",
-     "file": "processed/synthetic/sundarbans/observations/2005.tif",
-     "bytes": 155582,
-     "sha256": "747dc80dbb42d3b7e85dd501f8a8383a547a33f1044c65267caa96db6d3b8cfe",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-chennai/observations/2000.tif",
+     "bytes": 17521,
+     "sha256": "7f62fe9ecf95ca933681b7ad7c56bd509a5452cec1b3723e1e5a7ed374230048",
      "quality": "good",
      "valid_fraction": 1.0
     },
     {
      "date": "2010-01-01",
-     "file": "processed/synthetic/sundarbans/observations/2010.tif",
-     "bytes": 154337,
-     "sha256": "d3659438f1db85f8d9e41fed23185840772d6a47fa36fefb064a05a81984750e",
-     "quality": "good",
-     "valid_fraction": 0.96
-    },
-    {
-     "date": "2015-01-01",
-     "file": "processed/synthetic/sundarbans/observations/2015.tif",
-     "bytes": 149955,
-     "sha256": "8e85ed049a144ae6337a711825bf3f3f352eb7d7b8d2ba47163ab49377e292ff",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-chennai/observations/2010.tif",
+     "bytes": 21076,
+     "sha256": "9a45007ff345c4c3ce09f47d7b5b6354087cccc523bef4bb76588bc9a7506545",
      "quality": "good",
      "valid_fraction": 1.0
     },
     {
      "date": "2020-01-01",
-     "file": "processed/synthetic/sundarbans/observations/2020.tif",
-     "bytes": 147992,
-     "sha256": "8213c634f50e151c0cfbcce004bff933e81e2d135f0139e40c86152124b3de2c",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-chennai/observations/2020.tif",
+     "bytes": 21632,
+     "sha256": "25c8b1cf0cc65e44db0b6c0cccb4bfd6a1132b8dc4fc8cfed48eceb30f7c43fa",
      "quality": "good",
      "valid_fraction": 1.0
     }
    ],
    "variables": [
     {
-     "key": "mangrove",
-     "label": "mangrove",
-     "class": 8,
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
      "primary": true
-    },
-    {
-     "key": "water",
-     "label": "open water",
-     "class": 2,
-     "primary": false
-    },
-    {
-     "key": "mudflat",
-     "label": "mudflat",
-     "class": 7,
-     "primary": false
-    },
-    {
-     "key": "land",
-     "label": "land (including mangrove)",
-     "class": [
-      1,
-      8
-     ],
-     "primary": false
     }
    ],
    "documents": {
-    "historical_statistics.json": "processed/synthetic/sundarbans/historical_statistics.json",
-    "historical_statistics.csv": "processed/synthetic/sundarbans/historical_statistics.csv",
-    "ground_truth.json": "processed/synthetic/sundarbans/ground_truth.json"
+    "pipeline.json": "processed/official/tamil_nadu/ghsl-built-up-chennai/pipeline.json",
+    "historical_statistics.json": "processed/official/tamil_nadu/ghsl-built-up-chennai/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/tamil_nadu/ghsl-built-up-chennai/historical_statistics.csv"
    },
    "change_products": [
-    "processed/synthetic/sundarbans/change/land_2000_2020.difference.tif",
-    "processed/synthetic/sundarbans/change/land_2000_2020.hotspots.geojson",
-    "processed/synthetic/sundarbans/change/land_2000_2020.summary.json",
-    "processed/synthetic/sundarbans/change/mangrove_2000_2020.difference.tif",
-    "processed/synthetic/sundarbans/change/mangrove_2000_2020.hotspots.geojson",
-    "processed/synthetic/sundarbans/change/mangrove_2000_2020.summary.json",
-    "processed/synthetic/sundarbans/change/mudflat_2000_2020.difference.tif",
-    "processed/synthetic/sundarbans/change/mudflat_2000_2020.hotspots.geojson",
-    "processed/synthetic/sundarbans/change/mudflat_2000_2020.summary.json",
-    "processed/synthetic/sundarbans/change/water_2000_2020.difference.tif",
-    "processed/synthetic/sundarbans/change/water_2000_2020.hotspots.geojson",
-    "processed/synthetic/sundarbans/change/water_2000_2020.summary.json"
+    "processed/official/tamil_nadu/ghsl-built-up-chennai/change/built_up_2000_2020.difference.tif",
+    "processed/official/tamil_nadu/ghsl-built-up-chennai/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/tamil_nadu/ghsl-built-up-chennai/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-coimbatore",
+   "path": "processed/official/tamil_nadu/ghsl-built-up-coimbatore",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    76.85,
+    10.9,
+    77.1,
+    11.15
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-coimbatore/observations/2000.tif",
+     "bytes": 12595,
+     "sha256": "d9cc8f926caf576e2f0ca85cc9edb545104c4575bb742ed160eeee5db4165cbe",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-coimbatore/observations/2010.tif",
+     "bytes": 14067,
+     "sha256": "dcc08afa168a42a0da54f0f09d6ea9d15f493babdf4c15b48dd0365f555bc1fc",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-coimbatore/observations/2020.tif",
+     "bytes": 15195,
+     "sha256": "c911047c0091483c9ce5663100ae35873761c3153f654d273486b1f408c0050f",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/tamil_nadu/ghsl-built-up-coimbatore/pipeline.json",
+    "historical_statistics.json": "processed/official/tamil_nadu/ghsl-built-up-coimbatore/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/tamil_nadu/ghsl-built-up-coimbatore/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/tamil_nadu/ghsl-built-up-coimbatore/change/built_up_2000_2020.difference.tif",
+    "processed/official/tamil_nadu/ghsl-built-up-coimbatore/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/tamil_nadu/ghsl-built-up-coimbatore/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-kanyakumari",
+   "path": "processed/official/tamil_nadu/ghsl-built-up-kanyakumari",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    77.4,
+    8.05,
+    77.7,
+    8.3
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/observations/2000.tif",
+     "bytes": 7134,
+     "sha256": "fc0d89ca2c3193cbd960c9a569c982118c4188048d5ff7de8a016244d7ba0cb9",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/observations/2010.tif",
+     "bytes": 7759,
+     "sha256": "c20b4d5942f2f5912d0d63422785023d63aa8eda9d56965acee214ffea898c16",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/observations/2020.tif",
+     "bytes": 8549,
+     "sha256": "5193d727bf7d07abed60c5514f0eb4aa313d1187ade8d2b26c0dd9d57a399db8",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/pipeline.json",
+    "historical_statistics.json": "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/change/built_up_2000_2020.difference.tif",
+    "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/tamil_nadu/ghsl-built-up-kanyakumari/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-madurai",
+   "path": "processed/official/tamil_nadu/ghsl-built-up-madurai",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    78.0,
+    9.8,
+    78.25,
+    10.05
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-madurai/observations/2000.tif",
+     "bytes": 8004,
+     "sha256": "dd8ea7a9d85dad269cd9818b9dbc9b5c2968bcfa260f3f6f9572aaf7db295203",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-madurai/observations/2010.tif",
+     "bytes": 9232,
+     "sha256": "f8f743736cd688f1f8591b47f7c187bb1fab40f56302018b443464fcb99fc346",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/tamil_nadu/ghsl-built-up-madurai/observations/2020.tif",
+     "bytes": 10638,
+     "sha256": "6b6163d4735f1472c4a1dad76588eb9c61d9137520cc3b355c7b73aaa76422cd",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/tamil_nadu/ghsl-built-up-madurai/pipeline.json",
+    "historical_statistics.json": "processed/official/tamil_nadu/ghsl-built-up-madurai/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/tamil_nadu/ghsl-built-up-madurai/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/tamil_nadu/ghsl-built-up-madurai/change/built_up_2000_2020.difference.tif",
+    "processed/official/tamil_nadu/ghsl-built-up-madurai/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/tamil_nadu/ghsl-built-up-madurai/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-lucknow",
+   "path": "processed/official/uttar_pradesh/ghsl-built-up-lucknow",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    80.8,
+    26.7,
+    81.1,
+    27.0
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/uttar_pradesh/ghsl-built-up-lucknow/observations/2000.tif",
+     "bytes": 12098,
+     "sha256": "a4a50c57c9fb95e2d3685dc01e25b41e3e515a174f643ed2995625aa20fa4931",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/uttar_pradesh/ghsl-built-up-lucknow/observations/2010.tif",
+     "bytes": 14148,
+     "sha256": "af4221c578545e601c692a753f105aa8b7dd2f7784caba97a2ee93d6467707a2",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/uttar_pradesh/ghsl-built-up-lucknow/observations/2020.tif",
+     "bytes": 17910,
+     "sha256": "3fab00065af681c009bb56c37c039ea8283d22cff2b61b8b66c4c19cbb5b880e",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/uttar_pradesh/ghsl-built-up-lucknow/pipeline.json",
+    "historical_statistics.json": "processed/official/uttar_pradesh/ghsl-built-up-lucknow/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/uttar_pradesh/ghsl-built-up-lucknow/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/uttar_pradesh/ghsl-built-up-lucknow/change/built_up_2000_2020.difference.tif",
+    "processed/official/uttar_pradesh/ghsl-built-up-lucknow/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/uttar_pradesh/ghsl-built-up-lucknow/change/built_up_2000_2020.summary.json"
+   ]
+  },
+  {
+   "id": "ghsl-built-up-kolkata",
+   "path": "processed/official/west_bengal/ghsl-built-up-kolkata",
+   "designation": "official_derived",
+   "public_label": "Satellite Observations",
+   "internal_origin": "derived from official data",
+   "bbox": [
+    88.15,
+    22.4,
+    88.55,
+    22.8
+   ],
+   "observation_files": [
+    {
+     "date": "2000-01-01",
+     "file": "processed/official/west_bengal/ghsl-built-up-kolkata/observations/2000.tif",
+     "bytes": 25929,
+     "sha256": "6804e960a4b77c56a045b5a06ef8dd9ff2b225e113928bbac46e7c81c8473f81",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2010-01-01",
+     "file": "processed/official/west_bengal/ghsl-built-up-kolkata/observations/2010.tif",
+     "bytes": 27430,
+     "sha256": "835b7356d5230d815348d2323c6bfa0d163f71eb237f246862949e1a8ae64da1",
+     "quality": "good",
+     "valid_fraction": 1.0
+    },
+    {
+     "date": "2020-01-01",
+     "file": "processed/official/west_bengal/ghsl-built-up-kolkata/observations/2020.tif",
+     "bytes": 28083,
+     "sha256": "328f10f167b9f82657e8bd8ac7fe208e2868ea1eea2997df3623568e3c14f9e4",
+     "quality": "good",
+     "valid_fraction": 1.0
+    }
+   ],
+   "variables": [
+    {
+     "key": "built_up",
+     "label": "built-up area",
+     "class": 4,
+     "primary": true
+    }
+   ],
+   "documents": {
+    "pipeline.json": "processed/official/west_bengal/ghsl-built-up-kolkata/pipeline.json",
+    "historical_statistics.json": "processed/official/west_bengal/ghsl-built-up-kolkata/historical_statistics.json",
+    "historical_statistics.csv": "processed/official/west_bengal/ghsl-built-up-kolkata/historical_statistics.csv"
+   },
+   "change_products": [
+    "processed/official/west_bengal/ghsl-built-up-kolkata/change/built_up_2000_2020.difference.tif",
+    "processed/official/west_bengal/ghsl-built-up-kolkata/change/built_up_2000_2020.hotspots.geojson",
+    "processed/official/west_bengal/ghsl-built-up-kolkata/change/built_up_2000_2020.summary.json"
    ]
   }
  ],
  "official_source_status": {
-  "VERIFIED_DOWNLOADED": 9,
+  "VERIFIED_DOWNLOADED": 28,
   "VERIFIED_METADATA_ONLY": 3,
   "ACCESS_REQUIRES_AUTHENTICATION": 5
  },
@@ -719,13 +2332,13 @@
   "districts": 735,
   "cities": 22,
   "localities": 21,
-  "geographical_features": 11
+  "geographical_features": 13
  },
  "boundary_status_counts": {
   "administrative_proxy": 22,
   "approximate_point": 22,
   "derived_from_official_data": 4,
-  "approximate_bbox": 4,
+  "approximate_bbox": 6,
   "analysis_window": 2,
   "authoritative_simplified": 771
  }

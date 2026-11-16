@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-vembanad-lake",
+ "name": "Vembanad Lake (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 136558.78,
+   "valid_ha": 136558.78,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 108258.07,
+    "Water (permanent or seasonal)": 28300.71
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 136558.78,
+   "valid_ha": 136558.78,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 95641.83,
+    "Water (permanent or seasonal)": 40916.95
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 28300.71,
+     "share_of_valid_pct": 20.724
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 40916.95,
+     "share_of_valid_pct": 29.963
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": 12616.24,
+   "net_change_pct": 44.58
+  }
+ },
+ "generated_at": "2026-11-15T07:20:30+00:00"
+}

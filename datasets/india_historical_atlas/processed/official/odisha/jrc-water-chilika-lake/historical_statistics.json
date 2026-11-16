@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-chilika-lake",
+ "name": "Chilika Lake (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 249534.24,
+   "valid_ha": 249534.24,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 128210.44,
+    "Water (permanent or seasonal)": 121323.8
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 249534.24,
+   "valid_ha": 249534.24,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 129487.6,
+    "Water (permanent or seasonal)": 120046.64
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 121323.8,
+     "share_of_valid_pct": 48.62
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 120046.64,
+     "share_of_valid_pct": 48.108
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": -1277.16,
+   "net_change_pct": -1.05
+  }
+ },
+ "generated_at": "2026-11-15T07:20:31+00:00"
+}

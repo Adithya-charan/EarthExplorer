@@ -1,0 +1,1796 @@
+{
+ "outcome": "change_detected",
+ "headline": "Change detected: 43.3 ha of water lost and 849.1 ha gained between 1984 and 2021 (net +805.8 ha, +4.9%).",
+ "analysis_id": "7845d215d175",
+ "dataset": {
+  "id": "jrc-water-ujani-reservoir",
+  "name": "Ujani Reservoir (JRC surface water)",
+  "description": "Water state at the first and last year of the JRC record, derived from the transition layer.",
+  "is_synthetic": false,
+  "simulated_label": null,
+  "source": "European Commission JRC, Global Surface Water Explorer",
+  "product": "JRC Global Surface Water transitions (v1.4, 2021 release)",
+  "format": "Cloud Optimized GeoTIFF (derived from the original official file)",
+  "crs": "EPSG:4326",
+  "resolution_m": 26.5,
+  "temporal_resolution": "irregular",
+  "bbox": [
+   74.95,
+   17.95,
+   75.3,
+   18.25
+  ],
+  "coverage": {
+   "start": "1984-01-01",
+   "end": "2021-01-01"
+  },
+  "observation_count": 2,
+  "usable_count": 2,
+  "classes": {
+   "1": "Not water",
+   "2": "Water (permanent or seasonal)",
+   "255": "No data"
+  },
+  "real_dataset_targets": [],
+  "issues": [],
+  "variables": [
+   {
+    "key": "water",
+    "label": "water",
+    "class": 2,
+    "primary": true
+   }
+  ],
+  "designation": "official_derived",
+  "public_label": "Satellite Observations",
+  "provenance": {
+   "designation": "official_derived",
+   "note": "Two-date comparison taken from JRC's own transition layer.",
+   "pipeline": "pipeline.json"
+  }
+ },
+ "location_name": "Ujani Reservoir (JRC surface water)",
+ "period": {
+  "requested": {
+   "start_year": 1984,
+   "end_year": 2021
+  },
+  "supported": {
+   "start": "1984-01-01",
+   "end": "2021-01-01"
+  },
+  "effective": {
+   "start_year": 1984,
+   "end_year": 2021
+  },
+  "status": "ok",
+  "messages": []
+ },
+ "first_observation": {
+  "date": "1984-01-01",
+  "quality": "fair",
+  "valid_fraction": 1.0,
+  "layer_url": "/api/explorer/datasets/jrc-water-ujani-reservoir/observations/1984-01-01/layer.png"
+ },
+ "last_observation": {
+  "date": "2021-01-01",
+  "quality": "fair",
+  "valid_fraction": 1.0,
+  "layer_url": "/api/explorer/datasets/jrc-water-ujani-reservoir/observations/2021-01-01/layer.png"
+ },
+ "observations_used": {
+  "start_window": "1984",
+  "end_window": "2021",
+  "start_count": 1,
+  "end_count": 1,
+  "matched_months": "Jan",
+  "matched_month_numbers": [
+   1
+  ],
+  "excluded": []
+ },
+ "areas": {
+  "footprint_ha": 123008.42,
+  "analysed_ha": 123008.42,
+  "uncertain_ha": 0.0,
+  "water_start_ha": 16288.78,
+  "water_end_ha": 17295.76,
+  "gained_ha": 849.14,
+  "lost_ha": 43.33,
+  "net_ha": 805.81,
+  "unchanged_water_ha": 16022.45,
+  "unchanged_land_ha": 105446.33,
+  "noise_filtered_ha": 647.17,
+  "pct_net_change": 4.95,
+  "pct_gross_change": 5.48,
+  "seasonal_amplitude_pct": null,
+  "year_to_year_scatter_ha": null
+ },
+ "most_affected": {
+  "region": "southern",
+  "kind": "gain",
+  "area_ha": 325.65,
+  "description": "southern area: 325.7 ha of water gained",
+  "hotspot_id": "7845d215d175-g4",
+  "centroid": {
+   "lon": 75.161852,
+   "lat": 17.96466
+  }
+ },
+ "hotspots": [
+  {
+   "id": "7845d215d175-g1",
+   "rank": 1,
+   "kind": "gain",
+   "area_ha": 60.5,
+   "geometry_area_ha": 60.45,
+   "share_of_change_pct": 9.0,
+   "centroid": {
+    "lon": 74.955526,
+    "lat": 18.029953
+   },
+   "bbox": [
+    74.95,
+    18.0155,
+    74.963,
+    18.0385
+   ],
+   "region": "south-western",
+   "description": "south-western area: 60.5 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g2",
+   "rank": 2,
+   "kind": "gain",
+   "area_ha": 49.81,
+   "geometry_area_ha": 49.77,
+   "share_of_change_pct": 7.4,
+   "centroid": {
+    "lon": 75.245456,
+    "lat": 18.0182
+   },
+   "bbox": [
+    75.2375,
+    18.01575,
+    75.2545,
+    18.022
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 49.8 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g3",
+   "rank": 3,
+   "kind": "gain",
+   "area_ha": 46.65,
+   "geometry_area_ha": 46.61,
+   "share_of_change_pct": 7.0,
+   "centroid": {
+    "lon": 75.268668,
+    "lat": 18.059694
+   },
+   "bbox": [
+    75.26525,
+    18.05475,
+    75.2725,
+    18.06425
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 46.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g4",
+   "rank": 4,
+   "kind": "gain",
+   "area_ha": 44.55,
+   "geometry_area_ha": 44.52,
+   "share_of_change_pct": 6.6,
+   "centroid": {
+    "lon": 75.161852,
+    "lat": 17.96466
+   },
+   "bbox": [
+    75.155,
+    17.95,
+    75.1675,
+    17.97725
+   ],
+   "region": "southern",
+   "description": "southern area: 44.6 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g5",
+   "rank": 5,
+   "kind": "gain",
+   "area_ha": 40.86,
+   "geometry_area_ha": 40.83,
+   "share_of_change_pct": 6.1,
+   "centroid": {
+    "lon": 75.11472,
+    "lat": 18.074595
+   },
+   "bbox": [
+    75.10425,
+    18.0715,
+    75.12075,
+    18.0775
+   ],
+   "region": "southern",
+   "description": "southern area: 40.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g6",
+   "rank": 6,
+   "kind": "gain",
+   "area_ha": 28.36,
+   "geometry_area_ha": 28.34,
+   "share_of_change_pct": 4.2,
+   "centroid": {
+    "lon": 75.027044,
+    "lat": 17.961115
+   },
+   "bbox": [
+    75.01975,
+    17.9515,
+    75.03725,
+    17.971
+   ],
+   "region": "southern",
+   "description": "southern area: 28.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g7",
+   "rank": 7,
+   "kind": "gain",
+   "area_ha": 27.48,
+   "geometry_area_ha": 27.45,
+   "share_of_change_pct": 4.1,
+   "centroid": {
+    "lon": 75.093273,
+    "lat": 17.977779
+   },
+   "bbox": [
+    75.08175,
+    17.97475,
+    75.104,
+    17.98175
+   ],
+   "region": "southern",
+   "description": "southern area: 27.5 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g8",
+   "rank": 8,
+   "kind": "gain",
+   "area_ha": 25.13,
+   "geometry_area_ha": 25.11,
+   "share_of_change_pct": 3.7,
+   "centroid": {
+    "lon": 75.070205,
+    "lat": 17.978198
+   },
+   "bbox": [
+    75.06525,
+    17.9725,
+    75.07775,
+    17.98225
+   ],
+   "region": "southern",
+   "description": "southern area: 25.1 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g9",
+   "rank": 9,
+   "kind": "gain",
+   "area_ha": 20.0,
+   "geometry_area_ha": 19.99,
+   "share_of_change_pct": 3.0,
+   "centroid": {
+    "lon": 75.135873,
+    "lat": 17.97203
+   },
+   "bbox": [
+    75.12975,
+    17.96975,
+    75.14325,
+    17.97475
+   ],
+   "region": "southern",
+   "description": "southern area: 20.0 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g10",
+   "rank": 10,
+   "kind": "gain",
+   "area_ha": 14.95,
+   "geometry_area_ha": 14.94,
+   "share_of_change_pct": 2.2,
+   "centroid": {
+    "lon": 75.058493,
+    "lat": 17.956737
+   },
+   "bbox": [
+    75.0535,
+    17.95175,
+    75.062,
+    17.962
+   ],
+   "region": "southern",
+   "description": "southern area: 14.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g11",
+   "rank": 11,
+   "kind": "gain",
+   "area_ha": 14.72,
+   "geometry_area_ha": 14.71,
+   "share_of_change_pct": 2.2,
+   "centroid": {
+    "lon": 74.96546,
+    "lat": 18.032504
+   },
+   "bbox": [
+    74.96325,
+    18.03025,
+    74.968,
+    18.03575
+   ],
+   "region": "south-western",
+   "description": "south-western area: 14.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g12",
+   "rank": 12,
+   "kind": "gain",
+   "area_ha": 11.36,
+   "geometry_area_ha": 11.35,
+   "share_of_change_pct": 1.7,
+   "centroid": {
+    "lon": 75.028923,
+    "lat": 17.991077
+   },
+   "bbox": [
+    75.0265,
+    17.988,
+    75.031,
+    17.994
+   ],
+   "region": "southern",
+   "description": "southern area: 11.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g13",
+   "rank": 13,
+   "kind": "gain",
+   "area_ha": 9.52,
+   "geometry_area_ha": 9.51,
+   "share_of_change_pct": 1.4,
+   "centroid": {
+    "lon": 75.195733,
+    "lat": 18.154531
+   },
+   "bbox": [
+    75.19275,
+    18.153,
+    75.19825,
+    18.15675
+   ],
+   "region": "eastern",
+   "description": "eastern area: 9.5 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g14",
+   "rank": 14,
+   "kind": "gain",
+   "area_ha": 9.38,
+   "geometry_area_ha": 9.37,
+   "share_of_change_pct": 1.4,
+   "centroid": {
+    "lon": 75.107781,
+    "lat": 17.996242
+   },
+   "bbox": [
+    75.106,
+    17.993,
+    75.11025,
+    17.9995
+   ],
+   "region": "southern",
+   "description": "southern area: 9.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g15",
+   "rank": 15,
+   "kind": "gain",
+   "area_ha": 9.09,
+   "geometry_area_ha": 9.08,
+   "share_of_change_pct": 1.4,
+   "centroid": {
+    "lon": 75.127187,
+    "lat": 17.95349
+   },
+   "bbox": [
+    75.1225,
+    17.95025,
+    75.12975,
+    17.959
+   ],
+   "region": "southern",
+   "description": "southern area: 9.1 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g16",
+   "rank": 16,
+   "kind": "gain",
+   "area_ha": 8.86,
+   "geometry_area_ha": 8.86,
+   "share_of_change_pct": 1.3,
+   "centroid": {
+    "lon": 75.111966,
+    "lat": 18.001164
+   },
+   "bbox": [
+    75.109,
+    17.99975,
+    75.11625,
+    18.00225
+   ],
+   "region": "southern",
+   "description": "southern area: 8.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g17",
+   "rank": 17,
+   "kind": "gain",
+   "area_ha": 8.78,
+   "geometry_area_ha": 8.78,
+   "share_of_change_pct": 1.3,
+   "centroid": {
+    "lon": 75.136825,
+    "lat": 18.178394
+   },
+   "bbox": [
+    75.135,
+    18.17475,
+    75.13925,
+    18.182
+   ],
+   "region": "eastern",
+   "description": "eastern area: 8.8 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g18",
+   "rank": 18,
+   "kind": "gain",
+   "area_ha": 7.62,
+   "geometry_area_ha": 7.61,
+   "share_of_change_pct": 1.1,
+   "centroid": {
+    "lon": 75.153654,
+    "lat": 18.079397
+   },
+   "bbox": [
+    75.15025,
+    18.0765,
+    75.1565,
+    18.082
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 7.6 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g19",
+   "rank": 19,
+   "kind": "gain",
+   "area_ha": 7.33,
+   "geometry_area_ha": 7.32,
+   "share_of_change_pct": 1.1,
+   "centroid": {
+    "lon": 75.130495,
+    "lat": 17.976405
+   },
+   "bbox": [
+    75.129,
+    17.97425,
+    75.13225,
+    17.97925
+   ],
+   "region": "southern",
+   "description": "southern area: 7.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g20",
+   "rank": 20,
+   "kind": "gain",
+   "area_ha": 7.32,
+   "geometry_area_ha": 7.31,
+   "share_of_change_pct": 1.1,
+   "centroid": {
+    "lon": 75.243913,
+    "lat": 18.166355
+   },
+   "bbox": [
+    75.242,
+    18.1645,
+    75.246,
+    18.16825
+   ],
+   "region": "eastern",
+   "description": "eastern area: 7.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g21",
+   "rank": 21,
+   "kind": "gain",
+   "area_ha": 6.81,
+   "geometry_area_ha": 6.81,
+   "share_of_change_pct": 1.0,
+   "centroid": {
+    "lon": 75.048695,
+    "lat": 18.019351
+   },
+   "bbox": [
+    75.047,
+    18.01775,
+    75.05025,
+    18.02075
+   ],
+   "region": "southern",
+   "description": "southern area: 6.8 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g22",
+   "rank": 22,
+   "kind": "gain",
+   "area_ha": 6.45,
+   "geometry_area_ha": 6.44,
+   "share_of_change_pct": 1.0,
+   "centroid": {
+    "lon": 75.126108,
+    "lat": 17.97198
+   },
+   "bbox": [
+    75.12275,
+    17.9705,
+    75.1295,
+    17.9735
+   ],
+   "region": "southern",
+   "description": "southern area: 6.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g23",
+   "rank": 23,
+   "kind": "gain",
+   "area_ha": 6.29,
+   "geometry_area_ha": 6.29,
+   "share_of_change_pct": 0.9,
+   "centroid": {
+    "lon": 75.108587,
+    "lat": 18.238794
+   },
+   "bbox": [
+    75.107,
+    18.2355,
+    75.1105,
+    18.24125
+   ],
+   "region": "northern",
+   "description": "northern area: 6.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g24",
+   "rank": 24,
+   "kind": "gain",
+   "area_ha": 6.15,
+   "geometry_area_ha": 6.15,
+   "share_of_change_pct": 0.9,
+   "centroid": {
+    "lon": 75.120131,
+    "lat": 18.00053
+   },
+   "bbox": [
+    75.1175,
+    17.99875,
+    75.12325,
+    18.002
+   ],
+   "region": "southern",
+   "description": "southern area: 6.2 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g25",
+   "rank": 25,
+   "kind": "gain",
+   "area_ha": 5.86,
+   "geometry_area_ha": 5.86,
+   "share_of_change_pct": 0.9,
+   "centroid": {
+    "lon": 75.041247,
+    "lat": 17.950456
+   },
+   "bbox": [
+    75.03725,
+    17.95,
+    75.04525,
+    17.95125
+   ],
+   "region": "southern",
+   "description": "southern area: 5.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g26",
+   "rank": 26,
+   "kind": "gain",
+   "area_ha": 5.86,
+   "geometry_area_ha": 5.85,
+   "share_of_change_pct": 0.9,
+   "centroid": {
+    "lon": 75.100359,
+    "lat": 18.071481
+   },
+   "bbox": [
+    75.09725,
+    18.07075,
+    75.1035,
+    18.072
+   ],
+   "region": "southern",
+   "description": "southern area: 5.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g27",
+   "rank": 27,
+   "kind": "gain",
+   "area_ha": 5.71,
+   "geometry_area_ha": 5.71,
+   "share_of_change_pct": 0.9,
+   "centroid": {
+    "lon": 75.125571,
+    "lat": 18.084856
+   },
+   "bbox": [
+    75.123,
+    18.08375,
+    75.128,
+    18.086
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 5.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g28",
+   "rank": 28,
+   "kind": "gain",
+   "area_ha": 5.57,
+   "geometry_area_ha": 5.56,
+   "share_of_change_pct": 0.8,
+   "centroid": {
+    "lon": 75.045661,
+    "lat": 18.01147
+   },
+   "bbox": [
+    75.0435,
+    18.009,
+    75.0475,
+    18.01375
+   ],
+   "region": "southern",
+   "description": "southern area: 5.6 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g29",
+   "rank": 29,
+   "kind": "gain",
+   "area_ha": 5.57,
+   "geometry_area_ha": 5.56,
+   "share_of_change_pct": 0.8,
+   "centroid": {
+    "lon": 75.128444,
+    "lat": 18.086632
+   },
+   "bbox": [
+    75.1275,
+    18.08375,
+    75.12925,
+    18.0895
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 5.6 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g30",
+   "rank": 30,
+   "kind": "gain",
+   "area_ha": 5.35,
+   "geometry_area_ha": 5.34,
+   "share_of_change_pct": 0.8,
+   "centroid": {
+    "lon": 75.116817,
+    "lat": 17.966361
+   },
+   "bbox": [
+    75.115,
+    17.96425,
+    75.11975,
+    17.969
+   ],
+   "region": "southern",
+   "description": "southern area: 5.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g31",
+   "rank": 31,
+   "kind": "gain",
+   "area_ha": 4.98,
+   "geometry_area_ha": 4.98,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 75.025765,
+    "lat": 17.984691
+   },
+   "bbox": [
+    75.0245,
+    17.98175,
+    75.0275,
+    17.98775
+   ],
+   "region": "southern",
+   "description": "southern area: 5.0 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g32",
+   "rank": 32,
+   "kind": "gain",
+   "area_ha": 4.91,
+   "geometry_area_ha": 4.9,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 75.182498,
+    "lat": 18.088785
+   },
+   "bbox": [
+    75.1795,
+    18.0865,
+    75.1855,
+    18.09125
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 4.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g33",
+   "rank": 33,
+   "kind": "gain",
+   "area_ha": 4.9,
+   "geometry_area_ha": 4.9,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 75.23895,
+    "lat": 18.169356
+   },
+   "bbox": [
+    75.23675,
+    18.168,
+    75.24175,
+    18.171
+   ],
+   "region": "eastern",
+   "description": "eastern area: 4.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g34",
+   "rank": 34,
+   "kind": "gain",
+   "area_ha": 4.9,
+   "geometry_area_ha": 4.9,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 75.149427,
+    "lat": 18.208718
+   },
+   "bbox": [
+    75.1485,
+    18.2065,
+    75.1505,
+    18.21075
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g35",
+   "rank": 35,
+   "kind": "gain",
+   "area_ha": 4.68,
+   "geometry_area_ha": 4.68,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 75.137578,
+    "lat": 18.184531
+   },
+   "bbox": [
+    75.13625,
+    18.1835,
+    75.13875,
+    18.1855
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g36",
+   "rank": 36,
+   "kind": "gain",
+   "area_ha": 4.68,
+   "geometry_area_ha": 4.68,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 75.151277,
+    "lat": 18.21234
+   },
+   "bbox": [
+    75.14975,
+    18.21125,
+    75.15375,
+    18.21325
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g37",
+   "rank": 37,
+   "kind": "gain",
+   "area_ha": 4.68,
+   "geometry_area_ha": 4.68,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 75.053516,
+    "lat": 18.219977
+   },
+   "bbox": [
+    75.051,
+    18.21775,
+    75.05625,
+    18.2225
+   ],
+   "region": "north-western",
+   "description": "north-western area: 4.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g38",
+   "rank": 38,
+   "kind": "gain",
+   "area_ha": 4.39,
+   "geometry_area_ha": 4.39,
+   "share_of_change_pct": 0.7,
+   "centroid": {
+    "lon": 75.178208,
+    "lat": 18.093238
+   },
+   "bbox": [
+    75.17675,
+    18.0915,
+    75.1795,
+    18.0945
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 4.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g39",
+   "rank": 39,
+   "kind": "gain",
+   "area_ha": 4.32,
+   "geometry_area_ha": 4.32,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 75.130502,
+    "lat": 18.069744
+   },
+   "bbox": [
+    75.12975,
+    18.06825,
+    75.13125,
+    18.0715
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 4.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g40",
+   "rank": 40,
+   "kind": "gain",
+   "area_ha": 4.25,
+   "geometry_area_ha": 4.25,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 75.125034,
+    "lat": 17.995349
+   },
+   "bbox": [
+    75.124,
+    17.994,
+    75.126,
+    17.99675
+   ],
+   "region": "southern",
+   "description": "southern area: 4.2 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g41",
+   "rank": 41,
+   "kind": "gain",
+   "area_ha": 4.02,
+   "geometry_area_ha": 4.02,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 75.075611,
+    "lat": 18.241875
+   },
+   "bbox": [
+    75.074,
+    18.24,
+    75.07725,
+    18.24325
+   ],
+   "region": "northern",
+   "description": "northern area: 4.0 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g42",
+   "rank": 42,
+   "kind": "gain",
+   "area_ha": 3.95,
+   "geometry_area_ha": 3.95,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 75.117,
+    "lat": 18.21856
+   },
+   "bbox": [
+    75.1145,
+    18.2175,
+    75.11925,
+    18.21975
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 4.0 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g43",
+   "rank": 43,
+   "kind": "gain",
+   "area_ha": 3.81,
+   "geometry_area_ha": 3.81,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 75.245937,
+    "lat": 18.013375
+   },
+   "bbox": [
+    75.24375,
+    18.012,
+    75.24775,
+    18.015
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 3.8 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g44",
+   "rank": 44,
+   "kind": "gain",
+   "area_ha": 3.74,
+   "geometry_area_ha": 3.73,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 75.26287,
+    "lat": 17.95514
+   },
+   "bbox": [
+    75.26125,
+    17.954,
+    75.2645,
+    17.95625
+   ],
+   "region": "south-eastern",
+   "description": "south-eastern area: 3.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g45",
+   "rank": 45,
+   "kind": "gain",
+   "area_ha": 3.73,
+   "geometry_area_ha": 3.73,
+   "share_of_change_pct": 0.6,
+   "centroid": {
+    "lon": 75.011032,
+    "lat": 18.192277
+   },
+   "bbox": [
+    75.009,
+    18.1915,
+    75.01275,
+    18.19275
+   ],
+   "region": "north-western",
+   "description": "north-western area: 3.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g46",
+   "rank": 46,
+   "kind": "gain",
+   "area_ha": 3.66,
+   "geometry_area_ha": 3.66,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.077075,
+    "lat": 18.17323
+   },
+   "bbox": [
+    75.07475,
+    18.1725,
+    75.07975,
+    18.1745
+   ],
+   "region": "north-western",
+   "description": "north-western area: 3.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g47",
+   "rank": 47,
+   "kind": "gain",
+   "area_ha": 3.51,
+   "geometry_area_ha": 3.51,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.142281,
+    "lat": 18.192089
+   },
+   "bbox": [
+    75.141,
+    18.191,
+    75.144,
+    18.1935
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 3.5 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g48",
+   "rank": 48,
+   "kind": "gain",
+   "area_ha": 3.44,
+   "geometry_area_ha": 3.44,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.11571,
+    "lat": 18.000758
+   },
+   "bbox": [
+    75.1135,
+    18.00025,
+    75.11775,
+    18.00125
+   ],
+   "region": "southern",
+   "description": "southern area: 3.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-l49",
+   "rank": 49,
+   "kind": "loss",
+   "area_ha": 3.44,
+   "geometry_area_ha": 3.44,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.066497,
+    "lat": 18.133146
+   },
+   "bbox": [
+    75.065,
+    18.13225,
+    75.06825,
+    18.13425
+   ],
+   "region": "south-western",
+   "description": "south-western shore: 3.4 ha of water lost"
+  },
+  {
+   "id": "7845d215d175-g50",
+   "rank": 50,
+   "kind": "gain",
+   "area_ha": 3.37,
+   "geometry_area_ha": 3.36,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 74.990082,
+    "lat": 18.173326
+   },
+   "bbox": [
+    74.988,
+    18.1725,
+    74.99225,
+    18.174
+   ],
+   "region": "western",
+   "description": "western area: 3.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g51",
+   "rank": 51,
+   "kind": "gain",
+   "area_ha": 3.3,
+   "geometry_area_ha": 3.29,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.117614,
+    "lat": 17.972019
+   },
+   "bbox": [
+    75.11625,
+    17.97025,
+    75.119,
+    17.97325
+   ],
+   "region": "southern",
+   "description": "southern area: 3.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g52",
+   "rank": 52,
+   "kind": "gain",
+   "area_ha": 3.29,
+   "geometry_area_ha": 3.29,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.145903,
+    "lat": 18.189625
+   },
+   "bbox": [
+    75.14475,
+    18.18875,
+    75.14725,
+    18.1905
+   ],
+   "region": "north-eastern",
+   "description": "north-eastern area: 3.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g53",
+   "rank": 53,
+   "kind": "gain",
+   "area_ha": 3.22,
+   "geometry_area_ha": 3.22,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.042472,
+    "lat": 18.214653
+   },
+   "bbox": [
+    75.0415,
+    18.21375,
+    75.0435,
+    18.2155
+   ],
+   "region": "north-western",
+   "description": "north-western area: 3.2 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g54",
+   "rank": 54,
+   "kind": "gain",
+   "area_ha": 3.15,
+   "geometry_area_ha": 3.15,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.026817,
+    "lat": 18.060235
+   },
+   "bbox": [
+    75.02575,
+    18.059,
+    75.02775,
+    18.06125
+   ],
+   "region": "south-western",
+   "description": "south-western area: 3.1 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g55",
+   "rank": 55,
+   "kind": "gain",
+   "area_ha": 3.07,
+   "geometry_area_ha": 3.07,
+   "share_of_change_pct": 0.5,
+   "centroid": {
+    "lon": 75.071869,
+    "lat": 18.241387
+   },
+   "bbox": [
+    75.07025,
+    18.24075,
+    75.07375,
+    18.242
+   ],
+   "region": "northern",
+   "description": "northern area: 3.1 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g56",
+   "rank": 56,
+   "kind": "gain",
+   "area_ha": 3.0,
+   "geometry_area_ha": 3.0,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.080863,
+    "lat": 18.241058
+   },
+   "bbox": [
+    75.079,
+    18.2405,
+    75.083,
+    18.2415
+   ],
+   "region": "northern",
+   "description": "northern area: 3.0 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g57",
+   "rank": 57,
+   "kind": "gain",
+   "area_ha": 2.86,
+   "geometry_area_ha": 2.85,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.092522,
+    "lat": 18.067022
+   },
+   "bbox": [
+    75.0915,
+    18.06575,
+    75.09375,
+    18.068
+   ],
+   "region": "southern",
+   "description": "southern area: 2.9 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g58",
+   "rank": 58,
+   "kind": "gain",
+   "area_ha": 2.78,
+   "geometry_area_ha": 2.78,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.080428,
+    "lat": 17.982053
+   },
+   "bbox": [
+    75.07825,
+    17.9815,
+    75.0825,
+    17.9825
+   ],
+   "region": "southern",
+   "description": "southern area: 2.8 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g59",
+   "rank": 59,
+   "kind": "gain",
+   "area_ha": 2.71,
+   "geometry_area_ha": 2.71,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.038159,
+    "lat": 18.001591
+   },
+   "bbox": [
+    75.037,
+    18.00025,
+    75.03925,
+    18.00275
+   ],
+   "region": "southern",
+   "description": "southern area: 2.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g60",
+   "rank": 60,
+   "kind": "gain",
+   "area_ha": 2.71,
+   "geometry_area_ha": 2.71,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.049618,
+    "lat": 18.149476
+   },
+   "bbox": [
+    75.0485,
+    18.14875,
+    75.05075,
+    18.1505
+   ],
+   "region": "western",
+   "description": "western area: 2.7 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-l61",
+   "rank": 61,
+   "kind": "loss",
+   "area_ha": 2.64,
+   "geometry_area_ha": 2.63,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.036937,
+    "lat": 18.14241
+   },
+   "bbox": [
+    75.03575,
+    18.1415,
+    75.038,
+    18.14325
+   ],
+   "region": "western",
+   "description": "western shore: 2.6 ha of water lost"
+  },
+  {
+   "id": "7845d215d175-g62",
+   "rank": 62,
+   "kind": "gain",
+   "area_ha": 2.56,
+   "geometry_area_ha": 2.56,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.063346,
+    "lat": 18.030611
+   },
+   "bbox": [
+    75.062,
+    18.03,
+    75.06475,
+    18.03125
+   ],
+   "region": "southern",
+   "description": "southern area: 2.6 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g63",
+   "rank": 63,
+   "kind": "gain",
+   "area_ha": 2.56,
+   "geometry_area_ha": 2.56,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.084261,
+    "lat": 18.047418
+   },
+   "bbox": [
+    75.0835,
+    18.04625,
+    75.085,
+    18.04875
+   ],
+   "region": "southern",
+   "description": "southern area: 2.6 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g64",
+   "rank": 64,
+   "kind": "gain",
+   "area_ha": 2.49,
+   "geometry_area_ha": 2.49,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.079235,
+    "lat": 18.180654
+   },
+   "bbox": [
+    75.07775,
+    18.18025,
+    75.081,
+    18.1815
+   ],
+   "region": "north-western",
+   "description": "north-western area: 2.5 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g65",
+   "rank": 65,
+   "kind": "gain",
+   "area_ha": 2.42,
+   "geometry_area_ha": 2.41,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.084837,
+    "lat": 18.052769
+   },
+   "bbox": [
+    75.0845,
+    18.05075,
+    75.08525,
+    18.05475
+   ],
+   "region": "southern",
+   "description": "southern area: 2.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g66",
+   "rank": 66,
+   "kind": "gain",
+   "area_ha": 2.42,
+   "geometry_area_ha": 2.41,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.052072,
+    "lat": 18.149155
+   },
+   "bbox": [
+    75.05075,
+    18.14825,
+    75.05325,
+    18.15
+   ],
+   "region": "western",
+   "description": "western area: 2.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g67",
+   "rank": 67,
+   "kind": "gain",
+   "area_ha": 2.42,
+   "geometry_area_ha": 2.41,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.004163,
+    "lat": 18.185655
+   },
+   "bbox": [
+    75.0025,
+    18.185,
+    75.0055,
+    18.1865
+   ],
+   "region": "western",
+   "description": "western area: 2.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g68",
+   "rank": 68,
+   "kind": "gain",
+   "area_ha": 2.41,
+   "geometry_area_ha": 2.41,
+   "share_of_change_pct": 0.4,
+   "centroid": {
+    "lon": 75.116004,
+    "lat": 18.236254
+   },
+   "bbox": [
+    75.1145,
+    18.235,
+    75.11725,
+    18.23725
+   ],
+   "region": "northern",
+   "description": "northern area: 2.4 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g69",
+   "rank": 69,
+   "kind": "gain",
+   "area_ha": 2.34,
+   "geometry_area_ha": 2.34,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 74.953656,
+    "lat": 18.09418
+   },
+   "bbox": [
+    74.95275,
+    18.09325,
+    74.9545,
+    18.09525
+   ],
+   "region": "south-western",
+   "description": "south-western area: 2.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-l70",
+   "rank": 70,
+   "kind": "loss",
+   "area_ha": 2.34,
+   "geometry_area_ha": 2.34,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 75.010805,
+    "lat": 18.175492
+   },
+   "bbox": [
+    75.00975,
+    18.1745,
+    75.012,
+    18.17625
+   ],
+   "region": "western",
+   "description": "western shore: 2.3 ha of water lost"
+  },
+  {
+   "id": "7845d215d175-g71",
+   "rank": 71,
+   "kind": "gain",
+   "area_ha": 2.34,
+   "geometry_area_ha": 2.34,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 75.03125,
+    "lat": 18.202141
+   },
+   "bbox": [
+    75.02975,
+    18.2015,
+    75.0325,
+    18.20275
+   ],
+   "region": "north-western",
+   "description": "north-western area: 2.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g72",
+   "rank": 72,
+   "kind": "gain",
+   "area_ha": 2.27,
+   "geometry_area_ha": 2.27,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 75.120794,
+    "lat": 17.97327
+   },
+   "bbox": [
+    75.11975,
+    17.97275,
+    75.122,
+    17.97375
+   ],
+   "region": "southern",
+   "description": "southern area: 2.3 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g73",
+   "rank": 73,
+   "kind": "gain",
+   "area_ha": 2.12,
+   "geometry_area_ha": 2.12,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 75.124401,
+    "lat": 17.963047
+   },
+   "bbox": [
+    75.12275,
+    17.9625,
+    75.126,
+    17.96375
+   ],
+   "region": "southern",
+   "description": "southern area: 2.1 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g74",
+   "rank": 74,
+   "kind": "gain",
+   "area_ha": 2.12,
+   "geometry_area_ha": 2.12,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 75.191685,
+    "lat": 18.155349
+   },
+   "bbox": [
+    75.19025,
+    18.155,
+    75.19325,
+    18.15575
+   ],
+   "region": "eastern",
+   "description": "eastern area: 2.1 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g75",
+   "rank": 75,
+   "kind": "gain",
+   "area_ha": 2.12,
+   "geometry_area_ha": 2.12,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 74.997849,
+    "lat": 18.207918
+   },
+   "bbox": [
+    74.9965,
+    18.20725,
+    74.999,
+    18.2085
+   ],
+   "region": "north-western",
+   "description": "north-western area: 2.1 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g76",
+   "rank": 76,
+   "kind": "gain",
+   "area_ha": 2.05,
+   "geometry_area_ha": 2.05,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 75.054232,
+    "lat": 18.159161
+   },
+   "bbox": [
+    75.053,
+    18.15825,
+    75.05525,
+    18.16
+   ],
+   "region": "western",
+   "description": "western area: 2.0 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-l77",
+   "rank": 77,
+   "kind": "loss",
+   "area_ha": 2.05,
+   "geometry_area_ha": 2.05,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 74.951429,
+    "lat": 18.162929
+   },
+   "bbox": [
+    74.95,
+    18.16225,
+    74.95275,
+    18.1635
+   ],
+   "region": "western",
+   "description": "western shore: 2.0 ha of water lost"
+  },
+  {
+   "id": "7845d215d175-g78",
+   "rank": 78,
+   "kind": "gain",
+   "area_ha": 2.05,
+   "geometry_area_ha": 2.05,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 74.973679,
+    "lat": 18.166571
+   },
+   "bbox": [
+    74.97225,
+    18.166,
+    74.975,
+    18.16725
+   ],
+   "region": "western",
+   "description": "western area: 2.0 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g79",
+   "rank": 79,
+   "kind": "gain",
+   "area_ha": 2.05,
+   "geometry_area_ha": 2.05,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 74.970036,
+    "lat": 18.226625
+   },
+   "bbox": [
+    74.96925,
+    18.2255,
+    74.97075,
+    18.228
+   ],
+   "region": "north-western",
+   "description": "north-western area: 2.0 ha of water gained"
+  },
+  {
+   "id": "7845d215d175-g80",
+   "rank": 80,
+   "kind": "gain",
+   "area_ha": 2.05,
+   "geometry_area_ha": 2.05,
+   "share_of_change_pct": 0.3,
+   "centroid": {
+    "lon": 74.986821,
+    "lat": 18.249482
+   },
+   "bbox": [
+    74.98575,
+    18.24875,
+    74.98775,
+    18.25
+   ],
+   "region": "north-western",
+   "description": "north-western area: 2.0 ha of water gained"
+  }
+ ],
+ "progression": [
+  {
+   "year": 1984,
+   "water_ha": 16288.78,
+   "cumulative_loss_ha": 0.0,
+   "cumulative_gain_ha": 0.0,
+   "observations": 1
+  },
+  {
+   "year": 2021,
+   "water_ha": 17295.76,
+   "cumulative_loss_ha": 43.33,
+   "cumulative_gain_ha": 849.14,
+   "observations": 1
+  }
+ ],
+ "trend": null,
+ "quality": {
+  "mean_valid_fraction": 1.0,
+  "uncertain_share": 0.0,
+  "observations_in_period": 2,
+  "usable_in_period": 2
+ },
+ "confidence": "medium",
+ "confidence_reasons": [
+  "1 usable observation(s) in 1984",
+  "1 usable observation(s) in 2021",
+  "mean valid-pixel share of the observations used: 100%",
+  "0% of the footprint is uncertain (cloud or gaps) and excluded"
+ ],
+ "limitations": [
+  "Spatial resolution is about 26 m per pixel; boundary shifts smaller than ~2 pixels are treated as positional noise.",
+  "Only Jan were compared so that seasons match; other months were not used for the start/end maps.",
+  "Fewer than five yearly composites exist, so the year-to-year scatter test could not be applied.",
+  "The data describe where and how much water extent changed. They cannot, by themselves, establish why."
+ ],
+ "what_was_analysed": "Same-season composites of 1984 (1 observations) and 2021 (1 observations), using only Jan so seasons match. A pixel counts as water if it is water in at least 50% of its valid observations; 0 ha (0%) were uncertain and excluded.",
+ "insufficient": null,
+ "thresholds": {
+  "window_years": 1,
+  "min_valid_obs_monthly": 6,
+  "min_valid_obs_yearly": 1,
+  "min_obs_valid_fraction": 0.5,
+  "min_pixel_obs_fraction": 0.34,
+  "water_frequency": 0.5,
+  "min_change_pct": 5.0,
+  "min_hotspot_ha": 2.0,
+  "min_feature_px": null,
+  "noise_factor": 2.0,
+  "variable": "water"
+ },
+ "bbox": [
+  74.95,
+  17.95,
+  75.3,
+  18.25
+ ],
+ "layers": {
+  "difference_png": "/api/explorer/analysis/7845d215d175/layers/difference.png",
+  "before_png": "/api/explorer/analysis/7845d215d175/layers/before.png",
+  "after_png": "/api/explorer/analysis/7845d215d175/layers/after.png",
+  "difference_tif": "/api/explorer/analysis/7845d215d175/layers/difference.tif",
+  "hotspots_geojson": "/api/explorer/analysis/7845d215d175/hotspots"
+ },
+ "variable": {
+  "key": "water",
+  "label": "water",
+  "class": 2,
+  "primary": true
+ },
+ "is_synthetic": false,
+ "simulated_label": null,
+ "designation": "official_derived",
+ "data_designation_note": "official-derived"
+}

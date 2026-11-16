@@ -1,0 +1,80 @@
+{
+ "dataset_id": "ghsl-built-up-jaipur",
+ "name": "Jaipur metropolitan area (GHSL built-up)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 99065.65,
+   "valid_ha": 99065.65,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 82060.41,
+    "Built-up (at least 15% of the cell)": 17005.24
+   }
+  },
+  {
+   "date": "2010-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 99065.65,
+   "valid_ha": 99065.65,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 72698.63,
+    "Built-up (at least 15% of the cell)": 26367.02
+   }
+  },
+  {
+   "date": "2020-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 99065.65,
+   "valid_ha": 99065.65,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 64721.21,
+    "Built-up (at least 15% of the cell)": 34344.44
+   }
+  }
+ ],
+ "variables": {
+  "built_up": {
+   "label": "built-up area",
+   "classes": 4,
+   "primary": true,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 17005.24,
+     "share_of_valid_pct": 17.166
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 26367.02,
+     "share_of_valid_pct": 26.616
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 34344.44,
+     "share_of_valid_pct": 34.668
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": 17339.2,
+   "net_change_pct": 101.96
+  }
+ },
+ "generated_at": "2026-11-15T07:20:31+00:00"
+}

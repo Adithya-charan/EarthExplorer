@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-hirakud-reservoir",
+ "name": "Hirakud Reservoir (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 257797.95,
+   "valid_ha": 257797.95,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 197745.23,
+    "Water (permanent or seasonal)": 60052.72
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 257797.95,
+   "valid_ha": 257797.95,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 198588.07,
+    "Water (permanent or seasonal)": 59209.88
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 60052.72,
+     "share_of_valid_pct": 23.294
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 59209.88,
+     "share_of_valid_pct": 22.968
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": -842.84,
+   "net_change_pct": -1.4
+  }
+ },
+ "generated_at": "2026-11-15T07:20:31+00:00"
+}

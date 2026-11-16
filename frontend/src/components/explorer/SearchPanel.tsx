@@ -3,14 +3,14 @@
 import { ArrowLeft, ArrowRight, Loader2, Mic, MicOff, Search } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { explorerApi } from "@/lib/explorer/api";
-import { dataLabel, levelName, yearOptions } from "@/lib/explorer/logic";
+import { levelName, yearOptions } from "@/lib/explorer/logic";
 import type { DatasetInfo, LocationOut } from "@/lib/explorer/types";
 import { VOICE_EXAMPLES } from "@/lib/explorer/voice";
 
 // A fixed upper bound: reading the clock during render would make the prerendered page stale.
 const MAX_YEAR = 2026;
 
-export const EXAMPLES = ["Bellandur Lake, Bengaluru", "Hyderabad", "Sundarbans", "Himalayas", "Uttarakhand"];
+export const EXAMPLES = ["Bellandur Lake, Bengaluru", "Hyderabad", "Chennai", "Delhi NCR", "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Kochi", "Visakhapatnam", "Bhubaneswar", "Lucknow", "Chilika Lake", "Vembanad Lake", "Hirakud Reservoir", "Sundarbans"];
 
 export interface VoiceUi {
   supported: boolean;
@@ -242,7 +242,7 @@ export function SearchPanel(p: Props) {
 
       {!p.compact ? (
         <div className="nx-rise flex flex-col items-center gap-2 text-center">
-          <p className="text-[12.5px] text-[color:var(--nx-muted)]">Search a place, choose a period, then Explore. Drag to turn the globe, scroll to zoom.</p>
+          <p className="text-[12.5px] text-[color:var(--nx-muted)]">Search a place, choose a period, then Explore. Drag to turn the globe, scroll to zoom. Places with satellite data:</p>
           <div className="flex flex-wrap justify-center gap-2" aria-label="Example locations">
             {EXAMPLES.map((e) => (
               <button key={e} type="button" className="nx-chip" onClick={() => p.onExample(e)} disabled={p.busy}>
@@ -271,16 +271,5 @@ export function DatasetAvailability({ datasets, error }: { datasets: DatasetInfo
   if (error) return <p className="text-[12px] text-amber-200" data-testid="availability">Dataset availability could not be loaded. Is the backend running?</p>;
   if (!datasets) return <p className="text-[12px] text-[color:var(--nx-muted)]" data-testid="availability">Checking which datasets are available…</p>;
   if (datasets.length === 0) return <p className="text-[12px] text-amber-200" data-testid="availability">No datasets are loaded, so no location has observations.</p>;
-  return (
-    <p className="max-w-[720px] text-[12px] leading-relaxed text-[color:var(--nx-muted)]" data-testid="availability">
-      <span className="font-semibold text-[color:var(--nx-soft)]">Historical layers: </span>
-      {datasets.map((d, i) => (
-        <span key={d.id}>
-          {i > 0 ? " · " : ""}
-          {d.name.replace(/ \((?:illustrative|simulated)[^)]*\)$/i, "")} {d.coverage.start.slice(0, 4)}–{d.coverage.end.slice(0, 4)} ({dataLabel(d)})
-        </span>
-      ))}
-      . Other places can be shown on the globe, but have no observations to compare.
-    </p>
-  );
+  return null;
 }

@@ -1,28 +1,4 @@
-import type { GeoJSONFeatureCollection } from "./earth/types";
-import type {
-  AnalyzeRequest,
-  AnalyzeResponse,
-  ColumnMapping,
-  CompareRequest,
-  ChatRequest,
-  ChatResponse,
-  CompareResponse,
-  DatasetListResponse,
-  DiagnosticsResponse,
-  GridFrame,
-  GridUploadResponse,
-  MetadataResponse,
-  MethodologyResponse,
-  ObservationsResponse,
-  RegionsResponse,
-  OverviewResponse,
-  AtlasResponse,
-  SnapshotResponse,
-  SourceProfile,
-  StoryRequest,
-  StoryResponse,
-  UploadResponse,
-} from "./types";
+/** Shared HTTP helper for the NASAX API. */
 
 export const API_BASE = (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000").replace(/\/+$/, "");
 export const REQUEST_TIMEOUT_MS = 30_000;
@@ -100,87 +76,10 @@ export async function request<T>(path: string, opts: RequestOptions = {}): Promi
     throw new ApiError(
       0,
       "network_error",
-      `Cannot reach the EarthTrend API at ${API_BASE}. Check that the backend is running.`,
+      `Cannot reach the NASAX API at ${API_BASE}. Check that the backend is running.`,
     );
   } finally {
     clearTimeout(timer);
     opts.signal?.removeEventListener("abort", onAbort);
   }
 }
-
-const qs = (params: Record<string, string | number | boolean | null | undefined>) => {
-  const p = new URLSearchParams();
-  for (const [k, v] of Object.entries(params)) if (v !== undefined && v !== null && v !== "") p.set(k, String(v));
-  const s = p.toString();
-  return s ? `?${s}` : "";
-};
-
-export interface ObservationQuery {
-  dataset_id: string;
-  variable?: string;
-  region?: string;
-  start?: string;
-  end?: string;
-  limit?: number;
-  offset?: number;
-  include_missing?: boolean;
-}
-
-export const api = {
-  datasets: (signal?: AbortSignal) => request<DatasetListResponse>("/api/datasets", { signal }),
-  metadata: (datasetId: string, signal?: AbortSignal) =>
-    request<MetadataResponse>(`/api/metadata${qs({ dataset_id: datasetId })}`, { signal }),
-  observations: (q: ObservationQuery, signal?: AbortSignal) =>
-    request<ObservationsResponse>(`/api/observations${qs({ ...q })}`, { signal }),
-  observationsCsv: (q: Omit<ObservationQuery, "limit" | "offset">, signal?: AbortSignal) =>
-    request<string>(`/api/observations${qs({ ...q, format: "csv" })}`, { signal, raw: true }),
-  diagnostics: (q: { dataset_id: string; variable: string; region: string }, signal?: AbortSignal) =>
-    request<DiagnosticsResponse>(`/api/diagnostics${qs(q)}`, { signal }),
-  analyze: (body: AnalyzeRequest, signal?: AbortSignal) =>
-    request<AnalyzeResponse>("/api/analyze", { json: body, signal }),
-  compare: (body: CompareRequest, signal?: AbortSignal) =>
-    request<CompareResponse>("/api/compare", { json: body, signal }),
-  regions: (datasetId: string, signal?: AbortSignal) =>
-    request<RegionsResponse>(`/api/regions${qs({ dataset_id: datasetId })}`, { signal }),
-  overview: (datasetId: string, region: string, signal?: AbortSignal) =>
-    request<OverviewResponse>(`/api/overview${qs({ dataset_id: datasetId, region })}`, { signal }),
-  snapshot: (datasetId: string, year: number, month: number, signal?: AbortSignal) =>
-    request<SnapshotResponse>(`/api/snapshot${qs({ dataset_id: datasetId, year, month })}`, { signal }),
-  atlas: (datasetId: string, signal?: AbortSignal) => request<AtlasResponse>(`/api/atlas${qs({ dataset_id: datasetId })}`, { signal }),
-  story: (body: StoryRequest, signal?: AbortSignal) => request<StoryResponse>("/api/story", { json: body, signal }),
-  uploadGrid: (file: File, opts: { variable?: string; name?: string } = {}, signal?: AbortSignal) => {
-    const form = new FormData();
-    form.set("file", file);
-    if (opts.variable) form.set("variable", opts.variable);
-    if (opts.name) form.set("dataset_name", opts.name);
-    return request<GridUploadResponse>("/api/upload-grid", { form, signal, timeoutMs: 120_000 });
-  },
-  gridFrame: (datasetId: string, month: string, signal?: AbortSignal) =>
-    request<GridFrame>(`/api/grid${qs({ dataset_id: datasetId, month })}`, { signal }),
-  chat: (body: ChatRequest, signal?: AbortSignal) => request<ChatResponse>("/api/chat", { json: body, signal }),
-  methodology: (signal?: AbortSignal) => request<MethodologyResponse>("/api/methodology", { signal }),
-  profile: (file: File, signal?: AbortSignal) => {
-    const form = new FormData();
-    form.set("file", file);
-    return request<SourceProfile>("/api/profile", { form, signal, timeoutMs: 120_000 });
-  },
-  upload: (
-    file: File,
-    mapping: ColumnMapping,
-    opts: { dryRun: boolean; confirmed: boolean; datasetName?: string },
-    signal?: AbortSignal,
-  ) => {
-    const form = new FormData();
-    form.set("file", file);
-    form.set("mapping", JSON.stringify(mapping));
-    form.set("dry_run", String(opts.dryRun));
-    form.set("confirmed", String(opts.confirmed));
-    if (opts.datasetName) form.set("dataset_name", opts.datasetName);
-    return request<UploadResponse>("/api/upload", { form, signal, timeoutMs: 120_000 });
-  },
-  deleteDataset: (id: string) => request<void>(`/api/datasets/${encodeURIComponent(id)}`, { method: "DELETE" }),
-
-  // ---- Map outlines ----
-  boundaries: (opts: { simplify?: number } = {}, signal?: AbortSignal) =>
-    request<GeoJSONFeatureCollection & { source: { note: string } }>(`/api/geography/boundaries${qs({ simplify: opts.simplify })}`, { signal }),
-};

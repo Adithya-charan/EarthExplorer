@@ -1,0 +1,4 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-kozhikode,official_derived,2000-01-01,built_up,built-up area,3719.3,7.698,whole footprint,0.0,good
+ghsl-built-up-kozhikode,official_derived,2010-01-01,built_up,built-up area,5573.07,11.535,whole footprint,0.0,good
+ghsl-built-up-kozhikode,official_derived,2020-01-01,built_up,built-up area,6728.93,13.927,whole footprint,0.0,good

@@ -1,0 +1,3 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+jrc-water-ujani-reservoir,official_derived,1984-01-01,water,water,16288.78,13.242,whole footprint,0.0,fair
+jrc-water-ujani-reservoir,official_derived,2021-01-01,water,water,17295.76,14.061,whole footprint,0.0,fair

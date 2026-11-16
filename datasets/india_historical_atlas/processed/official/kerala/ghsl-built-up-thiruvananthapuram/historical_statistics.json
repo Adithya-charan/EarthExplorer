@@ -1,0 +1,80 @@
+{
+ "dataset_id": "ghsl-built-up-thiruvananthapuram",
+ "name": "Thiruvananthapuram metropolitan area (GHSL built-up)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "2000-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 127862.73,
+   "valid_ha": 127862.73,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 118255.43,
+    "Built-up (at least 15% of the cell)": 9607.29
+   }
+  },
+  {
+   "date": "2010-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 127862.73,
+   "valid_ha": 127862.73,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 112890.87,
+    "Built-up (at least 15% of the cell)": 14971.86
+   }
+  },
+  {
+   "date": "2020-01-01",
+   "quality": "good",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 127862.73,
+   "valid_ha": 127862.73,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not built-up (below 15% of the cell)": 109826.39,
+    "Built-up (at least 15% of the cell)": 18036.34
+   }
+  }
+ ],
+ "variables": {
+  "built_up": {
+   "label": "built-up area",
+   "classes": 4,
+   "primary": true,
+   "series": [
+    {
+     "date": "2000-01-01",
+     "area_ha": 9607.29,
+     "share_of_valid_pct": 7.514
+    },
+    {
+     "date": "2010-01-01",
+     "area_ha": 14971.86,
+     "share_of_valid_pct": 11.709
+    },
+    {
+     "date": "2020-01-01",
+     "area_ha": 18036.34,
+     "share_of_valid_pct": 14.106
+    }
+   ],
+   "first_date": "2000-01-01",
+   "last_date": "2020-01-01",
+   "net_change_ha": 8429.05,
+   "net_change_pct": 87.74
+  }
+ },
+ "generated_at": "2026-11-15T07:20:30+00:00"
+}

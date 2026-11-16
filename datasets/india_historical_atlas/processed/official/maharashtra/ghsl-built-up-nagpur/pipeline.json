@@ -1,0 +1,69 @@
+{
+ "dataset": "ghsl-built-up-nagpur",
+ "generated_at": "2026-11-15T07:12:41+00:00",
+ "steps": [
+  {
+   "epoch": 2000,
+   "inspect": {
+    "crs": "EPSG:4326",
+    "res_deg": 0.0008333333300326821,
+    "dtype": "uint16"
+   },
+   "clip": {
+    "window": [
+     10749,
+     9419,
+     360,
+     240
+    ]
+   },
+   "crs": "no reprojection needed (EPSG:4326)",
+   "align": "native 3 arc-second grid kept",
+   "classify": "built-up if m2 / cell area >= 0.15",
+   "output": "observations/2000.tif",
+   "built_up_ha": 14416.03
+  },
+  {
+   "epoch": 2010,
+   "inspect": {
+    "crs": "EPSG:4326",
+    "res_deg": 0.0008333333300326821,
+    "dtype": "uint16"
+   },
+   "clip": {
+    "window": [
+     10749,
+     9419,
+     360,
+     240
+    ]
+   },
+   "crs": "no reprojection needed (EPSG:4326)",
+   "align": "native 3 arc-second grid kept",
+   "classify": "built-up if m2 / cell area >= 0.15",
+   "output": "observations/2010.tif",
+   "built_up_ha": 18395.49
+  },
+  {
+   "epoch": 2020,
+   "inspect": {
+    "crs": "EPSG:4326",
+    "res_deg": 0.0008333333300326821,
+    "dtype": "uint16"
+   },
+   "clip": {
+    "window": [
+     10749,
+     9419,
+     360,
+     240
+    ]
+   },
+   "crs": "no reprojection needed (EPSG:4326)",
+   "align": "native 3 arc-second grid kept",
+   "classify": "built-up if m2 / cell area >= 0.15",
+   "output": "observations/2020.tif",
+   "built_up_ha": 20598.17
+  }
+ ]
+}

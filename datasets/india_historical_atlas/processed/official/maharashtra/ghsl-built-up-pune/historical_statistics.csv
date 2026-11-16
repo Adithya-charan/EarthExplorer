@@ -1,0 +1,4 @@
+dataset_id,designation,date,variable,label,area_ha,share_of_valid_pct,zone,nodata_pct,quality
+ghsl-built-up-pune,official_derived,2000-01-01,built_up,built-up area,18760.89,21.404,whole footprint,0.0,good
+ghsl-built-up-pune,official_derived,2010-01-01,built_up,built-up area,28366.65,32.363,whole footprint,0.0,good
+ghsl-built-up-pune,official_derived,2020-01-01,built_up,built-up area,33248.99,37.933,whole footprint,0.0,good

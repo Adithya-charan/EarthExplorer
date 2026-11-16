@@ -47,6 +47,7 @@
   }
  ],
  "license": "CC BY 4.0",
+ "min_feature_px": 1,
  "temporal_resolution": "irregular",
  "coverage": {
   "start": "2000-01-01",
@@ -90,7 +91,7 @@
     ],
     "nodata_value": 65535,
     "nodata_fraction": 0.0,
-    "processed_at": "2026-11-15T01:14:43+00:00"
+    "processed_at": "2026-11-15T04:00:46+00:00"
    }
   },
   {
@@ -130,7 +131,7 @@
     ],
     "nodata_value": 65535,
     "nodata_fraction": 0.0,
-    "processed_at": "2026-11-15T01:14:43+00:00"
+    "processed_at": "2026-11-15T04:00:47+00:00"
    }
   },
   {
@@ -170,7 +171,7 @@
     ],
     "nodata_value": 65535,
     "nodata_fraction": 0.0,
-    "processed_at": "2026-11-15T01:14:44+00:00"
+    "processed_at": "2026-11-15T04:00:47+00:00"
    }
   }
  ],
@@ -180,6 +181,5 @@
   "designation": "official_derived",
   "note": "GHSL is a modelled product built from Landsat and Sentinel-2 imagery. Epoch years are not acquisition dates.",
   "pipeline": "pipeline.json"
- },
- "min_feature_px": 1
+ }
 }

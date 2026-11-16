@@ -114,7 +114,8 @@ body {
 
 /* ---------------------------------------------------------------------------------------------
    NASAX Earth Time Machine: a deep-space scene. Scoped to .nx so the rest of the app keeps its light theme. */
-.nx {
+.nx,
+.nxp {
   --nx-bg: #030816;
   --nx-ink: #e8f1ff;
   --nx-soft: #b6c6e3;
@@ -125,20 +126,25 @@ body {
   --nx-loss: #ff4d5e;
   --nx-gain: #35e08a;
   --nx-warn: #fbbf24;
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
   background: var(--nx-bg);
   color: var(--nx-ink);
   font-size: 14px;
 }
+.nx {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+/* Scrollable analytics pages share the Earth Time Machine look. */
+.nxp {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% -10%, #0b1d3f 0%, var(--nx-bg) 60%);
+}
 .nx-glass {
-  background: rgba(7, 15, 34, 0.74);
-  -webkit-backdrop-filter: blur(14px) saturate(1.25);
-  backdrop-filter: blur(14px) saturate(1.25);
+  background: rgba(7, 15, 34, 0.88);
   border: 1px solid var(--nx-line);
   border-radius: 14px;
-  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 .nx-chip {
   display: inline-flex;
@@ -212,10 +218,12 @@ body {
   border-color: var(--nx-accent);
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
-.nx select.nx-input option {
+.nx select.nx-input option,
+.nxp select.nx-input option {
   background: #0a1530;
 }
-.nx :focus-visible {
+.nx :focus-visible,
+.nxp :focus-visible {
   outline: 2px solid var(--nx-accent);
   outline-offset: 2px;
 }
@@ -288,4 +296,64 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+
+/* Official light look for the analytics, dataset and methods pages (.nxp). The globe and forecast scenes (.nx) stay dark. */
+.nxp {
+  --nx-bg: #f4f6fa;
+  --nx-ink: #0f1b2d;
+  --nx-soft: #33435a;
+  --nx-muted: #5b6b80;
+  --nx-line: #d5deea;
+  --nx-accent: #0b5cad;
+  --nx-accent-strong: #084a8c;
+  --nx-loss: #b42335;
+  --nx-gain: #12703f;
+  --nx-warn: #8a5a00;
+  background: var(--nx-bg);
+  color: var(--nx-ink);
+}
+.nxp .nx-glass {
+  background: #ffffff;
+  border: 1px solid var(--nx-line);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15, 27, 45, 0.05), 0 2px 8px rgba(15, 27, 45, 0.05);
+}
+.nxp .nx-chip {
+  background: #ffffff;
+  border-color: #c3cfde;
+  color: var(--nx-soft);
+}
+.nxp .nx-chip:hover {
+  background: #e8f0fa;
+  border-color: var(--nx-accent);
+  color: var(--nx-accent-strong);
+}
+.nxp .nx-btn {
+  background: var(--nx-accent);
+  color: #ffffff;
+  border-radius: 8px;
+}
+.nxp .nx-btn:hover:not(:disabled) {
+  filter: none;
+  background: var(--nx-accent-strong);
+}
+.nxp .nx-input {
+  background: #ffffff;
+  border-color: #c3cfde;
+  color: var(--nx-ink);
+}
+.nxp select.nx-input option {
+  background: #ffffff;
+  color: var(--nx-ink);
+}
+.nxp .nxp-nav-active {
+  background: #e3edf9;
+  color: var(--nx-accent-strong);
+  box-shadow: inset 0 -2px 0 var(--nx-accent);
+}
+.nxp .nxp-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--nx-line);
 }

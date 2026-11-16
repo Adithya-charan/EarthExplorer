@@ -1,6 +1,6 @@
 # NASAX evidence report
 
-Generated 2026-11-15T02:10:09+00:00.
+Generated 2026-11-15T04:09:43+00:00.
 
 ## What is official
 - 5 dataset(s) derived from official files: Bellandur and east Bengaluru (GHSL built-up), Bellandur Lake (JRC surface water), Hyderabad metropolitan area (GHSL built-up), Hyderabad lakes (JRC surface water), Sundarbans (ESA WorldCover 2021). Label in the app: **Satellite Observations**.

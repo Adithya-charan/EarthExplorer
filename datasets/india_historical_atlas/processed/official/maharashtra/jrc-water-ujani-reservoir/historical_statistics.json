@@ -1,0 +1,61 @@
+{
+ "dataset_id": "jrc-water-ujani-reservoir",
+ "name": "Ujani Reservoir (JRC surface water)",
+ "designation": "official_derived",
+ "public_label": "Satellite Observations",
+ "method": "Per-observation class areas from the classified rasters using geodesic pixel areas; cloud and no-data pixels are excluded from shares and reported as no-data.",
+ "observations": [
+  {
+   "date": "1984-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 123008.42,
+   "valid_ha": 123008.42,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 106719.65,
+    "Water (permanent or seasonal)": 16288.78
+   }
+  },
+  {
+   "date": "2021-01-01",
+   "quality": "fair",
+   "valid_fraction": 1.0,
+   "readable": true,
+   "footprint_ha": 123008.42,
+   "valid_ha": 123008.42,
+   "nodata_ha": 0.0,
+   "nodata_pct": 0.0,
+   "class_area_ha": {
+    "Not water": 105712.66,
+    "Water (permanent or seasonal)": 17295.76
+   }
+  }
+ ],
+ "variables": {
+  "water": {
+   "label": "water",
+   "classes": 2,
+   "primary": true,
+   "series": [
+    {
+     "date": "1984-01-01",
+     "area_ha": 16288.78,
+     "share_of_valid_pct": 13.242
+    },
+    {
+     "date": "2021-01-01",
+     "area_ha": 17295.76,
+     "share_of_valid_pct": 14.061
+    }
+   ],
+   "first_date": "1984-01-01",
+   "last_date": "2021-01-01",
+   "net_change_ha": 1006.98,
+   "net_change_pct": 6.18
+  }
+ },
+ "generated_at": "2026-11-15T07:20:30+00:00"
+}
